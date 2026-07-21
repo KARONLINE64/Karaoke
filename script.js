@@ -1,17 +1,26 @@
-const songs = [
-  { artist: "Queen", title: "Bohemian Rhapsody" },
-  { artist: "ABBA", title: "Dancing Queen" },
-  { artist: "Adele", title: "Hello" },
-  { artist: "Elvis Presley", title: "Can't Help Falling In Love" }
-];
+let songs = [];
 
 const songsDiv = document.getElementById("songs");
 const search = document.getElementById("search");
 
+fetch("songs.json")
+  .then(response => response.json())
+  .then(data => {
+    songs = data.sort((a, b) => {
+      if (a.artist === b.artist) {
+        return a.title.localeCompare(b.title);
+      }
+      return a.artist.localeCompare(b.artist);
+    });
+
+    display(songs);
+  });
+
 function display(list) {
+
   songsDiv.innerHTML = "";
 
-  for (let i = 0; i < list.length; i++) {
+  list.forEach(song => {
 
     const card = document.createElement("div");
     card.className = "song";
@@ -20,38 +29,36 @@ function display(list) {
 
     const artist = document.createElement("div");
     artist.className = "artist";
-    artist.textContent = list[i].artist;
+    artist.textContent = song.artist;
 
     const title = document.createElement("div");
     title.className = "title";
-    title.textContent = list[i].title;
+    title.textContent = song.title;
 
     left.appendChild(artist);
     left.appendChild(title);
 
     const star = document.createElement("div");
     star.className = "star";
-    star.textContent = "⭐";
+    star.textContent = "☆";
 
     card.appendChild(left);
     card.appendChild(star);
 
     songsDiv.appendChild(card);
-  }
-}
 
-display(songs);
+  });
+
+}
 
 search.addEventListener("input", function () {
 
   const value = search.value.toLowerCase();
 
-  const result = songs.filter(function (song) {
-    return (
-      song.artist.toLowerCase().includes(value) ||
-      song.title.toLowerCase().includes(value)
-    );
-  });
+  const result = songs.filter(song =>
+    song.artist.toLowerCase().includes(value) ||
+    song.title.toLowerCase().includes(value)
+  );
 
   display(result);
 
