@@ -39,8 +39,37 @@ function display(list) {
     left.appendChild(title);
 
     const star = document.createElement("div");
-    star.className = "star";
+star.className = "star";
+
+let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+const id = song.artist + " - " + song.title;
+
+if (favs.includes(id)) {
+    star.textContent = "★";
+} else {
     star.textContent = "☆";
+}
+
+star.onclick = function () {
+
+    let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    if (favs.includes(id)) {
+
+        favs = favs.filter(x => x !== id);
+        star.textContent = "☆";
+
+    } else {
+
+        favs.push(id);
+        star.textContent = "★";
+
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favs));
+
+};
 
     card.appendChild(left);
     card.appendChild(star);
