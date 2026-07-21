@@ -66,8 +66,14 @@ main{
 }
 
 .star{
-    font-size:24px;
+    font-size:28px;
     cursor:pointer;
+    color:#666;
+    transition:0.2s;
+}
+
+.star:hover{
+    color:#FFD700;
 }
 
 nav{
