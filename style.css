@@ -95,3 +95,6 @@ nav button{
     font-size:18px;
     cursor:pointer;
 }
+.star.selected{
+    color:#FFD700;
+}
