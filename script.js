@@ -4,91 +4,101 @@ const songsDiv = document.getElementById("songs");
 const search = document.getElementById("search");
 
 fetch("songs.json")
-  .then(response => response.json())
-  .then(data => {
+.then(response => response.json())
+.then(data => {
+
     songs = data.sort((a, b) => {
-      if (a.artist === b.artist) {
-        return a.title.localeCompare(b.title);
-      }
-      return a.artist.localeCompare(b.artist);
+
+        if (a.artist === b.artist) {
+            return a.title.localeCompare(b.title);
+        }
+
+        return a.artist.localeCompare(b.artist);
+
     });
 
     display(songs);
-  });
+
+});
 
 function display(list) {
 
-  songsDiv.innerHTML = "";
+    songsDiv.innerHTML = "";
 
-  list.forEach(song => {
+    list.forEach(song => {
 
-    const card = document.createElement("div");
-    card.className = "song";
+        const card = document.createElement("div");
+        card.className = "song";
 
-    const left = document.createElement("div");
+        const left = document.createElement("div");
 
-    const artist = document.createElement("div");
-    artist.className = "artist";
-    artist.textContent = song.artist;
+        const artist = document.createElement("div");
+        artist.className = "artist";
+        artist.textContent = song.artist;
 
-    const title = document.createElement("div");
-    title.className = "title";
-    title.textContent = song.title;
+        const title = document.createElement("div");
+        title.className = "title";
+        title.textContent = song.title;
 
-    left.appendChild(artist);
-    left.appendChild(title);
+        left.appendChild(artist);
+        left.appendChild(title);
 
-    const star = document.createElement("div");
-star.className = "star";
+        const star = document.createElement("div");
+        star.className = "star";
 
-let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+        const id = song.artist + " - " + song.title;
 
-const id = song.artist + " - " + song.title;
+        let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
-if (favs.includes(id)) {
-    star.textContent = "★";
-} else {
-    star.textContent = "☆";
-}
+        if (favorites.includes(id)) {
+            star.textContent = "★";
+            star.classList.add("selected");
+        } else {
+            star.textContent = "☆";
+        }
 
-star.onclick = function () {
+        star.onclick = function () {
 
-    let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+            let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
-    if (favs.includes(id)) {
+            if (favorites.includes(id)) {
 
-        favs = favs.filter(x => x !== id);
-        star.textContent = "☆";
+                favorites = favorites.filter(item => item !== id);
 
-    } else {
+                star.textContent = "☆";
+                star.classList.remove("selected");
 
-        favs.push(id);
-        star.textContent = "★";
+            } else {
 
-    }
+                favorites.push(id);
 
-    localStorage.setItem("favorites", JSON.stringify(favs));
+                star.textContent = "★";
+                star.classList.add("selected");
 
-};
+            }
 
-    card.appendChild(left);
-    card.appendChild(star);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
 
-    songsDiv.appendChild(card);
+        };
 
-  });
+        card.appendChild(left);
+        card.appendChild(star);
+
+        songsDiv.appendChild(card);
+
+    });
 
 }
 
 search.addEventListener("input", function () {
 
-  const value = search.value.toLowerCase();
+    const value = search.value.toLowerCase();
 
-  const result = songs.filter(song =>
-    song.artist.toLowerCase().includes(value) ||
-    song.title.toLowerCase().includes(value)
-  );
+    const result = songs.filter(song =>
+        song.artist.toLowerCase().includes(value) ||
+        song.title.toLowerCase().includes(value)
+    );
 
-  display(result);
+    display(result);
 
 });
