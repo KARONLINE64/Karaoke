@@ -4,25 +4,33 @@ const songsDiv = document.getElementById("songs");
 const search = document.getElementById("search");
 const homeBtn = document.getElementById("homeBtn");
 const favBtn = document.getElementById("favBtn");
+const welcome = document.getElementById("welcome");
+
 fetch("songs.json")
-.then(response => response.json())
-.then(data => {
+    .then(response => response.json())
+    .then(data => {
 
-    songs = data.sort((a, b) => {
+        songs = data.sort((a, b) => {
 
-        if (a.artist === b.artist) {
-            return a.title.localeCompare(b.title);
-        }
+            if (a.artist === b.artist) {
+                return a.title.localeCompare(b.title);
+            }
 
-        return a.artist.localeCompare(b.artist);
+            return a.artist.localeCompare(b.artist);
+
+        });
+
+        display([]);
 
     });
 
-    display(songs);
-
-});
-
 function display(list) {
+
+    if (list.length === 0) {
+        welcome.classList.remove("hidden");
+    } else {
+        welcome.classList.add("hidden");
+    }
 
     songsDiv.innerHTML = "";
 
@@ -93,7 +101,12 @@ function display(list) {
 
 search.addEventListener("input", function () {
 
-    const value = search.value.toLowerCase();
+    const value = search.value.trim().toLowerCase();
+
+    if (value === "") {
+        display([]);
+        return;
+    }
 
     const result = songs.filter(song =>
         song.artist.toLowerCase().includes(value) ||
@@ -103,10 +116,11 @@ search.addEventListener("input", function () {
     display(result);
 
 });
+
 homeBtn.onclick = function () {
 
     search.value = "";
-    display(songs);
+    display([]);
 
 };
 
