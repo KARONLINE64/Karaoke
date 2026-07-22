@@ -5,8 +5,10 @@
 }
 
 body{
-    background:#0b0b0b;
-    color:#ffffff;
+    margin:0;
+    background:
+        radial-gradient(circle at top,#133a7a 0%,#0b1730 18%,#050505 55%,#000 100%);
+    color:white;
     font-family:Arial,Helvetica,sans-serif;
 }
 
@@ -15,11 +17,12 @@ header{
     padding:30px 20px 20px;
 }
 
-#logo{
-    width:220px;
-    max-width:80%;
-    margin-bottom:20px;
-    filter:drop-shadow(0 0 20px #2ea8ff);
+.logo{
+    display:block;
+    width:min(92vw,700px);
+    max-height:150px;
+    object-fit:contain;
+    margin:20px auto 10px;
 }
 
 h1{
@@ -29,13 +32,16 @@ h1{
 }
 
 #search{
-    width:100%;
-    max-width:650px;
-    padding:16px;
-    font-size:18px;
+    display:block;
+    width:min(90%,700px);
+    margin:18px auto;
+    padding:16px 22px;
     border:none;
-    border-radius:12px;
-    outline:none;
+    border-radius:30px;
+    background:white;
+    font-size:18px;
+    box-sizing:border-box;
+    box-shadow:0 0 25px rgba(0,140,255,.25);
 }
 
 main{
@@ -100,17 +106,22 @@ nav button{
     color:white;
     font-size:18px;
     cursor:pointer;
-}
 #welcome{
     text-align:center;
-    margin-top:80px;
-    font-size:32px;
-    color:rgba(255,255,255,0.65);
-    font-weight:600;
-    transition:0.3s;
+    margin:45px auto;
+    font-size:34px;
+    font-weight:700;
+    color:white;
+    text-shadow:
+        0 0 8px #4da6ff,
+        0 0 18px #008cff;
     user-select:none;
+    line-height:1.4;
 }
 
 .hidden{
     display:none;
+    header{
+    padding-bottom:10px;
+}
 }
