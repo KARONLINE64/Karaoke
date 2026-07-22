@@ -2,7 +2,8 @@ let songs = [];
 
 const songsDiv = document.getElementById("songs");
 const search = document.getElementById("search");
-
+const homeBtn = document.getElementById("homeBtn");
+const favBtn = document.getElementById("favBtn");
 fetch("songs.json")
 .then(response => response.json())
 .then(data => {
@@ -102,3 +103,22 @@ search.addEventListener("input", function () {
     display(result);
 
 });
+homeBtn.onclick = function () {
+
+    search.value = "";
+    display(songs);
+
+};
+
+favBtn.onclick = function () {
+
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    const list = songs.filter(song =>
+        favorites.includes(song.artist + " - " + song.title)
+    );
+
+    search.value = "";
+    display(list);
+
+};
