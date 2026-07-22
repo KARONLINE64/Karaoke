@@ -5,55 +5,66 @@
 }
 
 body{
-    margin:0;
-    background:
-        radial-gradient(circle at top,#133a7a 0%,#0b1730 18%,#050505 55%,#000 100%);
-    color:white;
+    background:#05070d;
+    color:#ffffff;
     font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    background-image:
+        radial-gradient(circle at top,
+        rgba(0,120,255,.35) 0%,
+        rgba(0,70,170,.18) 18%,
+        transparent 45%);
+    background-repeat:no-repeat;
+    background-size:100% 420px;
 }
 
 header{
     text-align:center;
-    padding:15px 20px 10px;
+    padding:20px 20px 10px;
 }
 
 .logo{
     display:block;
-    width:min(90vw,650px);
+    width:min(92vw,520px);
     max-height:120px;
     object-fit:contain;
-    margin:10px auto;
+    margin:0 auto 12px;
 }
 
 #search{
     display:block;
-    width:min(92%,700px);
-    margin:15px auto;
-    padding:18px 24px;
+    width:min(92%,650px);
+    margin:0 auto;
+    padding:16px 22px;
+    font-size:18px;
     border:none;
     border-radius:30px;
-    background:white;
+    outline:none;
+    background:#ffffff;
     color:#222;
-    font-size:18px;
-    box-shadow:0 0 25px rgba(0,140,255,.35);
+    box-shadow:0 0 18px rgba(0,140,255,.35);
+}
+
+#search::placeholder{
+    color:#777;
 }
 
 main{
     width:95%;
     max-width:900px;
-    margin:auto;
-    padding-bottom:100px;
+    margin:30px auto 0;
+    padding-bottom:110px;
 }
 
 #welcome{
     text-align:center;
-    margin:40px auto;
+    margin:45px auto;
     font-size:34px;
     font-weight:700;
-    color:white;
     line-height:1.4;
+    color:#ffffff;
     text-shadow:
-        0 0 8px #66c2ff,
+        0 0 8px #3aa7ff,
         0 0 20px #008cff;
     user-select:none;
 }
@@ -66,43 +77,46 @@ main{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#161616;
-    margin:10px 0;
+    margin:12px 0;
     padding:16px 18px;
+    background:#161b24;
+    border:1px solid #25354d;
     border-radius:18px;
-    border:1px solid #2c2c2c;
     transition:.2s;
 }
 
 .song:hover{
-    background:#222;
+    background:#1d2531;
     transform:translateY(-2px);
 }
 
 .artist{
-    color:#52bfff;
+    color:#53bfff;
     font-size:18px;
-    font-weight:700;
+    font-weight:bold;
 }
 
 .title{
-    color:white;
-    margin-top:4px;
+    margin-top:5px;
+    color:#ffffff;
     font-size:15px;
 }
 
 .star{
     font-size:28px;
-    cursor:pointer;
     color:#666;
+    cursor:pointer;
     transition:.2s;
     user-select:none;
 }
 
-.star:hover,
-.star.selected{
-    color:#FFD700;
+.star:hover{
+    color:#ffd700;
     transform:scale(1.15);
+}
+
+.star.selected{
+    color:#ffd700;
 }
 
 nav{
@@ -110,18 +124,18 @@ nav{
     left:0;
     bottom:0;
     width:100%;
-    background:#0d0d0d;
-    border-top:1px solid #333;
+    background:#0d1118;
+    border-top:1px solid #263547;
     display:flex;
     justify-content:space-around;
+    align-items:center;
     padding:14px 0;
-    backdrop-filter:blur(8px);
 }
 
 nav button{
     background:none;
     border:none;
-    color:white;
+    color:#ffffff;
     font-size:17px;
     font-weight:600;
     cursor:pointer;
@@ -129,5 +143,30 @@ nav button{
 }
 
 nav button:hover{
-    color:#4db8ff;
+    color:#53bfff;
+}
+
+@media (max-width:600px){
+
+    .logo{
+        max-height:100px;
+    }
+
+    #welcome{
+        font-size:28px;
+        margin:35px 20px;
+    }
+
+    .artist{
+        font-size:16px;
+    }
+
+    .title{
+        font-size:14px;
+    }
+
+    nav button{
+        font-size:15px;
+    }
+
 }
