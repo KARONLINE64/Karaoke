@@ -1,39 +1,95 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Floribar Karaoke</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+
 </head>
 
 <body>
 
-    <header>
-        <img src="logo.png" alt="Floribar Logo" class="logo">
-        <input
-            type="text"
-            id="search"
-            placeholder="Search artist or song..."
-            autocomplete="off">
-    </header>
+<header>
 
-    <main>
+    <img src="logo.png" alt="Floribar Logo" class="logo">
 
-        <div id="welcome">
+    <input
+        type="text"
+        id="search"
+        placeholder="Search artist or song..."
+        autocomplete="off">
+
+</header>
+
+<main>
+
+    <div id="welcome">
+
+        <div class="welcome1">
             🎤 Pick your song and let's sing!
         </div>
 
-        <div id="songs"></div>
+        <div class="welcome2">
+            Never lose your favorite tracks.
+        </div>
 
-    </main>
+        <div class="welcome3">
+            Sign in with Facebook for "My Songs".
+        </div>
 
-    <nav class="bottom-nav">
-        <button id="homeBtn">🏠 Home</button>
-        <button id="favBtn">⭐ My Songs</button>
-    </nav>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="songs"></div>
+
+</main>
+
+<nav class="bottom-nav">
+
+    <button id="homeBtn">
+        🏠 Home
+    </button>
+
+    <button id="favBtn">
+        ⭐ My Songs
+    </button>
+
+    <button id="settingsBtn">
+        ⚙️
+    </button>
+
+</nav>
+
+<div id="settingsMenu" class="settings-menu hidden">
+
+    <button id="loginBtn">
+        Log in
+    </button>
+
+    <button id="facebookBtn">
+        Sign in with Facebook
+    </button>
+
+    <button id="changeAccountBtn">
+        Change account
+    </button>
+
+    <button id="logoutBtn">
+        Log out
+    </button>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
