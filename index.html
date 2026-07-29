@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Maintenance</title>
-<style>
-body{
-    background:#111;
-    color:white;
-    font-family:Arial,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    text-align:center;
-}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Karaoke</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div>
-<h1>🎤 Karaoke Catalogue</h1>
-<p>The website is currently being updated.</p>
-<p>Please come back in a few minutes.</p>
-<p>Thank you!</p>
+<header>
+<h1>KARAOKE</h1>
+
+<input id="search" type="text" placeholder="Artiste ou chanson...">
+
+<div style="margin-top:15px;">
+<button id="homeBtn">Accueil</button>
+<button id="favBtn">★ Favoris</button>
 </div>
 
+<div id="welcome">
+<h2>Choisissez une chanson et chantez&nbsp;!</h2>
+</div>
+</header>
+
+<div id="songs"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
