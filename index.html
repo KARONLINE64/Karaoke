@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Floribar Karaoke</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floribar Karaoke</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+    <header>
+        <img src="logo.png" alt="Floribar Logo" class="logo">
+        <input
+            type="text"
+            id="search"
+            placeholder="Search artist or song..."
+            autocomplete="off">
+    </header>
 
-<img src="logo.png" id="logo" alt="Floribar">
+    <main>
 
-<h1>KARAOKE</h1>
+        <div id="welcome">
+            🎤 Pick your song and let's sing!
+        </div>
 
-<input
-type="text"
-id="search"
-placeholder="Search artist or song..."
-autocomplete="off">
+        <div id="songs"></div>
 
-</header>
+    </main>
 
-<main>
+    <nav class="bottom-nav">
+        <button id="homeBtn">🏠 Home</button>
+        <button id="favBtn">⭐ My Songs</button>
+    </nav>
 
-<div id="songs"></div>
-
-</main>
-
-<nav>
-
-<button id="homeBtn">🏠 Home</button>
-
-<button id="favBtn">⭐ My Songs</button>
-
-</nav>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
