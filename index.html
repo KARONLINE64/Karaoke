@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Maintenance</title>
-<style>
-html,body{margin:0;height:100%;font-family:Arial,sans-serif;background:#111;color:#fff}
-body{display:flex;align-items:center;justify-content:center;text-align:center}
-.box{max-width:700px;padding:40px}
-h1{font-size:48px;margin-bottom:20px}
-p{font-size:22px;line-height:1.5;color:#ddd}
-.small{margin-top:30px;font-size:16px;color:#999}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Floribar Karaoke</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-<div class="box">
-<h1>🚧 SITE TEMPORAIREMENT EN MAINTENANCE 🚧</h1>
-<p>Le catalogue est momentanément indisponible.</p>
-<p>Nous effectuons une mise à jour et le service sera rétabli dès que possible.</p>
-<div class="small">Merci de votre compréhension.</div>
-</div>
+
+<header>
+
+<img src="logo.png" id="logo" alt="Floribar">
+
+<h1>KARAOKE</h1>
+
+<input
+type="text"
+id="search"
+placeholder="Search artist or song..."
+autocomplete="off">
+
+</header>
+
+<main>
+
+<div id="songs"></div>
+
+</main>
+
+<nav>
+
+<button id="homeBtn">🏠 Home</button>
+
+<button id="favBtn">⭐ My Songs</button>
+
+</nav>
+
+<script src="script.js"></script>
+
 </body>
 </html>
