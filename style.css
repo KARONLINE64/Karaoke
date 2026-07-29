@@ -197,31 +197,19 @@ main{
 }
 
 .star{
-
     font-size:28px;
-
-    color:#666;
-
     cursor:pointer;
-
-    transition:.2s;
-
+    color:#666666;
+    transition:0.2s;
     user-select:none;
-
 }
 
 .star:hover{
-
-    color:#ffd700;
-
-    transform:scale(1.15);
-
+    color:#FFD700;
 }
 
 .star.selected{
-
-    color:#ffd700;
-
+    color:#FFD700;
 }
 
 .bottom-nav{
@@ -378,4 +366,6 @@ main{
 
 }
 
+.star.selected{
+    color:#FFD700;
 }
