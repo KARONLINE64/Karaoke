@@ -1,98 +1,97 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KARONLINE64 - Under Construction</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<title>Floribar Karaoke</title>
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:radial-gradient(circle at top,#133a7a 0%,#0b1730 20%,#050505 60%,#000 100%);
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    text-align:center;
-    overflow:hidden;
-}
+<link rel="stylesheet" href="style.css">
 
-.container{
-    max-width:700px;
-    padding:40px;
-}
-
-h1{
-    font-size:4rem;
-    letter-spacing:4px;
-    margin-bottom:20px;
-    text-shadow:0 0 10px #fff,
-                0 0 20px #fff,
-                0 0 35px #00bfff;
-}
-
-h2{
-    font-size:1.6rem;
-    margin-bottom:35px;
-    color:#9fdfff;
-    letter-spacing:2px;
-}
-
-p{
-    font-size:1.2rem;
-    line-height:1.8;
-    color:#ddd;
-}
-
-.gear{
-    font-size:90px;
-    animation:spin 8s linear infinite;
-    margin-bottom:25px;
-}
-
-@keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-footer{
-    margin-top:50px;
-    font-size:0.95rem;
-    color:#999;
-}
-</style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<div class="gear">⚙️</div>
+<img src="logo.png" id="logo" alt="Floribar Karaoke">
 
-<h1>UNDER CONSTRUCTION</h1>
+<input
+type="text"
+id="search"
+placeholder="Search artist or song..."
+autocomplete="off">
 
-<h2>KARONLINE64</h2>
+</header>
 
-<p>
-Our karaoke song catalog is currently being updated.
-</p>
+<main>
 
-<p style="margin-top:15px;">
-We'll be back very soon with new features and an improved experience.
-</p>
+<section id="homePage">
 
-<footer>
-Thank you for your patience.
-</footer>
+<div id="welcome">
+
+<div class="welcomeAction">
+
+<span class="icon">🎤</span>
+
+<span>Pick your song and let's sing!</span>
 
 </div>
 
+<div class="welcomeAction">
+
+<span class="icon">📚</span>
+
+<span>Or view our entire catalog</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="catalogPage" class="hidden">
+
+<div class="catalogItem" data-file="english.json">📚 English</div>
+
+<div class="catalogItem" data-file="francais.json">📚 Français</div>
+
+<div class="catalogItem" data-file="nederlands.json">📚 Nederlands</div>
+
+<div class="catalogItem" data-file="italiano.json">📚 Italiano</div>
+
+<div class="catalogItem" data-file="espanol.json">📚 Español</div>
+
+</section>
+
+<section id="songsPage" class="hidden">
+
+<div id="songs"></div>
+
+</section>
+
+</main>
+
+<nav class="bottomNav">
+
+<button id="homeBtn">
+🏠 Home
+</button>
+
+<button id="catalogBtn">
+📚 Catalog
+</button>
+
+<button id="favBtn">
+⭐ My Songs
+</button>
+
+</nav>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
