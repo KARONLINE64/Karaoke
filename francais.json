@@ -1,23 +1,15 @@
 [
   {
     "artist": "2 be 3",
-    "title": "2 Be 3 (Pour être libre)"
-  },
-  {
-    "artist": "2 be 3",
     "title": "Partir un jour"
   },
   {
-    "artist": "3 Café Gourmand",
-    "title": "À nos souvenirs"
+    "artist": "3 CAFE GOURMAND",
+    "title": "À nos souvenirs                                                "
   },
   {
-    "artist": "Standard",
-    "title": "À la pêche aux moules"
-  },
-  {
-    "artist": "M & Gail Ann Dorsey",
-    "title": "À toi"
+    "artist": "Á toi",
+    "title": "M & Gail Ann Dorsey (BDF)"
   },
   {
     "artist": "Adamo",
@@ -26,6 +18,10 @@
   {
     "artist": "Adamo",
     "title": "C'est ma vie"
+  },
+  {
+    "artist": "Adamo",
+    "title": "C'est ma vie (SHOT)"
   },
   {
     "artist": "Adamo",
@@ -101,7 +97,7 @@
   },
   {
     "artist": "Agathe",
-    "title": "Je Ne Veux Pas Rentrer Chez Moi Seule"
+    "title": "Je Ne Veux Pas Rentrer Chez Moi Seule "
   },
   {
     "artist": "Aladdin",
@@ -109,15 +105,15 @@
   },
   {
     "artist": "Aladdin",
-    "title": "Je suis ton meilleur ami"
+    "title": "Je suis ton meilleur ami                  "
   },
   {
     "artist": "Aladdin",
-    "title": "Prince Ali"
+    "title": "Prince Ali                            "
   },
   {
     "artist": "Alain Barriere",
-    "title": "Ma vie"
+    "title": "Ma vie (REMIX)"
   },
   {
     "artist": "Alain Barrière",
@@ -129,7 +125,11 @@
   },
   {
     "artist": "Alain Barrière",
-    "title": "Ma vie"
+    "title": "Ma vie (Tino)"
+  },
+  {
+    "artist": "Alain Barrière ",
+    "title": " Ma vie (MPK)"
   },
   {
     "artist": "Alain Bashung",
@@ -141,19 +141,19 @@
   },
   {
     "artist": "Alain Bashung",
-    "title": "Les mots bleus"
+    "title": "Les mots bleus      "
   },
   {
     "artist": "Alain Bashung",
-    "title": "Madame rêve"
+    "title": "Madame rêve\t\t\t\t\t"
   },
   {
     "artist": "Alain Bashung",
     "title": "Vertige de l'amour"
   },
   {
-    "artist": "ALAIN BASHUNG",
-    "title": "OSEZ JOSEPHINE"
+    "artist": "ALAIN BASHUNG ",
+    "title": " OSEZ JOSEPHINE"
   },
   {
     "artist": "Alain Chamfort",
@@ -181,7 +181,11 @@
   },
   {
     "artist": "Alain Delorme",
-    "title": "Romantique avec toi"
+    "title": "Romantique avec toi (REMIX)"
+  },
+  {
+    "artist": "Alain Delorme",
+    "title": "Romantique avec toi (TinoK)"
   },
   {
     "artist": "Alain Souchon",
@@ -193,7 +197,7 @@
   },
   {
     "artist": "Alain Souchon",
-    "title": "Et si en plus y'a personne"
+    "title": "Et si en plus y'a personne\t\t\t\t\t"
   },
   {
     "artist": "Alain Souchon",
@@ -237,7 +241,7 @@
   },
   {
     "artist": "Alizée",
-    "title": "A contre-courant"
+    "title": "A contre-courant "
   },
   {
     "artist": "Alizée",
@@ -249,7 +253,7 @@
   },
   {
     "artist": "Alizée",
-    "title": "J'en ai marre"
+    "title": "J'en ai marre                              "
   },
   {
     "artist": "Alizée",
@@ -281,7 +285,7 @@
   },
   {
     "artist": "Amadou & Mariam",
-    "title": "La Réalité"
+    "title": "La Réalité "
   },
   {
     "artist": "Amel Bent",
@@ -289,7 +293,7 @@
   },
   {
     "artist": "Amel Bent",
-    "title": "Je Me Sens Vivre"
+    "title": "Je Me Sens Vivre "
   },
   {
     "artist": "Amel Bent",
@@ -297,7 +301,7 @@
   },
   {
     "artist": "Amel Bent",
-    "title": "Ne retiens pas tes larmes"
+    "title": "Ne retiens pas tes larmes\t\t\t\t\t"
   },
   {
     "artist": "Amel Bent",
@@ -305,47 +309,47 @@
   },
   {
     "artist": "Amel Bent",
-    "title": "Tu n'es plus là"
+    "title": "Tu n'es plus là                         "
   },
   {
-    "artist": "Amel Bent",
-    "title": "Le droit à l'erreur"
+    "artist": "Amel Bent               ",
+    "title": "Le droit à l'erreur "
   },
   {
     "artist": "Amel Bent & Imen Es",
-    "title": "Jusqu'au bout"
+    "title": "Jusqu'au bout\t\t\t\t\t"
   },
   {
     "artist": "Amir",
-    "title": "Ce soir"
+    "title": "Ce soir\t\t\t\t\t"
   },
   {
     "artist": "Amir",
-    "title": "J'ai cherché"
+    "title": "J'ai cherché                                 "
   },
   {
     "artist": "Amir",
-    "title": "Longtemps"
+    "title": "Longtemps                                    "
   },
   {
     "artist": "Amir",
-    "title": "On dirait"
+    "title": "On dirait                                    "
   },
   {
     "artist": "Amir",
     "title": "Rétine"
   },
   {
-    "artist": "Amir",
+    "artist": "Amir ",
     "title": "Complémentaire"
   },
   {
     "artist": "Amir & Indila",
-    "title": "Carrousel"
+    "title": "Carrousel\t\t\t\t\t"
   },
   {
     "artist": "Amy feat Lyna Mahyem & Lylah",
-    "title": "Va là bas"
+    "title": "Va là bas     "
   },
   {
     "artist": "Anais",
@@ -356,8 +360,8 @@
     "title": "Trahie"
   },
   {
-    "artist": "Anastasia",
-    "title": "Voyage dans le temps"
+    "artist": "Anastasia              ",
+    "title": "Voyage dans le temps "
   },
   {
     "artist": "André Claveau",
@@ -373,11 +377,11 @@
   },
   {
     "artist": "Andrea Bocelli & H. Ségara",
-    "title": "Vivo per lei"
+    "title": "Vivo per lei (je vis pour elle)"
   },
   {
     "artist": "Andrea Bocelli & Hélène Segara",
-    "title": "Vivo per lei"
+    "title": "Vivo per lei (BDF)"
   },
   {
     "artist": "Angèle",
@@ -385,15 +389,15 @@
   },
   {
     "artist": "Angèle",
-    "title": "Flou"
+    "title": "Flou                                                                    "
   },
   {
     "artist": "Angèle",
-    "title": "Libre"
+    "title": "Libre\t\t\t\t\t"
   },
   {
     "artist": "Angèle",
-    "title": "Perdus"
+    "title": "Perdus                                                                  "
   },
   {
     "artist": "Angèle",
@@ -401,7 +405,7 @@
   },
   {
     "artist": "Angèle feat. Roméo Elvis",
-    "title": "Tout oublier"
+    "title": "Tout oublier\t\t\t\t\t"
   },
   {
     "artist": "Angelina",
@@ -421,7 +425,7 @@
   },
   {
     "artist": "Annie Cordy",
-    "title": "Tu m'as voulue"
+    "title": "Tu m'as voulue                        "
   },
   {
     "artist": "Antoine",
@@ -441,10 +445,10 @@
   },
   {
     "artist": "Arno",
-    "title": "Les yeux de ma mère"
+    "title": "Les yeux de ma mère (live)\t\t\t\t\t"
   },
   {
-    "artist": "Arno",
+    "artist": "Arno ",
     "title": "Les yeux de ma mère"
   },
   {
@@ -457,19 +461,19 @@
   },
   {
     "artist": "Assia",
-    "title": "Elle est a toi"
+    "title": "Elle est a toi \t\t\t\t\t"
   },
   {
     "artist": "Au Petit Bonheur",
     "title": "J'veux du soleil"
   },
   {
-    "artist": "Autant en emporte le vent",
+    "artist": "Autant en emporte le vent ",
     "title": "Tous les hommes"
   },
   {
-    "artist": "Aventura",
-    "title": "Obsesion"
+    "artist": "Aventura ",
+    "title": "Obsesion "
   },
   {
     "artist": "Axel Bauer",
@@ -477,10 +481,10 @@
   },
   {
     "artist": "Axel Bauer",
-    "title": "Éteins la lumière"
+    "title": "Éteins la lumière (BDF)"
   },
   {
-    "artist": "Axel Bauer &  Zazie",
+    "artist": "Axel Bauer &  Zazie ",
     "title": "A ma place"
   },
   {
@@ -509,19 +513,19 @@
   },
   {
     "artist": "Axelle Red & Ycare",
-    "title": "A toi"
+    "title": "A toi                          "
   },
   {
     "artist": "Aya Nakamura",
-    "title": "Copines"
+    "title": "Copines                              "
   },
   {
     "artist": "Aya Nakamura",
-    "title": "Djadja"
+    "title": "Djadja                               "
   },
   {
     "artist": "Aya Nakamura",
-    "title": "Pookie"
+    "title": "Pookie                                                            "
   },
   {
     "artist": "B Azzam",
@@ -549,11 +553,11 @@
   },
   {
     "artist": "Barbara Pravi",
-    "title": "Voilà"
+    "title": "Voilà\t\t\t\t\t"
   },
   {
     "artist": "BB Brunes",
-    "title": "Dis moi"
+    "title": "Dis moi   "
   },
   {
     "artist": "Beau Dommage",
@@ -561,7 +565,7 @@
   },
   {
     "artist": "Ben L'Oncle Soul",
-    "title": "Soulman"
+    "title": "Soulman "
   },
   {
     "artist": "Ben Mazué",
@@ -569,11 +573,11 @@
   },
   {
     "artist": "Benabar",
-    "title": "Je suis de celles"
+    "title": "Je suis de celles              "
   },
   {
     "artist": "Benabar",
-    "title": "L'effet papillon"
+    "title": "L'effet papillon                          "
   },
   {
     "artist": "Benjamin Biolay",
@@ -585,39 +589,43 @@
   },
   {
     "artist": "BERNARD LAVILLIERS",
-    "title": "LES MAINS D'OR"
+    "title": "LES MAINS D'OR    "
   },
   {
     "artist": "Bernard Lavilliers",
     "title": "On the road again"
   },
   {
-    "artist": "Bernard Lavilliers",
-    "title": "Pigalle la blanche"
+    "artist": "Bernard Lavilliers           ",
+    "title": "Pigalle la blanche "
   },
   {
-    "artist": "Bernard Lavilliers",
-    "title": "Stand the ghetto"
+    "artist": "Bernard Lavilliers             ",
+    "title": "Stand the ghetto "
   },
   {
-    "artist": "Bernard Lavilliers",
-    "title": "Noir et blanc"
+    "artist": "Bernard Lavilliers                ",
+    "title": "Noir et blanc "
   },
   {
-    "artist": "Bernard Lavilliers",
-    "title": "La salsa"
+    "artist": "Bernard Lavilliers                     ",
+    "title": "La salsa "
   },
   {
-    "artist": "Bernard Lavilliers",
-    "title": "Le bal"
+    "artist": "Bernard Lavilliers                       ",
+    "title": "Le bal "
   },
   {
     "artist": "Bernard Lavilliers & Nicoletta",
-    "title": "Idées noires"
+    "title": "Idées noires (BDF)\t\t\t\t\t"
+  },
+  {
+    "artist": "Bernard Lavilliers & Nicoletta",
+    "title": "Idées noires (BDFab)\t\t\t\t\t"
   },
   {
     "artist": "Bernard Minet",
-    "title": "Bioman"
+    "title": "Bioman "
   },
   {
     "artist": "Bernard Minet",
@@ -625,7 +633,7 @@
   },
   {
     "artist": "Bernard Minet",
-    "title": "Dis-moi Bioman"
+    "title": "Dis-moi Bioman "
   },
   {
     "artist": "Bernard Minet",
@@ -645,7 +653,7 @@
   },
   {
     "artist": "Bezu",
-    "title": "A La Queue Leu Leu"
+    "title": "A La Queue Leu Leu "
   },
   {
     "artist": "Bibi",
@@ -653,15 +661,15 @@
   },
   {
     "artist": "Bibie",
-    "title": "Tout doucement"
+    "title": "Tout doucement (BDF)"
   },
   {
     "artist": "Bigflo & Oli",
-    "title": "Dommage"
+    "title": "Dommage         "
   },
   {
     "artist": "Bigflo& Oli",
-    "title": "Dommage"
+    "title": "Dommage\t\t\t\t\t"
   },
   {
     "artist": "Bill Baxter",
@@ -697,7 +705,7 @@
   },
   {
     "artist": "Booba",
-    "title": "Au bout des rêves"
+    "title": "Au bout des rêves\t\t\t\t\t"
   },
   {
     "artist": "Boris Vian",
@@ -709,11 +717,11 @@
   },
   {
     "artist": "Boule Noir",
-    "title": "Aimer d'amour"
+    "title": "Aimer d'amour                            "
   },
   {
     "artist": "Boule Noire",
-    "title": "Aimer d’amour"
+    "title": "Aimer d’amour (BDF)"
   },
   {
     "artist": "Bourvil",
@@ -725,7 +733,7 @@
   },
   {
     "artist": "Bourvil",
-    "title": "La tendresse"
+    "title": "La tendresse                              "
   },
   {
     "artist": "Bourvil",
@@ -773,11 +781,15 @@
   },
   {
     "artist": "Brice DeNice",
-    "title": "Le Casse De Brice"
+    "title": "Le Casse De Brice "
   },
   {
     "artist": "Brigitte Bardot",
     "title": "Harley Davidson"
+  },
+  {
+    "artist": "Brigitte Bardot",
+    "title": "Harley Davidson (KF)"
   },
   {
     "artist": "Brigitte Bardot",
@@ -797,7 +809,7 @@
   },
   {
     "artist": "C Jérome",
-    "title": "C'est moi"
+    "title": "C'est moi\t\t\t\t\t"
   },
   {
     "artist": "C. Jérome",
@@ -821,11 +833,11 @@
   },
   {
     "artist": "Calogero",
-    "title": "C'est dit"
+    "title": "C'est dit                                "
   },
   {
     "artist": "Calogero",
-    "title": "Danser Encore"
+    "title": "Danser Encore\t\t\t\t\t"
   },
   {
     "artist": "Calogero",
@@ -848,7 +860,7 @@
     "title": "Yalla"
   },
   {
-    "artist": "Calogero",
+    "artist": "Calogero ",
     "title": "Prendre racine"
   },
   {
@@ -865,11 +877,11 @@
   },
   {
     "artist": "Camille Lellouche",
-    "title": "N’insiste pas"
+    "title": "N’insiste pas "
   },
   {
     "artist": "Canada",
-    "title": "Mourir les sirènes"
+    "title": "Mourir les sirènes                         "
   },
   {
     "artist": "Candy",
@@ -877,14 +889,14 @@
   },
   {
     "artist": "Capéo",
-    "title": "Laisse Aller"
+    "title": "Laisse Aller\t\t\t\t\t"
   },
   {
     "artist": "Carbonne",
     "title": "Imagine"
   },
   {
-    "artist": "Carine -Star Academy",
+    "artist": "Carine -Star Academy ",
     "title": "Quand on n'a que l'amour"
   },
   {
@@ -921,7 +933,7 @@
   },
   {
     "artist": "Carolyne Jomphe",
-    "title": "Alléluia"
+    "title": "Alléluia (VF)"
   },
   {
     "artist": "Carte de Séjour",
@@ -932,7 +944,7 @@
     "title": "L'île aux enfants"
   },
   {
-    "artist": "Catherine Deneuve & Françoise  Dorleac",
+    "artist": "Catherine Deneuve & Françoise  Dorleac ",
     "title": "La chanson des jumelles"
   },
   {
@@ -949,11 +961,11 @@
   },
   {
     "artist": "Celine Dion",
-    "title": "Encore un soir"
+    "title": "Encore un soir            "
   },
   {
     "artist": "Celine Dion",
-    "title": "On ne change pas2"
+    "title": "On ne change pas2\t\t\t\t\t"
   },
   {
     "artist": "Céline Dion",
@@ -1017,7 +1029,7 @@
   },
   {
     "artist": "Céline Dion",
-    "title": "Mon Ami M'a Quittée"
+    "title": "Mon Ami M'a Quittée "
   },
   {
     "artist": "Céline Dion",
@@ -1053,34 +1065,34 @@
   },
   {
     "artist": "Céline Dion",
-    "title": "Zora sourit"
+    "title": "Zora sourit                           "
   },
   {
-    "artist": "Céline Dion",
-    "title": "L'hymne à l'amour"
+    "artist": "Céline Dion ",
+    "title": " L'hymne à l'amour (BDF)"
   },
   {
-    "artist": "Céline Dion",
+    "artist": "Céline Dion ",
     "title": "Dans un autre monde"
   },
   {
-    "artist": "Céline Dion",
+    "artist": "Céline Dion ",
     "title": "Le vol d'un ange"
   },
   {
-    "artist": "Céline Dion",
+    "artist": "Céline Dion ",
     "title": "Ne partez pas sans moi"
   },
   {
-    "artist": "Céline Dion",
+    "artist": "Céline Dion ",
     "title": "Quand on n'a que l'amour"
   },
   {
-    "artist": "Céline Dion",
+    "artist": "Céline Dion ",
     "title": "Tout l'or des hommes"
   },
   {
-    "artist": "Céline Dion",
+    "artist": "Céline Dion                    ",
     "title": "Je T’Aime Encore"
   },
   {
@@ -1089,7 +1101,7 @@
   },
   {
     "artist": "Cerena",
-    "title": "Tout, Rien Du Tout"
+    "title": "Tout, Rien Du Tout "
   },
   {
     "artist": "Chagrin d'amour",
@@ -1109,11 +1121,19 @@
   },
   {
     "artist": "Charles Aznavour",
+    "title": "Désormais(Tino)\t\t\t\t\t"
+  },
+  {
+    "artist": "Charles Aznavour",
     "title": "Emmenez-moi"
   },
   {
     "artist": "Charles Aznavour",
     "title": "Et pourtant"
+  },
+  {
+    "artist": "Charles Aznavour",
+    "title": "Et pourtant(G JJ)\t\t\t\t\t"
   },
   {
     "artist": "Charles Aznavour",
@@ -1129,7 +1149,7 @@
   },
   {
     "artist": "Charles Aznavour",
-    "title": "J'ai vécu"
+    "title": "J'ai vécu          "
   },
   {
     "artist": "Charles Aznavour",
@@ -1141,7 +1161,7 @@
   },
   {
     "artist": "Charles Aznavour",
-    "title": "La bohême"
+    "title": "La bohême (BDF)"
   },
   {
     "artist": "Charles Aznavour",
@@ -1170,6 +1190,10 @@
   {
     "artist": "Charles Aznavour",
     "title": "Mes emmerdes"
+  },
+  {
+    "artist": "Charles Aznavour",
+    "title": "Mes emmerdes (BDF)"
   },
   {
     "artist": "Charles Aznavour",
@@ -1205,7 +1229,7 @@
   },
   {
     "artist": "Charles Aznavour",
-    "title": "Toi et moi"
+    "title": "Toi et moi\t\t\t\t\t"
   },
   {
     "artist": "Charles Aznavour",
@@ -1216,8 +1240,8 @@
     "title": "Tu te laisse aller"
   },
   {
-    "artist": "Charles Aznavour",
-    "title": "Tu t'laisse aller"
+    "artist": "Charles Aznavour ",
+    "title": "Tu t'laisse aller (MS)"
   },
   {
     "artist": "Charles Trenet",
@@ -1245,7 +1269,7 @@
   },
   {
     "artist": "Charles Trenet",
-    "title": "La Chance Aux Chansons"
+    "title": "La Chance Aux Chansons "
   },
   {
     "artist": "Charles Trenet",
@@ -1300,8 +1324,8 @@
     "title": "Y'a d'la joie"
   },
   {
-    "artist": "CHARLOTTE CARDIN",
-    "title": "FEEL GOOD"
+    "artist": "CHARLOTTE CARDIN ",
+    "title": " FEEL GOOD"
   },
   {
     "artist": "Charlotte Julian",
@@ -1317,7 +1341,7 @@
   },
   {
     "artist": "Chilla",
-    "title": "Pas de limite"
+    "title": "Pas de limite\t\t\t\t\t"
   },
   {
     "artist": "Chimène Badi",
@@ -1333,14 +1357,14 @@
   },
   {
     "artist": "Chimène Badi",
-    "title": "Retomber amoureux"
+    "title": "Retomber amoureux "
   },
   {
-    "artist": "Chimène Badi",
+    "artist": "Chimène Badi ",
     "title": "Je vais te chercher"
   },
   {
-    "artist": "Chimène Badi",
+    "artist": "Chimène Badi ",
     "title": "Le jour d'après"
   },
   {
@@ -1349,15 +1373,15 @@
   },
   {
     "artist": "Christian Delagrange",
-    "title": "Reviens mon amour,reviens"
+    "title": "Reviens mon amour,reviens    "
   },
   {
     "artist": "Christian Delagrange",
-    "title": "Sans toi je suis seul"
+    "title": "Sans toi je suis seul        "
   },
   {
     "artist": "Christian Vidal",
-    "title": "Angélique"
+    "title": "Angélique                         "
   },
   {
     "artist": "Christine & the Queens",
@@ -1365,7 +1389,7 @@
   },
   {
     "artist": "Christine & the Queens",
-    "title": "Saint Claude"
+    "title": "Saint Claude    "
   },
   {
     "artist": "Christophe",
@@ -1373,7 +1397,7 @@
   },
   {
     "artist": "Christophe",
-    "title": "Aline remix"
+    "title": "Aline remix                            "
   },
   {
     "artist": "Christophe",
@@ -1389,19 +1413,19 @@
   },
   {
     "artist": "Christophe Mae",
-    "title": "Ca fait mal"
+    "title": "Ca fait mal "
   },
   {
     "artist": "Christophe Mae",
-    "title": "Charly"
+    "title": "Charly                             "
   },
   {
     "artist": "Christophe Mae",
-    "title": "DINGUE DINGUE DINGUE"
+    "title": "DINGUE DINGUE DINGUE        "
   },
   {
     "artist": "Christophe Mae",
-    "title": "Il est où le bonheur"
+    "title": "Il est où le bonheur          "
   },
   {
     "artist": "Christophe Mae",
@@ -1421,15 +1445,15 @@
   },
   {
     "artist": "Christophe Willem",
-    "title": "PS je t'aime"
+    "title": "PS je t'aime\t\t\t\t\t"
   },
   {
     "artist": "Christophe Willem",
-    "title": "Si mes larmes tombent"
+    "title": "Si mes larmes tombent           "
   },
   {
     "artist": "Clara Luciani",
-    "title": "Bravo, tu as gagné (live)"
+    "title": "Bravo, tu as gagné (live) (BDF)"
   },
   {
     "artist": "Clara Luciani",
@@ -1437,11 +1461,15 @@
   },
   {
     "artist": "Clara Luciani",
-    "title": "La grenade"
+    "title": "La grenade\t\t\t\t\t"
   },
   {
     "artist": "Clara Luciani",
-    "title": "Respire encore"
+    "title": "La grenade(KF)"
+  },
+  {
+    "artist": "Clara Luciani",
+    "title": "Respire encore (2BDF)"
   },
   {
     "artist": "Claude Barzotti",
@@ -1453,7 +1481,15 @@
   },
   {
     "artist": "Claude Barzotti",
+    "title": "Elle me tue (Roger)"
+  },
+  {
+    "artist": "Claude Barzotti",
     "title": "Je ne t'écrirai plus"
+  },
+  {
+    "artist": "Claude Barzotti",
+    "title": "Je ne t'écrirai plus (KV)"
   },
   {
     "artist": "Claude Barzotti",
@@ -1477,11 +1513,15 @@
   },
   {
     "artist": "Claude Barzotti",
-    "title": "Ma femme"
+    "title": "Ma femme               "
   },
   {
     "artist": "Claude Barzotti",
     "title": "Madame"
+  },
+  {
+    "artist": "Claude Barzotti",
+    "title": "Madame (BDF)"
   },
   {
     "artist": "Claude Barzotti",
@@ -1493,7 +1533,7 @@
   },
   {
     "artist": "Claude Barzotti",
-    "title": "Parle moi"
+    "title": "Parle moi  (K_E)"
   },
   {
     "artist": "Claude Barzotti",
@@ -1504,8 +1544,8 @@
     "title": "Que sais tu de moi"
   },
   {
-    "artist": "Claude Barzotti",
-    "title": "Je ne t ecrirai plus"
+    "artist": "Claude Barzotti ",
+    "title": "Je ne t ecrirai plus (KV)"
   },
   {
     "artist": "Claude Borel",
@@ -1569,6 +1609,10 @@
   },
   {
     "artist": "Claude François",
+    "title": "Le chanteur malheureux (24)"
+  },
+  {
+    "artist": "Claude François",
     "title": "Le Lundi au soleil"
   },
   {
@@ -1609,7 +1653,7 @@
   },
   {
     "artist": "Claude François",
-    "title": "Quelquefois"
+    "title": "Quelquefois (avec voix fem)"
   },
   {
     "artist": "Claude François",
@@ -1653,11 +1697,11 @@
   },
   {
     "artist": "Claude Michel",
-    "title": "Je m'ennuie de toi"
+    "title": "Je m'ennuie de toi\t\t\t\t\t"
   },
   {
     "artist": "Claude Michel",
-    "title": "Je m'sens très seul"
+    "title": "Je m'sens très seul\t\t\t\t\t"
   },
   {
     "artist": "Claude Michel",
@@ -1665,23 +1709,27 @@
   },
   {
     "artist": "Claude Michel",
-    "title": "La femme de ma vie"
+    "title": "La femme de ma vie\t\t\t\t\t"
   },
   {
     "artist": "Claude Michel",
-    "title": "Mal d'amour"
+    "title": "Mal d'amour                         "
   },
   {
     "artist": "Claude Michel",
-    "title": "Mal D'amour"
+    "title": "Mal D'amour (JP)"
   },
   {
     "artist": "Claude Michel Schönberg",
-    "title": "Le premier pas"
+    "title": "Le premier pas (BDFab)"
   },
   {
     "artist": "Claude Nougaro",
     "title": "Armstrong"
+  },
+  {
+    "artist": "Claude Nougaro",
+    "title": "Armstrong (BDF)"
   },
   {
     "artist": "Claude Nougaro",
@@ -1704,7 +1752,7 @@
     "title": "Une petite fille"
   },
   {
-    "artist": "Claude Nougaro",
+    "artist": "Claude Nougaro ",
     "title": "Cecile ma fille"
   },
   {
@@ -1713,7 +1761,7 @@
   },
   {
     "artist": "Claudio Capéo",
-    "title": "Riche"
+    "title": "Riche (DFab)"
   },
   {
     "artist": "Coeur de pirate",
@@ -1757,18 +1805,18 @@
   },
   {
     "artist": "Corneille",
-    "title": "Comme Un Fils"
+    "title": "Comme Un Fils "
   },
   {
     "artist": "Corneille",
-    "title": "Ensemble"
+    "title": "Ensemble "
   },
   {
     "artist": "Corneille",
-    "title": "Parce Qu’On Vient De Loin"
+    "title": "Parce Qu’On Vient De Loin "
   },
   {
-    "artist": "Corneille",
+    "artist": "Corneille ",
     "title": "Seul au monde"
   },
   {
@@ -1777,7 +1825,7 @@
   },
   {
     "artist": "Corynne Charby",
-    "title": "Boule de flipper"
+    "title": "Boule de flipper (KF)"
   },
   {
     "artist": "Corynne Charby",
@@ -1789,7 +1837,7 @@
   },
   {
     "artist": "Dadju",
-    "title": "Reine"
+    "title": "Reine                                                                    "
   },
   {
     "artist": "Dalida",
@@ -1833,7 +1881,7 @@
   },
   {
     "artist": "Dalida",
-    "title": "Je suis malade"
+    "title": "Je suis malade\t\t\t\t\t"
   },
   {
     "artist": "Dalida",
@@ -1845,11 +1893,15 @@
   },
   {
     "artist": "Dalida",
+    "title": "Laissez moi danser (2026)"
+  },
+  {
+    "artist": "Dalida",
     "title": "Laissez-moi danser"
   },
   {
     "artist": "Dalida",
-    "title": "Le temps des fleurs"
+    "title": "Le temps des fleurs\t\t\t\t\t"
   },
   {
     "artist": "Dalida",
@@ -1876,12 +1928,12 @@
     "title": "Pour ne pas vivre seul"
   },
   {
-    "artist": "Dalida",
+    "artist": "Dalida ",
     "title": "Salama"
   },
   {
-    "artist": "Dalida",
-    "title": "Les enfants du Pirée"
+    "artist": "Dalida                     ",
+    "title": "Les enfants du Pirée "
   },
   {
     "artist": "Dalida & Alain Delon",
@@ -1889,11 +1941,15 @@
   },
   {
     "artist": "Dalida & Alain Delon",
-    "title": "Paroles, paroles"
+    "title": "Paroles, paroles (BDF)"
   },
   {
     "artist": "Daniel Balavoine",
     "title": "Dieu que c'est beau"
+  },
+  {
+    "artist": "Daniel Balavoine",
+    "title": "Dieu que c'est beau (BDF)"
   },
   {
     "artist": "Daniel Balavoine",
@@ -1909,7 +1965,11 @@
   },
   {
     "artist": "Daniel Balavoine",
-    "title": "Lipstick polychrome"
+    "title": "Le chanteur (BDF)"
+  },
+  {
+    "artist": "Daniel Balavoine",
+    "title": "Lipstick polychrome (K_E)"
   },
   {
     "artist": "Daniel Balavoine",
@@ -1921,23 +1981,23 @@
   },
   {
     "artist": "Daniel Balavoine",
-    "title": "Sauver l’amour"
+    "title": "Sauver l’amour (BDF)"
   },
   {
     "artist": "Daniel Balavoine",
     "title": "Vivre ou survivre"
   },
   {
-    "artist": "Daniel Balavoine",
+    "artist": "Daniel Balavoine ",
     "title": "Aimer est plus fort que d'être aimé"
   },
   {
-    "artist": "Daniel Balavoine",
+    "artist": "Daniel Balavoine ",
     "title": "Tous les cris, les SOS"
   },
   {
-    "artist": "Daniel Balavoine",
-    "title": "La vie ne m'apprend rien"
+    "artist": "Daniel Balavoine       ",
+    "title": "La vie ne m'apprend rien "
   },
   {
     "artist": "Daniel Gérard",
@@ -1949,7 +2009,7 @@
   },
   {
     "artist": "Daniel Guichard",
-    "title": "Je viens pas te parler d'amour"
+    "title": "Je viens pas te parler d'amour    "
   },
   {
     "artist": "Daniel Guichard",
@@ -1964,8 +2024,8 @@
     "title": "Mon vieux"
   },
   {
-    "artist": "Daniel Guichard",
-    "title": "Chanson pour Anna"
+    "artist": "Daniel Guichard               ",
+    "title": "Chanson pour Anna "
   },
   {
     "artist": "Daniel Lavoie",
@@ -1981,15 +2041,15 @@
   },
   {
     "artist": "Daniel Levi",
-    "title": "L'envie d'aimer"
+    "title": "L'envie d'aimer (2026)"
   },
   {
-    "artist": "Daniel Levi",
+    "artist": "Daniel Levi ",
     "title": "Ici et Maintenant"
   },
   {
     "artist": "Daniel Levy",
-    "title": "L'envie d'aimer"
+    "title": "L'envie d'aimer (Les X command.)"
   },
   {
     "artist": "Danni & Daho",
@@ -2005,7 +2065,7 @@
   },
   {
     "artist": "Danny BRILLANT",
-    "title": "viens a saint germain"
+    "title": "viens a saint germain "
   },
   {
     "artist": "Dany Bédar",
@@ -2061,7 +2121,7 @@
   },
   {
     "artist": "David & Jonathan",
-    "title": "Est?ce que tu viens pour les vacances"
+    "title": "Est?ce que tu viens pour les vacances (SHOT)"
   },
   {
     "artist": "David Alexandre Winter",
@@ -2072,7 +2132,7 @@
     "title": "Je te dédie"
   },
   {
-    "artist": "David Charvet",
+    "artist": "David Charvet ",
     "title": "Jusqu'au bout"
   },
   {
@@ -2093,7 +2153,11 @@
   },
   {
     "artist": "David Hallyday",
-    "title": "Tu ne m’as pas laissé le temps"
+    "title": "Tu ne m'as pas laissé le temps (MPK)"
+  },
+  {
+    "artist": "David Hallyday",
+    "title": "Tu ne m’as pas laissé le temps (BDF)\t\t\t\t\t"
   },
   {
     "artist": "David Koven",
@@ -2113,11 +2177,11 @@
   },
   {
     "artist": "Début de Soirée",
-    "title": "Jardins d'enfants"
+    "title": "Jardins d'enfants  "
   },
   {
     "artist": "Début de Soirée",
-    "title": "La Vie La Nuit"
+    "title": "La Vie La Nuit "
   },
   {
     "artist": "Début de Soirée",
@@ -2125,14 +2189,14 @@
   },
   {
     "artist": "Demis Roussos",
-    "title": "Mourir auprès de mon amour"
+    "title": "Mourir auprès de mon amour          "
   },
   {
     "artist": "Demis Roussos",
-    "title": "On écrit sur les murs"
+    "title": "On écrit sur les murs               "
   },
   {
-    "artist": "Demis Roussos",
+    "artist": "Demis Roussos ",
     "title": "Mourir Aupres de Mon Amour"
   },
   {
@@ -2140,12 +2204,8 @@
     "title": "Libre"
   },
   {
-    "artist": "Desireless",
+    "artist": "Desireless ",
     "title": "Voyage voyage"
-  },
-  {
-    "artist": "desktop",
-    "title": ""
   },
   {
     "artist": "DIAM'S",
@@ -2157,11 +2217,11 @@
   },
   {
     "artist": "Diam's",
-    "title": "La boulette"
+    "title": "La boulette (kf)"
   },
   {
     "artist": "DIAM'S",
-    "title": "Par amour"
+    "title": "Par amour                      "
   },
   {
     "artist": "Diams & Vitaa",
@@ -2189,11 +2249,11 @@
   },
   {
     "artist": "Dick Rivers",
-    "title": "Cinderella"
+    "title": "Cinderella "
   },
   {
     "artist": "Dick Rivers",
-    "title": "Donne moi ta main"
+    "title": "Donne moi ta main                     "
   },
   {
     "artist": "Dick Rivers",
@@ -2205,27 +2265,27 @@
   },
   {
     "artist": "Dick Rivers",
-    "title": "Je ne suis plus rien sans toi"
+    "title": "Je ne suis plus rien sans toi         "
   },
   {
     "artist": "Dick Rivers",
-    "title": "Ne pleure pas"
+    "title": "Ne pleure pas                         "
   },
   {
     "artist": "Dick Rivers",
     "title": "Viens Me Faire Oublier"
   },
   {
-    "artist": "Dick Rivers",
-    "title": "Les yeux d'une femme"
+    "artist": "Dick Rivers                ",
+    "title": "Les yeux d'une femme "
   },
   {
-    "artist": "Dick Rivers",
-    "title": "Nice baie des anges"
+    "artist": "Dick Rivers                 ",
+    "title": "Nice baie des anges "
   },
   {
-    "artist": "Dick Rivers",
-    "title": "Tu n'es plus là"
+    "artist": "Dick Rivers                     ",
+    "title": "Tu n'es plus là "
   },
   {
     "artist": "Didier Barbelivien",
@@ -2240,16 +2300,12 @@
     "title": "A toutes les filles"
   },
   {
-    "artist": "Didier Bourdon",
-    "title": "On peuplu rien dire"
+    "artist": "Didier Bourdon              ",
+    "title": "On peuplu rien dire "
   },
   {
     "artist": "Didier Sustrac",
     "title": "Tout seul"
-  },
-  {
-    "artist": "Diego J Hallyday",
-    "title": ""
   },
   {
     "artist": "Disney",
@@ -2261,7 +2317,7 @@
   },
   {
     "artist": "Disney",
-    "title": "Nous sommes in"
+    "title": "Nous sommes in (Roi Lion)"
   },
   {
     "artist": "Divers",
@@ -2321,11 +2377,11 @@
   },
   {
     "artist": "Dorthée",
-    "title": "Les neiges de l'Himalaya"
+    "title": "Les neiges de l'Himalaya "
   },
   {
     "artist": "Dorthée",
-    "title": "Maman"
+    "title": "Maman "
   },
   {
     "artist": "Dr Yaro",
@@ -2349,7 +2405,7 @@
   },
   {
     "artist": "Eddy Mitchel",
-    "title": "Le cimetière des éléphants"
+    "title": "Le cimetière des éléphants (MPK)"
   },
   {
     "artist": "Eddy Mitchell",
@@ -2397,11 +2453,27 @@
   },
   {
     "artist": "Eddy Mitchell",
+    "title": "La fille du motel (CKP)"
+  },
+  {
+    "artist": "Eddy Mitchell",
+    "title": "La fille du motel (Conceptk)"
+  },
+  {
+    "artist": "Eddy Mitchell",
     "title": "La peau d'une autre"
   },
   {
     "artist": "Eddy Mitchell",
     "title": "Le cimetière des éléphants"
+  },
+  {
+    "artist": "Eddy Mitchell",
+    "title": "Le cimetière des éléphants (CK)"
+  },
+  {
+    "artist": "Eddy Mitchell",
+    "title": "Le cimetière des éléphants (Conceptk)"
   },
   {
     "artist": "Eddy Mitchell",
@@ -2444,8 +2516,8 @@
     "title": "Une terre promise"
   },
   {
-    "artist": "Eddy Mitchell",
-    "title": "Sur la route 66"
+    "artist": "Eddy Mitchell                   ",
+    "title": "Sur la route 66 "
   },
   {
     "artist": "Edith Piaf",
@@ -2465,7 +2537,7 @@
   },
   {
     "artist": "Edith Piaf",
-    "title": "L'homme à la moto"
+    "title": "L'homme à la moto\t\t\t\t\t"
   },
   {
     "artist": "Edith Piaf",
@@ -2508,31 +2580,31 @@
     "title": "Paris en colère"
   },
   {
-    "artist": "Edith Piaf",
-    "title": "Johnny, tu n'es pas un ange"
+    "artist": "Edith Piaf          ",
+    "title": "Johnny, tu n'es pas un ange "
   },
   {
-    "artist": "Edith Piaf",
-    "title": "Bravo pour le clown"
+    "artist": "Edith Piaf                  ",
+    "title": "Bravo pour le clown "
   },
   {
-    "artist": "Edith Piaf",
-    "title": "Bal dans ma rue"
+    "artist": "Edith Piaf                      ",
+    "title": "Bal dans ma rue "
   },
   {
-    "artist": "Edith Piaf",
-    "title": "Mon Dieu"
+    "artist": "Edith Piaf                             ",
+    "title": "Mon Dieu "
   },
   {
-    "artist": "Edith Piaf - Théo Sarapo",
-    "title": "A quoi ça sert l'amour"
+    "artist": "Edith Piaf - Théo Sarapo ",
+    "title": "A quoi ça sert l'amour "
   },
   {
     "artist": "Edith Piaf & C. Aznavour",
     "title": "Plus bleu que le bleu de tes yeux"
   },
   {
-    "artist": "Edith Piaf et Théo Sarapo",
+    "artist": "Edith Piaf et Théo Sarapo ",
     "title": "A quoi ça sert l'amour"
   },
   {
@@ -2617,7 +2689,7 @@
   },
   {
     "artist": "Emmanuel Moire",
-    "title": "Mon essentiel"
+    "title": "Mon essentiel "
   },
   {
     "artist": "Emmanuel Moire",
@@ -2660,8 +2732,8 @@
     "title": "Solenzara"
   },
   {
-    "artist": "Enrico Macias",
-    "title": "Les gens du nord"
+    "artist": "Enrico Macias                  ",
+    "title": "Les gens du nord "
   },
   {
     "artist": "Ensemble contre le SIDA",
@@ -2729,47 +2801,47 @@
   },
   {
     "artist": "Étienne Daho",
-    "title": "Le premier jour du reste de ta vie"
+    "title": "Le premier jour du reste de ta vie (BDF)"
   },
   {
-    "artist": "Etienne Daho",
-    "title": "Des heures hindoues"
+    "artist": "Etienne Daho                ",
+    "title": "Des heures hindoues "
   },
   {
-    "artist": "Etienne Daho",
-    "title": "Comme un igloo"
+    "artist": "Etienne Daho                     ",
+    "title": "Comme un igloo "
   },
   {
-    "artist": "Etienne Daho",
-    "title": "Epaule tattoo"
+    "artist": "Etienne Daho                      ",
+    "title": "Epaule tattoo "
   },
   {
-    "artist": "Etienne Daho",
-    "title": "Idéal"
+    "artist": "Etienne Daho                              ",
+    "title": "Idéal "
   },
   {
     "artist": "Etienne Drapeau",
-    "title": "Je Serai Là"
+    "title": "Je Serai Là\t\t\t\t\t"
   },
   {
     "artist": "Etienne Drapeau",
     "title": "T'es ma femme, t'es la plus belle."
   },
   {
-    "artist": "Eva",
-    "title": "Bottega"
+    "artist": "Eva ",
+    "title": " Bottega"
   },
   {
-    "artist": "Eve Angeli",
-    "title": "Une chanson dans le cœur"
+    "artist": "Eve Angeli ",
+    "title": "Une chanson dans le cœur (Felicita)"
   },
   {
     "artist": "F. Gray & D. Barbelivien",
-    "title": "Il faut laisser le temps au temps"
+    "title": "Il faut laisser le temps au temps "
   },
   {
-    "artist": "Fababy",
-    "title": "Love d’un voyou ft. Aya Nakamura"
+    "artist": "Fababy ",
+    "title": " Love d’un voyou ft. Aya Nakamura"
   },
   {
     "artist": "Fabienne Thibeault",
@@ -2777,11 +2849,11 @@
   },
   {
     "artist": "Fanny",
-    "title": "L'homme à la moto"
+    "title": "L'homme à la moto\t\t\t\t\t"
   },
   {
     "artist": "Fatal Bazooka",
-    "title": "Parle à Ma Main"
+    "title": "Parle à Ma Main\t\t\t\t\t"
   },
   {
     "artist": "Faudel",
@@ -2800,12 +2872,12 @@
     "title": "Ignace"
   },
   {
-    "artist": "Florent Brunel",
-    "title": "Casser les couilles"
+    "artist": "Florent Brunel ",
+    "title": "Casser les couilles              "
   },
   {
     "artist": "Florent Pagby",
-    "title": "Chatelet les Halles"
+    "title": "Chatelet les Halles (G JJ)"
   },
   {
     "artist": "Florent Pagny",
@@ -2829,11 +2901,15 @@
   },
   {
     "artist": "Florent Pagny",
-    "title": "Immensse"
+    "title": "Et un jour une femme (BDF)"
   },
   {
     "artist": "Florent Pagny",
-    "title": "La Javanaise"
+    "title": "Immensse\t\t\t\t\t"
+  },
+  {
+    "artist": "Florent Pagny",
+    "title": "La Javanaise (Live acoustique)      "
   },
   {
     "artist": "Florent Pagny",
@@ -2857,7 +2933,7 @@
   },
   {
     "artist": "Florent Pagny",
-    "title": "N'importe quoi"
+    "title": "N'importe quoi                      "
   },
   {
     "artist": "Florent Pagny",
@@ -2884,28 +2960,28 @@
     "title": "Y a pas un homme qui soit né pour ça"
   },
   {
-    "artist": "Florent Pagny",
-    "title": "Mourir les yeux ouverts"
+    "artist": "Florent Pagny           ",
+    "title": "Mourir les yeux ouverts "
   },
   {
-    "artist": "Florent Pagny",
-    "title": "D'un amour à l'autre"
+    "artist": "Florent Pagny              ",
+    "title": "D'un amour à l'autre "
   },
   {
-    "artist": "Florent Pagny",
-    "title": "Une place pour moi"
+    "artist": "Florent Pagny                ",
+    "title": "Une place pour moi "
   },
   {
-    "artist": "Florent Pagny",
-    "title": "Sierra Cuadrada"
+    "artist": "Florent Pagny                   ",
+    "title": "Sierra Cuadrada "
   },
   {
-    "artist": "Florent Pagny",
-    "title": "Loin de toi"
+    "artist": "Florent Pagny                       ",
+    "title": "Loin de toi "
   },
   {
-    "artist": "Florent Pagny",
-    "title": "Je trace"
+    "artist": "Florent Pagny                          ",
+    "title": "Je trace "
   },
   {
     "artist": "Florent Pagny (feat Christophe Maé)",
@@ -2949,7 +3025,7 @@
   },
   {
     "artist": "France Gall",
-    "title": "Diégo libre dans sa tête"
+    "title": "Diégo libre dans sa tête\t\t\t\t\t"
   },
   {
     "artist": "France Gall",
@@ -3013,7 +3089,7 @@
   },
   {
     "artist": "France Gall",
-    "title": "Tout Pour La Musique"
+    "title": "Tout Pour La Musique (JP)"
   },
   {
     "artist": "France Gall",
@@ -3021,11 +3097,11 @@
   },
   {
     "artist": "France Gall & Elton John",
-    "title": "Donner pour donner"
+    "title": "Donner pour donner       "
   },
   {
     "artist": "Francis Cabrel",
-    "title": "A l'encre de tes yeux"
+    "title": " A l'encre de tes yeux (BDF)\t\t\t\t\t"
   },
   {
     "artist": "Francis Cabrel",
@@ -3053,7 +3129,11 @@
   },
   {
     "artist": "Francis Cabrel",
-    "title": "Je t'aimais, je t'aime et je t'aimerai"
+    "title": "Je t'aimais, je t'aime et je t'aimerai\t\t\t\t\t"
+  },
+  {
+    "artist": "Francis Cabrel",
+    "title": "Je t'aimais, je t'aime et je t'aimerai (BDF)"
   },
   {
     "artist": "Francis Cabrel",
@@ -3061,7 +3141,7 @@
   },
   {
     "artist": "Francis Cabrel",
-    "title": "L'encre de tes yeux"
+    "title": "L'encre de tes yeux (REMIX)"
   },
   {
     "artist": "Francis Cabrel",
@@ -3097,11 +3177,15 @@
   },
   {
     "artist": "Francis Cabrel",
-    "title": "Samedi Soir Sur La Terre"
+    "title": "Samedi Soir Sur La Terre           "
   },
   {
     "artist": "Francis Cabrel",
     "title": "Sarbacane"
+  },
+  {
+    "artist": "Francis Cabrel",
+    "title": "Sarbacane (SHOTCUT)"
   },
   {
     "artist": "Francis Cabrel",
@@ -3112,32 +3196,36 @@
     "title": "Tu me corresponds"
   },
   {
-    "artist": "Francis Cabrel",
+    "artist": "Francis Cabrel ",
     "title": "C'était hiver"
   },
   {
-    "artist": "Francis Cabrel",
+    "artist": "Francis Cabrel ",
     "title": "Il faudra leur dire"
   },
   {
-    "artist": "Francis Cabrel",
+    "artist": "Francis Cabrel ",
     "title": "Les murs de poussiere"
   },
   {
-    "artist": "Francis Cabrel",
+    "artist": "Francis Cabrel ",
     "title": "Octobre"
   },
   {
-    "artist": "Francis Cabrel",
+    "artist": "Francis Cabrel ",
     "title": "Répondezmoi"
   },
   {
     "artist": "Francis Lalanne",
-    "title": "La maison du bonheur"
+    "title": "La maison du bonheur (Conceptk)"
   },
   {
     "artist": "Francis Lalanne",
     "title": "On se retrouvera"
+  },
+  {
+    "artist": "Francis Lalanne",
+    "title": "On se retrouvera (BDF)"
   },
   {
     "artist": "Francis Lalanne",
@@ -3181,7 +3269,7 @@
   },
   {
     "artist": "François Feldman",
-    "title": "Joy"
+    "title": "Joy "
   },
   {
     "artist": "François Feldman",
@@ -3193,11 +3281,11 @@
   },
   {
     "artist": "François Feldman",
-    "title": "Magic boulevard"
+    "title": "Magic boulevard\t\t\t\t\t"
   },
   {
     "artist": "François Feldman",
-    "title": "Petit Franck"
+    "title": "Petit Franck "
   },
   {
     "artist": "François Feldman",
@@ -3221,11 +3309,11 @@
   },
   {
     "artist": "Françoise Haedy&Marc Lavoine",
-    "title": "Chère amie"
+    "title": "Chère amie           "
   },
   {
     "artist": "Francoise Hardy",
-    "title": "Message personnel"
+    "title": "Message personnel\t\t\t\t\t"
   },
   {
     "artist": "Françoise Hardy",
@@ -3245,7 +3333,7 @@
   },
   {
     "artist": "Françoise Hardy",
-    "title": "Tamalou"
+    "title": "Tamalou "
   },
   {
     "artist": "Françoise Hardy",
@@ -3257,11 +3345,11 @@
   },
   {
     "artist": "Françoise Hardy",
-    "title": "V.I.P."
+    "title": "V.I.P. "
   },
   {
     "artist": "Françoise Hardy & Jacques Dutronc",
-    "title": "Puisque vous partez en voyage"
+    "title": "Puisque vous partez en voyage\t\t\t\t\t"
   },
   {
     "artist": "Frank Michael",
@@ -3353,7 +3441,7 @@
   },
   {
     "artist": "Fréro Delavega",
-    "title": "Le Coeur Elephant"
+    "title": "Le Coeur Elephant                  "
   },
   {
     "artist": "G Murat",
@@ -3393,11 +3481,15 @@
   },
   {
     "artist": "Garou",
+    "title": "Seul (BDF)"
+  },
+  {
+    "artist": "Garou ",
     "title": "L'adieu"
   },
   {
     "artist": "Garou & Céline Dion",
-    "title": "Sous le vent"
+    "title": "Sous le vent (BDF)"
   },
   {
     "artist": "Garou & M.Sardou",
@@ -3405,11 +3497,11 @@
   },
   {
     "artist": "Ge´rard Lenorman",
-    "title": "Voici Les Cle´s"
+    "title": "Voici Les Cle´s (BART)"
   },
   {
     "artist": "Génération Goldman",
-    "title": "Envolemoi"
+    "title": "Envolemoi                      "
   },
   {
     "artist": "Georges Brassens",
@@ -3513,7 +3605,7 @@
   },
   {
     "artist": "Gerald De Palmas",
-    "title": "Elle Habite Ici"
+    "title": "Elle Habite Ici "
   },
   {
     "artist": "Gerald De Palmas",
@@ -3528,15 +3620,15 @@
     "title": "Elle danse seule"
   },
   {
-    "artist": "Gérald De Palmas",
+    "artist": "Gérald De Palmas ",
     "title": "Elle s'ennuie"
   },
   {
-    "artist": "Gérald de Palmas",
+    "artist": "Gérald de Palmas ",
     "title": "Regarde-moi bien en face"
   },
   {
-    "artist": "Gérald De Palmas",
+    "artist": "Gérald De Palmas ",
     "title": "Une seule vie"
   },
   {
@@ -3545,7 +3637,7 @@
   },
   {
     "artist": "Gérard Berliner",
-    "title": "Louise"
+    "title": "Louise\t\t\t\t\t"
   },
   {
     "artist": "Gérard Blanc",
@@ -3553,7 +3645,7 @@
   },
   {
     "artist": "Gérard Blanc",
-    "title": "Une autre histoire"
+    "title": "Une autre histoire (BDF)"
   },
   {
     "artist": "Gérard Blanchard",
@@ -3565,27 +3657,35 @@
   },
   {
     "artist": "Gérard Lenorman",
-    "title": "Voici les clés"
+    "title": "La petite valse (BDFab)"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Voici les clés (BDF)"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Voici les clés (MPK)"
   },
   {
     "artist": "Gerard Lenormand",
-    "title": "C'est peut être les anges"
+    "title": "C'est peut être les anges "
   },
   {
     "artist": "Gerard Lenormand",
-    "title": "Et moi je chante"
+    "title": "Et moi je chante "
   },
   {
     "artist": "Gerard Lenormand",
-    "title": "Les matins d'hiver"
+    "title": "Les matins d'hiver "
   },
   {
     "artist": "Gerard Lenormand",
-    "title": "Si j'étais président"
+    "title": "Si j'étais président "
   },
   {
     "artist": "Gerard Lenormand",
-    "title": "Si tu ne me laisses pas tomber"
+    "title": "Si tu ne me laisses pas tomber "
   },
   {
     "artist": "Gérard Lenormand",
@@ -3633,7 +3733,7 @@
   },
   {
     "artist": "Gilbert Bécaud",
-    "title": "Je reviens te chercher"
+    "title": "Je reviens te chercher (BDFab)"
   },
   {
     "artist": "Gilbert Bécaud",
@@ -3681,11 +3781,11 @@
   },
   {
     "artist": "Gims & Sting",
-    "title": "Reste"
+    "title": "Reste                                                             "
   },
   {
     "artist": "Ginette Reno",
-    "title": "Ça pleure aussi un homme"
+    "title": "Ça pleure aussi un homme             "
   },
   {
     "artist": "Ginette Reno",
@@ -3701,19 +3801,19 @@
   },
   {
     "artist": "Ginette Réno",
-    "title": "La deuxième voix"
+    "title": "La deuxième voix (2)"
   },
   {
-    "artist": "Ginie Line",
-    "title": "Jusqu'à la tolérence"
-  },
-  {
-    "artist": "Gold",
-    "title": "Calicoba"
+    "artist": "Ginie Line             ",
+    "title": "Jusqu'à la tolérence "
   },
   {
     "artist": "Gold",
-    "title": "Capitaine Abandonné"
+    "title": "Calicoba "
+  },
+  {
+    "artist": "Gold",
+    "title": "Capitaine Abandonné "
   },
   {
     "artist": "Gold",
@@ -3721,7 +3821,7 @@
   },
   {
     "artist": "Gold",
-    "title": "Laissez Nous Chanter"
+    "title": "Laissez Nous Chanter "
   },
   {
     "artist": "Gold",
@@ -3729,7 +3829,7 @@
   },
   {
     "artist": "Gold",
-    "title": "Rio De Janvier"
+    "title": "Rio De Janvier "
   },
   {
     "artist": "Gold",
@@ -3737,11 +3837,11 @@
   },
   {
     "artist": "Golden",
-    "title": "Briller"
+    "title": "Briller "
   },
   {
     "artist": "Goldman & Jones",
-    "title": "Je te donne"
+    "title": "Je te donne (BDF)"
   },
   {
     "artist": "Grace Jones",
@@ -3777,7 +3877,7 @@
   },
   {
     "artist": "Grégoire",
-    "title": "Merci"
+    "title": "Merci\t\t\t\t\t"
   },
   {
     "artist": "Grégoire",
@@ -3785,7 +3885,7 @@
   },
   {
     "artist": "Grégoire",
-    "title": "Toi + moi"
+    "title": "Toi + moi                                "
   },
   {
     "artist": "Gregory Lemarchal",
@@ -3797,15 +3897,15 @@
   },
   {
     "artist": "Grégory Lemarchal",
-    "title": "A corps perdu"
+    "title": "A corps perdu    "
   },
   {
     "artist": "Grégory Lemarchal",
     "title": "Sos d'un terrien en détresse"
   },
   {
-    "artist": "Grégory Lemarchal",
-    "title": "Ecris l'histoire"
+    "artist": "Grégory Lemarchal              ",
+    "title": "Ecris l'histoire "
   },
   {
     "artist": "Guesh Patti",
@@ -3816,16 +3916,12 @@
     "title": "Toi et moi"
   },
   {
-    "artist": "Guy Marchand",
-    "title": "Destinée"
+    "artist": "Guy Marchand ",
+    "title": " Destinée (BDF)"
   },
   {
     "artist": "Guy Mardel",
     "title": "N'avoue jamais"
-  },
-  {
-    "artist": "Hakuna Matata (français)",
-    "title": ""
   },
   {
     "artist": "Hatik",
@@ -3836,16 +3932,16 @@
     "title": "Aimée pour de vrai"
   },
   {
-    "artist": "Hélène",
-    "title": "Je m'appelle Hélène"
+    "artist": "Hélène ",
+    "title": "Je m'appelle Hélène "
   },
   {
-    "artist": "Hélène",
+    "artist": "Hélène ",
     "title": "La danse d' Hélène"
   },
   {
-    "artist": "Hélène",
-    "title": "Pour l'amour d'un garçon"
+    "artist": "Hélène ",
+    "title": "Pour l'amour d'un garçon "
   },
   {
     "artist": "Helene Sagara",
@@ -3885,11 +3981,11 @@
   },
   {
     "artist": "Hélène Ségara",
-    "title": "Loin du froid de décembre"
+    "title": "Loin du froid de décembre           "
   },
   {
-    "artist": "Hélène Segara",
-    "title": "Ailleurs Comme Ici"
+    "artist": "Hélène Segara             ",
+    "title": "Ailleurs Comme Ici "
   },
   {
     "artist": "Helmut Fritz",
@@ -3905,7 +4001,7 @@
   },
   {
     "artist": "Henri Salvador",
-    "title": "Jardin D’Hiver"
+    "title": "Jardin D’Hiver "
   },
   {
     "artist": "Henri Salvador",
@@ -3933,7 +4029,7 @@
   },
   {
     "artist": "Herbert Leonard",
-    "title": "PourLePlaisir"
+    "title": "PourLePlaisir (YannMULLER)"
   },
   {
     "artist": "Herbert Leonard",
@@ -3941,11 +4037,11 @@
   },
   {
     "artist": "Herbert Leonard",
-    "title": "Quand tu m'aimes"
+    "title": "Quand tu m'aimes "
   },
   {
     "artist": "Herbert Leonard",
-    "title": "Tu ne pourras plus jamais m'oublier"
+    "title": "Tu ne pourras plus jamais m'oublier "
   },
   {
     "artist": "Herbert Léonard",
@@ -3985,7 +4081,7 @@
   },
   {
     "artist": "Heuss",
-    "title": "La moulaga"
+    "title": "La moulaga\t\t\t\t\t"
   },
   {
     "artist": "Hots Chocolats",
@@ -3993,7 +4089,11 @@
   },
   {
     "artist": "Hubert Félix Thiéfaine",
-    "title": "Lorelei sebasto cha"
+    "title": "Lorelei sebasto cha "
+  },
+  {
+    "artist": "Hubert Félix Thiéfaine",
+    "title": "Lorelei sebasto cha (BDF)"
   },
   {
     "artist": "Hughes Aufray",
@@ -4024,16 +4124,16 @@
     "title": "Santiano"
   },
   {
-    "artist": "Hugues Aufray",
-    "title": "Adieu Monsieur le professeur"
+    "artist": "Hugues Aufray      ",
+    "title": "Adieu Monsieur le professeur "
   },
   {
     "artist": "IAM",
-    "title": "Je danse le Mia"
+    "title": "Je danse le Mia\t\t\t\t\t"
   },
   {
     "artist": "IAM",
-    "title": "Petit frère"
+    "title": "Petit frère\t\t\t\t\t"
   },
   {
     "artist": "Il était une fois",
@@ -4048,20 +4148,20 @@
     "title": "Que fais tu ce soir après diner"
   },
   {
-    "artist": "Il était une fois",
-    "title": "Pomme"
+    "artist": "Il était une fois                         ",
+    "title": "Pomme "
   },
   {
-    "artist": "Ilona",
-    "title": "Un monde parfait"
+    "artist": "Ilona                          ",
+    "title": "Un monde parfait "
   },
   {
-    "artist": "Image",
-    "title": "Les démons de minuit"
+    "artist": "Image ",
+    "title": " Les démons de minuit (BDF)"
   },
   {
     "artist": "Images",
-    "title": "Le coeur en exil"
+    "title": "Le coeur en exil "
   },
   {
     "artist": "Images",
@@ -4073,15 +4173,19 @@
   },
   {
     "artist": "Imen Es",
-    "title": "1ère fois"
+    "title": "1ère fois\t\t\t\t\t"
   },
   {
     "artist": "Imen Es",
-    "title": "Djibril"
+    "title": "1ère fois (feat Alonzo)\t\t\t\t\t"
   },
   {
     "artist": "Imen Es",
-    "title": "Fantôme"
+    "title": "Djibril\t\t\t\t\t"
+  },
+  {
+    "artist": "Imen Es",
+    "title": "Fantôme\t\t\t\t\t"
   },
   {
     "artist": "INDILA",
@@ -4097,14 +4201,14 @@
   },
   {
     "artist": "Indila",
-    "title": "S.O.S."
+    "title": "S.O.S.                                     "
   },
   {
     "artist": "Indila",
     "title": "Tourner dans le vide"
   },
   {
-    "artist": "Indila",
+    "artist": "Indila  ",
     "title": "Comme un bateau"
   },
   {
@@ -4125,19 +4229,23 @@
   },
   {
     "artist": "Indochine",
-    "title": "L'aventurier"
+    "title": "L'aventurier "
   },
   {
     "artist": "Indochine",
     "title": "Tes yeux noirs"
   },
   {
-    "artist": "INDOCHINE",
+    "artist": "INDOCHINE ",
     "title": "College boy"
   },
   {
     "artist": "Isabelle Adjani",
     "title": "Pull marine"
+  },
+  {
+    "artist": "Isabelle Adjani",
+    "title": "Pull marine  (K_E)"
   },
   {
     "artist": "Isabelle Aubret",
@@ -4180,15 +4288,15 @@
     "title": "Une autre vie"
   },
   {
-    "artist": "Isabelle Boulay",
+    "artist": "Isabelle Boulay ",
     "title": "Un jour ou l'autre"
   },
   {
-    "artist": "Isabelle Boulay",
-    "title": "Ma fille"
+    "artist": "Isabelle Boulay                        ",
+    "title": "Ma fille "
   },
   {
-    "artist": "Isleym",
+    "artist": "Isleym  ",
     "title": "Avec le Temps"
   },
   {
@@ -4281,7 +4389,7 @@
   },
   {
     "artist": "Jacques Brel",
-    "title": "Mathilde"
+    "title": "Mathilde (BDF)"
   },
   {
     "artist": "Jacques Brel",
@@ -4417,7 +4525,7 @@
   },
   {
     "artist": "Jean Baptiste Guégan",
-    "title": "Puisque C'est Ecrit"
+    "title": "Puisque C'est Ecrit(JP)"
   },
   {
     "artist": "Jean Ferrat",
@@ -4449,15 +4557,19 @@
   },
   {
     "artist": "Jean Jacques Goldman",
-    "title": "Il y a"
+    "title": "Il y a\t\t\t\t\t"
   },
   {
     "artist": "Jean Jacques Goldman",
-    "title": "Je ne vous parlerai pas d'elle"
+    "title": "Je ne vous parlerai pas d'elle "
   },
   {
     "artist": "Jean Jacques Goldman",
-    "title": "Je te donne"
+    "title": "Je ne vous parlerai pas d'elle (BDF)"
+  },
+  {
+    "artist": "Jean Jacques Goldman",
+    "title": "Je te donne\t\t\t\t\t"
   },
   {
     "artist": "Jean Jacques Goldman",
@@ -4469,11 +4581,11 @@
   },
   {
     "artist": "Jean Louis Aubert",
-    "title": "Dis, quand reviendras tu"
+    "title": "Dis, quand reviendras tu\t\t\t\t\t"
   },
   {
     "artist": "Jean Luc Lahaye",
-    "title": "Débarquez moi"
+    "title": "Débarquez moi\t\t\t\t\t"
   },
   {
     "artist": "Jean Lumière",
@@ -4481,7 +4593,7 @@
   },
   {
     "artist": "Jean Pierre Mader",
-    "title": "Disparue"
+    "title": "Disparue\t\t\t\t\t"
   },
   {
     "artist": "Jean Raphaël",
@@ -4493,7 +4605,7 @@
   },
   {
     "artist": "Jean Vallée",
-    "title": "L'amour ça fait chanter la vie"
+    "title": "L'amour ça fait chanter la vie\t\t\t\t\t"
   },
   {
     "artist": "Jean-Claude Cesarini",
@@ -4509,7 +4621,7 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Au bout de mes rêves"
+    "title": "Au bout de mes rêves "
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -4533,7 +4645,7 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Elle attend"
+    "title": "Elle attend "
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -4541,7 +4653,7 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Ensemble"
+    "title": "Ensemble "
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -4549,11 +4661,11 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Et l'on n'y peut rien"
+    "title": "Et l'on n'y peut rien "
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Etre le premier"
+    "title": "Etre le premier "
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -4565,7 +4677,7 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Je ne vous parlerai pas d'elle"
+    "title": "Je ne vous parlerai pas d'elle "
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -4617,7 +4729,7 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Puisque tu pars"
+    "title": "Puisque tu pars "
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -4625,18 +4737,18 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Sache que je"
+    "title": "Sache que je "
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Tournent les violons"
+    "title": "Tournent les violons "
   },
   {
     "artist": "Jean-Jacques Goldman",
     "title": "Tout petit monde"
   },
   {
-    "artist": "Jean-Jacques Goldman",
+    "artist": "Jean-Jacques Goldman ",
     "title": "Veiller tard"
   },
   {
@@ -4673,7 +4785,7 @@
   },
   {
     "artist": "Jean-Pierre François",
-    "title": "Il a neigé sur les lacs"
+    "title": "Il a neigé sur les lacs "
   },
   {
     "artist": "Jean-Pierre Mader",
@@ -4681,7 +4793,7 @@
   },
   {
     "artist": "Jean-Pierre Mader",
-    "title": "Un pied devant l'autre"
+    "title": "Un pied devant l'autre\t\t\t\t\t"
   },
   {
     "artist": "Jean-Sebastien Lavoie",
@@ -4713,7 +4825,7 @@
   },
   {
     "artist": "Jena Lee",
-    "title": "J'aimerais tellement"
+    "title": "J'aimerais tellement                                                  "
   },
   {
     "artist": "Jenifer",
@@ -4721,7 +4833,7 @@
   },
   {
     "artist": "Jenifer",
-    "title": "Donne moi le temps"
+    "title": "Donne moi le temps (K&V)"
   },
   {
     "artist": "Jenifer",
@@ -4729,7 +4841,7 @@
   },
   {
     "artist": "Jenifer",
-    "title": "J’Attends L’Amour"
+    "title": "J’Attends L’Amour "
   },
   {
     "artist": "Jenifer",
@@ -4737,10 +4849,10 @@
   },
   {
     "artist": "Jenifer",
-    "title": "Sauve qui aime"
+    "title": "Sauve qui aime\t\t\t\t\t"
   },
   {
-    "artist": "Jenifer",
+    "artist": "Jenifer ",
     "title": "Ma révolution"
   },
   {
@@ -4757,7 +4869,7 @@
   },
   {
     "artist": "Jeremy Chatelain",
-    "title": "Vivre Ca"
+    "title": "Vivre Ca "
   },
   {
     "artist": "Jesse Garon",
@@ -4765,7 +4877,7 @@
   },
   {
     "artist": "Jimmy Somerville",
-    "title": "You Make Me Feel"
+    "title": "You Make Me Feel "
   },
   {
     "artist": "JJ Goldman",
@@ -4776,8 +4888,8 @@
     "title": "Laisse parler les gens"
   },
   {
-    "artist": "Jody",
-    "title": "Dans ce monde"
+    "artist": "Jody                              ",
+    "title": "Dans ce monde "
   },
   {
     "artist": "Joe Dassin",
@@ -4809,11 +4921,15 @@
   },
   {
     "artist": "Joe Dassin",
+    "title": "L'été indien (BDF)"
+  },
+  {
+    "artist": "Joe Dassin",
     "title": "L’équipe à Jojo"
   },
   {
     "artist": "Joe Dassin",
-    "title": "Le café des trois colombes"
+    "title": "Le café des trois colombes "
   },
   {
     "artist": "Joe Dassin",
@@ -4830,6 +4946,10 @@
   {
     "artist": "Joe Dassin",
     "title": "Salut"
+  },
+  {
+    "artist": "Joe Dassin",
+    "title": "Salut (BDF)"
   },
   {
     "artist": "Joe Dassin",
@@ -4885,7 +5005,7 @@
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "Cet homme que voila"
+    "title": "Cet homme que voila (live)\t\t\t\t\t"
   },
   {
     "artist": "Johnny Hallyday",
@@ -4905,11 +5025,11 @@
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "Essayez"
+    "title": "Essayez (BDF)"
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "Fou d'amour"
+    "title": "Fou d'amour (DEVOC)"
   },
   {
     "artist": "Johnny Hallyday",
@@ -4957,6 +5077,10 @@
   },
   {
     "artist": "Johnny Hallyday",
+    "title": "Je te promets (BDF)\t\t\t\t\t"
+  },
+  {
+    "artist": "Johnny Hallyday",
     "title": "Je te promets (Live Born Rocker To"
   },
   {
@@ -4970,6 +5094,10 @@
   {
     "artist": "Johnny Hallyday",
     "title": "L'envie"
+  },
+  {
+    "artist": "Johnny Hallyday",
+    "title": "L'envie (BDF)"
   },
   {
     "artist": "Johnny Hallyday",
@@ -5037,7 +5165,7 @@
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "Noël interdit"
+    "title": "Noël interdit (BDF)"
   },
   {
     "artist": "Johnny Hallyday",
@@ -5049,7 +5177,7 @@
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "Oh ! Ma jolie Sarah"
+    "title": "Oh ! Ma jolie Sarah (BDF)"
   },
   {
     "artist": "Johnny Hallyday",
@@ -5069,7 +5197,7 @@
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "Que je t'aime"
+    "title": "Que je t'aime "
   },
   {
     "artist": "Johnny Hallyday",
@@ -5117,7 +5245,7 @@
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "Te manquer"
+    "title": "Te manquer                 "
   },
   {
     "artist": "Johnny Hallyday",
@@ -5137,7 +5265,15 @@
   },
   {
     "artist": "Johnny Hallyday",
-    "title": "L'instinct"
+    "title": "Vivre pour le meilleur (BDF)\t\t\t\t\t"
+  },
+  {
+    "artist": "Johnny Hallyday",
+    "title": "Vivre pour le meilleur (BDFab)"
+  },
+  {
+    "artist": "Johnny Hallyday                      ",
+    "title": "L'instinct "
   },
   {
     "artist": "Jonatan Cerrada",
@@ -5153,7 +5289,7 @@
   },
   {
     "artist": "Joyca",
-    "title": "Confiné"
+    "title": "Confiné\t\t\t\t\t"
   },
   {
     "artist": "Joyce Jonathan",
@@ -5165,11 +5301,11 @@
   },
   {
     "artist": "JuL",
-    "title": "J'oublie Tout"
+    "title": "J'oublie Tout \t\t\t\t\t"
   },
   {
-    "artist": "Jules et Jim",
-    "title": "Le tourbillon de la vie"
+    "artist": "Jules et Jim            ",
+    "title": "Le tourbillon de la vie "
   },
   {
     "artist": "Julie Pietri",
@@ -5181,7 +5317,7 @@
   },
   {
     "artist": "Julie Zenatti",
-    "title": "Si j'men sors"
+    "title": " Si j'men sors"
   },
   {
     "artist": "Julie Zenatti",
@@ -5269,19 +5405,19 @@
   },
   {
     "artist": "Julien Clerc",
-    "title": "Avant qu'on aille au fond des choses"
+    "title": "Avant qu'on aille au fond des choses "
   },
   {
     "artist": "Julien Clerc",
-    "title": "Ce n'est rien"
+    "title": "Ce n'est rien (BDF)"
   },
   {
     "artist": "Julien Clerc",
-    "title": "Ma préférence"
+    "title": "Ma préférence (BDF)"
   },
   {
     "artist": "Julien Clerc",
-    "title": "Mon refuge"
+    "title": "Mon refuge\t\t\t\t\t"
   },
   {
     "artist": "Julien Doré",
@@ -5293,7 +5429,7 @@
   },
   {
     "artist": "Juliette Armanet",
-    "title": "Le dernier jour du disco"
+    "title": "Le dernier jour du disco\t\t\t\t\t"
   },
   {
     "artist": "Juliette Greco",
@@ -5317,7 +5453,7 @@
   },
   {
     "artist": "Julio Iglesias",
-    "title": "En amour il y'a toujours un perdant"
+    "title": "En amour il y'a toujours un perdant (24)"
   },
   {
     "artist": "Julio Iglesias",
@@ -5325,7 +5461,19 @@
   },
   {
     "artist": "Julio Iglesias",
+    "title": "Il faut toujours un perdant (CK)"
+  },
+  {
+    "artist": "Julio Iglesias",
+    "title": "Il faut toujours un perdant (MPK)"
+  },
+  {
+    "artist": "Julio Iglesias",
     "title": "Je n'ai pas changé"
+  },
+  {
+    "artist": "Julio Iglesias",
+    "title": "Je n'ai pas changé (CK)"
   },
   {
     "artist": "Julio Iglesias",
@@ -5341,11 +5489,15 @@
   },
   {
     "artist": "Julio Iglesias",
+    "title": "Pauvres diables (25)"
+  },
+  {
+    "artist": "Julio Iglesias",
     "title": "Viens m'embrasser"
   },
   {
     "artist": "Jumie Zennati",
-    "title": "Rendez-Moi Le Silence"
+    "title": "Rendez-Moi Le Silence "
   },
   {
     "artist": "Jungeli",
@@ -5357,7 +5509,7 @@
   },
   {
     "artist": "K-Maro",
-    "title": "Crazy"
+    "title": "Crazy "
   },
   {
     "artist": "K-Maro",
@@ -5365,27 +5517,27 @@
   },
   {
     "artist": "K-Maro",
-    "title": "Qu'Est-Ce Que Ca Te Fout"
+    "title": "Qu'Est-Ce Que Ca Te Fout "
   },
   {
-    "artist": "Kana",
+    "artist": "Kana ",
     "title": "Plantation"
   },
   {
     "artist": "Kate Ryan",
-    "title": "Désenchantee"
+    "title": "Désenchantee\t\t\t\t\t"
   },
   {
     "artist": "Kayliah",
-    "title": "Quand Une Fille Est Love"
+    "title": "Quand Une Fille Est Love "
   },
   {
     "artist": "Keen'v",
-    "title": "Mademoiselle Valérie"
+    "title": "Mademoiselle Valérie\t\t\t\t\t"
   },
   {
     "artist": "Kendji",
-    "title": "La Bohème"
+    "title": "La Bohème\t\t\t\t\t"
   },
   {
     "artist": "Kendji Girac",
@@ -5393,7 +5545,7 @@
   },
   {
     "artist": "Kendji Girac",
-    "title": "Avec toi"
+    "title": "Avec toi                                                          "
   },
   {
     "artist": "Kendji Girac",
@@ -5409,18 +5561,22 @@
   },
   {
     "artist": "Kendji Girac",
-    "title": "Habibi"
+    "title": "Habibi                                                            "
   },
   {
     "artist": "Kendji Girac",
-    "title": "La gitane"
+    "title": "La gitane "
   },
   {
     "artist": "Kendji Girac",
-    "title": "Toi et moi"
+    "title": "La gitane (KF)"
   },
   {
     "artist": "Kendji Girac",
+    "title": "Toi et moi                                                        "
+  },
+  {
+    "artist": "Kendji Girac ",
     "title": "Les yeux de la Mama"
   },
   {
@@ -5429,7 +5585,7 @@
   },
   {
     "artist": "Kenza Farah & Sefyu",
-    "title": "Lettre du front"
+    "title": "Lettre du front\t\t\t\t\t"
   },
   {
     "artist": "Kerdy Vuvu",
@@ -5441,7 +5597,7 @@
   },
   {
     "artist": "Khaled",
-    "title": "C'est la vie"
+    "title": "C'est la vie                               "
   },
   {
     "artist": "Khaled",
@@ -5453,15 +5609,15 @@
   },
   {
     "artist": "KIDS  UNITED",
-    "title": "L'oiseau et l'enfant"
+    "title": "L'oiseau et l'enfant\t\t\t\t\t"
   },
   {
     "artist": "KIDS  UNITED",
-    "title": "Tout  le bonheur du Monde"
+    "title": "Tout  le bonheur du Monde\t\t\t\t\t"
   },
   {
     "artist": "Kids United",
-    "title": "On écrit sur les murs"
+    "title": "On écrit sur les murs  "
   },
   {
     "artist": "Koxie",
@@ -5484,11 +5640,11 @@
     "title": "Plan A"
   },
   {
-    "artist": "Kyo",
+    "artist": "Kyo ",
     "title": "Je saigne encore"
   },
   {
-    "artist": "Kyo & Sita",
+    "artist": "Kyo & Sita ",
     "title": "Le chemin"
   },
   {
@@ -5496,8 +5652,8 @@
     "title": "Cash City"
   },
   {
-    "artist": "L'envie d'aimer",
-    "title": "Daniel LEVI (Karaoké Piano"
+    "artist": "L'envie d'aimer ",
+    "title": " Daniel LEVI (Karaoké Piano "
   },
   {
     "artist": "L5",
@@ -5525,7 +5681,7 @@
   },
   {
     "artist": "La Compagnie Créole",
-    "title": "Bons baisers de Fort de France"
+    "title": "Bons baisers de Fort de France (BDF)"
   },
   {
     "artist": "La Compagnie Créole",
@@ -5541,7 +5697,7 @@
   },
   {
     "artist": "La League",
-    "title": "Donne-Moi Ton Numéro"
+    "title": "Donne-Moi Ton Numéro "
   },
   {
     "artist": "La Nouvelle Star",
@@ -5549,15 +5705,15 @@
   },
   {
     "artist": "La Petite Culotte",
-    "title": "La Goffa Lolita"
+    "title": "La Goffa Lolita\t\t\t\t\t"
   },
   {
     "artist": "La Petite Culotte",
-    "title": "La goffa lolita"
+    "title": "La goffa lolita (26)"
   },
   {
     "artist": "La Petite Culotte",
-    "title": "La goffa Lolita"
+    "title": "La goffa Lolita (BDF)"
   },
   {
     "artist": "La petite sirène",
@@ -5565,7 +5721,7 @@
   },
   {
     "artist": "La petite sirène",
-    "title": "Sous l'océan"
+    "title": "Sous l'océan   "
   },
   {
     "artist": "La Plage",
@@ -5573,7 +5729,11 @@
   },
   {
     "artist": "La Zarra",
-    "title": "Evidemment"
+    "title": "Evidemment "
+  },
+  {
+    "artist": "La Zarra",
+    "title": "Evidemment (BDFab)"
   },
   {
     "artist": "Laam",
@@ -5585,7 +5745,7 @@
   },
   {
     "artist": "Laam",
-    "title": "Je veux chanter pour ceux"
+    "title": "Je veux chanter pour ceux                    "
   },
   {
     "artist": "Laam",
@@ -5601,19 +5761,19 @@
   },
   {
     "artist": "Lara Fabian",
-    "title": "Adagio"
+    "title": "Adagio (Anglais)"
   },
   {
     "artist": "Lara Fabian",
-    "title": "Aimer déjà"
+    "title": "Aimer déjà "
   },
   {
     "artist": "Lara Fabian",
-    "title": "Bambina"
+    "title": "Bambina "
   },
   {
     "artist": "Lara Fabian",
-    "title": "Humana"
+    "title": "Humana "
   },
   {
     "artist": "Lara Fabian",
@@ -5621,11 +5781,11 @@
   },
   {
     "artist": "Lara Fabian",
-    "title": "J'ai zappé"
+    "title": "J'ai zappé "
   },
   {
     "artist": "Lara Fabian",
-    "title": "J’Y Crois Encore"
+    "title": "J’Y Crois Encore "
   },
   {
     "artist": "Lara Fabian",
@@ -5633,15 +5793,15 @@
   },
   {
     "artist": "Lara Fabian",
-    "title": "Je t'aime"
+    "title": "Je t'aime  "
   },
   {
     "artist": "Lara Fabian",
-    "title": "Je t'aime encore"
+    "title": "Je t'aime encore\t\t\t\t\t"
   },
   {
     "artist": "Lara Fabian",
-    "title": "Je t'appartiens"
+    "title": "Je t'appartiens "
   },
   {
     "artist": "Lara Fabian",
@@ -5649,15 +5809,15 @@
   },
   {
     "artist": "Lara Fabian",
-    "title": "Le roi est une femme"
+    "title": "Le roi est une femme "
   },
   {
     "artist": "Lara Fabian",
-    "title": "Leïla"
+    "title": "Leïla "
   },
   {
     "artist": "Lara Fabian",
-    "title": "Les amoureux de l'an 2000"
+    "title": "Les amoureux de l'an 2000 "
   },
   {
     "artist": "Lara Fabian",
@@ -5673,15 +5833,15 @@
   },
   {
     "artist": "Lara Fabian",
-    "title": "Pas sans toi"
+    "title": "Pas sans toi "
   },
   {
     "artist": "Lara Fabian",
-    "title": "S'en aller"
+    "title": "S'en aller "
   },
   {
     "artist": "Lara Fabian",
-    "title": "Silence"
+    "title": "Silence "
   },
   {
     "artist": "Lara Fabian",
@@ -5689,19 +5849,19 @@
   },
   {
     "artist": "Lara Fabian",
-    "title": "Tango"
+    "title": "Tango "
   },
   {
     "artist": "Lara Fabian",
-    "title": "Tout"
+    "title": "Tout  "
   },
   {
-    "artist": "Lara Fabian",
+    "artist": "Lara Fabian ",
     "title": "La différence"
   },
   {
-    "artist": "Lara Fabian",
-    "title": "Si tu m'aimes"
+    "artist": "Lara Fabian ",
+    "title": "Si tu m'aimes "
   },
   {
     "artist": "Laroche Valmont",
@@ -5709,11 +5869,11 @@
   },
   {
     "artist": "LARTISTE",
-    "title": "CHOCOLAT"
+    "title": "CHOCOLAT          "
   },
   {
-    "artist": "Lartiste",
-    "title": "Mafiosa feat. Caroliina"
+    "artist": "Lartiste ",
+    "title": "Mafiosa feat. Caroliina                                             "
   },
   {
     "artist": "Larusso",
@@ -5729,7 +5889,7 @@
   },
   {
     "artist": "Latin Lovers",
-    "title": "Vous les femmes"
+    "title": "Vous les femmes (Pobre Diablo)"
   },
   {
     "artist": "Laurent Voulzy",
@@ -5745,15 +5905,15 @@
   },
   {
     "artist": "Laurent Voulzy",
-    "title": "Le cœur grenadine"
+    "title": "Le cœur grenadine (BDF)"
   },
   {
     "artist": "Laurent Voulzy",
-    "title": "Le pouvoir des fleurs"
+    "title": "Le pouvoir des fleurs (MPK)"
   },
   {
     "artist": "Laurent Voulzy",
-    "title": "Le rêve du pêcheur"
+    "title": "Le rêve du pêcheur                                              "
   },
   {
     "artist": "Laurent Voulzy",
@@ -5761,7 +5921,7 @@
   },
   {
     "artist": "Laurent Voulzy",
-    "title": "Rock collection"
+    "title": "Rock collection (BDF)"
   },
   {
     "artist": "Laurent Voulzy",
@@ -5777,7 +5937,7 @@
   },
   {
     "artist": "Le grand Jojo",
-    "title": "Jules César"
+    "title": "Jules César\t\t\t\t\t"
   },
   {
     "artist": "Le Roi Soleil",
@@ -5865,7 +6025,7 @@
   },
   {
     "artist": "Les Chevaliers Du Fiel",
-    "title": "Dans La Simca 1000"
+    "title": "Dans La Simca 1000         "
   },
   {
     "artist": "Les choristes",
@@ -5881,7 +6041,7 @@
   },
   {
     "artist": "Les Dix Commandements",
-    "title": "L'Envie d'aimer"
+    "title": "L'Envie d'aimer\t\t\t\t\t"
   },
   {
     "artist": "Les Dix Commandements",
@@ -5897,7 +6057,7 @@
   },
   {
     "artist": "Les Enfoirés",
-    "title": "Mourir sur scène"
+    "title": "Mourir sur scène\t\t\t\t\t"
   },
   {
     "artist": "Les Forbans",
@@ -5916,32 +6076,28 @@
     "title": "Mon Voisin"
   },
   {
-    "artist": "Les Inconnus",
-    "title": "C'est toi que je t'aime"
+    "artist": "Les Inconnus ",
+    "title": "C'est toi que je t'aime            "
   },
   {
-    "artist": "Les Inconnus",
-    "title": "Isabelle a les yeux bleus"
+    "artist": "Les Inconnus ",
+    "title": "Isabelle a les yeux bleus                         "
   },
   {
     "artist": "Les Infidèles",
-    "title": "Les larmes et des maux"
+    "title": "Les larmes et des maux\t\t\t\t\t"
   },
   {
     "artist": "Les Musclés",
-    "title": "La fête au village"
+    "title": "La fête au village "
   },
   {
     "artist": "Les Musclés",
-    "title": "La Musclada"
+    "title": "La Musclada "
   },
   {
     "artist": "Les Poppys",
-    "title": "Non,Non,Rien N'a Changé"
-  },
-  {
-    "artist": "Les souliers rouges Vivre ou ne pas vivre",
-    "title": ""
+    "title": "Non,Non,Rien N'a Changé                "
   },
   {
     "artist": "Leslie",
@@ -5980,32 +6136,32 @@
     "title": "Va savoir"
   },
   {
-    "artist": "Liane Foly",
-    "title": "Laisse pleurer les nuages"
+    "artist": "Liane Foly            ",
+    "title": "Laisse pleurer les nuages "
   },
   {
-    "artist": "Liane Foly",
-    "title": "Les petites notes"
+    "artist": "Liane Foly                    ",
+    "title": "Les petites notes "
   },
   {
-    "artist": "Liane Foly",
-    "title": "Ca va ça vient"
+    "artist": "Liane Foly                       ",
+    "title": "Ca va ça vient "
   },
   {
-    "artist": "Liane Foly",
-    "title": "Goodbye lover"
+    "artist": "Liane Foly                        ",
+    "title": "Goodbye lover "
   },
   {
-    "artist": "Liane Foly",
-    "title": "S'en balancer"
+    "artist": "Liane Foly                        ",
+    "title": "S'en balancer "
   },
   {
-    "artist": "Liane Foly",
-    "title": "Etre vrai"
+    "artist": "Liane Foly                            ",
+    "title": "Etre vrai "
   },
   {
-    "artist": "Liane Foly",
-    "title": "Vivre"
+    "artist": "Liane Foly                                ",
+    "title": "Vivre "
   },
   {
     "artist": "Liliclub",
@@ -6013,7 +6169,7 @@
   },
   {
     "artist": "Lilicub",
-    "title": "Voyage en Italie"
+    "title": "Voyage en Italie (BDF)"
   },
   {
     "artist": "Linda De Suza",
@@ -6045,19 +6201,19 @@
   },
   {
     "artist": "Loïc Nottet",
-    "title": "Mr  Mme"
+    "title": "Mr  Mme\t\t\t\t\t"
   },
   {
     "artist": "Lorie",
-    "title": "A Vingt Ans"
+    "title": "A Vingt Ans "
   },
   {
     "artist": "Lorie",
-    "title": "C'Est Plus Fort Que Moi"
+    "title": "C'Est Plus Fort Que Moi "
   },
   {
     "artist": "Lorie",
-    "title": "J'ai besoin d'amour"
+    "title": "J'ai besoin d'amour "
   },
   {
     "artist": "Lorie",
@@ -6069,7 +6225,7 @@
   },
   {
     "artist": "Lorie",
-    "title": "Sur un air latino"
+    "title": "Sur un air latino  "
   },
   {
     "artist": "Lorie",
@@ -6077,7 +6233,7 @@
   },
   {
     "artist": "Lorie",
-    "title": "Toi Et Moi"
+    "title": "Toi Et Moi "
   },
   {
     "artist": "Lorie",
@@ -6085,7 +6241,7 @@
   },
   {
     "artist": "Lorie",
-    "title": "Week-End"
+    "title": "Week-End "
   },
   {
     "artist": "Lou",
@@ -6109,11 +6265,11 @@
   },
   {
     "artist": "Louane",
-    "title": "Secret"
+    "title": "Secret\t\t\t\t\t"
   },
   {
     "artist": "Louis",
-    "title": "Même pas mal"
+    "title": "Même pas mal\t\t\t\t\t"
   },
   {
     "artist": "Louis Bertignac",
@@ -6125,7 +6281,7 @@
   },
   {
     "artist": "Louis Chedid",
-    "title": "Les absents ont toujours tort"
+    "title": "Les absents ont toujours tort\t\t\t\t\t"
   },
   {
     "artist": "Louis Chedid",
@@ -6144,11 +6300,11 @@
     "title": "Ton invitation"
   },
   {
-    "artist": "Luce",
-    "title": "L'été Noir"
+    "artist": "Luce ",
+    "title": " L'été Noir"
   },
   {
-    "artist": "Lucie -Star Academy",
+    "artist": "Lucie -Star Academy ",
     "title": "Singing in the rain"
   },
   {
@@ -6193,15 +6349,15 @@
   },
   {
     "artist": "Luis Mariano",
-    "title": "Rossignol"
+    "title": "Rossignol                            "
   },
   {
     "artist": "Luna Parker",
-    "title": "Tes états d'âme ... Eric"
+    "title": "Tes états d'âme ... Eric "
   },
   {
     "artist": "Lynda",
-    "title": "Adieu ft Dadju"
+    "title": "Adieu ft Dadju\t\t\t\t\t"
   },
   {
     "artist": "Lynda",
@@ -6225,7 +6381,7 @@
   },
   {
     "artist": "M",
-    "title": "Onde sensuelle"
+    "title": "Onde sensuelle                         "
   },
   {
     "artist": "M Pokora",
@@ -6241,11 +6397,11 @@
   },
   {
     "artist": "M Pokora",
-    "title": "Si on disait"
+    "title": "Si on disait\t\t\t\t\t"
   },
   {
     "artist": "M Pokora",
-    "title": "Tombé"
+    "title": "Tombé                                    "
   },
   {
     "artist": "M Pokora et Tal",
@@ -6253,7 +6409,7 @@
   },
   {
     "artist": "M. Sardou - S. Vartan",
-    "title": "La première fois qu'on s'aimera"
+    "title": "La première fois qu'on s'aimera "
   },
   {
     "artist": "Mac Tyer et Maître Gims",
@@ -6261,11 +6417,11 @@
   },
   {
     "artist": "Maëlle",
-    "title": "L’effet de masse"
+    "title": "L’effet de masse (BDF)"
   },
   {
     "artist": "Magali Noel",
-    "title": "Fais moi mal Johnny"
+    "title": "Fais moi mal Johnny                   "
   },
   {
     "artist": "Magic system",
@@ -6277,15 +6433,15 @@
   },
   {
     "artist": "Maitre Gims",
-    "title": "Cameleon"
+    "title": "Cameleon\t\t\t\t\t"
   },
   {
     "artist": "Maitre Gims",
-    "title": "Mon Coeur Avait Raison"
+    "title": "Mon Coeur Avait Raison\t\t\t\t\t"
   },
   {
     "artist": "Maitre gims",
-    "title": "Tout donner"
+    "title": "Tout donner            "
   },
   {
     "artist": "Maitre Gims",
@@ -6312,12 +6468,8 @@
     "title": "Parisienne"
   },
   {
-    "artist": "Maitre Gims",
+    "artist": "Maitre Gims ",
     "title": "Changer"
-  },
-  {
-    "artist": "Mamma Mia! (version française)",
-    "title": ""
   },
   {
     "artist": "Manau",
@@ -6333,7 +6485,7 @@
   },
   {
     "artist": "Marc Antoine",
-    "title": "Tant besoin de toi"
+    "title": "Tant besoin de toi                   "
   },
   {
     "artist": "Marc Aryan",
@@ -6360,32 +6512,32 @@
     "title": "Le parking des anges"
   },
   {
-    "artist": "Marc Lavoine",
-    "title": "Le monde est tellement con"
+    "artist": "Marc Lavoine         ",
+    "title": "Le monde est tellement con "
   },
   {
-    "artist": "Marc Lavoine",
-    "title": "Pour une biguine avec toi"
+    "artist": "Marc Lavoine          ",
+    "title": "Pour une biguine avec toi "
   },
   {
-    "artist": "Marc Lavoine",
-    "title": "L'amour de 30 secondes"
+    "artist": "Marc Lavoine             ",
+    "title": "L'amour de 30 secondes "
   },
   {
-    "artist": "Marc Lavoine",
-    "title": "Bascule avec moi"
+    "artist": "Marc Lavoine                   ",
+    "title": "Bascule avec moi "
   },
   {
-    "artist": "Marc Lavoine",
-    "title": "Le pont Mirabeau"
+    "artist": "Marc Lavoine                   ",
+    "title": "Le pont Mirabeau "
   },
   {
-    "artist": "Marc Lavoine",
-    "title": "Rue Fontaine"
+    "artist": "Marc Lavoine                       ",
+    "title": "Rue Fontaine "
   },
   {
-    "artist": "Marc Lavoine",
-    "title": "Paris"
+    "artist": "Marc Lavoine                              ",
+    "title": "Paris "
   },
   {
     "artist": "Marc Lavoine & Bambou",
@@ -6397,15 +6549,15 @@
   },
   {
     "artist": "Marc Lavoine & Claire Keim",
-    "title": "Je ne veux qu'elle"
+    "title": "Je ne veux qu'elle "
   },
   {
-    "artist": "Marc Lavoine & Cristina Marocco",
+    "artist": "Marc Lavoine & Cristina Marocco  ",
     "title": "J'ai tout oublié"
   },
   {
     "artist": "Marie Carmen",
-    "title": "L'aigle noir"
+    "title": "L'aigle noir\t\t\t\t\t"
   },
   {
     "artist": "Marie Dubas",
@@ -6424,36 +6576,36 @@
     "title": "La tendresse"
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Mes bouquets d'asphodèles"
+    "artist": "Marie Laforêt         ",
+    "title": "Mes bouquets d'asphodèles "
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Il a neigé sur yesterday"
+    "artist": "Marie Laforêt          ",
+    "title": "Il a neigé sur yesterday "
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Les vendanges de l'amour"
+    "artist": "Marie Laforêt          ",
+    "title": "Les vendanges de l'amour "
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Manchester et Liverpool"
+    "artist": "Marie Laforêt           ",
+    "title": "Manchester et Liverpool "
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Viens sur la montagne"
+    "artist": "Marie Laforêt             ",
+    "title": "Viens sur la montagne "
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Maine Montparnasse"
+    "artist": "Marie Laforêt                ",
+    "title": "Maine Montparnasse "
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Mon amour, mon ami"
+    "artist": "Marie Laforêt                ",
+    "title": "Mon amour, mon ami "
   },
   {
-    "artist": "Marie Laforêt",
-    "title": "Viens, viens"
+    "artist": "Marie Laforêt                      ",
+    "title": "Viens, viens "
   },
   {
     "artist": "Marie Myrian",
@@ -6465,11 +6617,11 @@
   },
   {
     "artist": "Marilou & Garou",
-    "title": "Tu Es Comme Ca"
+    "title": "Tu Es Comme Ca "
   },
   {
     "artist": "Marwa Loud ft Eva",
-    "title": "Allo"
+    "title": "Allo\t\t\t\t\t"
   },
   {
     "artist": "Mathe Altéry",
@@ -6485,7 +6637,7 @@
   },
   {
     "artist": "Maurane",
-    "title": "La chanson des vieux amants"
+    "title": "La chanson des vieux amants               "
   },
   {
     "artist": "Maurane",
@@ -6512,12 +6664,12 @@
     "title": "Toutes les mamas"
   },
   {
-    "artist": "Maurane",
-    "title": "Tout faux"
+    "artist": "Maurane                               ",
+    "title": "Tout faux "
   },
   {
     "artist": "Mauranne & Lara Fabian",
-    "title": "Tu Es Mon Autre"
+    "title": "Tu Es Mon Autre "
   },
   {
     "artist": "Maurice Chevalier",
@@ -6573,7 +6725,7 @@
   },
   {
     "artist": "Mc Solaar",
-    "title": "Victime de la Mode"
+    "title": "Victime de la Mode                      "
   },
   {
     "artist": "MC Solar",
@@ -6584,8 +6736,8 @@
     "title": "Une femme avec une femme"
   },
   {
-    "artist": "Medley  année 80",
-    "title": "By Funkyz"
+    "artist": "Medley  année 80 ",
+    "title": " By Funkyz"
   },
   {
     "artist": "Mélanie Renaud",
@@ -6601,11 +6753,11 @@
   },
   {
     "artist": "Mentissa",
-    "title": "Et bam"
+    "title": "Et bam (KF)\t\t\t\t\t"
   },
   {
     "artist": "Mentissa",
-    "title": "Mamma Mia"
+    "title": "Mamma Mia (BDF)"
   },
   {
     "artist": "Michal",
@@ -6629,7 +6781,7 @@
   },
   {
     "artist": "Michel Berger",
-    "title": "La Groupie Du Pianiste"
+    "title": "La Groupie Du Pianiste (REMIX)"
   },
   {
     "artist": "Michel Berger",
@@ -6645,6 +6797,10 @@
   },
   {
     "artist": "Michel Berger",
+    "title": "Les princes des villes (BDF)"
+  },
+  {
+    "artist": "Michel Berger",
     "title": "Message personnel"
   },
   {
@@ -6657,11 +6813,15 @@
   },
   {
     "artist": "Michel Berger",
+    "title": "Quelques mots d'amour (BDF)"
+  },
+  {
+    "artist": "Michel Berger",
     "title": "Seras Tu Là"
   },
   {
     "artist": "Michel Berger",
-    "title": "Vivre"
+    "title": "Vivre (BDF)"
   },
   {
     "artist": "Michel Berger",
@@ -6681,6 +6841,10 @@
   },
   {
     "artist": "Michel Delpech",
+    "title": "Chez Laurette (25)"
+  },
+  {
+    "artist": "Michel Delpech",
     "title": "Le chasseur"
   },
   {
@@ -6693,7 +6857,11 @@
   },
   {
     "artist": "Michel Delpech",
-    "title": "Loin d'ici"
+    "title": "Les divorcés (BDF)"
+  },
+  {
+    "artist": "Michel Delpech",
+    "title": "Loin d'ici "
   },
   {
     "artist": "Michel Delpech",
@@ -6709,19 +6877,31 @@
   },
   {
     "artist": "Michel Delpech",
+    "title": "Quand j'étais chanteur (BDF)"
+  },
+  {
+    "artist": "Michel Delpech",
+    "title": "Quand j'étais chanteur (BDFab)"
+  },
+  {
+    "artist": "Michel Delpech",
+    "title": "Quand j'étais chanteur (Tino)"
+  },
+  {
+    "artist": "Michel Delpech",
     "title": "Que Marianne était jolie"
   },
   {
-    "artist": "Michel Delpech",
+    "artist": "Michel Delpech  ",
     "title": "J'étais un ange"
   },
   {
-    "artist": "Michel Delpech",
-    "title": "62, nos 15 ans"
+    "artist": "Michel Delpech                   ",
+    "title": "62, nos 15 ans "
   },
   {
-    "artist": "Michel Delpech",
-    "title": "Wight is Wight"
+    "artist": "Michel Delpech                   ",
+    "title": "Wight is Wight "
   },
   {
     "artist": "Michel Delpech & Alain souchon",
@@ -6752,32 +6932,32 @@
     "title": "Viva la vida"
   },
   {
-    "artist": "Michel Fugain",
-    "title": "Chanson pour les demoiselles"
+    "artist": "Michel Fugain      ",
+    "title": "Chanson pour les demoiselles "
   },
   {
-    "artist": "Michel Fugain",
-    "title": "Bravo monsieur le monde"
+    "artist": "Michel Fugain           ",
+    "title": "Bravo monsieur le monde "
   },
   {
-    "artist": "Michel Fugain",
-    "title": "Des rêves et du vent"
+    "artist": "Michel Fugain              ",
+    "title": "Des rêves et du vent "
   },
   {
-    "artist": "Michel Fugain",
-    "title": "Chaque jour de plus"
+    "artist": "Michel Fugain               ",
+    "title": "Chaque jour de plus "
   },
   {
-    "artist": "Michel Fugain",
-    "title": "Comme un soleil"
+    "artist": "Michel Fugain                   ",
+    "title": "Comme un soleil "
   },
   {
-    "artist": "Michel Fugain",
-    "title": "Où s'en vont"
+    "artist": "Michel Fugain                      ",
+    "title": "Où s'en vont "
   },
   {
-    "artist": "Michel Fugain",
-    "title": "Forteresse"
+    "artist": "Michel Fugain                        ",
+    "title": "Forteresse "
   },
   {
     "artist": "Michel Jonasz",
@@ -6793,7 +6973,7 @@
   },
   {
     "artist": "Michel Jonasz",
-    "title": "Je voulais te dire que je t’attends"
+    "title": "Je voulais te dire que je t’attends (BDFab)"
   },
   {
     "artist": "Michel Jonasz",
@@ -6801,7 +6981,7 @@
   },
   {
     "artist": "Michel Jonasz",
-    "title": "Les vacances au bord de la mer"
+    "title": "Les vacances au bord de la mer (BDF)"
   },
   {
     "artist": "Michel Jonasz",
@@ -6812,11 +6992,11 @@
     "title": "Super nana"
   },
   {
-    "artist": "Michel Jonasz",
+    "artist": "Michel Jonasz ",
     "title": "Joueurs de blues"
   },
   {
-    "artist": "Michel Jonasz",
+    "artist": "Michel Jonasz ",
     "title": "Lucille"
   },
   {
@@ -6841,7 +7021,7 @@
   },
   {
     "artist": "Michel Polnareff",
-    "title": "Holydays"
+    "title": "Holydays "
   },
   {
     "artist": "Michel Polnareff",
@@ -6873,15 +7053,19 @@
   },
   {
     "artist": "Michel Polnareff",
-    "title": "Le bal des Laze"
+    "title": "Le bal des Laze "
   },
   {
     "artist": "Michel Polnareff",
-    "title": "Lettre à France"
+    "title": "Lettre à France "
   },
   {
     "artist": "Michel Polnareff",
-    "title": "LNAHO"
+    "title": "Lettre à France (BDF)"
+  },
+  {
+    "artist": "Michel Polnareff",
+    "title": "LNAHO "
   },
   {
     "artist": "Michel Polnareff",
@@ -6905,7 +7089,7 @@
   },
   {
     "artist": "Michel Polnareff",
-    "title": "Tam Tam"
+    "title": "Tam Tam  "
   },
   {
     "artist": "Michel Polnareff",
@@ -6933,7 +7117,7 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "55 jours 55 nuits"
+    "title": "55 jours 55 nuits (JPK)"
   },
   {
     "artist": "Michel Sardou",
@@ -6941,7 +7125,11 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Attention les enfants... danger"
+    "title": "Afrique adieu (BDFab)"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Attention les enfants... danger "
   },
   {
     "artist": "Michel Sardou",
@@ -6953,7 +7141,7 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Dix ans plus tôt"
+    "title": "Dix ans plus tôt "
   },
   {
     "artist": "Michel Sardou",
@@ -6961,7 +7149,7 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "En quelle année Georgia"
+    "title": "En quelle année Georgia (BDF)"
   },
   {
     "artist": "Michel Sardou",
@@ -6969,23 +7157,27 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Être une femme"
+    "title": "Être une femme (BDFab)"
   },
   {
     "artist": "Michel Sardou",
-    "title": "Il Etait Là"
+    "title": "Être une femme (REMIX)"
   },
   {
     "artist": "Michel Sardou",
-    "title": "J'accuse"
+    "title": "Il Etait Là (Le Fauteuil)"
   },
   {
     "artist": "Michel Sardou",
-    "title": "J'aurais voulu t'aimer"
+    "title": "J'accuse "
   },
   {
     "artist": "Michel Sardou",
-    "title": "Je  ne sais plus rien"
+    "title": "J'aurais voulu t'aimer                                           "
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Je  ne sais plus rien\t\t\t\t\t"
   },
   {
     "artist": "Michel Sardou",
@@ -6997,19 +7189,23 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Je vais t’aimer"
+    "title": "Je vais t’aimer (BDF)\t\t\t\t\t"
   },
   {
     "artist": "Michel Sardou",
-    "title": "Je vais t’aimer BDF)"
+    "title": "Je vais t’aimer (BDFab)"
   },
   {
     "artist": "Michel Sardou",
-    "title": "Je veux l'épouser pour un soir"
+    "title": "Je vais t’aimer BDF)\t\t\t\t\t"
   },
   {
     "artist": "Michel Sardou",
-    "title": "Je viens du sud"
+    "title": "Je veux l'épouser pour un soir "
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Je viens du sud "
   },
   {
     "artist": "Michel Sardou",
@@ -7025,7 +7221,7 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "L’aigle noir (live 2013)"
+    "title": "L’aigle noir (live 2013) (BDF)\t\t\t\t\t"
   },
   {
     "artist": "Michel Sardou",
@@ -7037,11 +7233,15 @@
   },
   {
     "artist": "Michel Sardou",
+    "title": "La java de Broadway (live 2018)"
+  },
+  {
+    "artist": "Michel Sardou",
     "title": "La maladie d'amour"
   },
   {
     "artist": "Michel Sardou",
-    "title": "La maladie d’amour"
+    "title": "La maladie d’amour (BDF)\t\t\t\t\t"
   },
   {
     "artist": "Michel Sardou",
@@ -7049,7 +7249,7 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "La vieille"
+    "title": "La vieille "
   },
   {
     "artist": "Michel Sardou",
@@ -7057,11 +7257,15 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Le curé"
+    "title": "Le curé "
   },
   {
     "artist": "Michel Sardou",
     "title": "Le France"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Le France (BDFab)"
   },
   {
     "artist": "Michel Sardou",
@@ -7081,7 +7285,7 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Les lacs du Connemara"
+    "title": "Les lacs du Connemara (BDFab)"
   },
   {
     "artist": "Michel Sardou",
@@ -7089,11 +7293,15 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Les vieux mariés"
+    "title": "Les vieux mariés "
   },
   {
     "artist": "Michel Sardou",
-    "title": "Les villes de solitude"
+    "title": "Les vieux mariés (BDF)"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Les villes de solitude "
   },
   {
     "artist": "Michel Sardou",
@@ -7105,7 +7313,7 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Petit"
+    "title": "Petit "
   },
   {
     "artist": "Michel Sardou",
@@ -7113,34 +7321,38 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Rouge"
+    "title": "Rouge "
   },
   {
     "artist": "Michel Sardou",
-    "title": "Selon que vous serez etc... etc..."
+    "title": "Selon que vous serez etc... etc... "
   },
   {
     "artist": "Michel Sardou",
-    "title": "Un Roi Barbare"
+    "title": "Un Roi Barbare (JPK)"
   },
   {
     "artist": "Michel Sardou",
-    "title": "Victoria"
+    "title": "Victoria                                                         "
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Victoria (BDF)"
   },
   {
     "artist": "Michel Sardou",
     "title": "Vladimir Ilich"
   },
   {
-    "artist": "Michel Sardou",
+    "artist": "Michel Sardou ",
     "title": "Loin"
   },
   {
-    "artist": "Michel Sardou",
+    "artist": "Michel Sardou ",
     "title": "Non Merci"
   },
   {
-    "artist": "Michel Sardou & Garou",
+    "artist": "Michel Sardou & Garou ",
     "title": "La rivière de notre enfance"
   },
   {
@@ -7153,15 +7365,15 @@
   },
   {
     "artist": "Michèle Torr",
-    "title": "Ave Maria"
+    "title": "Ave Maria (Gounod) "
   },
   {
     "artist": "Michèle Torr",
-    "title": "Lui"
+    "title": "Lui (BDFab)"
   },
   {
     "artist": "Michèle Torr",
-    "title": "Un enfant c'est comme ça"
+    "title": "Un enfant c'est comme ça\t\t\t\t\t"
   },
   {
     "artist": "Michelle Torr",
@@ -7173,10 +7385,10 @@
   },
   {
     "artist": "Mickael Miro",
-    "title": "Dans ma boule de cristal"
+    "title": "Dans ma boule de cristal             "
   },
   {
-    "artist": "Mickey 3D",
+    "artist": "Mickey 3D ",
     "title": "Respire"
   },
   {
@@ -7189,7 +7401,7 @@
   },
   {
     "artist": "Mike Brant",
-    "title": "Elle a gardé ses yeux d'enfant"
+    "title": "Elle a gardé ses yeux d'enfant\t\t\t\t\t"
   },
   {
     "artist": "Mike Brant",
@@ -7201,7 +7413,7 @@
   },
   {
     "artist": "Mike Brant",
-    "title": "On se retrouve par hazard"
+    "title": "On se retrouve par hazard\t\t\t\t\t"
   },
   {
     "artist": "Mike Brant",
@@ -7212,24 +7424,24 @@
     "title": "Rien qu'une larme"
   },
   {
-    "artist": "Mike Brant",
-    "title": "Medley"
+    "artist": "Mike Brant     ",
+    "title": "Medley "
   },
   {
-    "artist": "Mike Brant",
-    "title": "Tout donné, tout repris"
+    "artist": "Mike Brant              ",
+    "title": "Tout donné, tout repris "
   },
   {
-    "artist": "Mike Brant",
-    "title": "Mais dans la lumière"
+    "artist": "Mike Brant                 ",
+    "title": "Mais dans la lumière "
   },
   {
-    "artist": "Mike Brant",
-    "title": "Qui pourra te dire"
+    "artist": "Mike Brant                   ",
+    "title": "Qui pourra te dire "
   },
   {
-    "artist": "Mike Brant",
-    "title": "Viens ce soir"
+    "artist": "Mike Brant                        ",
+    "title": "Viens ce soir "
   },
   {
     "artist": "Mireille Mathieu",
@@ -7265,15 +7477,15 @@
   },
   {
     "artist": "Moon Ray",
-    "title": "Comanchero"
+    "title": "Comanchero "
   },
   {
     "artist": "Moos",
-    "title": "Au nom de la rose"
+    "title": " Au nom de la rose"
   },
   {
     "artist": "Mort Schuman",
-    "title": "Un été de porcelaine"
+    "title": "Un été de porcelaine (MPK)"
   },
   {
     "artist": "Mort Shuman",
@@ -7317,7 +7529,11 @@
   },
   {
     "artist": "Mylène Farmer",
-    "title": "Désenchantée"
+    "title": "Désenchantée                        "
+  },
+  {
+    "artist": "Mylène Farmer",
+    "title": "Désenchantée (24)"
   },
   {
     "artist": "Mylène Farmer",
@@ -7377,7 +7593,7 @@
   },
   {
     "artist": "Naps",
-    "title": "La kiffance"
+    "title": "La kiffance\t\t\t\t\t"
   },
   {
     "artist": "Natasha Saint-Pier",
@@ -7408,12 +7624,12 @@
     "title": "Je n’ai que mon âme"
   },
   {
-    "artist": "Natasha St-Pier",
-    "title": "Tant que c'est toi"
+    "artist": "Natasha St-Pier              ",
+    "title": "Tant que c'est toi "
   },
   {
     "artist": "Nathalie Cardone",
-    "title": "Hasta siempre"
+    "title": "Hasta siempre (Che Guevara)"
   },
   {
     "artist": "Nathalie Cardone",
@@ -7429,7 +7645,7 @@
   },
   {
     "artist": "Natoo",
-    "title": "Je sais pas danser"
+    "title": "Je sais pas danser\t\t\t\t\t"
   },
   {
     "artist": "Nej",
@@ -7481,7 +7697,7 @@
   },
   {
     "artist": "Niagara",
-    "title": "Tchiki boum"
+    "title": "Tchiki boum "
   },
   {
     "artist": "Nicolas Peyrac",
@@ -7533,11 +7749,11 @@
   },
   {
     "artist": "Ninho",
-    "title": "La vie qu’on mène"
+    "title": "La vie qu’on mène\t\t\t\t\t"
   },
   {
     "artist": "Ninho",
-    "title": "Lettre à une femme"
+    "title": "Lettre à une femme\t\t\t\t\t"
   },
   {
     "artist": "Ninho",
@@ -7568,7 +7784,7 @@
     "title": "Le vent nous portera"
   },
   {
-    "artist": "NOIR DESIR",
+    "artist": "NOIR DESIR ",
     "title": "Comme elle vient"
   },
   {
@@ -7577,11 +7793,11 @@
   },
   {
     "artist": "Nolwenn Leroy",
-    "title": "Mon ange"
+    "title": "Mon ange             "
   },
   {
     "artist": "Nolwenn Leroy",
-    "title": "Suivre une étoile"
+    "title": "Suivre une étoile\t\t\t\t\t"
   },
   {
     "artist": "Nolwenn Leroy",
@@ -7657,7 +7873,7 @@
   },
   {
     "artist": "Nour",
-    "title": "Premier amour"
+    "title": "Premier amour\t\t\t\t\t"
   },
   {
     "artist": "NTM",
@@ -7669,19 +7885,15 @@
   },
   {
     "artist": "Nuno Resende",
-    "title": "Le grand soir"
+    "title": "Le grand soir (Eurovision 2005)"
   },
   {
     "artist": "Nuttea",
-    "title": "Trop peu de temps"
+    "title": "Trop peu de temps\t\t\t\t\t"
   },
   {
     "artist": "Obturate",
-    "title": "Sacré Charlemagne"
-  },
-  {
-    "artist": "Olive et Tom champions du foot",
-    "title": ""
+    "title": "Sacré Charlemagne "
   },
   {
     "artist": "Ophélie Winter",
@@ -7697,11 +7909,11 @@
   },
   {
     "artist": "Orelsan",
-    "title": "Jour meilleur"
+    "title": "Jour meilleur (BDF)"
   },
   {
     "artist": "Orelsan",
-    "title": "La terre est ronde"
+    "title": "La terre est ronde\t\t\t\t\t"
   },
   {
     "artist": "Ozone",
@@ -7709,7 +7921,7 @@
   },
   {
     "artist": "P Fiori, F Pagny, P Bruel, J C Papi",
-    "title": "Terra Corsa"
+    "title": "Terra Corsa "
   },
   {
     "artist": "P.Santoro/N.Resende/P.Davilla",
@@ -7717,7 +7929,7 @@
   },
   {
     "artist": "Pablo Villafranca",
-    "title": "La peine maximum"
+    "title": "La peine maximum (Les X command.)"
   },
   {
     "artist": "Pacifique",
@@ -7753,7 +7965,7 @@
   },
   {
     "artist": "Pascal Obispo",
-    "title": "À Qui Dire Qu'on Est Seul"
+    "title": "À Qui Dire Qu'on Est Seul\t\t\t\t\t"
   },
   {
     "artist": "Pascal Obispo",
@@ -7857,6 +8069,10 @@
   },
   {
     "artist": "Patricia Kaas",
+    "title": "Mon mec à moi (BDF)"
+  },
+  {
+    "artist": "Patricia Kaas",
     "title": "Quand Jimmy dit"
   },
   {
@@ -7864,32 +8080,32 @@
     "title": "Regarde les riches"
   },
   {
-    "artist": "Patricia Kaas",
-    "title": "Je voudrais la connaître"
+    "artist": "Patricia Kaas          ",
+    "title": "Je voudrais la connaître "
   },
   {
-    "artist": "Patricia Kaas",
-    "title": "Entrer dans la lumière"
+    "artist": "Patricia Kaas            ",
+    "title": "Entrer dans la lumière "
   },
   {
-    "artist": "Patricia Kaas",
-    "title": "Je le garde pour toi"
+    "artist": "Patricia Kaas              ",
+    "title": "Je le garde pour toi "
   },
   {
-    "artist": "Patricia Kaas",
-    "title": "Ceux qui n'ont rien"
+    "artist": "Patricia Kaas               ",
+    "title": "Ceux qui n'ont rien "
   },
   {
-    "artist": "Patricia Kaas",
-    "title": "Et je m'en veut"
+    "artist": "Patricia Kaas               ",
+    "title": "Et je m'en veut "
   },
   {
-    "artist": "Patricia Kaas",
-    "title": "Kennedy Rose"
+    "artist": "Patricia Kaas                      ",
+    "title": "Kennedy Rose "
   },
   {
     "artist": "Patricia Lavila",
-    "title": "Pour Toi C'est Rien, Pour Moi C'est Tout"
+    "title": "Pour Toi C'est Rien, Pour Moi C'est Tout (JP)"
   },
   {
     "artist": "Patrick Bruel",
@@ -7897,7 +8113,7 @@
   },
   {
     "artist": "Patrick Bruel",
-    "title": "Au café des délices"
+    "title": "Au café des délices (BDF)"
   },
   {
     "artist": "Patrick Bruel",
@@ -7929,7 +8145,7 @@
   },
   {
     "artist": "Patrick Bruel",
-    "title": "Je fais semblant"
+    "title": "Je fais semblant\t\t\t\t\t"
   },
   {
     "artist": "Patrick Bruel",
@@ -7941,7 +8157,7 @@
   },
   {
     "artist": "Patrick Bruel",
-    "title": "Pas eu le temps"
+    "title": "Pas eu le temps\t\t\t\t\t"
   },
   {
     "artist": "Patrick Bruel",
@@ -7953,22 +8169,22 @@
   },
   {
     "artist": "Patrick Bruel",
-    "title": "Qui a le droit"
+    "title": "Qui a le droit (BDF)"
   },
   {
     "artist": "Patrick Bruel",
     "title": "tout s'éfface"
   },
   {
-    "artist": "Patrick Bruel",
-    "title": "Alors regarde"
+    "artist": "Patrick Bruel ",
+    "title": "Alors regarde (BDF)"
   },
   {
-    "artist": "Patrick Bruel",
+    "artist": "Patrick Bruel ",
     "title": "Au café des délices"
   },
   {
-    "artist": "Patrick Bruel",
+    "artist": "Patrick Bruel ",
     "title": "Mon amant de st jean"
   },
   {
@@ -7989,7 +8205,7 @@
   },
   {
     "artist": "Patrick Fiori",
-    "title": "Elles"
+    "title": "Elles                               "
   },
   {
     "artist": "Patrick Fiori",
@@ -8004,19 +8220,19 @@
     "title": "Que tu reviennes"
   },
   {
-    "artist": "Patrick Fiori",
+    "artist": "Patrick Fiori ",
     "title": "Chrysalide"
   },
   {
-    "artist": "Patrick Fiori",
-    "title": "Toutes les peines"
+    "artist": "Patrick Fiori             ",
+    "title": "Toutes les peines "
   },
   {
-    "artist": "Patrick Fiori",
-    "title": "Sans bruit"
+    "artist": "Patrick Fiori                        ",
+    "title": "Sans bruit "
   },
   {
-    "artist": "Patrick Fiori & Jean jacques Goldman",
+    "artist": "Patrick Fiori & Jean jacques Goldman  ",
     "title": "4 mots sur un piano"
   },
   {
@@ -8029,27 +8245,27 @@
   },
   {
     "artist": "Patrick Juvet",
-    "title": "Où Sont Les Femmes ?"
+    "title": "Où Sont Les Femmes ? "
   },
   {
-    "artist": "Patrick Juvet",
-    "title": "Les bleus au coeur"
+    "artist": "Patrick Juvet                ",
+    "title": "Les bleus au coeur "
   },
   {
-    "artist": "Patrick Juvet",
-    "title": "Toujours du cinéma"
+    "artist": "Patrick Juvet                ",
+    "title": "Toujours du cinéma "
   },
   {
-    "artist": "Patrick Juvet",
-    "title": "La musica"
+    "artist": "Patrick Juvet                         ",
+    "title": "La musica "
   },
   {
-    "artist": "Patrick Juvet",
-    "title": "Magic"
+    "artist": "Patrick Juvet                             ",
+    "title": "Magic "
   },
   {
-    "artist": "Patrick Juvet",
-    "title": "Sonia"
+    "artist": "Patrick Juvet                             ",
+    "title": "Sonia "
   },
   {
     "artist": "Patxi Garat",
@@ -8173,11 +8389,11 @@
   },
   {
     "artist": "Pierre Bachelet",
-    "title": "Marionnettiste"
+    "title": "Marionnettiste                    "
   },
   {
     "artist": "Pierre de Maere",
-    "title": "Un jour je marierai un ange"
+    "title": "Un jour je marierai un ange\t\t\t\t\t"
   },
   {
     "artist": "Pierre Dudan",
@@ -8189,7 +8405,7 @@
   },
   {
     "artist": "Pierre Garnier",
-    "title": "Nous on sait"
+    "title": "Nous on sait (BDF)"
   },
   {
     "artist": "Pierre Garnier & M Pokora",
@@ -8198,6 +8414,10 @@
   {
     "artist": "Pierre Groscolas",
     "title": "Lady Lay"
+  },
+  {
+    "artist": "Pierre Groscolas",
+    "title": "Lady Lay(BDF)"
   },
   {
     "artist": "Pierre Perret",
@@ -8209,11 +8429,11 @@
   },
   {
     "artist": "Pierre Perret",
-    "title": "Ouvrez la cage aux oiseaux"
+    "title": "Ouvrez la cage aux oiseaux          "
   },
   {
-    "artist": "Pierre Rapsat",
-    "title": "L'enfant du 92 ème"
+    "artist": "Pierre Rapsat ",
+    "title": " L'enfant du 92 ème"
   },
   {
     "artist": "Placebo",
@@ -8233,7 +8453,7 @@
   },
   {
     "artist": "Pow Wow",
-    "title": "Le lion est mort ce soir"
+    "title": "Le lion est mort ce soir "
   },
   {
     "artist": "Princesse Erika",
@@ -8245,7 +8465,7 @@
   },
   {
     "artist": "Priscilla",
-    "title": "Bric A Brac"
+    "title": "Bric A Brac "
   },
   {
     "artist": "Priscilla",
@@ -8256,12 +8476,12 @@
     "title": "Tchouk Tchouk Music"
   },
   {
-    "artist": "Priscilla",
+    "artist": "Priscilla ",
     "title": "Jalousie"
   },
   {
-    "artist": "Priscilla",
-    "title": "Toujours Pas D'Amour"
+    "artist": "Priscilla ",
+    "title": "Toujours Pas D'Amour "
   },
   {
     "artist": "Queen",
@@ -8288,6 +8508,10 @@
     "title": "Caravane"
   },
   {
+    "artist": "Raphaël",
+    "title": "Caravane (BDF)"
+  },
+  {
     "artist": "Raphael & Jean-Louis Aubert",
     "title": "Sur La Route"
   },
@@ -8300,7 +8524,7 @@
     "title": "Mets de l'huile"
   },
   {
-    "artist": "Regiani",
+    "artist": "Regiani ",
     "title": "MA FILLE MON ENFANT"
   },
   {
@@ -8317,7 +8541,7 @@
   },
   {
     "artist": "Reine des neiges",
-    "title": "Libérée, délivrée"
+    "title": "Libérée, délivrée                "
   },
   {
     "artist": "Renaud",
@@ -8392,7 +8616,7 @@
     "title": "Viens chez moi, j'habite chez une copine"
   },
   {
-    "artist": "Renaud & Axelle Red",
+    "artist": "Renaud & Axelle Red ",
     "title": "Manhattan Kaboul"
   },
   {
@@ -8432,12 +8656,12 @@
     "title": "Tu parles trop"
   },
   {
-    "artist": "Richard Anthony",
-    "title": "C'est ma fête"
+    "artist": "Richard Anthony                   ",
+    "title": "C'est ma fête "
   },
   {
-    "artist": "Richard Anthony",
-    "title": "Ce monde"
+    "artist": "Richard Anthony                        ",
+    "title": "Ce monde "
   },
   {
     "artist": "Richard Cocciante",
@@ -8450,6 +8674,10 @@
   {
     "artist": "Richard Cocciante",
     "title": "Avec simplicité"
+  },
+  {
+    "artist": "Richard Cocciante",
+    "title": "Avec simplicité (MPK)"
   },
   {
     "artist": "Richard Cocciante",
@@ -8466,6 +8694,10 @@
   {
     "artist": "Richard Cocciante",
     "title": "Pour elle"
+  },
+  {
+    "artist": "Richard Cocciante",
+    "title": "Pour elle (BDF)"
   },
   {
     "artist": "Richard Cocciante",
@@ -8517,6 +8749,10 @@
   },
   {
     "artist": "Roch Voisine",
+    "title": "Avant de partir (26)"
+  },
+  {
+    "artist": "Roch Voisine",
     "title": "Et si"
   },
   {
@@ -8525,15 +8761,19 @@
   },
   {
     "artist": "Roch Voisine",
+    "title": "Hélène (2026)"
+  },
+  {
+    "artist": "Roch Voisine",
     "title": "J'entends frapper"
   },
   {
     "artist": "Roch Voisine",
-    "title": "Je L’Ai Vu"
+    "title": "Je L’Ai Vu "
   },
   {
     "artist": "Roch Voisine",
-    "title": "On the outside"
+    "title": "On the outside "
   },
   {
     "artist": "Roch Voisine",
@@ -8557,11 +8797,11 @@
   },
   {
     "artist": "Roméo & Juliette",
-    "title": "Avoir une fille"
+    "title": "Avoir une fille "
   },
   {
     "artist": "Roméo & Juliette",
-    "title": "C'est pas ma faute"
+    "title": "C'est pas ma faute "
   },
   {
     "artist": "Roméo & Juliette",
@@ -8573,7 +8813,7 @@
   },
   {
     "artist": "Roméo & Juliette",
-    "title": "Et voilà qu'elle aime"
+    "title": "Et voilà qu'elle aime "
   },
   {
     "artist": "Roméo & Juliette",
@@ -8581,7 +8821,7 @@
   },
   {
     "artist": "Roméo & Juliette",
-    "title": "Les beaux, les laids"
+    "title": "Les beaux, les laids "
   },
   {
     "artist": "Roméo & Juliette",
@@ -8596,20 +8836,20 @@
     "title": "Vérone"
   },
   {
-    "artist": "Romeo & Juliette",
+    "artist": "Romeo & Juliette ",
     "title": "J'ai peur"
   },
   {
     "artist": "Roméo Elvis",
-    "title": "Soleil"
+    "title": "Soleil\t\t\t\t\t"
   },
   {
     "artist": "Roméo et Juliette",
-    "title": "Les rois du monde"
+    "title": "Les rois du monde (avec choeurs)\t\t\t\t\t"
   },
   {
-    "artist": "ROSE",
-    "title": "la liste"
+    "artist": "ROSE ",
+    "title": " la liste"
   },
   {
     "artist": "Rose Laurens",
@@ -8645,6 +8885,10 @@
   },
   {
     "artist": "Sacha Distel",
+    "title": "Ma femme (KT)"
+  },
+  {
+    "artist": "Sacha Distel",
     "title": "Scoubidou"
   },
   {
@@ -8652,8 +8896,8 @@
     "title": "Toute la pluie tombe sur moi"
   },
   {
-    "artist": "Sacha Distel",
-    "title": "Ces mots stupides"
+    "artist": "Sacha Distel                  ",
+    "title": "Ces mots stupides "
   },
   {
     "artist": "Saint Granier",
@@ -8665,7 +8909,7 @@
   },
   {
     "artist": "Salvatore Fuca",
-    "title": "Pour la Sicile mon île"
+    "title": "Pour la Sicile mon île\t\t\t\t\t"
   },
   {
     "artist": "Sandy",
@@ -8692,11 +8936,11 @@
     "title": "Hello"
   },
   {
-    "artist": "Michel Sardou",
+    "artist": "Michel Sardou ",
     "title": "Je ne sais plus rien"
   },
   {
-    "artist": "Michel Sardou",
+    "artist": "Michel Sardou ",
     "title": "Salut"
   },
   {
@@ -8705,7 +8949,7 @@
   },
   {
     "artist": "Sébastien El Chato",
-    "title": "Ça Pleure Aussi Un Homme"
+    "title": "Ça Pleure Aussi Un Homme       "
   },
   {
     "artist": "Serge Gains & E. Mitchell",
@@ -8773,6 +9017,10 @@
   },
   {
     "artist": "Serge Lama",
+    "title": "Je suis malade (BDF)\t\t\t\t\t"
+  },
+  {
+    "artist": "Serge Lama",
     "title": "Le temps de la rengaine"
   },
   {
@@ -8797,7 +9045,7 @@
   },
   {
     "artist": "Serge Reggiani",
-    "title": "L'italien"
+    "title": "L'italien  "
   },
   {
     "artist": "Serge Reggiani",
@@ -8816,16 +9064,16 @@
     "title": "Votre fille a vingt ans"
   },
   {
-    "artist": "Serge Reggiani",
+    "artist": "Serge Reggiani ",
     "title": "Le petit garçon"
   },
   {
-    "artist": "Séverine",
-    "title": "Un banc, un arbre, une rue"
+    "artist": "Séverine             ",
+    "title": "Un banc, un arbre, une rue "
   },
   {
     "artist": "Sexion d'Assaut",
-    "title": "Désolé"
+    "title": "Désolé  "
   },
   {
     "artist": "Shake",
@@ -8833,19 +9081,19 @@
   },
   {
     "artist": "Shake",
-    "title": "Je viens de loin"
+    "title": "Je viens de loin\t\t\t\t\t"
   },
   {
     "artist": "Shake",
-    "title": "Rien n est plus beau que l amour"
+    "title": "Rien n est plus beau que l amour(kf)\t\t\t\t\t"
   },
   {
     "artist": "Shake",
-    "title": "Rien n'est plus beau que l'amour"
+    "title": "Rien n'est plus beau que l'amour            "
   },
   {
     "artist": "Shake",
-    "title": "Rien n'est Plus Beau que L'amour"
+    "title": "Rien n'est Plus Beau que L'amour(Tino)\t\t\t\t\t"
   },
   {
     "artist": "Shake",
@@ -8853,18 +9101,18 @@
   },
   {
     "artist": "Shake",
-    "title": "Tu sais je t'aime"
+    "title": "Tu sais je t'aime(Tino)\t\t\t\t\t"
   },
   {
-    "artist": "Shake",
+    "artist": "Shake  ",
     "title": "Tu sais je t'aime"
   },
   {
     "artist": "Shakira",
-    "title": "Je l'aime à mourir"
+    "title": "Je l'aime à mourir\t\t\t\t\t"
   },
   {
-    "artist": "Shakira",
+    "artist": "Shakira ",
     "title": "Je laime a mourir"
   },
   {
@@ -8885,7 +9133,7 @@
   },
   {
     "artist": "Sheila",
-    "title": "Patrick mon chéri"
+    "title": "Patrick mon chéri\t\t\t\t\t"
   },
   {
     "artist": "Sheila",
@@ -8893,7 +9141,7 @@
   },
   {
     "artist": "Sheila & Ringo",
-    "title": "Les gondoles a Venise"
+    "title": "Les gondoles a Venise (G64)"
   },
   {
     "artist": "Sheila et Ringo",
@@ -8917,22 +9165,22 @@
   },
   {
     "artist": "Shym",
-    "title": "Rêves d'enfants"
+    "title": "Rêves d'enfants  "
   },
   {
     "artist": "Shym",
     "title": "Victoire"
   },
   {
-    "artist": "Siaka",
-    "title": "Los Angeles"
+    "artist": "Siaka ",
+    "title": " Los Angeles"
   },
   {
     "artist": "Sim & Topaloff",
     "title": "Où est ma chemise grise"
   },
   {
-    "artist": "Sinsemilia",
+    "artist": "Sinsemilia ",
     "title": "Tout le bonheur du monde"
   },
   {
@@ -8941,11 +9189,11 @@
   },
   {
     "artist": "Slimane",
-    "title": "A fleur de toi"
+    "title": "A fleur de toi                            "
   },
   {
     "artist": "Slimane",
-    "title": "Adieu"
+    "title": "Adieu                                     "
   },
   {
     "artist": "Slimane",
@@ -8953,7 +9201,7 @@
   },
   {
     "artist": "Slimane",
-    "title": "Des milliers de je t’aime"
+    "title": "Des milliers de je t’aime\t\t\t\t\t"
   },
   {
     "artist": "Slimane",
@@ -8961,7 +9209,7 @@
   },
   {
     "artist": "Slimane",
-    "title": "Je te promets"
+    "title": "Je te promets\t\t\t\t\t"
   },
   {
     "artist": "Slimane",
@@ -8969,7 +9217,7 @@
   },
   {
     "artist": "Slimane",
-    "title": "La chanson des vieux amant"
+    "title": "La chanson des vieux amant\t\t\t\t\t"
   },
   {
     "artist": "Slimane",
@@ -8981,7 +9229,7 @@
   },
   {
     "artist": "Slimane",
-    "title": "Paname"
+    "title": "Paname                        "
   },
   {
     "artist": "Slimane",
@@ -8993,23 +9241,27 @@
   },
   {
     "artist": "Slimane",
-    "title": "Tourner la tête"
+    "title": "Tourner la tête "
   },
   {
     "artist": "Slimane",
-    "title": "Mon amour"
+    "title": "Tourner la tête  (BDF)"
   },
   {
-    "artist": "Slimane",
-    "title": "Le vide"
+    "artist": "Slimane ",
+    "title": " Mon amour (BDF)"
+  },
+  {
+    "artist": "Slimane ",
+    "title": "Le vide                 "
   },
   {
     "artist": "Slimane & Claudio Capéo",
-    "title": "Chez toi"
+    "title": "Chez toi "
   },
   {
     "artist": "Slimane & Vitaa",
-    "title": "Avant Toi"
+    "title": "Avant Toi\t\t\t\t\t"
   },
   {
     "artist": "Slimane & Vitaa",
@@ -9024,12 +9276,12 @@
     "title": "Dominique"
   },
   {
-    "artist": "Sofia Mestari",
-    "title": "Ne pars pas"
+    "artist": "Sofia Mestari                       ",
+    "title": "Ne pars pas "
   },
   {
     "artist": "Soldat Louis",
-    "title": "Du rhum des femmes"
+    "title": "Du rhum des femmes "
   },
   {
     "artist": "Soldat Louis",
@@ -9041,19 +9293,19 @@
   },
   {
     "artist": "Soolking",
-    "title": "Suavemente"
+    "title": "Suavemente\t\t\t\t\t"
   },
   {
     "artist": "Soolking feat Reynmen",
-    "title": "Askim"
+    "title": "Askim\t\t\t\t\t"
   },
   {
     "artist": "Soprano",
-    "title": "Cosmo"
+    "title": "Cosmo\t\t\t\t\t"
   },
   {
     "artist": "Soprano",
-    "title": "En feu"
+    "title": "En feu                                    "
   },
   {
     "artist": "Soprano",
@@ -9061,23 +9313,23 @@
   },
   {
     "artist": "Soprano",
-    "title": "Hiro"
+    "title": "Hiro                                                                   "
   },
   {
     "artist": "Soprano",
-    "title": "Moi j'ai pas"
+    "title": "Moi j'ai pas                                                           "
   },
   {
     "artist": "Soprano",
-    "title": "Mon précieux"
+    "title": "Mon précieux\t\t\t\t\t"
   },
   {
     "artist": "Soprano Feat Vicenzo",
-    "title": "Le Coach"
+    "title": "Le Coach\t\t\t\t\t"
   },
   {
     "artist": "Soprano&Léa Caste",
-    "title": "Dernière Chance"
+    "title": "Dernière Chance                 "
   },
   {
     "artist": "Star Academy",
@@ -9089,11 +9341,11 @@
   },
   {
     "artist": "STARAC 3",
-    "title": "L'orange"
+    "title": "L'orange "
   },
   {
     "artist": "STARAC 4",
-    "title": "Laissez-Moi Danser"
+    "title": "Laissez-Moi Danser "
   },
   {
     "artist": "STARACADEMY",
@@ -9121,6 +9373,10 @@
   },
   {
     "artist": "Starmania",
+    "title": "Le blues du businessman (BDF)"
+  },
+  {
+    "artist": "Starmania",
     "title": "Le monde est stone"
   },
   {
@@ -9145,7 +9401,7 @@
   },
   {
     "artist": "Starmania",
-    "title": "Quand on n'a plus rien à perdre"
+    "title": "Quand on n'a plus rien à perdre (BDF)"
   },
   {
     "artist": "Starmania",
@@ -9169,11 +9425,11 @@
   },
   {
     "artist": "Stéphan Eicher",
-    "title": "Pas d'ami"
+    "title": "Pas d'ami ( comme toi )"
   },
   {
     "artist": "Stéphane Eicher",
-    "title": "Déjeuner en paix"
+    "title": "Déjeuner en paix (BDF)\t\t\t\t\t"
   },
   {
     "artist": "Stéphane Eisher",
@@ -9205,7 +9461,7 @@
   },
   {
     "artist": "Superbus",
-    "title": "Lola"
+    "title": "Lola                                                                  "
   },
   {
     "artist": "Suzy Delair",
@@ -9300,8 +9556,8 @@
     "title": "Les poèmes de Michelle"
   },
   {
-    "artist": "Terri Moise",
-    "title": "Je serai là"
+    "artist": "Terri Moise                     ",
+    "title": "Je serai là "
   },
   {
     "artist": "Tété",
@@ -9309,15 +9565,15 @@
   },
   {
     "artist": "Thierry Amiel",
-    "title": "Les Mots Bleus"
+    "title": "Les Mots Bleus "
   },
   {
     "artist": "Thierry Cam",
-    "title": "Tout au fond des océans"
+    "title": "Tout au fond des océans\t\t\t\t\t"
   },
   {
     "artist": "Thierry Cham",
-    "title": "Océan"
+    "title": "Océan "
   },
   {
     "artist": "Thierry Hazard",
@@ -9337,7 +9593,7 @@
   },
   {
     "artist": "Thierry Le Luron",
-    "title": "Nous Nous Reverrons Un Jour Ou L’Autre"
+    "title": "Nous Nous Reverrons Un Jour Ou L’Autre "
   },
   {
     "artist": "Tina Arena",
@@ -9388,24 +9644,24 @@
     "title": "Sûr et certain"
   },
   {
-    "artist": "Tony Christie",
-    "title": "Amarillo"
+    "artist": "Tony Christie                          ",
+    "title": "Amarillo "
   },
   {
     "artist": "Tout ce qui brille",
-    "title": "Chanson sur ma drôle de vie"
+    "title": "Chanson sur ma drôle de vie      "
   },
   {
     "artist": "Tragedie",
-    "title": "Gentleman"
+    "title": "Gentleman "
   },
   {
     "artist": "Tragedie",
-    "title": "Hey Oh"
+    "title": "Hey Oh\t\t\t\t\t"
   },
   {
     "artist": "Tragedie",
-    "title": "L'Art Du Corps Et Du Coeur"
+    "title": "L'Art Du Corps Et Du Coeur "
   },
   {
     "artist": "Tragédie",
@@ -9445,19 +9701,19 @@
   },
   {
     "artist": "Vaya con dios",
-    "title": "Quand elle rit aux éclats"
+    "title": "Quand elle rit aux éclats\t\t\t\t\t"
   },
   {
-    "artist": "Vaya Con Dios",
+    "artist": "Vaya Con Dios ",
     "title": "Johnny tu n'es pas un ange"
   },
   {
     "artist": "Vegedream",
-    "title": "Ramenez la coupe à la maison"
+    "title": "Ramenez la coupe à la maison "
   },
   {
     "artist": "Véronique Sanson",
-    "title": "Bahia"
+    "title": "Bahia              "
   },
   {
     "artist": "Véronique Sanson",
@@ -9485,27 +9741,27 @@
   },
   {
     "artist": "Véronique Sanson",
-    "title": "Vancouver"
+    "title": "Vancouver\t\t\t\t\t"
   },
   {
     "artist": "Véronique Sanson & Vianney",
-    "title": "Chanson sur ma drôle de vie"
+    "title": "Chanson sur ma drôle de vie (voix féminine) "
   },
   {
     "artist": "Vianney",
-    "title": "Beau papa"
+    "title": "Beau papa\t\t\t\t\t"
   },
   {
     "artist": "Vianney",
-    "title": "Je m'en vais"
+    "title": "Je m'en vais      "
   },
   {
     "artist": "Vianney",
-    "title": "On est bien comme ça"
+    "title": "On est bien comme ça                      "
   },
   {
     "artist": "Vianney & Mentissa Aziza",
-    "title": "Parce que c'est toi"
+    "title": "Parce que c'est toi\t\t\t\t\t"
   },
   {
     "artist": "Vicky Léandros",
@@ -9525,19 +9781,19 @@
   },
   {
     "artist": "Vitaa",
-    "title": "Ma soeur"
+    "title": "Ma soeur                                    "
   },
   {
     "artist": "Vitaa",
-    "title": "Pourquoi Les Hommes"
+    "title": "Pourquoi Les Hommes    "
   },
   {
     "artist": "Vitaa",
-    "title": "Ton amoureuse"
+    "title": "Ton amoureuse (BDF)"
   },
   {
     "artist": "Vitaa & Slimane",
-    "title": "Ça va ça vient"
+    "title": "Ça va ça vient (BDF)"
   },
   {
     "artist": "Vitaa ft, Maitre Gims",
@@ -9553,7 +9809,7 @@
   },
   {
     "artist": "We Love Disney",
-    "title": "L'air du vent"
+    "title": "L'air du vent                      "
   },
   {
     "artist": "We Love Disney",
@@ -9577,7 +9833,11 @@
   },
   {
     "artist": "William Sheller",
-    "title": "Un vieux Rock n Roll"
+    "title": "Un homme heureux (BDFab)"
+  },
+  {
+    "artist": "William Sheller",
+    "title": "Un vieux Rock n Roll\t\t\t\t\t"
   },
   {
     "artist": "Willy Denzey",
@@ -9585,23 +9845,23 @@
   },
   {
     "artist": "Willy Denzey",
-    "title": "Honey"
+    "title": "Honey "
   },
   {
     "artist": "Willy Denzey",
     "title": "L'orphelin"
   },
   {
-    "artist": "Willy Denzey",
+    "artist": "Willy Denzey ",
     "title": "Le mur du son"
   },
   {
     "artist": "Yannick",
-    "title": "Ces soirées là"
+    "title": "Ces soirées là                                                         "
   },
   {
     "artist": "Yannick Noah",
-    "title": "En Attendant"
+    "title": "En Attendant "
   },
   {
     "artist": "Yannick Noah",
@@ -9609,7 +9869,7 @@
   },
   {
     "artist": "Yannick Noah",
-    "title": "J'Aurais Dû Comprendre"
+    "title": "J'Aurais Dû Comprendre "
   },
   {
     "artist": "Yannick Noah",
@@ -9633,11 +9893,11 @@
   },
   {
     "artist": "Yannick Noah",
-    "title": "Ose"
+    "title": "Ose "
   },
   {
     "artist": "Yannick Noah",
-    "title": "Quand Ils Sont Là"
+    "title": "Quand Ils Sont Là "
   },
   {
     "artist": "Yannick Noah",
@@ -9648,20 +9908,20 @@
     "title": "Simon Papa Tara"
   },
   {
-    "artist": "Yannick Noah",
-    "title": "Si tu savais"
+    "artist": "Yannick Noah                       ",
+    "title": "Si tu savais "
   },
   {
     "artist": "Yannick Noah & Dezziz La Peste",
-    "title": "Métis"
+    "title": "Métis(se) "
   },
   {
     "artist": "Yanns",
-    "title": "Clic clic pan pan"
+    "title": "Clic clic pan pan\t\t\t\t\t"
   },
   {
     "artist": "Yelle feat Fatal Bazooka",
-    "title": "Parle à ma main"
+    "title": "Parle à ma main\t\t\t\t\t"
   },
   {
     "artist": "Yseult",
@@ -9673,7 +9933,7 @@
   },
   {
     "artist": "Yves Duteil",
-    "title": "La Langue De Chez Nous"
+    "title": "La Langue De Chez Nous "
   },
   {
     "artist": "Yves Duteil",
@@ -9688,8 +9948,8 @@
     "title": "Prendre un enfant par la main"
   },
   {
-    "artist": "Yves Duteil",
-    "title": "Au parc Monceau"
+    "artist": "Yves Duteil                     ",
+    "title": "Au parc Monceau "
   },
   {
     "artist": "Yves Montand",
@@ -9705,7 +9965,7 @@
   },
   {
     "artist": "Yves Montand",
-    "title": "Le carosse"
+    "title": "Le carosse "
   },
   {
     "artist": "Yves Montand",
@@ -9713,7 +9973,7 @@
   },
   {
     "artist": "Yves Montand",
-    "title": "Le temps des cerises"
+    "title": "Le temps des cerises                                              "
   },
   {
     "artist": "Yves Montand",
@@ -9732,8 +9992,8 @@
     "title": "Au pays des merveilles de Juliet"
   },
   {
-    "artist": "Yves Simon",
-    "title": "Diabolo menthe"
+    "artist": "Yves Simon                       ",
+    "title": "Diabolo menthe "
   },
   {
     "artist": "Zachary Richard",
@@ -9745,11 +10005,11 @@
   },
   {
     "artist": "Zaho",
-    "title": "Oh mama"
+    "title": "Oh mama\t\t\t\t\t"
   },
   {
     "artist": "Zaho",
-    "title": "Roi 2 cœur ft Indila"
+    "title": "Roi 2 cœur ft Indila\t\t\t\t\t"
   },
   {
     "artist": "Zaho",
@@ -9757,7 +10017,7 @@
   },
   {
     "artist": "Zaho de Sagazan",
-    "title": "La symphonie des éclairs"
+    "title": "La symphonie des éclairs (BDFab)"
   },
   {
     "artist": "Zaz",
@@ -9788,7 +10048,7 @@
     "title": "Je suis un homme"
   },
   {
-    "artist": "Zazie",
+    "artist": "Zazie ",
     "title": "Rodéo"
   },
   {
@@ -9801,6 +10061,6 @@
   },
   {
     "artist": "Zouk Machine",
-    "title": "Maldon"
+    "title": "Maldon (La musique dans la peau) "
   }
 ]
