@@ -16,9 +16,7 @@
 
 <header>
 
-<img src="logo.png" id="logo" alt="Floribar">
-
-<h1>KARAOKE</h1>
+<img src="logo.png" id="logo" alt="Floribar Karaoke">
 
 <input
 type="text"
@@ -30,29 +28,53 @@ autocomplete="off">
 
 <main>
 
+<section id="homePage">
+
 <div id="welcome">
 
-    <div id="welcomeSearch" class="welcomeAction">
-        <span class="icon">🎤</span>
-        <span>Pick your song and let's sing!</span>
-    </div>
+<div class="welcomeAction">
 
-    <div id="welcomeCatalog" class="welcomeAction">
-        <span class="icon">📚</span>
-        <span>View our entire catalog</span>
-    </div>
+<span class="icon">🎤</span>
+
+<span>Pick your song and let's sing!</span>
 
 </div>
+
+<div class="welcomeAction">
+
+<span class="icon">📚</span>
+
+<span>Or view our entire catalog</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="catalogPage" class="hidden">
+
+<div class="catalogItem" data-file="english.json">📚 English</div>
+
+<div class="catalogItem" data-file="francais.json">📚 Français</div>
+
+<div class="catalogItem" data-file="nederlands.json">📚 Nederlands</div>
+
+<div class="catalogItem" data-file="italiano.json">📚 Italiano</div>
+
+<div class="catalogItem" data-file="espanol.json">📚 Español</div>
+
+</section>
+
+<section id="songsPage" class="hidden">
 
 <div id="songs"></div>
 
-<div id="catalog" class="hidden">
-
-</div>
+</section>
 
 </main>
 
-<nav>
+<nav class="bottomNav">
 
 <button id="homeBtn">
 🏠 Home
