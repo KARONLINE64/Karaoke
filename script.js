@@ -1,104 +1,233 @@
 let songs = [];
+let currentSongs = [];
+let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
-const songsDiv = document.getElementById("songs");
 const search = document.getElementById("search");
 
-fetch("songs.json")
-.then(response => response.json())
-.then(data => {
+const homePage = document.getElementById("homePage");
+const catalogPage = document.getElementById("catalogPage");
+const songsPage = document.getElementById("songsPage");
 
-    songs = data.sort((a, b) => {
+const songsDiv = document.getElementById("songs");
 
-        if (a.artist === b.artist) {
-            return a.title.localeCompare(b.title);
-        }
+const homeBtn = document.getElementById("homeBtn");
+const catalogBtn = document.getElementById("catalogBtn");
+const favBtn = document.getElementById("favBtn");
 
-        return a.artist.localeCompare(b.artist);
+function showHome(){
 
-    });
+homePage.classList.remove("hidden");
 
-    display(songs);
+catalogPage.classList.add("hidden");
 
-});
+songsPage.classList.add("hidden");
 
-function display(list) {
-
-    songsDiv.innerHTML = "";
-
-    list.forEach(song => {
-
-        const card = document.createElement("div");
-        card.className = "song";
-
-        const left = document.createElement("div");
-
-        const artist = document.createElement("div");
-        artist.className = "artist";
-        artist.textContent = song.artist;
-
-        const title = document.createElement("div");
-        title.className = "title";
-        title.textContent = song.title;
-
-        left.appendChild(artist);
-        left.appendChild(title);
-
-        const star = document.createElement("div");
-        star.className = "star";
-
-        const id = song.artist + " - " + song.title;
-
-        let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-
-        if (favorites.includes(id)) {
-            star.textContent = "★";
-            star.classList.add("selected");
-        } else {
-            star.textContent = "☆";
-        }
-
-        star.onclick = function () {
-
-            let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-
-            if (favorites.includes(id)) {
-
-                favorites = favorites.filter(item => item !== id);
-
-                star.textContent = "☆";
-                star.classList.remove("selected");
-
-            } else {
-
-                favorites.push(id);
-
-                star.textContent = "★";
-                star.classList.add("selected");
-
-            }
-
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-
-        };
-
-        card.appendChild(left);
-        card.appendChild(star);
-
-        songsDiv.appendChild(card);
-
-    });
+search.value="";
 
 }
 
-search.addEventListener("input", function () {
+function showCatalog(){
 
-    const value = search.value.toLowerCase();
+homePage.classList.add("hidden");
 
-    const result = songs.filter(song =>
-        song.artist.toLowerCase().includes(value) ||
-        song.title.toLowerCase().includes(value)
-    );
+catalogPage.classList.remove("hidden");
 
-    display(result);
+songsPage.classList.add("hidden");
+
+search.value="";
+
+}
+
+function showSongs(list){
+
+homePage.classList.add("hidden");
+
+catalogPage.classList.add("hidden");
+
+songsPage.classList.remove("hidden");
+
+drawSongs(list);
+
+}
+
+function drawSongs(list){
+
+songsDiv.innerHTML="";
+
+currentSongs=list;
+
+list.forEach(song=>{
+
+const card=document.createElement("div");
+
+card.className="song";
+
+const left=document.createElement("div");
+
+const artist=document.createElement("div");
+
+artist.className="artist";
+
+artist.textContent=song.artist;
+
+const title=document.createElement("div");
+
+title.className="title";
+
+title.textContent=song.title;
+
+left.appendChild(artist);
+
+left.appendChild(title);
+
+const star=document.createElement("div");
+
+star.className="star";
+
+const key=song.artist+"|"+song.title;
+
+if(favorites.includes(key)){
+
+star.textContent="★";
+
+star.classList.add("selected");
+
+}else{
+
+star.textContent="☆";
+
+}
+star.onclick=function(){
+
+if(favorites.includes(key)){
+
+favorites=favorites.filter(item=>item!==key);
+
+star.textContent="☆";
+
+star.classList.remove("selected");
+
+}else{
+
+favorites.push(key);
+
+star.textContent="★";
+
+star.classList.add("selected");
+
+}
+
+localStorage.setItem(
+
+"favorites",
+
+JSON.stringify(favorites)
+
+);
+
+};
+
+card.appendChild(left);
+
+card.appendChild(star);
+
+songsDiv.appendChild(card);
+
+});
+
+}
+
+async function loadLanguage(file){
+
+const response=await fetch(file);
+
+const data=await response.json();
+
+currentSongs=data;
+
+showSongs(currentSongs);
+
+}
+
+fetch("songs.json")
+
+.then(response=>response.json())
+
+.then(data=>{
+
+songs=data.sort((a,b)=>{
+
+if(a.artist===b.artist){
+
+return a.title.localeCompare(b.title);
+
+}
+
+return a.artist.localeCompare(b.artist);
+
+});
+
+showHome();
+
+});
+search.addEventListener("input",function(){
+
+const value=search.value.trim().toLowerCase();
+
+if(value===""){
+
+showHome();
+
+return;
+
+}
+
+const result=songs.filter(song=>
+
+song.artist.toLowerCase().includes(value)
+
+||
+
+song.title.toLowerCase().includes(value)
+
+);
+
+currentSongs=result;
+
+showSongs(currentSongs);
+
+});
+
+homeBtn.onclick=function(){
+
+showHome();
+
+};
+
+catalogBtn.onclick=function(){
+
+showCatalog();
+
+};
+
+favBtn.onclick=function(){
+
+currentSongs=songs.filter(song=>
+
+favorites.includes(song.artist+"|"+song.title)
+
+);
+
+showSongs(currentSongs);
+
+};
+
+document.querySelectorAll(".catalogItem").forEach(item=>{
+
+item.onclick=function(){
+
+loadLanguage(this.dataset.file);
+
+};
 
 });
