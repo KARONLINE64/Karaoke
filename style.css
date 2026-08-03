@@ -1,91 +1,332 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    background:#0b0b0b;
-    color:#ffffff;
-    font-family:Arial,Helvetica,sans-serif;
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#05070d;
+
+background-image:
+radial-gradient(circle at top,
+rgba(0,120,255,.35) 0%,
+rgba(0,70,170,.18) 18%,
+transparent 45%);
+
+background-repeat:no-repeat;
+
+background-size:100% 420px;
+
+color:#ffffff;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
 }
 
 header{
-    text-align:center;
-    padding:30px 20px 20px;
+
+padding:20px 20px 10px;
+
+text-align:center;
+
 }
 
 #logo{
-    width:220px;
-    max-width:80%;
-    margin-bottom:20px;
-    filter:drop-shadow(0 0 20px #2ea8ff);
-}
 
-h1{
-    font-size:2rem;
-    margin-bottom:20px;
-    letter-spacing:3px;
+display:block;
+
+width:min(92vw,560px);
+
+margin:auto;
+
+margin-bottom:20px;
+
 }
 
 #search{
-    width:100%;
-    max-width:650px;
-    padding:16px;
-    font-size:18px;
-    border:none;
-    border-radius:12px;
-    outline:none;
+
+display:block;
+
+width:min(92%,720px);
+
+margin:auto;
+
+padding:17px 24px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:30px;
+
+outline:none;
+
+background:#ffffff;
+
+color:#222;
+
+box-shadow:0 0 22px rgba(0,150,255,.45);
+
+}
+
+#search::placeholder{
+
+color:#666;
+
 }
 
 main{
-    width:95%;
-    max-width:900px;
-    margin:auto;
-    padding-bottom:120px;
+
+width:94%;
+
+max-width:980px;
+
+margin:auto;
+
+padding-bottom:120px;
+
+}
+
+.hidden{
+
+display:none!important;
+
+}
+
+#welcome{
+
+margin-top:50px;
+
+text-align:center;
+
+}
+
+.welcomeAction{
+
+margin:38px 0;
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#fff;
+
+text-shadow:
+0 0 8px #2aa7ff,
+0 0 20px #2aa7ff,
+0 0 35px #007dff;
+
+}
+
+.icon{
+
+margin-right:12px;
+
+}
+
+#catalogPage{
+
+margin-top:40px;
+
+}
+
+.catalogItem{
+
+background:#151b25;
+
+border:1px solid #2b4667;
+
+border-radius:18px;
+
+padding:18px 22px;
+
+margin:14px 0;
+
+font-size:24px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.20s;
+
+box-shadow:0 6px 16px rgba(0,0,0,.35);
+
+}
+
+.catalogItem:hover{
+
+background:#1d2633;
+
+transform:translateY(-2px);
+
 }
 
 .song{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#171717;
-    margin:12px 0;
-    padding:16px;
-    border-radius:12px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:#151b25;
+
+border:1px solid #2b4667;
+
+border-radius:18px;
+
+padding:16px 20px;
+
+margin:12px 0;
+
+box-shadow:0 6px 16px rgba(0,0,0,.35);
+
 }
 
 .artist{
-    font-weight:bold;
-    color:#49b7ff;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#58c8ff;
+
+margin-bottom:4px;
+
 }
 
 .title{
-    color:#ffffff;
-    margin-top:4px;
+
+font-size:16px;
+
+color:#fff;
+
 }
 
 .star{
-    font-size:24px;
-    cursor:pointer;
+
+font-size:28px;
+
+cursor:pointer;
+
+color:#888;
+
+user-select:none;
+
+transition:.15s;
+
 }
 
-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#111;
-    display:flex;
-    justify-content:space-around;
-    padding:16px;
-    border-top:1px solid #333;
+.star:hover{
+
+transform:scale(1.15);
+
 }
 
-nav button{
-    background:none;
-    border:none;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
+.star.selected{
+
+color:#ffd700;
+
+}
+
+.bottomNav{
+
+position:fixed;
+
+left:0;
+
+bottom:0;
+
+width:100%;
+
+height:70px;
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+background:#0d1118;
+
+border-top:1px solid #24374f;
+
+}
+
+.bottomNav button{
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.bottomNav button:hover{
+
+color:#55c7ff;
+
+}
+
+@media(max-width:700px){
+
+#logo{
+
+width:95%;
+
+}
+
+#search{
+
+width:96%;
+
+font-size:17px;
+
+}
+
+.welcomeAction{
+
+font-size:27px;
+
+}
+
+.catalogItem{
+
+font-size:20px;
+
+}
+
+.artist{
+
+font-size:17px;
+
+}
+
+.title{
+
+font-size:15px;
+
+}
+
+.bottomNav button{
+
+font-size:15px;
+
+}
+
 }
