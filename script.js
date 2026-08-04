@@ -1,5 +1,6 @@
 let songs = [];
 let currentSongs = [];
+const languageCache = {};
 let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
 const search = document.getElementById("search");
@@ -139,9 +140,21 @@ songsDiv.appendChild(card);
 
 async function loadLanguage(file){
 
+if(languageCache[file]){
+
+currentSongs=languageCache[file];
+
+showSongs(currentSongs);
+
+return;
+
+}
+
 const response=await fetch(file);
 
 const data=await response.json();
+
+languageCache[file]=data;
 
 currentSongs=data;
 
