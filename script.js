@@ -1,246 +1,151 @@
 let songs = [];
 let currentSongs = [];
-const languageCache = {};
 let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
 const search = document.getElementById("search");
 
 const homePage = document.getElementById("homePage");
 const catalogPage = document.getElementById("catalogPage");
+const newPage = document.getElementById("newPage");
 const songsPage = document.getElementById("songsPage");
 
 const songsDiv = document.getElementById("songs");
 
 const homeBtn = document.getElementById("homeBtn");
 const catalogBtn = document.getElementById("catalogBtn");
+const newBtn = document.getElementById("newBtn");
 const favBtn = document.getElementById("favBtn");
 
-function showHome(){
-
-homePage.classList.remove("hidden");
-
-catalogPage.classList.add("hidden");
-
-songsPage.classList.add("hidden");
-
-search.value="";
-
+function hideAllPages() {
+  homePage.classList.add("hidden");
+  catalogPage.classList.add("hidden");
+  newPage.classList.add("hidden");
+  songsPage.classList.add("hidden");
 }
 
-function showCatalog(){
-
-homePage.classList.add("hidden");
-
-catalogPage.classList.remove("hidden");
-
-songsPage.classList.add("hidden");
-
-search.value="";
-
+function showHome() {
+  hideAllPages();
+  homePage.classList.remove("hidden");
+  search.value = "";
 }
 
-function showSongs(list){
-
-homePage.classList.add("hidden");
-
-catalogPage.classList.add("hidden");
-
-songsPage.classList.remove("hidden");
-
-drawSongs(list);
-
+function showCatalog() {
+  hideAllPages();
+  catalogPage.classList.remove("hidden");
+  search.value = "";
 }
 
-function drawSongs(list){
-
-songsDiv.innerHTML="";
-
-currentSongs=list;
-
-list.forEach(song=>{
-
-const card=document.createElement("div");
-
-card.className="song";
-
-const left=document.createElement("div");
-
-const artist=document.createElement("div");
-
-artist.className="artist";
-
-artist.textContent=song.artist;
-
-const title=document.createElement("div");
-
-title.className="title";
-
-title.textContent=song.title;
-
-left.appendChild(artist);
-
-left.appendChild(title);
-
-const star=document.createElement("div");
-
-star.className="star";
-
-const key=song.artist+"|"+song.title;
-
-if(favorites.includes(key)){
-
-star.textContent="★";
-
-star.classList.add("selected");
-
-}else{
-
-star.textContent="☆";
-
-}
-star.onclick=function(){
-
-if(favorites.includes(key)){
-
-favorites=favorites.filter(item=>item!==key);
-
-star.textContent="☆";
-
-star.classList.remove("selected");
-
-}else{
-
-favorites.push(key);
-
-star.textContent="★";
-
-star.classList.add("selected");
-
+function showNew() {
+  hideAllPages();
+  newPage.classList.remove("hidden");
+  search.value = "";
 }
 
-localStorage.setItem(
-
-"favorites",
-
-JSON.stringify(favorites)
-
-);
-
-};
-
-card.appendChild(left);
-
-card.appendChild(star);
-
-songsDiv.appendChild(card);
-
-});
-
+function showSongs(list) {
+  hideAllPages();
+  songsPage.classList.remove("hidden");
+  drawSongs(list);
 }
 
-async function loadLanguage(file){
+function drawSongs(list) {
+  currentSongs = list;
+  let html = "";
 
-if(languageCache[file]){
+  for (const song of list) {
+    const key = song.artist + "|" + song.title;
+    const selected = favorites.includes(key);
 
-currentSongs=languageCache[file];
+    html += `
+<div class="song">
+  <div>
+    <div class="artist">${song.artist}</div>
+    <div class="title">${song.title}</div>
+  </div>
+  <div class="star ${selected ? "selected" : ""}" data-key="${key}">
+    ${selected ? "★" : "☆"}
+  </div>
+</div>`;
+  }
 
-showSongs(currentSongs);
+  songsDiv.innerHTML = html;
 
-return;
+  songsDiv.querySelectorAll(".star").forEach(star => {
+    star.onclick = function (e) {
+      e.stopPropagation();
+      const key = this.dataset.key;
 
+      if (favorites.includes(key)) {
+        favorites = favorites.filter(x => x !== key);
+        this.textContent = "☆";
+        this.classList.remove("selected");
+      } else {
+        favorites.push(key);
+        this.textContent = "★";
+        this.classList.add("selected");
+      }
+
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    };
+  });
 }
 
-const response=await fetch(file);
-
-const data=await response.json();
-
-languageCache[file]=data;
-
-currentSongs=data;
-
-showSongs(currentSongs);
-
+async function loadLanguage(file) {
+  const response = await fetch(file);
+  const data = await response.json();
+  currentSongs = data;
+  showSongs(currentSongs);
 }
 
 fetch("songs.json")
+  .then(response => response.json())
+  .then(data => {
+    songs = data.sort((a, b) => {
+      if (a.artist === b.artist) {
+        return a.title.localeCompare(b.title);
+      }
+      return a.artist.localeCompare(b.artist);
+    });
+    showHome();
+  });
 
-.then(response=>response.json())
+search.addEventListener("input", function () {
+  const value = search.value.trim().toLowerCase();
 
-.then(data=>{
+  if (value === "") {
+    showHome();
+    return;
+  }
 
-songs=data.sort((a,b)=>{
+  const result = songs.filter(song =>
+    song.artist.toLowerCase().includes(value) ||
+    song.title.toLowerCase().includes(value)
+  );
 
-if(a.artist===b.artist){
-
-return a.title.localeCompare(b.title);
-
-}
-
-return a.artist.localeCompare(b.artist);
-
+  currentSongs = result;
+  showSongs(currentSongs);
 });
 
-showHome();
-
-});
-search.addEventListener("input",function(){
-
-const value=search.value.trim().toLowerCase();
-
-if(value===""){
-
-showHome();
-
-return;
-
-}
-
-const result=songs.filter(song=>
-
-song.artist.toLowerCase().includes(value)
-
-||
-
-song.title.toLowerCase().includes(value)
-
-);
-
-currentSongs=result;
-
-showSongs(currentSongs);
-
-});
-
-homeBtn.onclick=function(){
-
-showHome();
-
+homeBtn.onclick = function () {
+  showHome();
 };
 
-catalogBtn.onclick=function(){
-
-showCatalog();
-
+catalogBtn.onclick = function () {
+  showCatalog();
 };
 
-favBtn.onclick=function(){
-
-currentSongs=songs.filter(song=>
-
-favorites.includes(song.artist+"|"+song.title)
-
-);
-
-showSongs(currentSongs);
-
+newBtn.onclick = function () {
+  showNew();
 };
 
-document.querySelectorAll(".catalogItem").forEach(item=>{
-
-item.onclick=function(){
-
-loadLanguage(this.dataset.file);
-
+favBtn.onclick = function () {
+  currentSongs = songs.filter(song =>
+    favorites.includes(song.artist + "|" + song.title)
+  );
+  showSongs(currentSongs);
 };
 
+document.querySelectorAll(".catalogItem").forEach(item => {
+  item.onclick = function () {
+    loadLanguage(this.dataset.file);
+  };
 });
