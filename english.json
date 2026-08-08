@@ -1785,7 +1785,15 @@
   },
   {
     "artist": "Beach Boys",
+    "title": "Fun Fun Fun"
+  },
+  {
+    "artist": "Beach Boys",
     "title": "Fun, fun, fun"
+  },
+  {
+    "artist": "Beach Boys",
+    "title": "God Only Knows"
   },
   {
     "artist": "Beach Boys",
@@ -1810,6 +1818,10 @@
   {
     "artist": "Beastie Boys",
     "title": "Fight For Your Right"
+  },
+  {
+    "artist": "Beatles",
+    "title": "A Day In The Life"
   },
   {
     "artist": "Beatles",
@@ -2526,6 +2538,10 @@
   {
     "artist": "Black Eyes Peas",
     "title": "Shut Up"
+  },
+  {
+    "artist": "Black Keys",
+    "title": "Lonely Boy"
   },
   {
     "artist": "Black Legend",
@@ -3672,6 +3688,10 @@
     "title": "Drive"
   },
   {
+    "artist": "Cars",
+    "title": "Drive"
+  },
+  {
     "artist": "Cartoons",
     "title": "Doo-Dah"
   },
@@ -3793,6 +3813,10 @@
   },
   {
     "artist": "Celine Dion",
+    "title": "The Greatest Reward"
+  },
+  {
+    "artist": "Celine Dion",
     "title": "The power of love"
   },
   {
@@ -3814,10 +3838,6 @@
   {
     "artist": "Celine Dion",
     "title": "Where does my heart beat now"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "The Greatest Reward"
   },
   {
     "artist": "Celine Dion & B. Streisand",
@@ -3844,6 +3864,14 @@
     "title": "Hero"
   },
   {
+    "artist": "Chainsmokers",
+    "title": "Closer"
+  },
+  {
+    "artist": "Chainsmokers feat. Daya",
+    "title": "Don't let me down"
+  },
+  {
     "artist": "Chaka Khan",
     "title": "I feel for you"
   },
@@ -3858,6 +3886,10 @@
   {
     "artist": "Champaign",
     "title": "How'bout Us"
+  },
+  {
+    "artist": "Champs",
+    "title": "Tequila"
   },
   {
     "artist": "Chandelier",
@@ -4502,6 +4534,10 @@
   {
     "artist": "Cranberries",
     "title": "Linger"
+  },
+  {
+    "artist": "Cranberries",
+    "title": "Ode To My Family"
   },
   {
     "artist": "Cranberries",
@@ -6772,7 +6808,7 @@
     "title": "Everytime you need me"
   },
   {
-    "artist": "Franck Sinatra",
+    "artist": "Frank Sinatra",
     "title": "Killing me softly"
   },
   {
@@ -8041,6 +8077,10 @@
   },
   {
     "artist": "Jackson 5",
+    "title": "I Want You Back"
+  },
+  {
+    "artist": "Jackson 5",
     "title": "Rockin' Robin"
   },
   {
@@ -8833,6 +8873,10 @@
   },
   {
     "artist": "Josh Groban",
+    "title": "You Raise Me Up"
+  },
+  {
+    "artist": "Josh Groban",
     "title": "You're still you"
   },
   {
@@ -9222,6 +9266,14 @@
   {
     "artist": "Kiki Dee",
     "title": "I've got the music in me"
+  },
+  {
+    "artist": "Killers",
+    "title": "Human"
+  },
+  {
+    "artist": "Killers",
+    "title": "Somebody Told Me"
   },
   {
     "artist": "Kim Carnes & Kenny Rogers",
@@ -10730,6 +10782,10 @@
   {
     "artist": "Maureen McGovern",
     "title": "Carolina moon"
+  },
+  {
+    "artist": "Mavericks",
+    "title": "Dance The Night Away"
   },
   {
     "artist": "Mavericks",
@@ -13685,7 +13741,15 @@
   },
   {
     "artist": "Rolling Stones",
+    "title": "Angie"
+  },
+  {
+    "artist": "Rolling Stones",
     "title": "It's all over now"
+  },
+  {
+    "artist": "Rolling Stones",
+    "title": "Satisfaction"
   },
   {
     "artist": "Rolling Stones",
@@ -13762,6 +13826,10 @@
   {
     "artist": "Ronan Keating feat Lulu",
     "title": "We’ve Got Tonight"
+  },
+  {
+    "artist": "Ronettes",
+    "title": "Be My Baby"
   },
   {
     "artist": "Room 5 feat. Oliver Cheatham",
@@ -14242,6 +14310,10 @@
   {
     "artist": "Saw Doctors",
     "title": "N 17"
+  },
+  {
+    "artist": "Scabs",
+    "title": "Hard times"
   },
   {
     "artist": "Scissor Sisters",
@@ -15229,6 +15301,10 @@
   },
   {
     "artist": "Stereophonics",
+    "title": "Dakota"
+  },
+  {
+    "artist": "Stereophonics",
     "title": "Hurry up and wait"
   },
   {
@@ -15544,12 +15620,12 @@
     "title": "The most beautiful girl in the world"
   },
   {
-    "artist": "T. Rex",
-    "title": "Children of the revolution"
-  },
-  {
     "artist": "T-Spoon",
     "title": "Sex on the beach"
+  },
+  {
+    "artist": "T. Rex",
+    "title": "Children of the revolution"
   },
   {
     "artist": "T. Rex",
@@ -15812,22 +15888,6 @@
     "title": "Castle In The Snow"
   },
   {
-    "artist": "Beach Boys",
-    "title": "Fun Fun Fun"
-  },
-  {
-    "artist": "Beach Boys",
-    "title": "God Only Knows"
-  },
-  {
-    "artist": "Beatles",
-    "title": "A Day In The Life"
-  },
-  {
-    "artist": "Black Keys",
-    "title": "Lonely Boy"
-  },
-  {
     "artist": "The Calling",
     "title": "Adrienne"
   },
@@ -15848,26 +15908,6 @@
     "title": "My Favourite Game"
   },
   {
-    "artist": "Cars",
-    "title": "Drive"
-  },
-  {
-    "artist": "Chainsmokers",
-    "title": "Closer"
-  },
-  {
-    "artist": "Chainsmokers feat. Daya",
-    "title": "Don't let me down"
-  },
-  {
-    "artist": "Champs",
-    "title": "Tequila"
-  },
-  {
-    "artist": "Cranberries",
-    "title": "Ode To My Family"
-  },
-  {
     "artist": "The Cure",
     "title": "A Forest"
   },
@@ -15880,20 +15920,8 @@
     "title": "Never Enough"
   },
   {
-    "artist": "Jackson 5",
-    "title": "I Want You Back"
-  },
-  {
     "artist": "The Jungle Book",
     "title": "I Wanna Be Like You"
-  },
-  {
-    "artist": "Killers",
-    "title": "Human"
-  },
-  {
-    "artist": "Killers",
-    "title": "Somebody Told Me"
   },
   {
     "artist": "The Libertines",
@@ -15912,10 +15940,6 @@
     "title": "The impossible dream"
   },
   {
-    "artist": "Mavericks",
-    "title": "Dance The Night Away"
-  },
-  {
     "artist": "The Phantom Of The Opera",
     "title": "The Music Of The Night"
   },
@@ -15928,28 +15952,8 @@
     "title": "Street Tuff"
   },
   {
-    "artist": "Rolling Stones",
-    "title": "Angie"
-  },
-  {
-    "artist": "Rolling Stones",
-    "title": "Satisfaction"
-  },
-  {
-    "artist": "Ronettes",
-    "title": "Be My Baby"
-  },
-  {
-    "artist": "Scabs",
-    "title": "Hard times"
-  },
-  {
     "artist": "The Script",
     "title": "Superheroes"
-  },
-  {
-    "artist": "Stereophonics",
-    "title": "Dakota"
   },
   {
     "artist": "The Streets",
@@ -16913,15 +16917,15 @@
   },
   {
     "artist": "Wham",
+    "title": "Everything she wants"
+  },
+  {
+    "artist": "Wham",
     "title": "Last Christmas"
   },
   {
     "artist": "Wham",
     "title": "Wake me up before you go go"
-  },
-  {
-    "artist": "Wham",
-    "title": "Everything she wants"
   },
   {
     "artist": "Wheatus",
