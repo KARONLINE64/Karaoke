@@ -1,8 +1,20 @@
+
 let songs = [];
 let searchIndex = [];
 let currentSongs = [];
 let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 const catalogCache = {};
+const favoriteSongMetaKey = "favoriteSongMeta";
+let favoriteSongMeta = JSON.parse(localStorage.getItem(favoriteSongMetaKey) || "{}");
+
+for (const key of favorites) {
+  if (!favoriteSongMeta[key]) {
+    const [artist = "", title = ""] = key.split("|");
+    if (artist || title) {
+      favoriteSongMeta[key] = { artist, title };
+    }
+  }
+}
 
 const search = document.getElementById("search");
 
@@ -31,6 +43,37 @@ const virtualState = {
 };
 
 let renderPending = false;
+
+function persistFavoriteState() {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  localStorage.setItem(favoriteSongMetaKey, JSON.stringify(favoriteSongMeta));
+}
+
+function addFavorite(key, song) {
+  if (!favorites.includes(key)) {
+    favorites.push(key);
+  }
+
+  const artist = song && song.artist ? song.artist : "";
+  const title = song && song.title ? song.title : "";
+
+  if (artist && title) {
+    favoriteSongMeta[key] = { artist, title };
+  } else {
+    const [artistFromKey = "", titleFromKey = ""] = key.split("|");
+    if (artistFromKey || titleFromKey) {
+      favoriteSongMeta[key] = { artist: artistFromKey, title: titleFromKey };
+    }
+  }
+
+  persistFavoriteState();
+}
+
+function removeFavorite(key) {
+  favorites = favorites.filter(x => x !== key);
+  delete favoriteSongMeta[key];
+  persistFavoriteState();
+}
 
 function hideAllPages() {
   homePage.classList.add("hidden");
@@ -145,12 +188,14 @@ function ensureVirtualList() {
 
     const isFavorite = favorites.includes(key);
     if (isFavorite) {
-      favorites = favorites.filter(x => x !== key);
+      removeFavorite(key);
     } else {
-      favorites.push(key);
+      addFavorite(key, {
+        artist: star.dataset.artist || key.split("|")[0],
+        title: star.dataset.title || key.split("|")[1]
+      });
     }
 
-    localStorage.setItem("favorites", JSON.stringify(favorites));
     updateRenderedStars(key);
   });
 
@@ -276,6 +321,8 @@ function renderVisibleSongs() {
       item.__artist.textContent = song.artist;
       item.__title.textContent = song.title;
       item.__star.dataset.key = key;
+      item.__star.dataset.artist = song.artist;
+      item.__star.dataset.title = song.title;
       item.__star.textContent = selected ? "★" : "☆";
       item.__star.className = selected ? "star selected" : "star";
       item.dataset.index = String(index);
@@ -357,9 +404,42 @@ newBtn.onclick = function () {
 };
 
 favBtn.onclick = function () {
-  currentSongs = songs.filter(song =>
-    favorites.includes(song.artist + "|" + song.title)
-  );
+  const combined = [];
+
+  for (const s of songs) {
+    if (s && s.artist && s.title) combined.push(s);
+  }
+
+  for (const k in catalogCache) {
+    const list = catalogCache[k];
+    if (Array.isArray(list)) {
+      for (const s of list) {
+        if (s && s.artist && s.title) combined.push(s);
+      }
+    }
+  }
+
+  for (const key of favorites) {
+    const song = favoriteSongMeta[key];
+    if (song && song.artist && song.title) {
+      combined.push({ artist: song.artist, title: song.title });
+    } else {
+      const [artist = "", title = ""] = key.split("|");
+      if (artist || title) {
+        combined.push({ artist, title });
+      }
+    }
+  }
+
+  const seen = new Set();
+  currentSongs = combined.filter(song => {
+    const key = song.artist + "|" + song.title;
+    if (!favorites.includes(key)) return false;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
   showSongs(currentSongs);
 };
 
