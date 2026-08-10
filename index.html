@@ -1,130 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Floribar Karaoke</title>
-
-<link rel="stylesheet" href="style.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karaoke — Under Construction</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%}
+body{
+display:flex;align-items:center;justify-content:center;
+background:radial-gradient(circle at top,#133a7a 0%,#0b1730 18%,#050505 55%,#000 100%);
+color:#fff;font-family:Arial,Helvetica,sans-serif;text-align:center;overflow:hidden
+}
+.container{width:min(90vw,800px);padding:40px 25px}
+h1{
+margin:0 0 20px;font-size:clamp(42px,9vw,82px);font-weight:700;
+letter-spacing:4px;
+text-shadow:0 0 5px rgba(255,255,255,.9),0 0 15px rgba(255,255,255,.7),0 0 35px rgba(255,255,255,.45)
+}
+.line{
+width:120px;height:2px;margin:0 auto 28px;background:#fff;
+box-shadow:0 0 8px rgba(255,255,255,.9),0 0 20px rgba(255,255,255,.6)
+}
+p{
+margin:0;font-size:clamp(18px,3.5vw,28px);letter-spacing:1px;line-height:1.5;
+text-shadow:0 0 6px rgba(255,255,255,.7),0 0 18px rgba(255,255,255,.35)
+}
+.sub{margin-top:14px;font-size:clamp(14px,2.5vw,19px);opacity:.8;letter-spacing:2px}
+</style>
 </head>
-
 <body>
-
-<header>
-
-<img src="logo.png" id="logo" alt="Floribar Karaoke">
-
-<input
-id="search"
-type="text"
-placeholder="Search artist or song..."
-autocomplete="off"
-spellcheck="false">
-
-</header>
-
-<main>
-
-<section id="homePage">
-
-<div id="welcome">
-
-<div class="welcomeAction">
-<span class="icon">🎤</span>
-<span>Pick your song and let's sing!</span>
-</div>
-
-<div class="welcomeAction">
-<span class="icon">📚</span>
-<span>Or browse our complete catalogue</span>
-</div>
-
-</div>
-
-</section>
-
-<section id="catalogPage" class="hidden">
-
-<div class="catalogItem" data-file="english.json">
-English
-</div>
-
-<div class="catalogItem" data-file="francais.json">
-Français
-</div>
-
-<div class="catalogItem" data-file="nederlands.json">
-Nederlands
-</div>
-
-<div class="catalogItem" data-file="italiano.json">
-Italiano
-</div>
-
-<div class="catalogItem" data-file="español.json">
-Español
-</div>
-
-</section>
-
-<section id="newPage" class="hidden">
-
-<div class="catalogItem" data-file="newenglish.json">
-🔥 English
-</div>
-
-<div class="catalogItem" data-file="newfrancais.json">
-🔥 Français
-</div>
-
-<div class="catalogItem" data-file="newnederlands.json">
-🔥 Nederlands
-</div>
-
-<div class="catalogItem" data-file="newitaliano.json">
-🔥 Italiano
-</div>
-
-<div class="catalogItem" data-file="newespañol.json">
-🔥 Español
-</div>
-
-</section>
-
-<section id="songsPage" class="hidden">
-
-<div id="songs"></div>
-
-</section>
-
+<main class="container">
+<h1>UNDER CONSTRUCTION</h1>
+<div class="line"></div>
+<p>Our karaoke songbook is currently being updated.</p>
+<p class="sub">BACK SOON</p>
 </main>
-
-<nav class="bottomNav">
-
-<button id="homeBtn" type="button">
-🏠<br>Home
-</button>
-
-<button id="catalogBtn" type="button">
-📚<br>Catalog
-</button>
-
-<button id="newBtn" type="button">
-🔥<br>NEW
-</button>
-
-<button id="favBtn" type="button">
-⭐<br>My Songs
-</button>
-
-</nav>
-
-<script src="script.js"></script>
-
 </body>
-
 </html>
