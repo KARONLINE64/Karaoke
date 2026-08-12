@@ -29,6 +29,7 @@ const homeBtn = document.getElementById("homeBtn");
 const catalogBtn = document.getElementById("catalogBtn");
 const newBtn = document.getElementById("newBtn");
 const favBtn = document.getElementById("favBtn");
+const requestBtn = document.getElementById("requestBtn");
 
 const virtualState = {
   initialized: false,
@@ -268,6 +269,19 @@ function createSongElement() {
   songEl.__title = titleEl;
   songEl.__star = starEl;
 
+  // Allow selecting a song by clicking the item (ignore clicks on the star)
+  songEl.addEventListener('click', (e) => {
+    if (e.target.closest('.star')) return;
+    const idx = songEl.dataset.index;
+    if (!idx) return;
+    const song = virtualState.currentList[Number(idx)];
+    if (!song) return;
+    selectedSongKey = song.artist + '|' + song.title;
+    for (const it of virtualState.pool) {
+      it.classList.toggle('selected', it.dataset.index === String(idx));
+    }
+  });
+
   return songEl;
 }
 
@@ -328,6 +342,9 @@ function renderVisibleSongs() {
       item.dataset.index = String(index);
       item.__listVersion = virtualState.version;
     }
+
+    // reflect selection state
+    item.classList.toggle('selected', selectedSongKey === key);
 
     item.style.top = `${displayCount * virtualState.itemHeight}px`;
     item.style.display = "flex";
@@ -448,3 +465,148 @@ document.querySelectorAll(".catalogItem").forEach(item => {
     loadLanguage(this.dataset.file);
   };
 });
+
+// --- Request feature: modal, search, and submit to local API ---
+// Request UI elements (created in index.html)
+const requestModal = document.getElementById('requestModal');
+const reqSongSearch = document.getElementById('reqSongSearch');
+const requestResults = document.getElementById('requestResults');
+const reqArtist = document.getElementById('reqArtist');
+const reqTitle = document.getElementById('reqTitle');
+const reqSinger = document.getElementById('reqSinger');
+const reqKey = document.getElementById('reqKey');
+const sendRequestBtn = document.getElementById('sendRequestBtn');
+const cancelRequestBtn = document.getElementById('cancelRequestBtn');
+const requestStatus = document.getElementById('requestStatus');
+
+let selectedSongKey = null;
+let requestSelectedSong = null;
+const requestSongIndex = new Map();
+
+function buildRequestSongIndex() {
+  requestSongIndex.clear();
+  const add = s => {
+    if (!s || !s.artist || !s.title) return;
+    const key = s.artist + '|' + s.title;
+    if (!requestSongIndex.has(key)) {
+      requestSongIndex.set(key, { artist: s.artist, title: s.title });
+    }
+  };
+  for (const s of songs) add(s);
+  for (const k in catalogCache) {
+    const list = catalogCache[k];
+    if (Array.isArray(list)) {
+      for (const s of list) add(s);
+    }
+  }
+}
+
+function renderRequestResults(list) {
+  requestResults.innerHTML = '';
+  requestResults.style.display = 'block';
+  if (!list.length) {
+    const empty = document.createElement('div');
+    empty.className = 'requestResult';
+    empty.textContent = 'No song found.';
+    requestResults.appendChild(empty);
+    return;
+  }
+  list.slice(0, 20).forEach(item => {
+    const row = document.createElement('div');
+    row.className = 'requestResult';
+    row.textContent = item.artist + ' — ' + item.title;
+    row.dataset.key = item.artist + '|' + item.title;
+    row.addEventListener('click', () => {
+      requestSelectedSong = item;
+      reqArtist.value = item.artist;
+      reqTitle.value = item.title;
+      document.querySelectorAll('.requestResult').forEach(el => el.classList.toggle('selected', el === row));
+      requestResults.innerHTML = '';
+      requestResults.style.display = 'none';
+      requestStatus.textContent = '';
+    });
+    requestResults.appendChild(row);
+  });
+}
+
+function searchRequestSongs(query) {
+  const term = query.trim().toLowerCase();
+  if (!term) {
+    requestResults.innerHTML = '';
+    requestResults.style.display = 'none';
+    requestSelectedSong = null;
+    reqArtist.value = '';
+    reqTitle.value = '';
+    return;
+  }
+  const results = [];
+  for (const item of requestSongIndex.values()) {
+    const text = (item.artist + ' ' + item.title).toLowerCase();
+    if (text.includes(term)) {
+      results.push(item);
+    }
+  }
+  renderRequestResults(results);
+}
+
+function openRequestModal() {
+  buildRequestSongIndex();
+  reqSongSearch.value = '';
+  requestResults.innerHTML = '';
+  requestSelectedSong = null;
+  reqArtist.value = '';
+  reqTitle.value = '';
+  reqSinger.value = '';
+  requestStatus.textContent = '';
+  reqKey.value = '0';
+  requestModal.classList.remove('hidden');
+}
+
+function closeRequestModal() { requestModal.classList.add('hidden'); }
+
+function buildKeyOptions() {
+  reqKey.innerHTML = '';
+  const optNormal = document.createElement('option'); optNormal.value = '0'; optNormal.textContent = 'Normal'; reqKey.appendChild(optNormal);
+  for (let i = 1; i <= 12; i++) { const p = document.createElement('option'); p.value = String(i); p.textContent = '+'+i; reqKey.appendChild(p); }
+  for (let i = 1; i <= 12; i++) { const n = document.createElement('option'); n.value = String(-i); n.textContent = String(-i); reqKey.appendChild(n); }
+}
+
+reqSongSearch && reqSongSearch.addEventListener('input', () => searchRequestSongs(reqSongSearch.value));
+
+const requestBox = requestModal && requestModal.querySelector('.rb-box');
+const requestOverlay = requestModal && requestModal.querySelector('.rb-overlay');
+
+requestBtn && requestBtn.addEventListener('click', () => openRequestModal());
+cancelRequestBtn && cancelRequestBtn.addEventListener('click', () => closeRequestModal());
+
+requestOverlay && requestOverlay.addEventListener('click', () => closeRequestModal());
+
+requestBox && requestBox.addEventListener('click', event => {
+  if (requestResults.style.display !== 'block') return;
+  const target = event.target;
+  if (target === reqSongSearch || requestResults.contains(target)) return;
+  requestResults.innerHTML = '';
+  requestResults.style.display = 'none';
+});
+
+sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
+  const artist = reqArtist.value.trim();
+  const title = reqTitle.value.trim();
+  const singer = reqSinger.value.trim();
+  const keyChange = parseInt(reqKey.value, 10);
+  if (!requestSelectedSong || !artist || !title) { requestStatus.textContent = 'Please select a song.'; return; }
+  if (!singer) { requestStatus.textContent = 'Please enter singer name.'; return; }
+  const payload = { artist, title, singer, keyChange };
+  console.log('REQUEST SENDING', payload);
+  try {
+    const res = await fetch('http://localhost:3000/request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    if (!res.ok) throw new Error('network');
+    requestStatus.textContent = 'Request sent successfully.';
+    setTimeout(() => closeRequestModal(), 1100);
+  } catch (err) {
+    console.error('Request error', err);
+    requestStatus.textContent = 'Request failed. Please try again.';
+  }
+});
+
+buildKeyOptions();
