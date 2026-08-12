@@ -237,3 +237,35 @@ main{
         font-size:15px;
     }
 }
+
+/* Request modal styles (minimal, non-intrusive) */
+.rb-overlay{
+    position:fixed;
+    left:0;right:0;top:0;bottom:0;
+    background:rgba(0,0,0,0.55);
+}
+.rb-box{
+    position:fixed;
+    left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    width:min(92%,480px);
+    background:#0f1720;
+    border:1px solid #24374f;
+    border-radius:12px;
+    padding:18px;
+    z-index:9999;
+}
+.rb-box h3{margin-bottom:8px;font-size:20px}
+.rb-box label{display:block;margin-top:10px;color:#9fbfe8;font-size:13px}
+.rb-box input, .rb-box select{
+    width:100%;padding:10px;border-radius:8px;border:none;margin-top:6px;background:#151b25;color:#fff
+}
+.rb-actions{display:flex;gap:10px;margin-top:14px}
+.rb-actions button{flex:1;padding:10px;border-radius:8px;border:none;font-weight:bold;cursor:pointer}
+#requestStatus{margin-top:10px;color:#aee3a8}
+.requestResults{display:none;max-height:220px;overflow-y:auto;margin-top:8px;border:1px solid #2b4667;border-radius:12px;background:#101824;}
+.requestResult{padding:12px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06);color:#fff;}
+.requestResult:last-child{border-bottom:none;}
+.requestResult:hover{background:rgba(0,123,255,0.18);}
+.requestResult.selected{background:rgba(0,123,255,0.28);}
+.song.selected{outline:2px solid rgba(88,200,255,0.25)}
