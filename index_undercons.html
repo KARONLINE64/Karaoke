@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Floribar Karaoke</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.png" id="logo" alt="Floribar Karaoke">
+
+<input
+id="search"
+type="text"
+placeholder="Search artist or song..."
+autocomplete="off"
+spellcheck="false">
+
+</header>
+
+<main>
+
+<section id="homePage">
+
+<div id="welcome">
+
+<div class="welcomeAction">
+<span class="icon">🎤</span>
+<span>Pick a song, send request and let's sing!</span>
+</div>
+
+<div class="welcomeAction">
+<span class="icon">📚</span>
+<span>Or browse our complete catalogue</span>
+</div>
+
+</div>
+
+</section>
+
+<section id="catalogPage" class="hidden">
+
+<div class="catalogItem" data-file="english.json">
+English
+</div>
+
+<div class="catalogItem" data-file="francais.json">
+Français
+</div>
+
+<div class="catalogItem" data-file="nederlands.json">
+Nederlands
+</div>
+
+<div class="catalogItem" data-file="italiano.json">
+Italiano
+</div>
+
+<div class="catalogItem" data-file="español.json">
+Español
+</div>
+
+</section>
+
+<section id="newPage" class="hidden">
+
+<div class="catalogItem" data-file="newenglish.json">
+🔥 English
+</div>
+
+<div class="catalogItem" data-file="newfrancais.json">
+🔥 Français
+</div>
+
+<div class="catalogItem" data-file="newnederlands.json">
+🔥 Nederlands
+</div>
+
+<div class="catalogItem" data-file="newitaliano.json">
+🔥 Italiano
+</div>
+
+<div class="catalogItem" data-file="newespañol.json">
+🔥 Español
+</div>
+
+</section>
+
+<section id="songsPage" class="hidden">
+
+<div id="songs"></div>
+
+</section>
+
+</main>
+
+<nav class="bottomNav">
+
+<button id="homeBtn" type="button">
+🏠<br>Home
+</button>
+
+<button id="catalogBtn" type="button">
+📚<br>Catalog
+</button>
+
+<button id="newBtn" type="button">
+🔥<br>NEW
+</button>
+
+<button id="requestBtn" type="button">
+🎤<br>Request
+</button>
+
+<button id="favBtn" type="button">
+⭐<br>My Songs
+</button>
+
+
+<!-- Request modal (hidden by default) -->
+<div id="requestModal" class="hidden">
+	<div class="rb-overlay"></div>
+	<div class="rb-box">
+		<h3>Request</h3>
+
+<label for="reqSongSearch">Song</label>
+	<input id="reqSongSearch" type="text" placeholder="Search artist or title">
+	<div id="requestResults" class="requestResults"></div>
+
+		<label for="reqArtist">Artist</label>
+		<input id="reqArtist" type="text" readonly>
+
+		<label for="reqTitle">Title</label>
+		<input id="reqTitle" type="text" readonly>
+
+		<label for="reqSinger">Singer</label>
+		<input id="reqSinger" type="text" placeholder="Singer name">
+
+		<label for="reqKey">Key Change</label>
+		<select id="reqKey"></select>
+
+		<div class="rb-actions">
+			<button id="sendRequestBtn" type="button">SEND REQUEST</button>
+			<button id="cancelRequestBtn" type="button">CANCEL</button>
+		</div>
+
+		<div id="requestStatus" aria-live="polite"></div>
+	</div>
+</div>
+
+<script src="script.js"></script>
+</html>
