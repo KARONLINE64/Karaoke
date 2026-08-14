@@ -483,8 +483,23 @@ let selectedSongKey = null;
 let requestSelectedSong = null;
 const requestSongIndex = new Map();
 
-function buildRequestSongIndex() {
+const requestCatalogFiles = [
+  "songs.json",
+  "english.json",
+  "francais.json",
+  "nederlands.json",
+  "italiano.json",
+  "español.json",
+  "newenglish.json",
+  "newfrancais.json",
+  "newnederlands.json",
+  "newitaliano.json",
+  "newespañol.json"
+];
+
+async function buildRequestSongIndex() {
   requestSongIndex.clear();
+
   const add = s => {
     if (!s || !s.artist || !s.title) return;
     const key = s.artist + '|' + s.title;
@@ -492,9 +507,29 @@ function buildRequestSongIndex() {
       requestSongIndex.set(key, { artist: s.artist, title: s.title });
     }
   };
+
   for (const s of songs) add(s);
-  for (const k in catalogCache) {
-    const list = catalogCache[k];
+
+  const filesToLoad = requestCatalogFiles.filter(file => file !== "songs.json");
+
+  const loadedLists = await Promise.all(
+    filesToLoad.map(async file => {
+      if (catalogCache[file]) return catalogCache[file];
+
+      try {
+        const response = await fetch(file);
+        if (!response.ok) return [];
+        const data = await response.json();
+        catalogCache[file] = data;
+        return data;
+      } catch (error) {
+        console.error("Request catalogue load failed:", file, error);
+        return [];
+      }
+    })
+  );
+
+  for (const list of loadedLists) {
     if (Array.isArray(list)) {
       for (const s of list) add(s);
     }
@@ -549,8 +584,8 @@ function searchRequestSongs(query) {
   renderRequestResults(results);
 }
 
-function openRequestModal() {
-  buildRequestSongIndex();
+async function openRequestModal() {
+  await buildRequestSongIndex();
   reqSongSearch.value = '';
   requestResults.innerHTML = '';
   requestSelectedSong = null;
