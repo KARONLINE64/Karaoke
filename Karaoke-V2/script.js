@@ -279,6 +279,7 @@ function createSongElement() {
     for (const it of virtualState.pool) {
       it.classList.toggle('selected', it.dataset.index === String(idx));
     }
+    openRequestModalWithSong(song);
   });
 
   return songEl;
@@ -560,7 +561,18 @@ function openRequestModal() {
   reqKey.value = '0';
   requestModal.classList.remove('hidden');
 }
-
+async function openRequestModalWithSong(song) {
+  await buildRequestSongIndex();
+  reqSongSearch.value = '';
+  requestResults.innerHTML = '';
+  requestSelectedSong = song;
+  reqArtist.value = song.artist || '';
+  reqTitle.value = song.title || '';
+  reqSinger.value = '';
+  requestStatus.textContent = '';
+  reqKey.value = '0';
+  requestModal.classList.remove('hidden');
+}
 function closeRequestModal() { requestModal.classList.add('hidden'); }
 
 function buildKeyOptions() {
