@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -18,10 +18,16 @@
 
 <img src="logo.png" id="logo" alt="Floribar Karaoke">
 
+<div class="lang-switch" aria-label="Choix de langue">
+  <button class="lang-btn active" data-locale="fr" type="button">FR</button>
+  <button class="lang-btn" data-locale="en" type="button">EN</button>
+</div>
+
 <input
 id="search"
 type="text"
-placeholder="Search artist or song..."
+placeholder="Rechercher un artiste ou une chanson..."
+data-i18n-placeholder="searchPlaceholder"
 autocomplete="off"
 spellcheck="false">
 
@@ -35,12 +41,12 @@ spellcheck="false">
 
 <div class="welcomeAction">
 <span class="icon">🎤</span>
-<span>Pick a song, send request and let's sing!</span>
+<span data-i18n="welcome1">Choisissez une chanson, envoyez votre demande et chantons !</span>
 </div>
 
 <div class="welcomeAction">
 <span class="icon">📚</span>
-<span>Or browse our complete catalogue</span>
+<span data-i18n="welcome2">Ou parcourez notre catalogue complet</span>
 </div>
 
 </div>
@@ -106,51 +112,53 @@ Español
 <nav class="bottomNav">
 
 <button id="homeBtn" type="button">
-🏠<br>Home
+<span data-i18n="navHome">Accueil</span>
 </button>
 
 <button id="catalogBtn" type="button">
-📚<br>Catalog
+<span data-i18n="navCatalog">Catalogue</span>
 </button>
 
 <button id="newBtn" type="button">
-🔥<br>NEW
+<span data-i18n="navNew">Nouveau</span>
 </button>
 
 <button id="requestBtn" type="button">
-🎤<br>Request
+<span data-i18n="navRequest">Demande</span>
 </button>
 
 <button id="favBtn" type="button">
-⭐<br>My Songs
+<span data-i18n="navFavorites">Mes chansons</span>
 </button>
+
+</nav>
 
 
 <!-- Request modal (hidden by default) -->
 <div id="requestModal" class="hidden">
 	<div class="rb-overlay"></div>
 	<div class="rb-box">
-		<h3>Request</h3>
+		<h3 data-i18n="requestModalTitle">Demande</h3>
 
-<label for="reqSongSearch">Song</label>
-	<input id="reqSongSearch" type="text" placeholder="Search artist or title">
+<label for="reqSongSearch" data-i18n="requestSong">Chanson</label>
+	<input id="reqSongSearch" type="text" data-i18n-placeholder="requestSongPlaceholder" placeholder="Rechercher un artiste ou un titre">
 	<div id="requestResults" class="requestResults"></div>
 
-		<label for="reqArtist">Artist</label>
+		<label for="reqArtist" data-i18n="requestArtist">Artiste</label>
 		<input id="reqArtist" type="text" readonly>
 
-		<label for="reqTitle">Title</label>
+		<label for="reqTitle" data-i18n="requestTitle">Titre</label>
 		<input id="reqTitle" type="text" readonly>
 
-		<label for="reqSinger">Singer</label>
-		<input id="reqSinger" type="text" placeholder="Singer name">
+		<label for="reqSinger" data-i18n="requestSinger">Chanteur</label>
+		<input id="reqSinger" type="text" data-i18n-placeholder="requestSingerPlaceholder" placeholder="Nom du chanteur">
 
-		<label for="reqKey">Key Change</label>
+		<label for="reqKey" data-i18n="requestKey">Transposition</label>
 		<select id="reqKey"></select>
 
 		<div class="rb-actions">
-			<button id="sendRequestBtn" type="button">SEND REQUEST</button>
-			<button id="cancelRequestBtn" type="button">CANCEL</button>
+			<button id="sendRequestBtn" type="button" data-i18n="sendRequest">ENVOYER LA DEMANDE</button>
+			<button id="cancelRequestBtn" type="button" data-i18n="cancelRequest">ANNULER</button>
 		</div>
 
 		<div id="requestStatus" aria-live="polite"></div>

@@ -1,4 +1,3 @@
-
 let songs = [];
 let searchIndex = [];
 let currentSongs = [];
@@ -507,7 +506,7 @@ function renderRequestResults(list) {
   if (!list.length) {
     const empty = document.createElement('div');
     empty.className = 'requestResult';
-    empty.textContent = 'No song found.';
+    empty.textContent = t('noSongFound');
     requestResults.appendChild(empty);
     return;
   }
@@ -594,19 +593,125 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
   const title = reqTitle.value.trim();
   const singer = reqSinger.value.trim();
   const keyChange = parseInt(reqKey.value, 10);
-  if (!requestSelectedSong || !artist || !title) { requestStatus.textContent = 'Please select a song.'; return; }
-  if (!singer) { requestStatus.textContent = 'Please enter singer name.'; return; }
+  if (!requestSelectedSong || !artist || !title) { requestStatus.textContent = t('selectSong'); return; }
+  if (!singer) { requestStatus.textContent = t('enterSinger'); return; }
   const payload = { artist, title, singer, keyChange };
   console.log('REQUEST SENDING', payload);
   try {
-    const res = await fetch('http://localhost:3000/request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    const res = await fetch('https://cloudflare-request-server.amkoud.workers.dev/request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
     if (!res.ok) throw new Error('network');
-    requestStatus.textContent = 'Request sent successfully.';
+    requestStatus.textContent = t('requestSent');
     setTimeout(() => closeRequestModal(), 1100);
   } catch (err) {
     console.error('Request error', err);
-    requestStatus.textContent = 'Request failed. Please try again.';
+    requestStatus.textContent = t('requestFailed');
   }
 });
 
-buildKeyOptions();
+const translations = {
+  fr: {
+    searchPlaceholder: 'Rechercher un artiste ou une chanson...',
+    welcome1: 'Choisissez une chanson, envoyez votre demande et chantons !',
+    welcome2: 'Ou parcourez notre catalogue complet',
+    navHome: 'Accueil',
+    navCatalog: 'Catalogue',
+    navNew: 'Nouveau',
+    navRequest: 'Demande',
+    navFavorites: 'Mes chansons',
+    requestModalTitle: 'Demande',
+    requestSong: 'Chanson',
+    requestSongPlaceholder: 'Rechercher un artiste ou un titre',
+    requestArtist: 'Artiste',
+    requestTitle: 'Titre',
+    requestSinger: 'Chanteur',
+    requestSingerPlaceholder: 'Nom du chanteur',
+    requestKey: 'Transposition',
+    sendRequest: 'ENVOYER LA DEMANDE',
+    cancelRequest: 'ANNULER',
+    noSongFound: 'Aucune chanson trouvée.',
+    selectSong: 'Veuillez sélectionner une chanson.',
+    enterSinger: 'Veuillez entrer le nom du chanteur.',
+    requestSent: 'Demande envoyée avec succès.',
+    requestFailed: 'Échec de l\'envoi. Veuillez réessayer.'
+  },
+  en: {
+    searchPlaceholder: 'Search artist or song...',
+    welcome1: 'Pick a song, send request and let\'s sing!',
+    welcome2: 'Or browse our complete catalogue',
+    navHome: 'Home',
+    navCatalog: 'Catalog',
+    navNew: 'NEW',
+    navRequest: 'Request',
+    navFavorites: 'My Songs',
+    requestModalTitle: 'Request',
+    requestSong: 'Song',
+    requestSongPlaceholder: 'Search artist or title',
+    requestArtist: 'Artist',
+    requestTitle: 'Title',
+    requestSinger: 'Singer',
+    requestSingerPlaceholder: 'Singer name',
+    requestKey: 'Key Change',
+    sendRequest: 'SEND REQUEST',
+    cancelRequest: 'CANCEL',
+    noSongFound: 'No song found.',
+    selectSong: 'Please select a song.',
+    enterSinger: 'Please enter the singer name.',
+    requestSent: 'Request sent successfully.',
+    requestFailed: 'Request failed. Please try again.'
+  }
+};
+
+const localeButtons = document.querySelectorAll('.lang-btn');
+const currentLocale = localStorage.getItem('karaokeLocale') || 'fr';
+
+function t(key) {
+  const active = translations[currentLocale] || translations.fr;
+  return active[key] || translations.fr[key] || key;
+}
+
+function applyLocale(locale) {
+  const activeLocale = translations[locale] ? locale : 'fr';
+  localStorage.setItem('karaokeLocale', activeLocale);
+  document.documentElement.lang = activeLocale;
+
+  document.querySelectorAll('[data-i18n]').forEach((node) => {
+    const key = node.dataset.i18n;
+    if (translations[activeLocale][key]) {
+      node.textContent = translations[activeLocale][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
+    const key = node.dataset.i18nPlaceholder;
+    if (translations[activeLocale][key]) {
+      node.placeholder = translations[activeLocale][key];
+    }
+  });
+
+  const searchInput = document.getElementById('search');
+  if (searchInput) {
+    searchInput.placeholder = translations[activeLocale].searchPlaceholder;
+  }
+
+  const songSearchInput = document.getElementById('reqSongSearch');
+  if (songSearchInput) {
+    songSearchInput.placeholder = translations[activeLocale].requestSongPlaceholder;
+  }
+
+  const singerInput = document.getElementById('reqSinger');
+  if (singerInput) {
+    singerInput.placeholder = translations[activeLocale].requestSingerPlaceholder;
+  }
+
+  localeButtons.forEach((button) => {
+    button.classList.toggle('active', button.dataset.locale === activeLocale);
+  });
+}
+
+localeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    applyLocale(button.dataset.locale);
+  });
+});
+
+applyLocale(currentLocale);

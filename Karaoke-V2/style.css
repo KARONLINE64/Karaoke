@@ -41,6 +41,33 @@ header{
     margin-bottom:20px;
 }
 
+.lang-switch{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin:0 auto 18px;
+    max-width:220px;
+}
+
+.lang-btn{
+    border:none;
+    background:#111827;
+    color:#dfeafc;
+    border-radius:999px;
+    padding:8px 18px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s ease;
+    border:1px solid #2d4d6d;
+}
+
+.lang-btn.active{
+    background:#3aa7ff;
+    color:#06141d;
+    box-shadow:0 0 16px rgba(58,167,255,.55);
+}
+
 #search{
     display:block;
     width:min(92%,720px);
@@ -258,14 +285,25 @@ main{
 .rb-box h3{margin-bottom:8px;font-size:20px}
 .rb-box label{display:block;margin-top:10px;color:#9fbfe8;font-size:13px}
 .rb-box input, .rb-box select{
-    width:100%;padding:10px;border-radius:8px;border:none;margin-top:6px;background:#151b25;color:#fff
+    width:100%;
+    margin-top:6px;
+    padding:10px 12px;
+    border-radius:8px;
+    border:1px solid #2b4667;
+    background:#0b1520;
+    color:#fff;
+    font-size:16px;
 }
-.rb-actions{display:flex;gap:10px;margin-top:14px}
-.rb-actions button{flex:1;padding:10px;border-radius:8px;border:none;font-weight:bold;cursor:pointer}
-#requestStatus{margin-top:10px;color:#aee3a8}
-.requestResults{display:none;max-height:220px;overflow-y:auto;margin-top:8px;border:1px solid #2b4667;border-radius:12px;background:#101824;}
-.requestResult{padding:12px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06);color:#fff;}
-.requestResult:last-child{border-bottom:none;}
-.requestResult:hover{background:rgba(0,123,255,0.18);}
-.requestResult.selected{background:rgba(0,123,255,0.28);}
-.song.selected{outline:2px solid rgba(88,200,255,0.25)}
+.rb-box .rb-actions{display:flex;gap:10px;margin-top:16px}
+.rb-box .rb-actions button{flex:1;padding:12px;border:none;border-radius:8px;font-weight:bold;cursor:pointer}
+#sendRequestBtn{background:#3aa7ff;color:#03131b}
+#cancelRequestBtn{background:#24374f;color:#fff}
+#requestStatus{margin-top:12px;min-height:20px;color:#9fe7b5;font-size:14px}
+.requestResults{display:none;max-height:220px;overflow:auto;background:#0b1520;border:1px solid #2b4667;border-radius:8px;margin-top:8px;padding:6px}
+.requestResult{padding:10px 12px;border-radius:6px;cursor:pointer;color:#dfeafc}
+.requestResult:hover,.requestResult.selected{background:#1a2d44}
+
+@media(max-width:500px){
+    .rb-box{padding:14px}
+    .rb-box .rb-actions{flex-direction:column}
+}
