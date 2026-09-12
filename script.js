@@ -714,10 +714,10 @@ const translations = {
 };
 
 const localeButtons = document.querySelectorAll('.lang-btn');
-const currentLocale = localStorage.getItem('karaokeLocale') || 'fr';
 
 function t(key) {
-  const active = translations[currentLocale] || translations.fr;
+  const activeLocale = localStorage.getItem('karaokeLocale') || 'fr';
+  const active = translations[activeLocale] || translations.fr;
   return active[key] || translations.fr[key] || key;
 }
 
