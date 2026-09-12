@@ -613,8 +613,9 @@ async function openRequestModalWithSong(song) {
 function closeRequestModal() { requestModal.classList.add('hidden'); }
 
 function buildKeyOptions() {
+  if (!reqKey) return;
   reqKey.innerHTML = '';
-  const optNormal = document.createElement('option'); optNormal.value = '0'; optNormal.textContent = 'Normal'; reqKey.appendChild(optNormal);
+  const optNormal = document.createElement('option'); optNormal.value = '0'; optNormal.textContent = t('normalKey'); reqKey.appendChild(optNormal);
   for (let i = 1; i <= 12; i++) { const p = document.createElement('option'); p.value = String(i); p.textContent = '+'+i; reqKey.appendChild(p); }
   for (let i = 1; i <= 12; i++) { const n = document.createElement('option'); n.value = String(-i); n.textContent = String(-i); reqKey.appendChild(n); }
 }
@@ -677,6 +678,7 @@ const translations = {
     requestKey: 'Transposition',
     sendRequest: 'ENVOYER LA DEMANDE',
     cancelRequest: 'ANNULER',
+    normalKey: 'Normal',
     noSongFound: 'Aucune chanson trouvée.',
     selectSong: 'Veuillez sélectionner une chanson.',
     enterSinger: 'Veuillez entrer le nom du chanteur.',
@@ -702,6 +704,7 @@ const translations = {
     requestKey: 'Key Change',
     sendRequest: 'SEND REQUEST',
     cancelRequest: 'CANCEL',
+    normalKey: 'Normal',
     noSongFound: 'No song found.',
     selectSong: 'Please select a song.',
     enterSinger: 'Please enter the singer name.',
@@ -752,6 +755,12 @@ function applyLocale(locale) {
     singerInput.placeholder = translations[activeLocale].requestSingerPlaceholder;
   }
 
+  const selectedKey = reqKey ? reqKey.value : '0';
+  buildKeyOptions();
+  if (reqKey && Array.from(reqKey.options).some((opt) => opt.value === selectedKey)) {
+    reqKey.value = selectedKey;
+  }
+
   localeButtons.forEach((button) => {
     button.classList.toggle('active', button.dataset.locale === activeLocale);
   });
@@ -763,4 +772,5 @@ localeButtons.forEach((button) => {
   });
 });
 
+buildKeyOptions();
 applyLocale(currentLocale);
