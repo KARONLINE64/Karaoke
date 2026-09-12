@@ -675,12 +675,12 @@ const translations = {
     sendRequest: 'ENVOYER LA DEMANDE',
     cancelRequest: 'ANNULER',
     normalKey: 'Normal',
-    requestsDisabled: 'Les demandes sont actuellement désactivées dans OpenKJ.',
+    requestsDisabled: 'Demandes désactivées actuellement.Réessayez plus tard svp.',
     noSongFound: 'Aucune chanson trouvée.',
     selectSong: 'Veuillez sélectionner une chanson.',
     enterSinger: 'Veuillez entrer le nom du chanteur.',
     requestSent: 'Demande envoyée avec succès.',
-    requestFailed: 'Échec de l\'envoi. Veuillez réessayer.'
+    requestFailed: 'Demandes désactivées actuellement.Réessayez plus tard svp.'
   },
   en: {
     searchPlaceholder: 'Search artist or song...',
@@ -702,12 +702,12 @@ const translations = {
     sendRequest: 'SEND REQUEST',
     cancelRequest: 'CANCEL',
     normalKey: 'Normal',
-    requestsDisabled: 'Requests are currently disabled in OpenKJ.',
+    requestsDisabled: 'Requests are currently disabled. Please try later.',
     noSongFound: 'No song found.',
     selectSong: 'Please select a song.',
     enterSinger: 'Please enter the singer name.',
     requestSent: 'Request sent successfully.',
-    requestFailed: 'Request failed. Please try again.'
+    requestFailed: 'Requests are currently disabled. Please try later.'
   }
 };
 
