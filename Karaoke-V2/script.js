@@ -549,19 +549,43 @@ function searchRequestSongs(query) {
   renderRequestResults(results);
 }
 
-function openRequestModal() {
-  buildRequestSongIndex();
+async function checkOpenKjAccepting() {
+  try {
+    const res = await fetch('http://127.0.0.1:3000/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ command: 'getAccepting' })
+    });
+    const data = await res.json();
+    return data && data.accepting === true;
+  } catch (error) {
+    console.log('[request] Cannot reach OpenKJ bridge, allowing requests to proceed');
+    return true;
+  }
+}
+
+async function openRequestModal() {
+  const isAccepting = await checkOpenKjAccepting();
+  
+  await buildRequestSongIndex();
   reqSongSearch.value = '';
   requestResults.innerHTML = '';
   requestSelectedSong = null;
   reqArtist.value = '';
   reqTitle.value = '';
   reqSinger.value = '';
-  requestStatus.textContent = '';
+  requestStatus.textContent = isAccepting ? '' : t('requestsDisabled');
   reqKey.value = '0';
+  
+  sendRequestBtn.disabled = !isAccepting;
+  sendRequestBtn.style.opacity = isAccepting ? '1' : '0.5';
+  sendRequestBtn.style.cursor = isAccepting ? 'pointer' : 'not-allowed';
+  
   requestModal.classList.remove('hidden');
 }
 async function openRequestModalWithSong(song) {
+  const isAccepting = await checkOpenKjAccepting();
+  
   await buildRequestSongIndex();
   reqSongSearch.value = '';
   requestResults.innerHTML = '';
@@ -569,8 +593,13 @@ async function openRequestModalWithSong(song) {
   reqArtist.value = song.artist || '';
   reqTitle.value = song.title || '';
   reqSinger.value = '';
-  requestStatus.textContent = '';
+  requestStatus.textContent = isAccepting ? '' : t('requestsDisabled');
   reqKey.value = '0';
+  
+  sendRequestBtn.disabled = !isAccepting;
+  sendRequestBtn.style.opacity = isAccepting ? '1' : '0.5';
+  sendRequestBtn.style.cursor = isAccepting ? 'pointer' : 'not-allowed';
+  
   requestModal.classList.remove('hidden');
 }
 function closeRequestModal() { requestModal.classList.add('hidden'); }
@@ -602,6 +631,10 @@ requestBox && requestBox.addEventListener('click', event => {
 });
 
 sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
+  if (sendRequestBtn.disabled) {
+    requestStatus.textContent = t('requestsDisabled');
+    return;
+  }
   const artist = reqArtist.value.trim();
   const title = reqTitle.value.trim();
   const singer = reqSinger.value.trim();
@@ -642,6 +675,7 @@ const translations = {
     sendRequest: 'ENVOYER LA DEMANDE',
     cancelRequest: 'ANNULER',
     normalKey: 'Normal',
+    requestsDisabled: 'Les demandes sont actuellement désactivées dans OpenKJ.',
     noSongFound: 'Aucune chanson trouvée.',
     selectSong: 'Veuillez sélectionner une chanson.',
     enterSinger: 'Veuillez entrer le nom du chanteur.',
@@ -668,6 +702,7 @@ const translations = {
     sendRequest: 'SEND REQUEST',
     cancelRequest: 'CANCEL',
     normalKey: 'Normal',
+    requestsDisabled: 'Requests are currently disabled in OpenKJ.',
     noSongFound: 'No song found.',
     selectSong: 'Please select a song.',
     enterSinger: 'Please enter the singer name.',
