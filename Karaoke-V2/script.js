@@ -559,8 +559,8 @@ async function checkOpenKjAccepting() {
     const data = await res.json();
     return data && data.accepting === true;
   } catch (error) {
-    console.log('[request] Cannot reach OpenKJ bridge, allowing requests to proceed');
-    return true;
+    console.log('[request] OpenKJ bridge not accessible');
+    return false;
   }
 }
 
@@ -675,7 +675,7 @@ const translations = {
     sendRequest: 'ENVOYER LA DEMANDE',
     cancelRequest: 'ANNULER',
     normalKey: 'Normal',
-    requestsDisabled: 'Les demandes sont actuellement désactivées dans OpenKJ.',
+    requestsDisabled: 'Service de demandes non accesible. Réessayez plus tard.',
     noSongFound: 'Aucune chanson trouvée.',
     selectSong: 'Veuillez sélectionner une chanson.',
     enterSinger: 'Veuillez entrer le nom du chanteur.',
@@ -702,7 +702,7 @@ const translations = {
     sendRequest: 'SEND REQUEST',
     cancelRequest: 'CANCEL',
     normalKey: 'Normal',
-    requestsDisabled: 'Requests are currently disabled in OpenKJ.',
+    requestsDisabled: 'Request service not accessible. Please try again later.',
     noSongFound: 'No song found.',
     selectSong: 'Please select a song.',
     enterSinger: 'Please enter the singer name.',
