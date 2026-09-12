@@ -221,9 +221,13 @@ main{
     background:none;
     border:none;
     color:#fff;
-    font-size:17px;
+    font-size:13px;
     font-weight:bold;
     cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
 
     -webkit-user-select:none;
     user-select:none;
@@ -231,6 +235,11 @@ main{
 
 .bottomNav button:active{
     color:#55c7ff;
+}
+
+.nav-icon{
+    font-size:20px;
+    line-height:1;
 }
 
 @media(max-width:700px){
@@ -261,7 +270,11 @@ main{
     }
 
     .bottomNav button{
-        font-size:15px;
+        font-size:11px;
+    }
+
+    .nav-icon{
+        font-size:18px;
     }
 }
 
