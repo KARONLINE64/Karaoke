@@ -172,6 +172,36 @@ Español
 
 <script>localStorage.setItem('karaokeLocale', 'fr');</script>
 <script src="script.js"></script>
+<script>
+(function () {
+  window.checkOpenKjAccepting = async function () {
+    try {
+      const res = await fetch('http://127.0.0.1:3000/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ command: 'getAccepting' })
+      });
+      if (!res.ok) return false;
+      const data = await res.json();
+      return data && data.accepting === true;
+    } catch (error) {
+      return false;
+    }
+  };
+
+  const originalT = window.t;
+  if (typeof originalT === 'function') {
+    window.t = function (key) {
+      if (key === 'requestsDisabled') {
+        return localStorage.getItem('karaokeLocale') === 'en'
+          ? 'Request service not accessible. Please try again later.'
+          : 'Service de demandes inaccessible. Réessayez plus tard svp.';
+      }
+      return originalT(key);
+    };
+  }
+})();
+</script>
 <script>if (typeof applyLocale === 'function') applyLocale('fr');</script>
 </body>
 </html>
