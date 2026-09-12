@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -26,7 +26,7 @@
 <input
 id="search"
 type="text"
-placeholder="Search artist or song..."
+placeholder="Rechercher un artiste ou une chanson..."
 data-i18n-placeholder="searchPlaceholder"
 autocomplete="off"
 spellcheck="false">
@@ -41,12 +41,12 @@ spellcheck="false">
 
 <div class="welcomeAction">
 <span class="icon">🎤</span>
-<span data-i18n="welcome1">Pick a song, send request and let's sing!</span>
+<span data-i18n="welcome1">Choisissez une chanson, envoyez une demande et chantons !</span>
 </div>
 
 <div class="welcomeAction">
 <span class="icon">📚</span>
-<span data-i18n="welcome2">Or browse our complete catalogue</span>
+<span data-i18n="welcome2">Ou parcourez notre catalogue complet</span>
 </div>
 
 </div>
@@ -55,115 +55,63 @@ spellcheck="false">
 
 <section id="catalogPage" class="hidden">
 
-<div class="catalogItem" data-file="english.json">
-English
-</div>
-
-<div class="catalogItem" data-file="francais.json">
-Français
-</div>
-
-<div class="catalogItem" data-file="nederlands.json">
-Nederlands
-</div>
-
-<div class="catalogItem" data-file="italiano.json">
-Italiano
-</div>
-
-<div class="catalogItem" data-file="español.json">
-Español
-</div>
+<div class="catalogItem" data-file="english.json">English</div>
+<div class="catalogItem" data-file="francais.json">Français</div>
+<div class="catalogItem" data-file="nederlands.json">Nederlands</div>
+<div class="catalogItem" data-file="italiano.json">Italiano</div>
+<div class="catalogItem" data-file="español.json">Español</div>
 
 </section>
 
 <section id="newPage" class="hidden">
 
-<div class="catalogItem" data-file="newenglish.json">
-🔥 English
-</div>
-
-<div class="catalogItem" data-file="newfrancais.json">
-🔥 Français
-</div>
-
-<div class="catalogItem" data-file="newnederlands.json">
-🔥 Nederlands
-</div>
-
-<div class="catalogItem" data-file="newitaliano.json">
-🔥 Italiano
-</div>
-
-<div class="catalogItem" data-file="newespañol.json">
-🔥 Español
-</div>
+<div class="catalogItem" data-file="newenglish.json">🔥 English</div>
+<div class="catalogItem" data-file="newfrancais.json">🔥 Français</div>
+<div class="catalogItem" data-file="newnederlands.json">🔥 Nederlands</div>
+<div class="catalogItem" data-file="newitaliano.json">🔥 Italiano</div>
+<div class="catalogItem" data-file="newespañol.json">🔥 Español</div>
 
 </section>
 
 <section id="songsPage" class="hidden">
-
 <div id="songs"></div>
-
 </section>
 
 </main>
 
 <nav class="bottomNav">
-
-<button id="homeBtn" type="button">
-<span data-i18n="navHome">Home</span>
-</button>
-
-<button id="catalogBtn" type="button">
-<span data-i18n="navCatalog">Catalog</span>
-</button>
-
-<button id="newBtn" type="button">
-<span data-i18n="navNew">NEW</span>
-</button>
-
-<button id="requestBtn" type="button">
-<span data-i18n="navRequest">Request</span>
-</button>
-
-<button id="favBtn" type="button">
-<span data-i18n="navFavorites">My Songs</span>
-</button>
-
+<button id="homeBtn" type="button"><span data-i18n="navHome">Accueil</span></button>
+<button id="catalogBtn" type="button"><span data-i18n="navCatalog">Catalogue</span></button>
+<button id="newBtn" type="button"><span data-i18n="navNew">NOUVEAU</span></button>
+<button id="requestBtn" type="button"><span data-i18n="navRequest">Demande</span></button>
+<button id="favBtn" type="button"><span data-i18n="navFavorites">Mes chansons</span></button>
 </nav>
 
-
-<!-- Request modal (hidden by default) -->
 <div id="requestModal" class="hidden">
-	<div class="rb-overlay"></div>
-	<div class="rb-box">
-		<h3 data-i18n="requestModalTitle">Request</h3>
-
-<label for="reqSongSearch" data-i18n="requestSong">Song</label>
-	<input id="reqSongSearch" type="text" data-i18n-placeholder="requestSongPlaceholder" placeholder="Search artist or title">
-	<div id="requestResults" class="requestResults"></div>
-
-		<label for="reqArtist" data-i18n="requestArtist">Artist</label>
-		<input id="reqArtist" type="text" readonly>
-
-		<label for="reqTitle" data-i18n="requestTitle">Title</label>
-		<input id="reqTitle" type="text" readonly>
-
-		<label for="reqSinger" data-i18n="requestSinger">Singer</label>
-		<input id="reqSinger" type="text" data-i18n-placeholder="requestSingerPlaceholder" placeholder="Singer name">
-
-		<label for="reqKey" data-i18n="requestKey">Key Change</label>
-		<select id="reqKey"></select>
-
-		<div class="rb-actions">
-			<button id="sendRequestBtn" type="button" data-i18n="sendRequest">SEND REQUEST</button>
-			<button id="cancelRequestBtn" type="button" data-i18n="cancelRequest">CANCEL</button>
-		</div>
-
-		<div id="requestStatus" aria-live="polite"></div>
-	</div>
+<div class="rb-overlay"></div>
+<div class="rb-box">
+<h3 data-i18n="requestModalTitle">Demande</h3>
+<label for="reqSongSearch" data-i18n="requestSong">Chanson</label>
+<input id="reqSongSearch" type="text" data-i18n-placeholder="requestSongPlaceholder" placeholder="Rechercher artiste ou titre">
+<div id="requestResults" class="requestResults"></div>
+<label for="reqArtist" data-i18n="requestArtist">Artiste</label>
+<input id="reqArtist" type="text" readonly>
+<label for="reqTitle" data-i18n="requestTitle">Titre</label>
+<input id="reqTitle" type="text" readonly>
+<label for="reqSinger" data-i18n="requestSinger">Chanteur</label>
+<input id="reqSinger" type="text" data-i18n-placeholder="requestSingerPlaceholder" placeholder="Nom du chanteur">
+<label for="reqKey" data-i18n="requestKey">Changement de tonalité</label>
+<select id="reqKey"></select>
+<div class="rb-actions">
+<button id="sendRequestBtn" type="button" data-i18n="sendRequest">ENVOYER LA DEMANDE</button>
+<button id="cancelRequestBtn" type="button" data-i18n="cancelRequest">ANNULER</button>
+</div>
+<div id="requestStatus" aria-live="polite"></div>
+</div>
 </div>
 
+<script>localStorage.setItem('karaokeLocale', 'fr');</script>
 <script src="script.js"></script>
+<script>if (typeof applyLocale === 'function') applyLocale('fr');</script>
+</body>
 </html>
