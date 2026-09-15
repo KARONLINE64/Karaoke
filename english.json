@@ -4840,12 +4840,12 @@
     "title": "Come Back My Love"
   },
   {
-    "artist": "Daryl Hall   John Oates",
-    "title": "Say It Isn't So"
+    "artist": "Daryl Hall & John Oates",
+    "title": "I Can't Go For That (No Can Do)"
   },
   {
     "artist": "Daryl Hall & John Oates",
-    "title": "I Can't Go For That (No Can Do)"
+    "title": "Say It Isn't So"
   },
   {
     "artist": "Dave Matthews Band",
@@ -6724,6 +6724,10 @@
     "title": "So Long"
   },
   {
+    "artist": "Flayns feat. Fred-V",
+    "title": "I'm sorry"
+  },
+  {
     "artist": "Fleetwood Mac",
     "title": "Don't stop"
   },
@@ -6808,10 +6812,6 @@
     "title": "Everytime you need me"
   },
   {
-    "artist": "Frank Sinatra",
-    "title": "Killing me softly"
-  },
-  {
     "artist": "Francki Valli",
     "title": "Can't take my eyes off of you"
   },
@@ -6830,6 +6830,10 @@
   {
     "artist": "Frank Sinatra",
     "title": "It Was A Very Good Year"
+  },
+  {
+    "artist": "Frank Sinatra",
+    "title": "Killing me softly"
   },
   {
     "artist": "Frank Sinatra",
@@ -8716,18 +8720,6 @@
     "title": "Wooden heart"
   },
   {
-    "artist": "Johhny Horton",
-    "title": "North to Alska"
-  },
-  {
-    "artist": "Johhny Horton",
-    "title": "The mansion you stole"
-  },
-  {
-    "artist": "Johhny Horton",
-    "title": "Whisparing pines"
-  },
-  {
     "artist": "John Barrowman",
     "title": "When You Tell Me That You Love Me"
   },
@@ -8828,16 +8820,28 @@
     "title": "Ring Of Fire"
   },
   {
-    "artist": "Johnny hates jazz",
-    "title": "I don't to be a hero"
+    "artist": "Johnny Hates Jazz",
+    "title": "I don't wanna be a hero"
   },
   {
-    "artist": "Johnny Hates Jazz",
-    "title": "I Don't wanna be a hero"
+    "artist": "Johnny Horton",
+    "title": "North to Alska"
+  },
+  {
+    "artist": "Johnny Horton",
+    "title": "The mansion you stole"
+  },
+  {
+    "artist": "Johnny Horton",
+    "title": "Whisparing pines"
   },
   {
     "artist": "Johnny Logan",
     "title": "Hold me know"
+  },
+  {
+    "artist": "Johnny Logan",
+    "title": "What's another year"
   },
   {
     "artist": "Johnny mathis",
@@ -17274,5 +17278,9 @@
   {
     "artist": "ZZ Top",
     "title": "Sleeping bag"
+  },
+  {
+    "artist": "Cher",
+    "title": "Welcome to burlesque"
   }
 ]
