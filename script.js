@@ -668,6 +668,10 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
   console.log('REQUEST SENDING', payload);
   try {
     const res = await fetch('https://cloudflare-request-server.amkoud.workers.dev/request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    if (res.status === 403) {
+      applyAcceptingState(false);
+      return;
+    }
     if (!res.ok) throw new Error('network');
     requestStatus.textContent = t('requestSent');
     setTimeout(() => closeRequestModal(), 1100);
