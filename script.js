@@ -468,6 +468,7 @@ const requestStatus = document.getElementById('requestStatus');
 
 let selectedSongKey = null;
 let requestSelectedSong = null;
+let requestsAccepting = true;
 const requestSongIndex = new Map();
 
 const requestCatalogFiles = [
@@ -545,7 +546,7 @@ function renderRequestResults(list) {
       document.querySelectorAll('.requestResult').forEach(el => el.classList.toggle('selected', el === row));
       requestResults.innerHTML = '';
       requestResults.style.display = 'none';
-      requestStatus.textContent = '';
+      if (requestsAccepting) requestStatus.textContent = '';
     });
     requestResults.appendChild(row);
   });
@@ -586,9 +587,17 @@ async function checkOpenKjAccepting() {
   }
 }
 
+function applyAcceptingState(isAccepting) {
+  requestsAccepting = isAccepting;
+  requestStatus.textContent = isAccepting ? '' : t('requestsDisabled');
+  sendRequestBtn.disabled = !isAccepting;
+  sendRequestBtn.style.opacity = isAccepting ? '1' : '0.5';
+  sendRequestBtn.style.cursor = isAccepting ? 'pointer' : 'not-allowed';
+}
+
 async function openRequestModal() {
   const isAccepting = await checkOpenKjAccepting();
-  
+
   await buildRequestSongIndex();
   reqSongSearch.value = '';
   requestResults.innerHTML = '';
@@ -596,19 +605,16 @@ async function openRequestModal() {
   reqArtist.value = '';
   reqTitle.value = '';
   reqSinger.value = '';
-  requestStatus.textContent = isAccepting ? '' : t('requestsDisabled');
   reqKey.value = '0';
-  
-  sendRequestBtn.disabled = !isAccepting;
-  sendRequestBtn.style.opacity = isAccepting ? '1' : '0.5';
-  sendRequestBtn.style.cursor = isAccepting ? 'pointer' : 'not-allowed';
-  
+
+  applyAcceptingState(isAccepting);
+
   requestModal.classList.remove('hidden');
 }
 
 async function openRequestModalWithSong(song) {
   const isAccepting = await checkOpenKjAccepting();
-  
+
   await buildRequestSongIndex();
   reqSongSearch.value = '';
   requestResults.innerHTML = '';
@@ -616,13 +622,10 @@ async function openRequestModalWithSong(song) {
   reqArtist.value = song.artist || '';
   reqTitle.value = song.title || '';
   reqSinger.value = '';
-  requestStatus.textContent = isAccepting ? '' : t('requestsDisabled');
   reqKey.value = '0';
-  
-  sendRequestBtn.disabled = !isAccepting;
-  sendRequestBtn.style.opacity = isAccepting ? '1' : '0.5';
-  sendRequestBtn.style.cursor = isAccepting ? 'pointer' : 'not-allowed';
-  
+
+  applyAcceptingState(isAccepting);
+
   requestModal.classList.remove('hidden');
 }
 
@@ -698,7 +701,7 @@ const translations = {
     sendRequest: 'ENVOYER LA DEMANDE',
     cancelRequest: 'ANNULER',
     normalKey: 'Normal',
-    requestsDisabled: 'Services inaccessibles...',
+    requestsDisabled: "Demandes désactivées actuellement. Attendez le début de l'animation svp.",
     noSongFound: 'Aucune chanson trouvée.',
     selectSong: 'Veuillez sélectionner une chanson.',
     enterSinger: 'Veuillez entrer le nom du chanteur.',
@@ -724,7 +727,7 @@ const translations = {
     sendRequest: 'SEND REQUEST',
     cancelRequest: 'CANCEL',
     normalKey: 'Normal',
-    requestsDisabled: 'Services inaccessible...',
+    requestsDisabled: 'Requests are currently disabled. Please wait for the event to start.',
     noSongFound: 'No song found.',
     selectSong: 'Please select a song.',
     enterSinger: 'Please enter the singer name.',
