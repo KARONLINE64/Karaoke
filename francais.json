@@ -108,6 +108,10 @@
     "title": "Prince Ali"
   },
   {
+    "artist": "Alain Barriere",
+    "title": "Ma vie (Remix)"
+  },
+  {
     "artist": "Alain Barrière",
     "title": "Elle était si jolie"
   },
@@ -162,6 +166,10 @@
   {
     "artist": "Alain Delorme",
     "title": "Romantique avec toi"
+  },
+  {
+    "artist": "Alain Delorme",
+    "title": "Romantique avec toi (Remix)"
   },
   {
     "artist": "Alain Souchon",
@@ -397,6 +405,10 @@
   },
   {
     "artist": "Annie Cordy",
+    "title": "Nini la chance"
+  },
+  {
+    "artist": "Annie Cordy",
     "title": "Six rose"
   },
   {
@@ -620,6 +632,10 @@
     "title": "Dommage"
   },
   {
+    "artist": "Bigflo et Oli",
+    "title": "Dernière"
+  },
+  {
     "artist": "Bill Baxter",
     "title": "Bienvenue à Paris"
   },
@@ -634,6 +650,10 @@
   {
     "artist": "Bizet  ( Carmen)",
     "title": "Toréador"
+  },
+  {
+    "artist": "Black M",
+    "title": "Sur ma route"
   },
   {
     "artist": "Blondo",
@@ -784,6 +804,14 @@
     "title": "N’insiste pas"
   },
   {
+    "artist": "Camille Lellouche",
+    "title": "Ne me jugez pas"
+  },
+  {
+    "artist": "Camille Lellouche & Grand Corps Malade",
+    "title": "Mais je t’aime"
+  },
+  {
     "artist": "Canada",
     "title": "Mourir les sirènes"
   },
@@ -834,6 +862,10 @@
   {
     "artist": "Carolyne Jomphe",
     "title": "Alléluia"
+  },
+  {
+    "artist": "Carolyne Jomphe",
+    "title": "Alléluia (VF)"
   },
   {
     "artist": "Carte de Séjour",
@@ -950,6 +982,10 @@
   {
     "artist": "Céline Dion",
     "title": "On ne change pas"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Ordinaire"
   },
   {
     "artist": "Céline Dion",
@@ -1113,6 +1149,10 @@
   },
   {
     "artist": "Charles Aznavour",
+    "title": "Mes emmerdes (Yann Muller remix)"
+  },
+  {
+    "artist": "Charles Aznavour",
     "title": "Tu t'laisse aller"
   },
   {
@@ -1196,6 +1236,10 @@
     "title": "Feel good"
   },
   {
+    "artist": "Charlotte Cardin",
+    "title": "Feel good"
+  },
+  {
     "artist": "Charlotte Julian",
     "title": "Fleur de province"
   },
@@ -1230,6 +1274,10 @@
   {
     "artist": "Chimène Badi",
     "title": "Le jour d'après"
+  },
+  {
+    "artist": "Chimène Bady",
+    "title": "Si j'avais su t'aimer"
   },
   {
     "artist": "Christian Delagrange",
@@ -1310,6 +1358,10 @@
   {
     "artist": "Christophe Willem",
     "title": "Si mes larmes tombent"
+  },
+  {
+    "artist": "Clara Luciani",
+    "title": "Bravo, tu as gagné (live)"
   },
   {
     "artist": "Clara Luciani",
@@ -1608,6 +1660,10 @@
     "title": "Les démons de minuit"
   },
   {
+    "artist": "Collectif Métissé",
+    "title": "Les démons de minuit"
+  },
+  {
     "artist": "Colonel Reyel",
     "title": "Aurélie"
   },
@@ -1706,6 +1762,10 @@
   {
     "artist": "Dalida",
     "title": "Je suis malade"
+  },
+  {
+    "artist": "Dalida",
+    "title": "La danse de Zorba"
   },
   {
     "artist": "Dalida",
@@ -1852,6 +1912,10 @@
     "title": "L'envie d'aimer"
   },
   {
+    "artist": "Daniel Levi",
+    "title": "L'envie d'aimer (Yann Muller remix)"
+  },
+  {
     "artist": "Danni & Daho",
     "title": "Comme un boomerang"
   },
@@ -1992,6 +2056,10 @@
     "title": "Libre"
   },
   {
+    "artist": "Demon Hunters",
+    "title": "Libre"
+  },
+  {
     "artist": "Desireless",
     "title": "Voyage voyage"
   },
@@ -2080,6 +2148,10 @@
     "title": "Elle"
   },
   {
+    "artist": "Didier Barbelivien",
+    "title": "Peut-être Toi, peut-être une autre"
+  },
+  {
     "artist": "Didier Barbelivien & Felix Gray",
     "title": "A toutes les filles"
   },
@@ -2090,6 +2162,10 @@
   {
     "artist": "Didier Sustrac",
     "title": "Tout seul"
+  },
+  {
+    "artist": "Disiz & Théodora",
+    "title": "Melodrama"
   },
   {
     "artist": "Disney",
@@ -2170,6 +2246,10 @@
   {
     "artist": "Dorthée",
     "title": "Maman"
+  },
+  {
+    "artist": "Dr Yaro",
+    "title": "Minimum ça"
   },
   {
     "artist": "Dr Yaro",
@@ -2468,6 +2548,10 @@
     "title": "Venir voir"
   },
   {
+    "artist": "Enola",
+    "title": "Bonjour, je me présente"
+  },
+  {
     "artist": "Enrico Macias",
     "title": "Adieu mon pays"
   },
@@ -2588,8 +2672,16 @@
     "title": "Bottega"
   },
   {
+    "artist": "Eva",
+    "title": "Bottega"
+  },
+  {
     "artist": "Eve Angeli",
     "title": "Une chanson dans le cœur"
+  },
+  {
+    "artist": "Fababy",
+    "title": "Love d’un voyou ft. Aya Nakamura"
   },
   {
     "artist": "Fababy  ft. Aya Nakamura",
@@ -2885,6 +2977,10 @@
   },
   {
     "artist": "Francis Cabrel",
+    "title": "L'encre de tes yeux (Remix)"
+  },
+  {
+    "artist": "Francis Cabrel",
     "title": "La cabane du pêcheur"
   },
   {
@@ -2970,6 +3066,10 @@
   {
     "artist": "Francois Feldman",
     "title": "C'est toi qui m'a fais"
+  },
+  {
+    "artist": "Francois Feldman",
+    "title": "Rien Que Pour Toi"
   },
   {
     "artist": "François Feldman",
@@ -3138,6 +3238,10 @@
   {
     "artist": "Frederickx- Goldman-Jones",
     "title": "Un deux trois"
+  },
+  {
+    "artist": "Fredz",
+    "title": "Le stade"
   },
   {
     "artist": "Frehel",
@@ -3489,6 +3593,10 @@
   },
   {
     "artist": "Ginette Reno",
+    "title": "L'essentiel"
+  },
+  {
+    "artist": "Ginette Reno",
     "title": "La deuxième voix"
   },
   {
@@ -3528,10 +3636,6 @@
     "title": "Ville de lumière"
   },
   {
-    "artist": "Golden",
-    "title": "Briller"
-  },
-  {
     "artist": "Goldman & Jones",
     "title": "Je te donne"
   },
@@ -3554,6 +3658,14 @@
   {
     "artist": "Grand Corps Malade",
     "title": "Retiens les rêves"
+  },
+  {
+    "artist": "Grand Corps Malade",
+    "title": "Retiens les rêves"
+  },
+  {
+    "artist": "Grand Corps Malade & Camille Lellouche",
+    "title": "Mais je t'aime"
   },
   {
     "artist": "Grand Jojo",
@@ -3741,6 +3853,10 @@
   },
   {
     "artist": "Herbert Léonard",
+    "title": "Quand tu m’aimes"
+  },
+  {
+    "artist": "Herbert Léonard",
     "title": "Tu ne pourras plus jamais m'oublier"
   },
   {
@@ -3890,6 +4006,10 @@
   {
     "artist": "Indila",
     "title": "S.O.S."
+  },
+  {
+    "artist": "Indila",
+    "title": "Tourner dans le vide"
   },
   {
     "artist": "Indila",
@@ -4228,6 +4348,14 @@
     "title": "Maintenant, je sais"
   },
   {
+    "artist": "Jean Jacques Goldman",
+    "title": "Parler v'ma vie"
+  },
+  {
+    "artist": "Jean Jacques Lafon",
+    "title": "Le géant de papier (Yann Muller)"
+  },
+  {
     "artist": "Jean Lumière",
     "title": "Plaisir d'amour"
   },
@@ -4561,11 +4689,11 @@
   },
   {
     "artist": "Joe Dassin",
-    "title": "L’équipe à Jojo"
+    "title": "L'été indien"
   },
   {
     "artist": "Joe Dassin",
-    "title": "L'été indien"
+    "title": "L’équipe à Jojo"
   },
   {
     "artist": "Joe Dassin",
@@ -4884,6 +5012,10 @@
     "title": "J’oublierai ton nom"
   },
   {
+    "artist": "Johnny Hallyday",
+    "title": "Non, Je Ne Regrette Rien"
+  },
+  {
     "artist": "Jonatan Cerrada",
     "title": "Rien ne me changera"
   },
@@ -5084,6 +5216,10 @@
     "title": "Petit génie"
   },
   {
+    "artist": "Jungeli",
+    "title": "Petit génie"
+  },
+  {
     "artist": "K O D",
     "title": "Chacun sa route"
   },
@@ -5204,6 +5340,22 @@
     "title": "Garcon"
   },
   {
+    "artist": "Kpop Demon Hunters",
+    "title": "Briller (Golden)"
+  },
+  {
+    "artist": "Kpop Demon Hunters",
+    "title": "Briller (Golden)"
+  },
+  {
+    "artist": "Kpop Demon Hunters",
+    "title": "Libre (Free)"
+  },
+  {
+    "artist": "Kpop Demon Hunters",
+    "title": "Libre (Free)"
+  },
+  {
     "artist": "Kyo",
     "title": "Dernière danse"
   },
@@ -5280,6 +5432,10 @@
     "title": "La goffa Lolita"
   },
   {
+    "artist": "La Petite Culotte",
+    "title": "La goffa lolita"
+  },
+  {
     "artist": "La petite sirène",
     "title": "Partir là-bas"
   },
@@ -5350,6 +5506,10 @@
   {
     "artist": "Lara Fabian",
     "title": "Je suis malade"
+  },
+  {
+    "artist": "Lara Fabian",
+    "title": "Je t'ai cherché"
   },
   {
     "artist": "Lara Fabian",
@@ -6009,6 +6169,10 @@
   },
   {
     "artist": "Maître Gims",
+    "title": "Ciel"
+  },
+  {
+    "artist": "Maître Gims",
     "title": "Estce que tu m'aimes"
   },
   {
@@ -6017,7 +6181,15 @@
   },
   {
     "artist": "Maître Gims",
+    "title": "Ninao"
+  },
+  {
+    "artist": "Maître Gims",
     "title": "Parisienne"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Spider"
   },
   {
     "artist": "Maitre Gims",
@@ -6312,6 +6484,10 @@
     "title": "Mamma Mia! (version française)"
   },
   {
+    "artist": "Mentissa",
+    "title": "Mamma Mia! (VF)"
+  },
+  {
     "artist": "Michal",
     "title": "Tu Mets De L’Or"
   },
@@ -6330,6 +6506,10 @@
   {
     "artist": "Michel Berger",
     "title": "La groupie du pianiste"
+  },
+  {
+    "artist": "Michel Berger",
+    "title": "La Groupie Du Pianiste (Remix)"
   },
   {
     "artist": "Michel Berger",
@@ -6378,6 +6558,10 @@
   {
     "artist": "Michel Delpech",
     "title": "Le chasseur"
+  },
+  {
+    "artist": "Michel Delpech",
+    "title": "Le Chasseur (Les oies sauvages-Yann Muller remix)"
   },
   {
     "artist": "Michel Delpech",
@@ -6434,6 +6618,10 @@
   {
     "artist": "Michel Fugain",
     "title": "Je n'aurai pas le temps"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Les Sud Américaines"
   },
   {
     "artist": "Michel Fugain",
@@ -6653,6 +6841,10 @@
   },
   {
     "artist": "Michel Sardou",
+    "title": "Être une femme (Remix)"
+  },
+  {
+    "artist": "Michel Sardou",
     "title": "Il Etait Là"
   },
   {
@@ -6693,11 +6885,11 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "L’aigle noir (live 2013)"
+    "title": "L'autre femme"
   },
   {
     "artist": "Michel Sardou",
-    "title": "L'autre femme"
+    "title": "L’aigle noir (live 2013)"
   },
   {
     "artist": "Michel Sardou",
@@ -6782,6 +6974,10 @@
   {
     "artist": "Michel Sardou",
     "title": "Selon que vous serez etc... etc..."
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Tous les bateaux s’envolent"
   },
   {
     "artist": "Michel Sardou",
@@ -6917,6 +7113,10 @@
   },
   {
     "artist": "Mireille Mathieu",
+    "title": "Une femme amoureuse"
+  },
+  {
+    "artist": "Mireille Mathieu",
     "title": "Une histoire d'amour"
   },
   {
@@ -6930,6 +7130,10 @@
   {
     "artist": "Mistinguett",
     "title": "Mon homme"
+  },
+  {
+    "artist": "Moha K",
+    "title": "Vroum Vroum"
   },
   {
     "artist": "Moon Ray",
@@ -7216,6 +7420,10 @@
     "title": "Mirza"
   },
   {
+    "artist": "Nino Ferrer",
+    "title": "Si tu m'aimes encore"
+  },
+  {
     "artist": "Noir Désir",
     "title": "Comme elle vient"
   },
@@ -7342,6 +7550,10 @@
   {
     "artist": "Orelsan",
     "title": "La terre est ronde"
+  },
+  {
+    "artist": "Oria",
+    "title": "Soirée mondaine"
   },
   {
     "artist": "Ozone",
@@ -7812,6 +8024,14 @@
     "title": "Nous on sait"
   },
   {
+    "artist": "Pierre Garnier",
+    "title": "Nous on sait"
+  },
+  {
+    "artist": "Pierre Garnier & M Pokora",
+    "title": "Chaque seconde"
+  },
+  {
     "artist": "Pierre Garnier & M Pokora",
     "title": "Chaque seconde"
   },
@@ -7929,6 +8149,10 @@
   },
   {
     "artist": "Renaud",
+    "title": "Adieu minette"
+  },
+  {
+    "artist": "Renaud",
     "title": "C'est mon dernier bal"
   },
   {
@@ -7954,6 +8178,10 @@
   {
     "artist": "Renaud",
     "title": "It is not because you are"
+  },
+  {
+    "artist": "Renaud",
+    "title": "La ballade nord irlandaise"
   },
   {
     "artist": "Renaud",
@@ -8102,6 +8330,10 @@
   {
     "artist": "Rita Mitsouko",
     "title": "Y'a d' la Haine"
+  },
+  {
+    "artist": "Robbie Williams",
+    "title": "Supreme"
   },
   {
     "artist": "Robert Charlebois",
@@ -8508,6 +8740,10 @@
     "title": "Los Angeles"
   },
   {
+    "artist": "Siaka",
+    "title": "Los Angeles"
+  },
+  {
     "artist": "Sim & Topaloff",
     "title": "Ma chemise grise"
   },
@@ -8637,6 +8873,10 @@
   },
   {
     "artist": "Soprano",
+    "title": "Inaya"
+  },
+  {
+    "artist": "Soprano",
     "title": "Moi j'ai pas"
   },
   {
@@ -8746,6 +8986,10 @@
   {
     "artist": "Stromae",
     "title": "Formidable"
+  },
+  {
+    "artist": "Stromae",
+    "title": "Mon amour"
   },
   {
     "artist": "Stromae",
@@ -9001,6 +9245,10 @@
   },
   {
     "artist": "Véronique Sanson",
+    "title": "Amoureuse"
+  },
+  {
+    "artist": "Véronique Sanson",
     "title": "Bahia"
   },
   {
@@ -9010,6 +9258,10 @@
   {
     "artist": "Véronique Sanson",
     "title": "Comme je l'imagine"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Je me suis tellement manquée"
   },
   {
     "artist": "Véronique Sanson",
@@ -9030,6 +9282,10 @@
   {
     "artist": "Véronique Sanson",
     "title": "Vancouver"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Amoureuse"
   },
   {
     "artist": "Véronique Sanson & Vianney",
@@ -9074,6 +9330,10 @@
   {
     "artist": "Vitaa",
     "title": "Pourquoi Les Hommes"
+  },
+  {
+    "artist": "Vitaa",
+    "title": "Ton amoureuse"
   },
   {
     "artist": "Vitaa",
@@ -9326,5 +9586,13 @@
   {
     "artist": "Zouk Machine",
     "title": "Maldon"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Putain de temps"
+  },
+  {
+    "artist": "Jeanne Mas",
+    "title": "L’enfant"
   }
 ]
