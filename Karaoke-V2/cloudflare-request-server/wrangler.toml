@@ -1,0 +1,13 @@
+name = "cloudflare-request-server"
+main = "src/index.js"
+compatibility_date = "2025-10-01"
+type = "javascript"
+d1_databases = [
+  { binding = "REQUEST_DB", database_name = "requests" }
+]
+
+[vars]
+# IMPORTANT: gardez ici toutes les origines qui doivent pouvoir appeler ce Worker.
+# Si la valeur réellement déployée (dashboard Cloudflare > Settings > Variables)
+# diffère de celle-ci, un `wrangler deploy` l'écrasera avec cette liste.
+ALLOWED_ORIGINS = "http://127.0.0.1:5500,https://karonline64.github.io"
