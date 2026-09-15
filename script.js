@@ -574,11 +574,15 @@ function searchRequestSongs(query) {
 
 async function checkOpenKjAccepting() {
   try {
-    const res = await fetch('https://cloudflare-request-server.amkoud.workers.dev/accepting-status');
+    const res = await fetch('http://127.0.0.1:3000/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ command: 'getAccepting' })
+    });
     const data = await res.json();
     return data && data.accepting === true;
   } catch (error) {
-    console.log('[request] Cannot reach request status endpoint, allowing requests to proceed');
+    console.log('[request] Cannot reach OpenKJ bridge, allowing requests to proceed');
     return true;
   }
 }
