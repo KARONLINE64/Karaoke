@@ -3,7 +3,7 @@ const parseAllowedOrigins = value => String(value || "http://127.0.0.1:5500").sp
 const makeCorsHeaders = (origin, allowedOrigins) => {
   const allowedOrigin = allowedOrigins.includes(origin) ? origin : null;
   const headers = {
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Request-Token",
   };
   if (allowedOrigin) {
@@ -251,11 +251,6 @@ export default {
     await ensureSchema(env);
 
     const url = new URL(request.url);
-
-    if (request.method === "GET" && url.pathname === "/accepting-status") {
-      const accepting = await isAccepting(env);
-      return jsonResponse({ accepting }, 200, corsHeaders);
-    }
 
     if (request.method === "POST" && url.pathname === "/") {
       if (!validateOpenKjAuth(request, openKjApiKey)) {
