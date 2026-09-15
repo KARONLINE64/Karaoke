@@ -19,14 +19,12 @@ const search = document.getElementById("search");
 
 const homePage = document.getElementById("homePage");
 const catalogPage = document.getElementById("catalogPage");
-const newPage = document.getElementById("newPage");
 const songsPage = document.getElementById("songsPage");
 
 const songsDiv = document.getElementById("songs");
 
 const homeBtn = document.getElementById("homeBtn");
 const catalogBtn = document.getElementById("catalogBtn");
-const newBtn = document.getElementById("newBtn");
 const favBtn = document.getElementById("favBtn");
 const requestBtn = document.getElementById("requestBtn");
 
@@ -78,7 +76,6 @@ function removeFavorite(key) {
 function hideAllPages() {
   homePage.classList.add("hidden");
   catalogPage.classList.add("hidden");
-  newPage.classList.add("hidden");
   songsPage.classList.add("hidden");
 }
 
@@ -91,12 +88,6 @@ function showHome() {
 function showCatalog() {
   hideAllPages();
   catalogPage.classList.remove("hidden");
-  search.value = "";
-}
-
-function showNew() {
-  hideAllPages();
-  newPage.classList.remove("hidden");
   search.value = "";
 }
 
@@ -416,10 +407,6 @@ catalogBtn.onclick = function () {
   showCatalog();
 };
 
-newBtn.onclick = function () {
-  showNew();
-};
-
 favBtn.onclick = function () {
   const combined = [];
 
@@ -698,7 +685,6 @@ const translations = {
     welcome2: 'Ou parcourez notre catalogue complet',
     navHome: 'Accueil',
     navCatalog: 'Catalogue',
-    navNew: 'Nouveau',
     navRequest: 'Demande',
     navFavorites: 'Mes chansons',
     requestModalTitle: 'Demande',
@@ -725,7 +711,6 @@ const translations = {
     welcome2: 'Or browse our complete catalogue',
     navHome: 'Home',
     navCatalog: 'Catalog',
-    navNew: 'NEW',
     navRequest: 'Request',
     navFavorites: 'My Songs',
     requestModalTitle: 'Request',
