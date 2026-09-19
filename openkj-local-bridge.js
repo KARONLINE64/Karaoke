@@ -251,6 +251,8 @@ const createServer = () => {
       return;
     }
 
+    console.log('[bridge] Payload:', JSON.stringify(payload));
+
     if (payload && typeof payload.command === 'string') {
       const remoteResponse = await handleOpenKjCommand(payload);
       if (remoteResponse.status >= 400) {
