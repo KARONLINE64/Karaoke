@@ -100,17 +100,20 @@ main{
     display:none!important;
 }
 
-#offlineOverlay{
+#offlineToast{
     position:fixed;
-    inset:0;
+    left:50%;
+    bottom:90px;
+    transform:translateX(-50%);
     z-index:9999;
-    background:#05070d;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    max-width:min(92vw,420px);
+    background:#111827;
+    border:1px solid rgba(223,234,252,.25);
+    border-radius:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+    padding:14px 18px;
     text-align:center;
-    padding:32px;
-    font-size:18px;
+    font-size:14px;
     font-weight:bold;
     color:#dfeafc;
 }

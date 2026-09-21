@@ -28,9 +28,13 @@ const catalogBtn = document.getElementById("catalogBtn");
 const favBtn = document.getElementById("favBtn");
 const requestBtn = document.getElementById("requestBtn");
 
-const offlineOverlay = document.getElementById("offlineOverlay");
+const offlineToast = document.getElementById("offlineToast");
 const SERVICE_STATUS_URL = "https://cloudflare-request-server.amkoud.workers.dev/status";
 const SERVICE_CHECK_INTERVAL_MS = 10000;
+const OFFLINE_TOAST_DURATION_MS = 4000;
+
+let serviceOnline = true;
+let offlineToastTimer = null;
 
 async function checkServiceOnline() {
   try {
@@ -44,12 +48,25 @@ async function checkServiceOnline() {
 }
 
 async function updateServiceStatus() {
-  const online = await checkServiceOnline();
-  if (offlineOverlay) offlineOverlay.classList.toggle("hidden", online);
+  serviceOnline = await checkServiceOnline();
+}
+
+function showOfflineToastIfNeeded() {
+  if (serviceOnline || !offlineToast) return;
+  offlineToast.classList.remove("hidden");
+  clearTimeout(offlineToastTimer);
+  offlineToastTimer = setTimeout(() => {
+    offlineToast.classList.add("hidden");
+  }, OFFLINE_TOAST_DURATION_MS);
 }
 
 updateServiceStatus();
 setInterval(updateServiceStatus, SERVICE_CHECK_INTERVAL_MS);
+
+[homeBtn, catalogBtn, favBtn, requestBtn].forEach(btn => {
+  if (btn) btn.addEventListener("click", showOfflineToastIfNeeded);
+});
+if (search) search.addEventListener("input", showOfflineToastIfNeeded);
 
 const virtualState = {
   initialized: false,
