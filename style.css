@@ -100,6 +100,21 @@ main{
     display:none!important;
 }
 
+#offlineOverlay{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#05070d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:32px;
+    font-size:18px;
+    font-weight:bold;
+    color:#dfeafc;
+}
+
 #welcome{
     margin-top:50px;
     text-align:center;

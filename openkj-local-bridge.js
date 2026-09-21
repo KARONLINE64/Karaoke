@@ -151,6 +151,7 @@ const handleOpenKjCommand = async (payload) => {
 
   switch (command) {
     case 'connectionTest':
+    case 'heartbeat':
     case 'getSerial':
     case 'getAccepting':
     case 'setAccepting':
@@ -289,6 +290,16 @@ const createServer = () => {
   return server;
 };
 
+const HEARTBEAT_INTERVAL_MS = 5000;
+
+const sendHeartbeat = async () => {
+  try {
+    await requestRemote('/', { command: 'heartbeat' });
+  } catch (error) {
+    console.error('[bridge] Heartbeat failed:', error.message);
+  }
+};
+
 const startBridge = () => {
   const key = ensureOpenKjApiKey();
   console.log('[bridge] Starting OpenKJ local bridge');
@@ -301,8 +312,13 @@ const startBridge = () => {
     console.log(`[bridge] Bridge ready and listening on http://${HOST}:${PORT}`);
   });
 
+  sendHeartbeat();
+  const heartbeatTimer = setInterval(sendHeartbeat, HEARTBEAT_INTERVAL_MS);
+  console.log(`[bridge] Sending heartbeat every ${HEARTBEAT_INTERVAL_MS / 1000}s so the site knows OpenKJ is online`);
+
   const shutdown = () => {
     console.log('[bridge] Shutting down bridge');
+    clearInterval(heartbeatTimer);
     server.close(() => process.exit(0));
   };
 
