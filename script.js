@@ -47,12 +47,10 @@ async function checkServiceOnline() {
   }
 }
 
-async function updateServiceStatus() {
-  serviceOnline = await checkServiceOnline();
-}
+const restrictedWhenOffline = [catalogBtn, favBtn, requestBtn, search].filter(Boolean);
 
 function showOfflineToastIfNeeded() {
-  if (serviceOnline || !offlineToast) return;
+  if (!offlineToast) return;
   offlineToast.classList.remove("hidden");
   clearTimeout(offlineToastTimer);
   offlineToastTimer = setTimeout(() => {
@@ -60,13 +58,19 @@ function showOfflineToastIfNeeded() {
   }, OFFLINE_TOAST_DURATION_MS);
 }
 
+function applyOfflineUiState() {
+  restrictedWhenOffline.forEach(el => {
+    el.classList.toggle("offlineDisabled", !serviceOnline);
+  });
+}
+
+async function updateServiceStatus() {
+  serviceOnline = await checkServiceOnline();
+  applyOfflineUiState();
+}
+
 updateServiceStatus();
 setInterval(updateServiceStatus, SERVICE_CHECK_INTERVAL_MS);
-
-[homeBtn, catalogBtn, favBtn, requestBtn].forEach(btn => {
-  if (btn) btn.addEventListener("click", showOfflineToastIfNeeded);
-});
-if (search) search.addEventListener("input", showOfflineToastIfNeeded);
 
 const virtualState = {
   initialized: false,
@@ -302,6 +306,7 @@ function createSongElement() {
   // Allow selecting a song by clicking the item (ignore clicks on the star)
   songEl.addEventListener('click', (e) => {
     if (e.target.closest('.star')) return;
+    if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
     const idx = songEl.dataset.index;
     if (!idx) return;
     const song = virtualState.currentList[Number(idx)];
@@ -421,6 +426,12 @@ fetch("songs.json")
   });
 
 search.addEventListener("input", function () {
+  if (!serviceOnline) {
+    search.value = "";
+    showOfflineToastIfNeeded();
+    return;
+  }
+
   const value = search.value.trim().toLowerCase();
 
   if (value === "") {
@@ -444,10 +455,12 @@ homeBtn.onclick = function () {
 };
 
 catalogBtn.onclick = function () {
+  if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
   showCatalog();
 };
 
 favBtn.onclick = function () {
+  if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
   const combined = [];
 
   for (const s of songs) {
@@ -489,6 +502,7 @@ favBtn.onclick = function () {
 
 document.querySelectorAll(".catalogItem").forEach(item => {
   item.onclick = function () {
+    if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
     loadLanguage(this.dataset.file);
   };
 });
@@ -684,7 +698,10 @@ reqSongSearch && reqSongSearch.addEventListener('input', () => searchRequestSong
 const requestBox = requestModal && requestModal.querySelector('.rb-box');
 const requestOverlay = requestModal && requestModal.querySelector('.rb-overlay');
 
-requestBtn && requestBtn.addEventListener('click', () => openRequestModal());
+requestBtn && requestBtn.addEventListener('click', () => {
+  if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
+  openRequestModal();
+});
 cancelRequestBtn && cancelRequestBtn.addEventListener('click', () => closeRequestModal());
 
 requestOverlay && requestOverlay.addEventListener('click', () => closeRequestModal());
