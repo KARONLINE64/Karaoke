@@ -21,9 +21,9 @@ const getEnv = env => ({
   openKjApiKey: env.OPENKJ_API_KEY,
 });
 
-const dbRun = async (env, sql, params = []) => env.REQUEST_DB.prepare(sql).run(params);
-const dbGet = async (env, sql, params = []) => env.REQUEST_DB.prepare(sql).first(params);
-const dbAll = async (env, sql, params = []) => env.REQUEST_DB.prepare(sql).all(params);
+const dbRun = async (env, sql, params = []) => env.REQUEST_DB.prepare(sql).bind(...params).run();
+const dbGet = async (env, sql, params = []) => env.REQUEST_DB.prepare(sql).bind(...params).first();
+const dbAll = async (env, sql, params = []) => env.REQUEST_DB.prepare(sql).bind(...params).all();
 
 const initSchema = async env => {
   await dbRun(env, `CREATE TABLE IF NOT EXISTS requests (
