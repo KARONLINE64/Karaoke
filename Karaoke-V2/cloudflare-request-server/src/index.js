@@ -1,9 +1,11 @@
 const parseAllowedOrigins = value => String(value || "http://127.0.0.1:5500").split(",").map(s => s.trim()).filter(Boolean);
 
+const HEARTBEAT_TIMEOUT_MS = 12000;
+
 const makeCorsHeaders = (origin, allowedOrigins) => {
   const allowedOrigin = allowedOrigins.includes(origin) ? origin : null;
   const headers = {
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Request-Token",
   };
   if (allowedOrigin) {
@@ -90,6 +92,19 @@ const setAccepting = async (env, accepting) => {
   return accepting;
 };
 
+const recordHeartbeat = async env => {
+  await setMetaValue(env, "last_heartbeat", Date.now());
+};
+
+const isOnline = async env => {
+  const value = await getMetaValue(env, "last_heartbeat");
+  const lastHeartbeat = parseInt(value, 10);
+  if (!Number.isFinite(lastHeartbeat)) {
+    return false;
+  }
+  return Date.now() - lastHeartbeat < HEARTBEAT_TIMEOUT_MS;
+};
+
 const generateRequestId = () => {
   if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
     return crypto.randomUUID();
@@ -148,6 +163,10 @@ const handleOpenKjCommand = async (env, data, corsHeaders) => {
   switch (command) {
     case "connectionTest":
       return jsonResponse({ command: "connectionTest", error: "" }, 200, corsHeaders);
+    case "heartbeat": {
+      await recordHeartbeat(env);
+      return jsonResponse({ command: "heartbeat", error: "" }, 200, corsHeaders);
+    }
     case "getSerial": {
       const serial = await getSerial(env);
       return jsonResponse({ command: "getSerial", error: "", serial }, 200, corsHeaders);
@@ -251,6 +270,11 @@ export default {
     await ensureSchema(env);
 
     const url = new URL(request.url);
+
+    if (request.method === "GET" && url.pathname === "/status") {
+      const online = await isOnline(env);
+      return jsonResponse({ online }, 200, corsHeaders);
+    }
 
     if (request.method === "POST" && url.pathname === "/") {
       if (!validateOpenKjAuth(request, openKjApiKey)) {

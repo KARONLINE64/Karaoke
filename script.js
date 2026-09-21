@@ -28,6 +28,29 @@ const catalogBtn = document.getElementById("catalogBtn");
 const favBtn = document.getElementById("favBtn");
 const requestBtn = document.getElementById("requestBtn");
 
+const offlineOverlay = document.getElementById("offlineOverlay");
+const SERVICE_STATUS_URL = "https://cloudflare-request-server.amkoud.workers.dev/status";
+const SERVICE_CHECK_INTERVAL_MS = 10000;
+
+async function checkServiceOnline() {
+  try {
+    const res = await fetch(SERVICE_STATUS_URL);
+    const data = await res.json();
+    return data && data.online === true;
+  } catch (error) {
+    console.log("[status] Cannot reach status endpoint, treating as offline");
+    return false;
+  }
+}
+
+async function updateServiceStatus() {
+  const online = await checkServiceOnline();
+  if (offlineOverlay) offlineOverlay.classList.toggle("hidden", online);
+}
+
+updateServiceStatus();
+setInterval(updateServiceStatus, SERVICE_CHECK_INTERVAL_MS);
+
 const virtualState = {
   initialized: false,
   spacer: null,
