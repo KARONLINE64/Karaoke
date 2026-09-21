@@ -118,6 +118,11 @@ main{
     color:#dfeafc;
 }
 
+.offlineDisabled{
+    opacity:.4;
+    cursor:not-allowed!important;
+}
+
 #welcome{
     margin-top:50px;
     text-align:center;
