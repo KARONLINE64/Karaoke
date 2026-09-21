@@ -241,6 +241,11 @@ const handleRequestSubmission = async (env, request, data, corsHeaders, requestE
     return buildErrorResponse({ status: "error", message: "keyChange out of range" }, 400, corsHeaders);
   }
 
+  const online = await isOnline(env);
+  if (!online) {
+    return buildErrorResponse({ status: "error", message: "service offline" }, 403, corsHeaders);
+  }
+
   const accepting = await isAccepting(env);
   if (!accepting) {
     return buildErrorResponse({ status: "error", message: "requests not accepted" }, 403, corsHeaders);
