@@ -727,6 +727,11 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
   if (!singer) { requestStatus.textContent = t('enterSinger'); return; }
   const payload = { artist, title, singer, keyChange };
   console.log('REQUEST SENDING', payload);
+
+  sendRequestBtn.disabled = true;
+  sendRequestBtn.style.opacity = '0.5';
+  sendRequestBtn.style.cursor = 'not-allowed';
+
   try {
     const res = await fetch('https://cloudflare-request-server.amkoud.workers.dev/request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
     if (res.status === 403) {
@@ -735,10 +740,16 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
     }
     if (!res.ok) throw new Error('network');
     requestStatus.textContent = t('requestSent');
-    setTimeout(() => closeRequestModal(), 1100);
+    setTimeout(() => {
+      closeRequestModal();
+      showHome();
+    }, 1100);
   } catch (err) {
     console.error('Request error', err);
     requestStatus.textContent = t('requestFailed');
+    sendRequestBtn.disabled = false;
+    sendRequestBtn.style.opacity = '1';
+    sendRequestBtn.style.cursor = 'pointer';
   }
 });
 
