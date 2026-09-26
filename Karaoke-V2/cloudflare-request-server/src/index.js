@@ -1,6 +1,22 @@
 const parseAllowedOrigins = value => String(value || "http://127.0.0.1:5500").split(",").map(s => s.trim()).filter(Boolean);
 
 const HEARTBEAT_TIMEOUT_MS = 12000;
+const NTFY_TOPIC = "floribar-karaoke-req-af0ae747";
+
+const notifyNewRequest = async (artist, title, singer) => {
+  try {
+    await fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
+      method: "POST",
+      headers: {
+        "Title": "Nouvelle demande karaoke",
+        "Tags": "microphone"
+      },
+      body: `${singer} : ${artist} - ${title}`
+    });
+  } catch (error) {
+    console.error("Failed to send push notification", error);
+  }
+};
 
 const makeCorsHeaders = (origin, allowedOrigins) => {
   const allowedOrigin = allowedOrigins.includes(origin) ? origin : null;
@@ -219,7 +235,7 @@ const handleOpenKjCommand = async (env, data, corsHeaders) => {
   }
 };
 
-const handleRequestSubmission = async (env, request, data, corsHeaders, requestEndpointToken) => {
+const handleRequestSubmission = async (env, request, data, corsHeaders, requestEndpointToken, ctx) => {
   const artist = typeof data.artist === "string" ? data.artist.trim() : "";
   const title = typeof data.title === "string" ? data.title.trim() : "";
   const singer = typeof data.singer === "string" ? data.singer.trim() : "";
@@ -259,11 +275,12 @@ const handleRequestSubmission = async (env, request, data, corsHeaders, requestE
     generateRequestId(), artist, title, singer, String(keyChange), Date.now()
   ]);
   await incrementSerial(env);
+  ctx.waitUntil(notifyNewRequest(artist, title, singer));
   return jsonResponse({ status: "ok" }, 200, corsHeaders);
 };
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const origin = request.headers.get("Origin") || "";
     const { allowedOrigins, requestEndpointToken, openKjApiKey } = getEnv(env);
     const corsHeaders = makeCorsHeaders(origin, allowedOrigins);
@@ -302,7 +319,7 @@ export default {
       } catch {
         return buildErrorResponse({ status: "error", message: "invalid json" }, 400, corsHeaders);
       }
-      return handleRequestSubmission(env, request, data, corsHeaders, requestEndpointToken);
+      return handleRequestSubmission(env, request, data, corsHeaders, requestEndpointToken, ctx);
     }
 
     return new Response("Not Found", { status: 404, headers: corsHeaders });
