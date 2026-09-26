@@ -3,9 +3,9 @@ const parseAllowedOrigins = value => String(value || "http://127.0.0.1:5500").sp
 const HEARTBEAT_TIMEOUT_MS = 12000;
 const NTFY_TOPIC = "floribar-karaoke-req-af0ae747";
 
-const notifyNewRequest = async (artist, title, singer) => {
+const notifyNewRequest = async (env, artist, title, singer) => {
   try {
-    await fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
+    const res = await fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
       method: "POST",
       headers: {
         "Title": "Nouvelle demande karaoke",
@@ -13,8 +13,11 @@ const notifyNewRequest = async (artist, title, singer) => {
       },
       body: `${singer} : ${artist} - ${title}`
     });
+    const text = await res.text();
+    await setMetaValue(env, "last_notify_result", `${Date.now()} status=${res.status} body=${text.slice(0, 200)}`);
   } catch (error) {
     console.error("Failed to send push notification", error);
+    await setMetaValue(env, "last_notify_result", `${Date.now()} error=${String(error && error.message || error)}`);
   }
 };
 
@@ -275,7 +278,7 @@ const handleRequestSubmission = async (env, request, data, corsHeaders, requestE
     generateRequestId(), artist, title, singer, String(keyChange), Date.now()
   ]);
   await incrementSerial(env);
-  ctx.waitUntil(notifyNewRequest(artist, title, singer));
+  ctx.waitUntil(notifyNewRequest(env, artist, title, singer));
   return jsonResponse({ status: "ok" }, 200, corsHeaders);
 };
 
@@ -295,7 +298,8 @@ export default {
 
     if (request.method === "GET" && url.pathname === "/status") {
       const online = await isOnline(env);
-      return jsonResponse({ online }, 200, corsHeaders);
+      const lastNotifyResult = await getMetaValue(env, "last_notify_result");
+      return jsonResponse({ online, lastNotifyResult }, 200, corsHeaders);
     }
 
     if (request.method === "POST" && url.pathname === "/") {
