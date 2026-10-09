@@ -1,65 +1,5 @@
 [
   {
-    "artist": "411",
-    "title": "On My Knees"
-  },
-  {
-    "artist": "411",
-    "title": "Teardrops"
-  },
-  {
-    "artist": "883",
-    "title": "6/1 sfigato"
-  },
-  {
-    "artist": "883",
-    "title": "Come mai"
-  },
-  {
-    "artist": "883",
-    "title": "Hanno ucciso l'uomo ragno"
-  },
-  {
-    "artist": "883",
-    "title": "La regola dell' amico"
-  },
-  {
-    "artist": "883",
-    "title": "Nella notte"
-  },
-  {
-    "artist": "883",
-    "title": "Non me la menare"
-  },
-  {
-    "artist": "883",
-    "title": "Nord sud ovest est"
-  },
-  {
-    "artist": "883",
-    "title": "Rotta per casa di Dio"
-  },
-  {
-    "artist": "883",
-    "title": "Sei un mito"
-  },
-  {
-    "artist": "911",
-    "title": "A little bit more"
-  },
-  {
-    "artist": "911",
-    "title": "How do you want me to love you ?"
-  },
-  {
-    "artist": "911",
-    "title": "More than a woman"
-  },
-  {
-    "artist": "911",
-    "title": "Private number"
-  },
-  {
     "artist": "0-Town",
     "title": "Liquid Dreams"
   },
@@ -70,6 +10,10 @@
   {
     "artist": "10 CC",
     "title": "I'm not in love"
+  },
+  {
+    "artist": "10cc",
+    "title": "Dreadlock Holiday"
   },
   {
     "artist": "1950s Standards",
@@ -128,6 +72,14 @@
     "title": "Sherry"
   },
   {
+    "artist": "411",
+    "title": "On My Knees"
+  },
+  {
+    "artist": "411",
+    "title": "Teardrops"
+  },
+  {
     "artist": "4PM",
     "title": "Sukiyaki"
   },
@@ -170,6 +122,58 @@
   {
     "artist": "5ive",
     "title": "You got the feelin'"
+  },
+  {
+    "artist": "883",
+    "title": "6/1 sfigato"
+  },
+  {
+    "artist": "883",
+    "title": "Come mai"
+  },
+  {
+    "artist": "883",
+    "title": "Hanno ucciso l'uomo ragno"
+  },
+  {
+    "artist": "883",
+    "title": "La regola dell' amico"
+  },
+  {
+    "artist": "883",
+    "title": "Nella notte"
+  },
+  {
+    "artist": "883",
+    "title": "Non me la menare"
+  },
+  {
+    "artist": "883",
+    "title": "Nord sud ovest est"
+  },
+  {
+    "artist": "883",
+    "title": "Rotta per casa di Dio"
+  },
+  {
+    "artist": "883",
+    "title": "Sei un mito"
+  },
+  {
+    "artist": "911",
+    "title": "A little bit more"
+  },
+  {
+    "artist": "911",
+    "title": "How do you want me to love you ?"
+  },
+  {
+    "artist": "911",
+    "title": "More than a woman"
+  },
+  {
+    "artist": "911",
+    "title": "Private number"
   },
   {
     "artist": "98'",
@@ -216,8 +220,16 @@
     "title": "Piu' di cosi'"
   },
   {
+    "artist": "A. Arancio",
+    "title": "Piu’ di cosi’"
+  },
+  {
     "artist": "A. Canino",
     "title": "Brutta"
+  },
+  {
+    "artist": "A. Celentano & C. Mori",
+    "title": "La Coppia Più Bella Del Mondo"
   },
   {
     "artist": "A1",
@@ -437,6 +449,10 @@
   },
   {
     "artist": "AC/DC",
+    "title": "Highway to Hell"
+  },
+  {
+    "artist": "AC/DC",
     "title": "Stiff upper lip"
   },
   {
@@ -445,15 +461,15 @@
   },
   {
     "artist": "AC/DC",
-    "title": "Highway to Hell"
-  },
-  {
-    "artist": "AC/DC",
     "title": "TNT"
   },
   {
     "artist": "Acda en De Munnik",
     "title": "Niet Of Nooit Geweest"
+  },
+  {
+    "artist": "ACDC",
+    "title": "Highway to Hell"
   },
   {
     "artist": "Ace of Base",
@@ -628,10 +644,6 @@
     "title": "Turning Tables"
   },
   {
-    "artist": "Adèle Bloemendaal",
-    "title": "Zallemenut"
-  },
-  {
     "artist": "Adrian Gurvitz",
     "title": "Classic"
   },
@@ -665,6 +677,10 @@
   },
   {
     "artist": "Adriano Celentano",
+    "title": "La coppia piu’ bella del mondo"
+  },
+  {
+    "artist": "Adriano Celentano",
     "title": "La Gelosia"
   },
   {
@@ -674,6 +690,10 @@
   {
     "artist": "Adriano Celentano",
     "title": "Si è spento il sole"
+  },
+  {
+    "artist": "Adriano Celentano",
+    "title": "Sotto Le Lenzuola"
   },
   {
     "artist": "Adriano Celentano",
@@ -688,12 +708,12 @@
     "title": "Ventiquattro milla baci"
   },
   {
-    "artist": "Adriano Celentano",
-    "title": "Sotto Le Lenzuola"
-  },
-  {
     "artist": "Adriano Pappalardo",
     "title": "Ricominciamo"
+  },
+  {
+    "artist": "Adèle Bloemendaal",
+    "title": "Zallemenut"
   },
   {
     "artist": "Aerosmith",
@@ -788,6 +808,10 @@
     "title": "Prince Ali"
   },
   {
+    "artist": "Alain Barriere",
+    "title": "Ma vie (Remix)"
+  },
+  {
     "artist": "Alain Barrière",
     "title": "Elle était si jolie"
   },
@@ -844,6 +868,10 @@
     "title": "Romantique avec toi"
   },
   {
+    "artist": "Alain Delorme",
+    "title": "Romantique avec toi (Remix)"
+  },
+  {
     "artist": "Alain Souchon",
     "title": "Allô maman bobo"
   },
@@ -874,6 +902,10 @@
   {
     "artist": "Alain Souchon",
     "title": "La beauté d'Ava Gardner"
+  },
+  {
+    "artist": "Alain Souchon",
+    "title": "La beauté d’Ava Gardner"
   },
   {
     "artist": "Alain Souchon",
@@ -1064,6 +1096,10 @@
     "title": "Sin Miedo A Nada"
   },
   {
+    "artist": "Alex Ubago",
+    "title": "Sin Miedo A Nada                       "
+  },
+  {
     "artist": "Alexander Curly",
     "title": "Guus Kom Naar Huus"
   },
@@ -1118,6 +1154,10 @@
   {
     "artist": "Alicia Keys",
     "title": "How Come You Don't Call Me"
+  },
+  {
+    "artist": "Alicia Keys",
+    "title": "How Come You Don’t Call Me"
   },
   {
     "artist": "Alicia Keys",
@@ -1301,6 +1341,10 @@
   },
   {
     "artist": "Amel Bent",
+    "title": "Le droit à l'erreur"
+  },
+  {
+    "artist": "Amel Bent",
     "title": "Ma philosophie"
   },
   {
@@ -1314,10 +1358,6 @@
   {
     "artist": "Amel Bent",
     "title": "Tu n'es plus là"
-  },
-  {
-    "artist": "Amel Bent",
-    "title": "Le droit à l'erreur"
   },
   {
     "artist": "Amel Bent & Imen Es",
@@ -1345,6 +1385,10 @@
   },
   {
     "artist": "Amir",
+    "title": "Complémentaire"
+  },
+  {
+    "artist": "Amir",
     "title": "J'ai cherché"
   },
   {
@@ -1360,10 +1404,6 @@
     "title": "Rétine"
   },
   {
-    "artist": "Amir",
-    "title": "Complémentaire"
-  },
-  {
     "artist": "Amir & Indila",
     "title": "Carrousel"
   },
@@ -1376,12 +1416,12 @@
     "title": "Va là bas"
   },
   {
-    "artist": "Amy feat Lyna Mahyem & Lylah",
-    "title": "Va là bas"
+    "artist": "Amy Grant",
+    "title": "Baby baby"
   },
   {
     "artist": "Amy Grant",
-    "title": "Baby baby"
+    "title": "Big yellow taxi"
   },
   {
     "artist": "Amy Grant",
@@ -1390,10 +1430,6 @@
   {
     "artist": "Amy Grant",
     "title": "That's what love is for"
-  },
-  {
-    "artist": "Amy Grant",
-    "title": "Big yellow taxi"
   },
   {
     "artist": "Amy Grant & Vince Gill",
@@ -1456,6 +1492,10 @@
     "title": "La puerta de alcala"
   },
   {
+    "artist": "Ana Belen & Manuel",
+    "title": "La puerta de alcala "
+  },
+  {
     "artist": "Ana Gabriel",
     "title": "Cosas Del Amor"
   },
@@ -1486,6 +1526,10 @@
   {
     "artist": "Anastacia",
     "title": "Cowboys and kisses"
+  },
+  {
+    "artist": "Anastacia",
+    "title": "Heavy On My Heart"
   },
   {
     "artist": "Anastacia",
@@ -1520,16 +1564,100 @@
     "title": "Why'd You Lie To Me"
   },
   {
-    "artist": "Anastacia",
-    "title": "Heavy On My Heart"
-  },
-  {
     "artist": "Anastasia",
     "title": "Voyage dans le temps"
   },
   {
     "artist": "Andra Day",
     "title": "Rise up"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Ali di libertà"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Ave Maria"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Che gelida manina"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Con te partiro"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Il mare calmo della sera"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "La donna E mobile"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Melodramma"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Mi manchi"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Nessun dorma"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "O sole mio"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Romanza"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Sempre, sempre"
+  },
+  {
+    "artist": "Andrea Bocelli",
+    "title": "Una furtiva lagrima"
+  },
+  {
+    "artist": "Andrea Bocelli & Gorgia",
+    "title": "Io vivo per lei"
+  },
+  {
+    "artist": "Andrea Bocelli & Hélène Segara",
+    "title": "Vivo per lei (je vis pour elle)"
+  },
+  {
+    "artist": "Andrea Bocelli y Marta Sanchez",
+    "title": "Vivo Por Ella"
+  },
+  {
+    "artist": "Andrea Mingari",
+    "title": "Amare amare"
+  },
+  {
+    "artist": "Andrea True Connection",
+    "title": "More more more"
+  },
+  {
+    "artist": "Andreas Johnson",
+    "title": "Glorious"
+  },
+  {
+    "artist": "Andreas Johnson",
+    "title": "The games we play"
+  },
+  {
+    "artist": "Andrew Gold",
+    "title": "Never let her slip away"
+  },
+  {
+    "artist": "Androids",
+    "title": "Do It With Madonna"
   },
   {
     "artist": "André Claveau",
@@ -1640,86 +1768,6 @@
     "title": "Willempie"
   },
   {
-    "artist": "Andrea Bocelli",
-    "title": "Ave Maria"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Che gelida manina"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Con te partiro"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Il mare calmo della sera"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "La donna E mobile"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Melodramma"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Mi manchi"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Nessun dorma"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "O sole mio"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Sempre, sempre"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Una furtiva lagrima"
-  },
-  {
-    "artist": "Andrea Bocelli & Gorgia",
-    "title": "Io vivo per lei"
-  },
-  {
-    "artist": "Andrea Bocelli & Hélène Segara",
-    "title": "Vivo per lei (je vis pour elle)"
-  },
-  {
-    "artist": "Andrea Bocelli y Marta Sanchez",
-    "title": "Vivo Por Ella"
-  },
-  {
-    "artist": "Andrea Mingari",
-    "title": "Amare amare"
-  },
-  {
-    "artist": "Andrea True Connection",
-    "title": "More more more"
-  },
-  {
-    "artist": "Andreas Johnson",
-    "title": "Glorious"
-  },
-  {
-    "artist": "Andreas Johnson",
-    "title": "The games we play"
-  },
-  {
-    "artist": "Andrew Gold",
-    "title": "Never let her slip away"
-  },
-  {
-    "artist": "Androids",
-    "title": "Do It With Madonna"
-  },
-  {
     "artist": "Andy Gibb",
     "title": "An everlasting love"
   },
@@ -1756,6 +1804,18 @@
     "title": "La llorona"
   },
   {
+    "artist": "Angelina",
+    "title": "Maman me dit"
+  },
+  {
+    "artist": "Anggun",
+    "title": "La neige au Sahara"
+  },
+  {
+    "artist": "Angus & Julia Stone",
+    "title": "Big jet plane"
+  },
+  {
     "artist": "Angèle",
     "title": "Bruxelles je t'aime"
   },
@@ -1778,18 +1838,6 @@
   {
     "artist": "Angèle feat. Roméo Elvis",
     "title": "Tout oublier"
-  },
-  {
-    "artist": "Angelina",
-    "title": "Maman me dit"
-  },
-  {
-    "artist": "Anggun",
-    "title": "La neige au Sahara"
-  },
-  {
-    "artist": "Angus & Julia Stone",
-    "title": "Big jet plane"
   },
   {
     "artist": "Animals",
@@ -2026,6 +2074,10 @@
   {
     "artist": "Antonio Machin",
     "title": "Camarera"
+  },
+  {
+    "artist": "Antonio Machin",
+    "title": "Camarera                           "
   },
   {
     "artist": "Api",
@@ -2325,11 +2377,19 @@
   },
   {
     "artist": "Atomic Kitten",
+    "title": "Cradle"
+  },
+  {
+    "artist": "Atomic Kitten",
     "title": "If you come to me"
   },
   {
     "artist": "Atomic Kitten",
     "title": "It's OK"
+  },
+  {
+    "artist": "Atomic Kitten",
+    "title": "It’s OK"
   },
   {
     "artist": "Atomic Kitten",
@@ -2354,10 +2414,6 @@
   {
     "artist": "Atomic Kitten",
     "title": "Whole again"
-  },
-  {
-    "artist": "Atomic Kitten",
-    "title": "Cradle"
   },
   {
     "artist": "Au Petit Bonheur",
@@ -2488,30 +2544,6 @@
     "title": "Mustapha"
   },
   {
-    "artist": "B-52's",
-    "title": "Love shack"
-  },
-  {
-    "artist": "B. De Groot",
-    "title": "Meester prikkebeen"
-  },
-  {
-    "artist": "B. J. Thomas",
-    "title": "Hooked on a feeling"
-  },
-  {
-    "artist": "B. Medley & J. Warnes",
-    "title": "The time of my life"
-  },
-  {
-    "artist": "B. Van Den Bossche",
-    "title": "Ga met me mee"
-  },
-  {
-    "artist": "B.J. Thomas",
-    "title": "Raindrops keep falling on my head"
-  },
-  {
     "artist": "B'Witched",
     "title": "Blame it on the weatherman"
   },
@@ -2534,6 +2566,30 @@
   {
     "artist": "B'Witched",
     "title": "To you I belong"
+  },
+  {
+    "artist": "B-52's",
+    "title": "Love shack"
+  },
+  {
+    "artist": "B. De Groot",
+    "title": "Meester prikkebeen"
+  },
+  {
+    "artist": "B. J. Thomas",
+    "title": "Hooked on a feeling"
+  },
+  {
+    "artist": "B. Medley & J. Warnes",
+    "title": "The time of my life"
+  },
+  {
+    "artist": "B. Van Den Bossche",
+    "title": "Ga met me mee"
+  },
+  {
+    "artist": "B.J. Thomas",
+    "title": "Raindrops keep falling on my head"
   },
   {
     "artist": "Baby Bash & Frankie J",
@@ -2897,11 +2953,11 @@
   },
   {
     "artist": "Basement Jaxx",
-    "title": "Red alert"
+    "title": "Good Luck"
   },
   {
     "artist": "Basement Jaxx",
-    "title": "Good Luck"
+    "title": "Red alert"
   },
   {
     "artist": "Bastille",
@@ -3352,6 +3408,10 @@
     "title": "Tu Luz"
   },
   {
+    "artist": "Bendita",
+    "title": "Tu Luz                                    "
+  },
+  {
     "artist": "Benianimo Gigli",
     "title": "Mamma"
   },
@@ -3385,7 +3445,19 @@
   },
   {
     "artist": "Bernard Lavilliers",
+    "title": "La salsa"
+  },
+  {
+    "artist": "Bernard Lavilliers",
+    "title": "Le bal"
+  },
+  {
+    "artist": "Bernard Lavilliers",
     "title": "Les mains d'or"
+  },
+  {
+    "artist": "Bernard Lavilliers",
+    "title": "Noir et blanc"
   },
   {
     "artist": "Bernard Lavilliers",
@@ -3398,18 +3470,6 @@
   {
     "artist": "Bernard Lavilliers",
     "title": "Stand the ghetto"
-  },
-  {
-    "artist": "Bernard Lavilliers",
-    "title": "Noir et blanc"
-  },
-  {
-    "artist": "Bernard Lavilliers",
-    "title": "La salsa"
-  },
-  {
-    "artist": "Bernard Lavilliers",
-    "title": "Le bal"
   },
   {
     "artist": "Bernard Lavilliers & Nicoletta",
@@ -3612,6 +3672,10 @@
     "title": "Dommage"
   },
   {
+    "artist": "Bigflo et Oli",
+    "title": "Dernière"
+  },
+  {
     "artist": "Bill Baxter",
     "title": "Bienvenue à Paris"
   },
@@ -3713,11 +3777,11 @@
   },
   {
     "artist": "Billy Idol",
-    "title": "White wedding"
+    "title": "Rebel Yell"
   },
   {
     "artist": "Billy Idol",
-    "title": "Rebel Yell"
+    "title": "White wedding"
   },
   {
     "artist": "Billy Joel",
@@ -3876,6 +3940,10 @@
     "title": "You see the trouble with me"
   },
   {
+    "artist": "Black M",
+    "title": "Sur ma route"
+  },
+  {
     "artist": "Black Sabbath",
     "title": "Paranoïd"
   },
@@ -3886,6 +3954,10 @@
   {
     "artist": "Blackpink",
     "title": "Jump"
+  },
+  {
+    "artist": "Blackpink",
+    "title": "JUMP"
   },
   {
     "artist": "Blazin Squad",
@@ -3929,19 +4001,15 @@
   },
   {
     "artist": "Blink 182",
-    "title": "What's my age again"
+    "title": "Always"
   },
   {
     "artist": "Blink 182",
-    "title": "Always"
+    "title": "What's my age again"
   },
   {
     "artist": "Bloen",
     "title": "Even aan  mijn moeder vragen"
-  },
-  {
-    "artist": "Blöf",
-    "title": "Liefs Uit Londen"
   },
   {
     "artist": "Blondie",
@@ -4009,6 +4077,10 @@
   },
   {
     "artist": "Blue",
+    "title": "A Chi Mi Dice"
+  },
+  {
+    "artist": "Blue",
     "title": "All Rise"
   },
   {
@@ -4021,7 +4093,15 @@
   },
   {
     "artist": "Blue",
+    "title": "Curtain Falls"
+  },
+  {
+    "artist": "Blue",
     "title": "Fly By"
+  },
+  {
+    "artist": "Blue",
+    "title": "Get Down On It"
   },
   {
     "artist": "Blue",
@@ -4038,18 +4118,6 @@
   {
     "artist": "Blue",
     "title": "U Make Me Wanna"
-  },
-  {
-    "artist": "Blue",
-    "title": "A Chi Mi Dice"
-  },
-  {
-    "artist": "Blue",
-    "title": "Curtain Falls"
-  },
-  {
-    "artist": "Blue",
-    "title": "Get Down On It"
   },
   {
     "artist": "Blue Diamonds",
@@ -4118,6 +4186,10 @@
   {
     "artist": "Blur",
     "title": "There's no other way"
+  },
+  {
+    "artist": "Blöf",
+    "title": "Liefs Uit Londen"
   },
   {
     "artist": "Bob Azam",
@@ -4209,6 +4281,10 @@
   },
   {
     "artist": "Bobby Brown",
+    "title": "Rpck with'cha"
+  },
+  {
+    "artist": "Bobby Brown",
     "title": "Two can play that game"
   },
   {
@@ -4241,11 +4317,11 @@
   },
   {
     "artist": "Bobby Solo",
-    "title": "Una lacrima sul viso"
+    "title": "Se piangi, se ridi"
   },
   {
     "artist": "Bobby Solo",
-    "title": "Se piangi, se ridi"
+    "title": "Una lacrima sul viso"
   },
   {
     "artist": "Bobby Vee",
@@ -4278,10 +4354,6 @@
   {
     "artist": "Bon Jovi",
     "title": "All about loving you"
-  },
-  {
-    "artist": "Bon Jovi",
-    "title": "Always"
   },
   {
     "artist": "Bon Jovi",
@@ -4416,6 +4488,10 @@
     "title": "Pierrot"
   },
   {
+    "artist": "Bonnie St. Claire",
+    "title": "Pierrot "
+  },
+  {
     "artist": "Bonnie StClaire",
     "title": "Dokter Bernhard"
   },
@@ -4478,6 +4554,10 @@
   {
     "artist": "Boule Noire",
     "title": "Aimer d'amour"
+  },
+  {
+    "artist": "Boule Noire",
+    "title": "Aimer d’amour"
   },
   {
     "artist": "Bourvil",
@@ -4757,15 +4837,15 @@
   },
   {
     "artist": "Britney Spears",
+    "title": "Overprotected"
+  },
+  {
+    "artist": "Britney Spears",
     "title": "Sometimes"
   },
   {
     "artist": "Britney Spears",
     "title": "Toxic"
-  },
-  {
-    "artist": "Britney Spears",
-    "title": "Overprotected"
   },
   {
     "artist": "Britney Spears Feat & Madonna",
@@ -4824,12 +4904,20 @@
     "title": "Boate azul"
   },
   {
+    "artist": "Bruno e Marrone   ",
+    "title": "Boate azul"
+  },
+  {
     "artist": "Bruno Maman",
     "title": "Qui sait"
   },
   {
     "artist": "Bruno Mars",
     "title": "24K Magic"
+  },
+  {
+    "artist": "Bruno Mars",
+    "title": "Grenade"
   },
   {
     "artist": "Bruno Mars",
@@ -4850,10 +4938,6 @@
   {
     "artist": "Bruno Mars",
     "title": "When I Was Your Man"
-  },
-  {
-    "artist": "Bruno Mars",
-    "title": "Grenade"
   },
   {
     "artist": "Bruno Pelletier",
@@ -4993,11 +5077,19 @@
   },
   {
     "artist": "Busted",
+    "title": "She Wants To Be Me"
+  },
+  {
+    "artist": "Busted",
     "title": "Sleeping With The Light On"
   },
   {
     "artist": "Busted",
     "title": "That's Whats I Go To School For"
+  },
+  {
+    "artist": "Busted",
+    "title": "That’s Whats I Go To School For"
   },
   {
     "artist": "Busted",
@@ -5014,10 +5106,6 @@
   {
     "artist": "Busted",
     "title": "You Said No"
-  },
-  {
-    "artist": "Busted",
-    "title": "She Wants To Be Me"
   },
   {
     "artist": "Buster Poindexter",
@@ -5081,6 +5169,10 @@
   },
   {
     "artist": "Calogero",
+    "title": "Prendre racine"
+  },
+  {
+    "artist": "Calogero",
     "title": "Si seulement je pouvais lui manquer"
   },
   {
@@ -5090,10 +5182,6 @@
   {
     "artist": "Calogero",
     "title": "Yalla"
-  },
-  {
-    "artist": "Calogero",
-    "title": "Prendre racine"
   },
   {
     "artist": "Calogero & Marie Poulain",
@@ -5112,10 +5200,6 @@
     "title": "You Are the Reason"
   },
   {
-    "artist": "Camélia Jordana",
-    "title": "Non non non non"
-  },
-  {
     "artist": "Camille",
     "title": "Geen tranen meer over"
   },
@@ -5130,6 +5214,22 @@
   {
     "artist": "Camille Lellouche",
     "title": "N'insiste pas"
+  },
+  {
+    "artist": "Camille Lellouche",
+    "title": "Ne me jugez pas"
+  },
+  {
+    "artist": "Camille Lellouche",
+    "title": "N’insiste pas"
+  },
+  {
+    "artist": "Camille Lellouche & Grand Corps Malade",
+    "title": "Mais je t'aime"
+  },
+  {
+    "artist": "Camille Lellouche & Grand Corps Malade",
+    "title": "Mais je t’aime"
   },
   {
     "artist": "Camilo Sesto",
@@ -5154,6 +5254,10 @@
   {
     "artist": "Camp Rock",
     "title": "Wouldn't Change A Thing"
+  },
+  {
+    "artist": "Camélia Jordana",
+    "title": "Non non non non"
   },
   {
     "artist": "Canada",
@@ -5288,6 +5392,10 @@
     "title": "Alléluia"
   },
   {
+    "artist": "Carolyne Jomphe",
+    "title": "Alléluia (VF)"
+  },
+  {
     "artist": "Carpenters",
     "title": "A kind of hush"
   },
@@ -5336,8 +5444,8 @@
     "title": "Ik wil altijd Bij jou Zijn"
   },
   {
-    "artist": "Cars",
-    "title": "Drive"
+    "artist": "Carry Konings & Koos Alberts",
+    "title": "Ik wil altijd Bij jou Zijn "
   },
   {
     "artist": "Cars",
@@ -5424,10 +5532,6 @@
     "title": "Finally"
   },
   {
-    "artist": "Ce´line Dion",
-    "title": "Ashes"
-  },
-  {
     "artist": "Cecilia",
     "title": "Mi querida Espana"
   },
@@ -5442,6 +5546,10 @@
   {
     "artist": "Cee Lo Green",
     "title": "Forget You"
+  },
+  {
+    "artist": "Celia Cruz",
+    "title": "La vida es un carnaval"
   },
   {
     "artist": "Celine Dion",
@@ -5536,142 +5644,6 @@
     "title": "Where does my heart beat now"
   },
   {
-    "artist": "Céline Dion",
-    "title": "Avec toi"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Ce n'était qu'un rêve"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Cherche encore"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Contre nature"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "D'amour et d'amitié"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Dans un autre monde"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Destin"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Encore un soir"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "J'attendais"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "J'irai ou tu iras"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Je lui dirai"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Je ne vous oublie pas"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Je sais pas"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Je T'Aime Encore"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "L'amour existe encore"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "L'hymne à l'amour"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "La mémoire d' Abraham"
-  },
-  {
-    "artist": "Céline dion",
-    "title": "La religieuse"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Le ballet"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Le vol d'un ange"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Les derniers seront les premiers"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Mon Ami M'a Quittée"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Ne partez pas sans moi"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "On ne change pas"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Parler a mon père"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Pour que tu m'aimes encore"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Prière Paienne"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Quand on n'a que l'amour"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Que toi au monde"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Regarde moi"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "S'Il Suffisait D'Aimer"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Tout l'or des hommes"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Vole"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Zora sourit"
-  },
-  {
     "artist": "Celine Dion & B. Streisand",
     "title": "Tell him"
   },
@@ -5682,10 +5654,6 @@
   {
     "artist": "Celine Dion & Clive Griffin",
     "title": "When I fall in love"
-  },
-  {
-    "artist": "Céline Dion & Garou",
-    "title": "Sous le vent"
   },
   {
     "artist": "Celine Dion & P. Bryson",
@@ -5704,12 +5672,20 @@
     "title": "Ya esta bien !!"
   },
   {
+    "artist": "Century",
+    "title": "Why lover why"
+  },
+  {
     "artist": "Cerena",
     "title": "Tout, Rien Du Tout"
   },
   {
     "artist": "Cesare Cremonini",
     "title": "Le tue parole fanno male"
+  },
+  {
+    "artist": "Ce´line Dion",
+    "title": "Ashes"
   },
   {
     "artist": "Chad Kroeger",
@@ -5837,6 +5813,10 @@
   },
   {
     "artist": "Charles Aznavour",
+    "title": "Mes emmerdes (Yann Muller remix)"
+  },
+  {
+    "artist": "Charles Aznavour",
     "title": "Mon émouvant amour"
   },
   {
@@ -5854,6 +5834,10 @@
   {
     "artist": "Charles Aznavour",
     "title": "Paris au mois d'août"
+  },
+  {
+    "artist": "Charles Aznavour",
+    "title": "Paris au mois d’août"
   },
   {
     "artist": "Charles Aznavour",
@@ -6008,6 +5992,10 @@
     "title": "Hooray, Hooray (It's A Cheeky Holiday)"
   },
   {
+    "artist": "Cheeky Girls",
+    "title": "Hooray, Hooray (It’s A Cheeky Holiday)"
+  },
+  {
     "artist": "Chef",
     "title": "Chocolate Salty Balls"
   },
@@ -6065,6 +6053,10 @@
   },
   {
     "artist": "Cher",
+    "title": "Welcome to burlesque"
+  },
+  {
+    "artist": "Cher",
     "title": "You Haven't Seen The Last Of Me"
   },
   {
@@ -6081,11 +6073,11 @@
   },
   {
     "artist": "Chicago",
-    "title": "You're the inspiration"
+    "title": "If You Leave Me Now"
   },
   {
     "artist": "Chicago",
-    "title": "If You Leave Me Now"
+    "title": "You're the inspiration"
   },
   {
     "artist": "Chicane & Bryan Adams",
@@ -6101,6 +6093,14 @@
   },
   {
     "artist": "Chimène Badi",
+    "title": "Entre nous"
+  },
+  {
+    "artist": "Chimène Badi",
+    "title": "Je vais te chercher"
+  },
+  {
+    "artist": "Chimène Badi",
     "title": "Je viens du Sud"
   },
   {
@@ -6113,19 +6113,15 @@
   },
   {
     "artist": "Chimène Badi",
+    "title": "Le jour d'après"
+  },
+  {
+    "artist": "Chimène Badi",
     "title": "Retomber amoureux"
   },
   {
-    "artist": "Chimène Badi",
-    "title": "Entre nous"
-  },
-  {
-    "artist": "Chimène Badi",
-    "title": "Je vais te chercher"
-  },
-  {
-    "artist": "Chimène Badi",
-    "title": "Le jour d'après"
+    "artist": "Chimène Bady",
+    "title": "Si j'avais su t'aimer"
   },
   {
     "artist": "China",
@@ -6289,15 +6285,15 @@
   },
   {
     "artist": "Christina Perri",
+    "title": "A Thousand Years"
+  },
+  {
+    "artist": "Christina Perri",
     "title": "Jar of Hearts"
   },
   {
     "artist": "Christina Perri",
     "title": "You are my sunshine"
-  },
-  {
-    "artist": "Christina Perri",
-    "title": "A Thousand Years"
   },
   {
     "artist": "Christine & the Queens",
@@ -6741,15 +6737,15 @@
   },
   {
     "artist": "Claudio Villa",
-    "title": "O surdato ‘nnamurato"
-  },
-  {
-    "artist": "Claudio Villa",
     "title": "Addio addio"
   },
   {
     "artist": "Claudio Villa",
     "title": "Luna rossa"
+  },
+  {
+    "artist": "Claudio Villa",
+    "title": "O surdato ‘nnamurato"
   },
   {
     "artist": "Clea",
@@ -6917,14 +6913,14 @@
   },
   {
     "artist": "Coldplay",
-    "title": "Trouble"
-  },
-  {
-    "artist": "Coldplay",
     "title": "Yellow"
   },
   {
     "artist": "Coldplay & Selena Gomez",
+    "title": "Let Somebody Go"
+  },
+  {
+    "artist": "Coldplay X Selena Gomez",
     "title": "Let Somebody Go"
   },
   {
@@ -7034,6 +7030,10 @@
   {
     "artist": "Corneille",
     "title": "Parce Qu'On Vient De Loin"
+  },
+  {
+    "artist": "Corneille",
+    "title": "Parce Qu’On Vient De Loin"
   },
   {
     "artist": "Corneille",
@@ -7200,10 +7200,6 @@
     "title": "Butterfly"
   },
   {
-    "artist": "Crazy Town",
-    "title": "Butterfly"
-  },
-  {
     "artist": "Cream",
     "title": "I feel free"
   },
@@ -7324,8 +7320,152 @@
     "title": "Stumblin' In"
   },
   {
-    "artist": "Cyril Riley",
-    "title": "Stumblin' In"
+    "artist": "Céline Dion",
+    "title": "Avec toi"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Ce n'était qu'un rêve"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Cherche encore"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Contre nature"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "D'amour et d'amitié"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Dans un autre monde"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Destin"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Encore un soir"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "J'attendais"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "J'irai ou tu iras"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Je lui dirai"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Je ne vous oublie pas"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Je sais pas"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Je T'Aime Encore"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Je T’Aime Encore"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "L'amour existe encore"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "L'hymne à l'amour"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "La mémoire d' Abraham"
+  },
+  {
+    "artist": "Céline dion",
+    "title": "La religieuse"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Le ballet"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Le vol d'un ange"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Les derniers seront les premiers"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Mon Ami M'a Quittée"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Ne partez pas sans moi"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "On ne change pas"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Ordinaire"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Parler a mon père"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Pour que tu m'aimes encore"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Prière Paienne"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Quand on n'a que l'amour"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Que toi au monde"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Regarde moi"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "S'Il Suffisait D'Aimer"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Tout l'or des hommes"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Vole"
+  },
+  {
+    "artist": "Céline Dion",
+    "title": "Zora sourit"
+  },
+  {
+    "artist": "Céline Dion & Garou",
+    "title": "Sous le vent"
   },
   {
     "artist": "D Modugno",
@@ -7437,6 +7577,10 @@
   },
   {
     "artist": "Dalida",
+    "title": "Les enfants du Pirée"
+  },
+  {
+    "artist": "Dalida",
     "title": "Les Gitans"
   },
   {
@@ -7462,10 +7606,6 @@
   {
     "artist": "Dalida",
     "title": "Salama"
-  },
-  {
-    "artist": "Dalida",
-    "title": "Les enfants du Pirée"
   },
   {
     "artist": "Dalida & Alain Delon",
@@ -7588,8 +7728,8 @@
     "title": "Can't take my eyes off of you"
   },
   {
-    "artist": "Daniel Gérard",
-    "title": "Petit Gonzales"
+    "artist": "Daniel Guichard",
+    "title": "Chanson pour Anna"
   },
   {
     "artist": "Daniel Guichard",
@@ -7612,8 +7752,8 @@
     "title": "Mon vieux"
   },
   {
-    "artist": "Daniel Guichard",
-    "title": "Chanson pour Anna"
+    "artist": "Daniel Gérard",
+    "title": "Petit Gonzales"
   },
   {
     "artist": "Daniel Lavoie",
@@ -7634,6 +7774,10 @@
   {
     "artist": "Daniel Levi",
     "title": "L'envie d'aimer"
+  },
+  {
+    "artist": "Daniel Levi",
+    "title": "L'envie d'aimer (Yann Muller remix)"
   },
   {
     "artist": "Daniel O'Donnell",
@@ -7745,11 +7889,11 @@
   },
   {
     "artist": "Darius",
-    "title": "Rushes"
+    "title": "Live Twice"
   },
   {
     "artist": "Darius",
-    "title": "Live Twice"
+    "title": "Rushes"
   },
   {
     "artist": "Darkness",
@@ -7788,6 +7932,10 @@
     "title": "I Can't Go For That (No Can Do)"
   },
   {
+    "artist": "Daryl Hall & John Oates",
+    "title": "Say It Isn't So"
+  },
+  {
     "artist": "Dave",
     "title": "Allo Elisa"
   },
@@ -7821,6 +7969,10 @@
   },
   {
     "artist": "David Bisbal",
+    "title": "Ave Maria                    "
+  },
+  {
+    "artist": "David Bisbal",
     "title": "Como la prima vez"
   },
   {
@@ -7849,11 +8001,11 @@
   },
   {
     "artist": "David Charvet",
-    "title": "Should I leave"
+    "title": "Jusqu'au bout"
   },
   {
     "artist": "David Charvet",
-    "title": "Jusqu'au bout"
+    "title": "Should I leave"
   },
   {
     "artist": "David Charvet",
@@ -7965,6 +8117,10 @@
   },
   {
     "artist": "De Dijk",
+    "title": "5 uur "
+  },
+  {
+    "artist": "De Dijk",
     "title": "Binnen zonder kloppen"
   },
   {
@@ -8068,18 +8224,6 @@
     "title": "You light up my life"
   },
   {
-    "artist": "Début de Soirée",
-    "title": "Jardins d'enfants"
-  },
-  {
-    "artist": "Début de Soirée",
-    "title": "La Vie La Nuit"
-  },
-  {
-    "artist": "Début de Soirée",
-    "title": "Nuit de Folie"
-  },
-  {
     "artist": "Dee Dee Bridgewater",
     "title": "Angel of the night"
   },
@@ -8157,15 +8301,15 @@
   },
   {
     "artist": "Demi Lovato",
+    "title": "Skyscraper"
+  },
+  {
+    "artist": "Demi Lovato",
     "title": "Stone Cold"
   },
   {
     "artist": "Demi Lovato",
     "title": "Two Worlds Collide"
-  },
-  {
-    "artist": "Demi Lovato",
-    "title": "Skyscraper"
   },
   {
     "artist": "Demis Roussos",
@@ -8174,6 +8318,10 @@
   {
     "artist": "Demis Roussos",
     "title": "Goodbye my love goodbye"
+  },
+  {
+    "artist": "Demis Roussos",
+    "title": "Mourir Aupres de Mon Amour"
   },
   {
     "artist": "Demis Roussos",
@@ -8186,10 +8334,6 @@
   {
     "artist": "Demis Roussos",
     "title": "On écrit sur les murs"
-  },
-  {
-    "artist": "Demis Roussos",
-    "title": "Mourir Aupres de Mon Amour"
   },
   {
     "artist": "Demon Hunters",
@@ -8261,11 +8405,11 @@
   },
   {
     "artist": "Destiny's Child",
-    "title": "Survivor"
+    "title": "Soldier"
   },
   {
     "artist": "Destiny's Child",
-    "title": "Soldier"
+    "title": "Survivor"
   },
   {
     "artist": "Deuzakkers",
@@ -8396,6 +8540,10 @@
     "title": "Elle"
   },
   {
+    "artist": "Didier Barbelivien",
+    "title": "Peut-être Toi, peut-être une autre"
+  },
+  {
     "artist": "Didier Barbelivien & Felix Gray",
     "title": "A toutes les filles"
   },
@@ -8513,6 +8661,10 @@
   },
   {
     "artist": "Dire Straits",
+    "title": "Lady Writer"
+  },
+  {
+    "artist": "Dire Straits",
     "title": "Money for nothing"
   },
   {
@@ -8521,15 +8673,11 @@
   },
   {
     "artist": "Dire Straits",
-    "title": "Walk of life"
-  },
-  {
-    "artist": "Dire Straits",
-    "title": "Lady Writer"
-  },
-  {
-    "artist": "Dire Straits",
     "title": "Sultans of Swing"
+  },
+  {
+    "artist": "Dire Straits",
+    "title": "Walk of life"
   },
   {
     "artist": "Disiz & Théodora",
@@ -8545,15 +8693,7 @@
   },
   {
     "artist": "Disney",
-    "title": "Il en faut peu pour être heureux"
-  },
-  {
-    "artist": "Disney",
     "title": "L'air du vent"
-  },
-  {
-    "artist": "Disney",
-    "title": "L'amour brille sous les étoiles"
   },
   {
     "artist": "Disney",
@@ -8600,10 +8740,6 @@
     "title": "There's your trouble"
   },
   {
-    "artist": "DJ Ötzi",
-    "title": "Sweet Caroline (party Remix)"
-  },
-  {
     "artist": "DJ Sammy",
     "title": "Boys Of Summer"
   },
@@ -8614,6 +8750,10 @@
   {
     "artist": "DJ Sammy",
     "title": "Sunlight"
+  },
+  {
+    "artist": "DJ Ötzi",
+    "title": "Sweet Caroline (party Remix)"
   },
   {
     "artist": "Doe Maar",
@@ -8726,6 +8866,10 @@
   {
     "artist": "Don omar ft Aventura",
     "title": "Ella y yo"
+  },
+  {
+    "artist": "Don omar ft Aventura",
+    "title": "Ella y yo                    "
   },
   {
     "artist": "Don Williams",
@@ -8849,11 +8993,11 @@
   },
   {
     "artist": "Dr. Hook",
-    "title": "When you're in love with a beautiful woman"
+    "title": "In Over My head"
   },
   {
     "artist": "Dr. Hook",
-    "title": "In Over My head"
+    "title": "When you're in love with a beautiful woman"
   },
   {
     "artist": "Drake",
@@ -8969,6 +9113,10 @@
   },
   {
     "artist": "Duran Duran",
+    "title": "Is There Something I Should Know"
+  },
+  {
+    "artist": "Duran Duran",
     "title": "New Moon On Monday"
   },
   {
@@ -8997,19 +9145,15 @@
   },
   {
     "artist": "Duran Duran",
+    "title": "What Happens Tomorrow"
+  },
+  {
+    "artist": "Duran Duran",
     "title": "Wild Boys"
   },
   {
     "artist": "Duran Duran",
     "title": "Wilds boys"
-  },
-  {
-    "artist": "Duran Duran",
-    "title": "Is There Something I Should Know"
-  },
-  {
-    "artist": "Duran Duran",
-    "title": "What Happens Tomorrow"
   },
   {
     "artist": "Durand Thibault",
@@ -9044,6 +9188,18 @@
     "title": "Business"
   },
   {
+    "artist": "Début de Soirée",
+    "title": "Jardins d'enfants"
+  },
+  {
+    "artist": "Début de Soirée",
+    "title": "La Vie La Nuit"
+  },
+  {
+    "artist": "Début de Soirée",
+    "title": "Nuit de Folie"
+  },
+  {
     "artist": "E Jerome",
     "title": "Maladie d'Amour"
   },
@@ -9054,6 +9210,10 @@
   {
     "artist": "E. Ruggeri",
     "title": "L'amore e un attimo"
+  },
+  {
+    "artist": "E. Ruggeri",
+    "title": "L’amore e un attimo"
   },
   {
     "artist": "E.L.O.",
@@ -9157,15 +9317,15 @@
   },
   {
     "artist": "Ed Sheeran",
+    "title": "Shape Of You"
+  },
+  {
+    "artist": "Ed Sheeran",
     "title": "The A Team"
   },
   {
     "artist": "Ed Sheeran",
     "title": "Thinking Out Loud"
-  },
-  {
-    "artist": "Ed Sheeran",
-    "title": "Shape Of You"
   },
   {
     "artist": "Eddie & the Hot Rods",
@@ -9217,6 +9377,10 @@
   },
   {
     "artist": "Eddy Mitchell",
+    "title": "Et la voix d’Elvis"
+  },
+  {
+    "artist": "Eddy Mitchell",
     "title": "Il ne rentre pas ce soir"
   },
   {
@@ -9245,15 +9409,11 @@
   },
   {
     "artist": "Eddy Mitchell",
-    "title": "Le cimetière des éléphants"
+    "title": "Les tuniques bleus et les Indiens"
   },
   {
     "artist": "Eddy Mitchell",
     "title": "Léche botte blues"
-  },
-  {
-    "artist": "Eddy Mitchell",
-    "title": "Les tuniques bleus et les Indiens"
   },
   {
     "artist": "Eddy Mitchell",
@@ -9468,12 +9628,20 @@
     "title": "Todo tiene sun fin"
   },
   {
+    "artist": "El Barrio",
+    "title": "Todo tiene sun fin                      "
+  },
+  {
     "artist": "El Chato",
     "title": "Que Bonitas eres"
   },
   {
     "artist": "El Gran Combo De P R",
     "title": "Me Libere"
+  },
+  {
+    "artist": "El Gran Combo De P R",
+    "title": "Me Libere                    "
   },
   {
     "artist": "El Norte",
@@ -9494,10 +9662,6 @@
   {
     "artist": "Electric Six",
     "title": "Danger High Voltage"
-  },
-  {
-    "artist": "Elégance",
-    "title": "Vacances, j'oublie tout"
   },
   {
     "artist": "Elgins",
@@ -9538,10 +9702,6 @@
   {
     "artist": "Elmer Food Beat",
     "title": "Le plastique c'est fantastique"
-  },
-  {
-    "artist": "Elodie",
-    "title": "Bagno a mezzanotte"
   },
   {
     "artist": "Elodie",
@@ -9638,6 +9798,10 @@
   {
     "artist": "Elton John",
     "title": "J'veux de la tendresse"
+  },
+  {
+    "artist": "Elton John",
+    "title": "J’veux de la tendresse"
   },
   {
     "artist": "Elton John",
@@ -10004,16 +10168,20 @@
     "title": "Baisse un peu l'abat-jour"
   },
   {
+    "artist": "Elégance",
+    "title": "Vacances, j'oublie tout"
+  },
+  {
+    "artist": "Embrace",
+    "title": "Ashes"
+  },
+  {
     "artist": "Embrace",
     "title": "Gravity"
   },
   {
     "artist": "Embrace",
     "title": "Looking As You Are"
-  },
-  {
-    "artist": "Embrace",
-    "title": "Ashes"
   },
   {
     "artist": "Emeli Sande",
@@ -10036,6 +10204,10 @@
     "title": "Chanson De L'Autruche"
   },
   {
+    "artist": "Emilie Jolie",
+    "title": "Chanson De L’Autruche"
+  },
+  {
     "artist": "Emilio Pericoli",
     "title": "Al di la"
   },
@@ -10046,6 +10218,10 @@
   {
     "artist": "Eminem",
     "title": "Cleaning Out My Closet"
+  },
+  {
+    "artist": "Eminem",
+    "title": "Just Lose It"
   },
   {
     "artist": "Eminem",
@@ -10074,10 +10250,6 @@
   {
     "artist": "Eminem",
     "title": "Without Me"
-  },
-  {
-    "artist": "Eminem",
-    "title": "Just Lose It"
   },
   {
     "artist": "Eminem ft. Rihanna",
@@ -10118,6 +10290,10 @@
   {
     "artist": "Emma Lanford",
     "title": "Is it 'cause i'm cool"
+  },
+  {
+    "artist": "Emma Lanford",
+    "title": "Is it ’cause i’m cool"
   },
   {
     "artist": "Emma Peeters",
@@ -10204,6 +10380,10 @@
     "title": "Like Toy Soldiers"
   },
   {
+    "artist": "Enola",
+    "title": "Bonjour, je me présente"
+  },
+  {
     "artist": "Enrico Caruso",
     "title": "O sole mio"
   },
@@ -10248,12 +10428,16 @@
     "title": "Heroe"
   },
   {
+    "artist": "Enrique  Iglesias",
+    "title": "Heroe "
+  },
+  {
     "artist": "Enrique Iglesias",
     "title": "Bailamos"
   },
   {
     "artist": "Enrique Iglesias",
-    "title": "Bailamos"
+    "title": "Bailamos                         "
   },
   {
     "artist": "Enrique Iglesias",
@@ -10281,6 +10465,10 @@
   },
   {
     "artist": "Enrique Iglesias",
+    "title": "Nunca te olvidare                "
+  },
+  {
+    "artist": "Enrique Iglesias",
     "title": "Rhythm devine"
   },
   {
@@ -10297,6 +10485,10 @@
   },
   {
     "artist": "Enrique Iglesias",
+    "title": "Subeme la radio               "
+  },
+  {
+    "artist": "Enrique Iglesias",
     "title": "Tired of Being Sorry"
   },
   {
@@ -10309,11 +10501,15 @@
   },
   {
     "artist": "Enrique iglesias ft gente de zona",
-    "title": "Bailando"
+    "title": "Bailando        "
   },
   {
     "artist": "Enrique Iglesias Ft. Bad Bunny",
     "title": "El Baño"
+  },
+  {
+    "artist": "Enrique Iglesias Ft. Bad Bunny",
+    "title": "El Baño            "
   },
   {
     "artist": "Ensemble contre le SIDA",
@@ -10353,15 +10549,15 @@
   },
   {
     "artist": "Erasure",
+    "title": "Breathe"
+  },
+  {
+    "artist": "Erasure",
     "title": "Chains of love"
   },
   {
     "artist": "Erasure",
     "title": "Sometimes"
-  },
-  {
-    "artist": "Erasure",
-    "title": "Breathe"
   },
   {
     "artist": "Eric Benet",
@@ -10389,15 +10585,15 @@
   },
   {
     "artist": "Eric Clapton",
+    "title": "Layla unplugged"
+  },
+  {
+    "artist": "Eric Clapton",
     "title": "Tears In Heaven"
   },
   {
     "artist": "Eric Clapton",
     "title": "Wonderful tonight"
-  },
-  {
-    "artist": "Eric Clapton",
-    "title": "Layla unplugged"
   },
   {
     "artist": "Eric Lapointe",
@@ -10414,6 +10610,10 @@
   {
     "artist": "Eros Ramazoti",
     "title": "Cosas de la Vida"
+  },
+  {
+    "artist": "Eros Ramazoti",
+    "title": "Cosas de la Vida                    "
   },
   {
     "artist": "Eros Ramazzotti",
@@ -10462,6 +10662,10 @@
   {
     "artist": "Eros Ramazzotti",
     "title": "Otra Como Tu"
+  },
+  {
+    "artist": "Eros Ramazzotti",
+    "title": "Otra Como Tu "
   },
   {
     "artist": "Eros Ramazzotti",
@@ -10550,10 +10754,6 @@
   {
     "artist": "Etienne Daho",
     "title": "Le grand sommeil"
-  },
-  {
-    "artist": "Étienne Daho",
-    "title": "Le premier jour du reste de ta vie"
   },
   {
     "artist": "Etienne Daho",
@@ -10696,8 +10896,20 @@
     "title": "Good thing"
   },
   {
+    "artist": "Fababy",
+    "title": "Love d'un voyou ft. Aya Nakamura"
+  },
+  {
+    "artist": "Fababy",
+    "title": "Love d’un voyou ft. Aya Nakamura"
+  },
+  {
     "artist": "Fababy  ft. Aya Nakamura",
     "title": "Love d'un voyou"
+  },
+  {
+    "artist": "Fababy  ft. Aya Nakamura",
+    "title": "Love d’un voyou"
   },
   {
     "artist": "Fabienne Thibeault",
@@ -10852,6 +11064,10 @@
     "title": "Un' ora sola ti vorrei"
   },
   {
+    "artist": "Fedora Mingarelli",
+    "title": "Un’ ora sola ti vorrei"
+  },
+  {
     "artist": "Feeder",
     "title": "Buck Rogers"
   },
@@ -10952,6 +11168,10 @@
     "title": "So Long"
   },
   {
+    "artist": "Flayns feat. Fred-V",
+    "title": "I'm sorry"
+  },
+  {
     "artist": "Fleetwood Mac",
     "title": "Don't stop"
   },
@@ -11013,10 +11233,6 @@
   },
   {
     "artist": "Florent Pagny",
-    "title": "Là où je t'emmènerai"
-  },
-  {
-    "artist": "Florent Pagny",
     "title": "Laissez-nous respirer"
   },
   {
@@ -11030,6 +11246,10 @@
   {
     "artist": "Florent Pagny",
     "title": "Loin de toi"
+  },
+  {
+    "artist": "Florent Pagny",
+    "title": "Là où je t'emmènerai"
   },
   {
     "artist": "Florent Pagny",
@@ -11080,12 +11300,16 @@
     "title": "Y a pas un homme qui soit né pour ça"
   },
   {
-    "artist": "Florent Pagny (feat Christophe Maé)",
-    "title": "Et un jour une femme"
+    "artist": "Florent Pagny & Cecilia Cara",
+    "title": "L'air du temps"
   },
   {
     "artist": "Florent Pagny & Cecilia Cara",
-    "title": "L'air du temps"
+    "title": "L’air du temps"
+  },
+  {
+    "artist": "Florent Pagny (feat Christophe Maé)",
+    "title": "Et un jour une femme"
   },
   {
     "artist": "Folklore",
@@ -11193,11 +11417,11 @@
   },
   {
     "artist": "France Gall",
-    "title": "Débranche"
+    "title": "Diégo libre dans sa tête"
   },
   {
     "artist": "France Gall",
-    "title": "Diégo libre dans sa tête"
+    "title": "Débranche"
   },
   {
     "artist": "France Gall",
@@ -11281,6 +11505,10 @@
   },
   {
     "artist": "Francesco Baccini",
+    "title": "Giulio Andreotti"
+  },
+  {
+    "artist": "Francesco Baccini",
     "title": "Il moi nome e' Ivo"
   },
   {
@@ -11294,10 +11522,6 @@
   {
     "artist": "Francesco Baccini",
     "title": "Qua qua quando"
-  },
-  {
-    "artist": "Francesco Baccini",
-    "title": "Giulio Andreotti"
   },
   {
     "artist": "Francesco Baccini & Ladri Di Biciclette",
@@ -11389,6 +11613,10 @@
   },
   {
     "artist": "Francis Cabrel",
+    "title": "L'encre de tes yeux (Remix)"
+  },
+  {
+    "artist": "Francis Cabrel",
     "title": "La cabane du pêcheur"
   },
   {
@@ -11418,10 +11646,6 @@
   {
     "artist": "Francis Cabrel",
     "title": "Petite Marie"
-  },
-  {
-    "artist": "Françis Cabrel",
-    "title": "Question d'équilibre"
   },
   {
     "artist": "Francis Cabrel",
@@ -11485,55 +11709,15 @@
   },
   {
     "artist": "Franco Simone",
-    "title": "Respiro"
-  },
-  {
-    "artist": "Franco Simone",
     "title": "Ti guardero' nel cuore"
-  },
-  {
-    "artist": "François Deguelt",
-    "title": "Le ciel, le soleil et la mer"
   },
   {
     "artist": "Francois Feldman",
     "title": "C'est toi qui m'a fais"
   },
   {
-    "artist": "François Feldman",
-    "title": "J'ai peur"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Joue pas"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Joy"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Le mal de toi"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Les valses de Vienne"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Magic boulevard"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Petit Franck"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Slave"
-  },
-  {
-    "artist": "François Feldman",
-    "title": "Tombé d'amour"
+    "artist": "Francois Feldman",
+    "title": "Rien Que Pour Toi"
   },
   {
     "artist": "Francois Valery",
@@ -11552,47 +11736,15 @@
     "title": "Des Ronds Dans L'eau"
   },
   {
-    "artist": "Françoise Hardy",
-    "title": "La maison où j'ai grandi"
-  },
-  {
-    "artist": "Françoise Hardy",
-    "title": "Message Personnel"
-  },
-  {
-    "artist": "Françoise Hardy",
-    "title": "Moi  vouloir toi"
-  },
-  {
-    "artist": "Françoise Hardy",
-    "title": "Tamalou"
-  },
-  {
-    "artist": "Françoise Hardy",
-    "title": "Tant de belles choses"
-  },
-  {
-    "artist": "Françoise Hardy",
-    "title": "Tous les garçons et les filles"
-  },
-  {
-    "artist": "Françoise Hardy",
-    "title": "V.I.P."
-  },
-  {
-    "artist": "Françoise Hardy & Jacques Dutronc",
-    "title": "Puisque vous partez en voyage"
-  },
-  {
-    "artist": "Françoise Hardy & Marc Lavoine",
-    "title": "Chère amie"
-  },
-  {
     "artist": "Frank & Mirella",
     "title": "Verliefd, verloofd, getrouwd"
   },
   {
     "artist": "Frank Boeijen",
+    "title": "Koud in mijn hart"
+  },
+  {
+    "artist": "Frank Boeijen ",
     "title": "Koud in mijn hart"
   },
   {
@@ -11760,6 +11912,86 @@
     "title": "Take Me Out"
   },
   {
+    "artist": "Françis Cabrel",
+    "title": "Question d'équilibre"
+  },
+  {
+    "artist": "François Deguelt",
+    "title": "Le ciel, le soleil et la mer"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "J'ai peur"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Joue pas"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Joy"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Le mal de toi"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Les valses de Vienne"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Magic boulevard"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Petit Franck"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Slave"
+  },
+  {
+    "artist": "François Feldman",
+    "title": "Tombé d'amour"
+  },
+  {
+    "artist": "Françoise Hardy",
+    "title": "La maison où j'ai grandi"
+  },
+  {
+    "artist": "Françoise Hardy",
+    "title": "Message Personnel"
+  },
+  {
+    "artist": "Françoise Hardy",
+    "title": "Moi  vouloir toi"
+  },
+  {
+    "artist": "Françoise Hardy",
+    "title": "Tamalou"
+  },
+  {
+    "artist": "Françoise Hardy",
+    "title": "Tant de belles choses"
+  },
+  {
+    "artist": "Françoise Hardy",
+    "title": "Tous les garçons et les filles"
+  },
+  {
+    "artist": "Françoise Hardy",
+    "title": "V.I.P."
+  },
+  {
+    "artist": "Françoise Hardy & Jacques Dutronc",
+    "title": "Puisque vous partez en voyage"
+  },
+  {
+    "artist": "Françoise Hardy & Marc Lavoine",
+    "title": "Chère amie"
+  },
+  {
     "artist": "Freak Power",
     "title": "Turn on, tune in, cop out"
   },
@@ -11810,6 +12042,30 @@
   {
     "artist": "Frederic François",
     "title": "Chicago"
+  },
+  {
+    "artist": "Frederickx- Goldman-Jones",
+    "title": "Un deux trois"
+  },
+  {
+    "artist": "Fredz",
+    "title": "Le stade"
+  },
+  {
+    "artist": "Free",
+    "title": "All right now"
+  },
+  {
+    "artist": "Frehel",
+    "title": "Riquita"
+  },
+  {
+    "artist": "Frozen",
+    "title": "Let It Go"
+  },
+  {
+    "artist": "Frozen",
+    "title": "Love is an open door"
   },
   {
     "artist": "Frédéric François",
@@ -11864,20 +12120,8 @@
     "title": "Si tu m'entends"
   },
   {
-    "artist": "Frederickx- Goldman-Jones",
-    "title": "Un deux trois"
-  },
-  {
-    "artist": "Fredz",
-    "title": "Le stade"
-  },
-  {
-    "artist": "Free",
-    "title": "All right now"
-  },
-  {
-    "artist": "Frehel",
-    "title": "Riquita"
+    "artist": "Frédéric Lerner",
+    "title": "Si tu m’entends"
   },
   {
     "artist": "Fréro Delavega",
@@ -11886,14 +12130,6 @@
   {
     "artist": "Fréro Delavega",
     "title": "Le Coeur Elephant"
-  },
-  {
-    "artist": "Frozen",
-    "title": "Let It Go"
-  },
-  {
-    "artist": "Frozen",
-    "title": "Love is an open door"
   },
   {
     "artist": "Fun",
@@ -12164,10 +12400,6 @@
     "title": "Be - Bop - A - Lula"
   },
   {
-    "artist": "Génération Goldman",
-    "title": "Envole-moi"
-  },
-  {
     "artist": "Genesis",
     "title": "I can't dance"
   },
@@ -12353,6 +12585,10 @@
   },
   {
     "artist": "Georges Brassens",
+    "title": "Je m’suis fait tout p’tit"
+  },
+  {
+    "artist": "Georges Brassens",
     "title": "La canne de Jeanne"
   },
   {
@@ -12366,6 +12602,10 @@
   {
     "artist": "Georges Brassens",
     "title": "La femme d'Hector"
+  },
+  {
+    "artist": "Georges Brassens",
+    "title": "La femme d’Hector"
   },
   {
     "artist": "Georges Brassens",
@@ -12480,40 +12720,8 @@
     "title": "Elle danse seule"
   },
   {
-    "artist": "Gérald De Palmas",
-    "title": "Elle Habite Ici"
-  },
-  {
-    "artist": "Gérald De Palmas",
-    "title": "Elle s'ennuie"
-  },
-  {
-    "artist": "Gérald De Palmas",
-    "title": "J'en rêve encore"
-  },
-  {
-    "artist": "Gérald de Palmas",
-    "title": "Regarde-moi bien en face"
-  },
-  {
-    "artist": "Gérald De Palmas",
-    "title": "Une seule vie"
-  },
-  {
     "artist": "Gerald Levert",
     "title": "I'd give anything"
-  },
-  {
-    "artist": "Gérard Berliner",
-    "title": "Louise"
-  },
-  {
-    "artist": "Gérard Blanc",
-    "title": "Une autre histoire"
-  },
-  {
-    "artist": "Gérard Blanchard",
-    "title": "Rock Amadour"
   },
   {
     "artist": "Gerard Cox",
@@ -12528,64 +12736,20 @@
     "title": "Love is in your eyes"
   },
   {
-    "artist": "Gérard Lenorman",
-    "title": "C'est peut être les anges"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Et moi je chante"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Gentil petit dauphin tristre"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Il"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "La ballade des gens heureux"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "La petite valse"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Les matins d'hiver"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Michèle"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Si j'étais président"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Si tu ne me laisses pas tomber"
-  },
-  {
-    "artist": "Gérard Lenorman",
-    "title": "Voici les clés"
-  },
-  {
-    "artist": "Gérard Palaprat",
-    "title": "Pour la fin du monde"
-  },
-  {
     "artist": "Gerardina Trovato",
     "title": "Il sole dentro"
   },
   {
-    "artist": "Gerardina trovato",
-    "title": "Non è un film"
+    "artist": "Gerardina Trovato",
+    "title": "Non ho piu' la mia citta'"
   },
   {
     "artist": "Gerardina Trovato",
-    "title": "Non ho piu' la mia citta'"
+    "title": "Non ho piu’ la mia citta’"
+  },
+  {
+    "artist": "Gerardina trovato",
+    "title": "Non è un film"
   },
   {
     "artist": "Gerardina Trovato",
@@ -12620,12 +12784,12 @@
     "title": "Ik ben Gerrit"
   },
   {
-    "artist": "Gerry & the Pacemakers",
-    "title": "Ferry'cross the mersey"
-  },
-  {
     "artist": "Gerry & The Pacemakers",
     "title": "Ferry 'Cross The Mersey"
+  },
+  {
+    "artist": "Gerry & the Pacemakers",
+    "title": "Ferry'cross the mersey"
   },
   {
     "artist": "Gerry Rafferty",
@@ -12724,6 +12888,10 @@
     "title": "Un mondo d'amore"
   },
   {
+    "artist": "Gianni Morandi",
+    "title": "Un mondo d’amore"
+  },
+  {
     "artist": "Gianni Paltenatti",
     "title": "Bandiera gialla"
   },
@@ -12744,8 +12912,16 @@
     "title": "Malatera"
   },
   {
+    "artist": "Gigi D'alessio & Laura Fabian",
+    "title": "Un Cuore Malato"
+  },
+  {
     "artist": "Gigi Finizio",
     "title": "Lo specchio dei pensieri"
+  },
+  {
+    "artist": "Gigliola Cinquetti",
+    "title": "Dio, come ti amo"
   },
   {
     "artist": "Gigliola Cinquetti",
@@ -12817,11 +12993,11 @@
   },
   {
     "artist": "Ginette Reno",
-    "title": "Ça pleure aussi un homme"
+    "title": "Je Ne Suis Qu'une Chanson"
   },
   {
     "artist": "Ginette Reno",
-    "title": "Je Ne Suis Qu'une Chanson"
+    "title": "L'essentiel"
   },
   {
     "artist": "Ginette Reno",
@@ -12830,6 +13006,10 @@
   {
     "artist": "Ginette Reno",
     "title": "Un peu plus haut, un peu plus loin"
+  },
+  {
+    "artist": "Ginette Reno",
+    "title": "Ça pleure aussi un homme"
   },
   {
     "artist": "Ginger",
@@ -12842,6 +13022,10 @@
   {
     "artist": "Gino Paoli",
     "title": "Che cosa c'e"
+  },
+  {
+    "artist": "Gino Paoli",
+    "title": "Che cosa c’e"
   },
   {
     "artist": "Gino Paoli",
@@ -12893,6 +13077,10 @@
   },
   {
     "artist": "Gipsy Kings",
+    "title": "Bamboleo"
+  },
+  {
+    "artist": "Gipsy Kings",
     "title": "Habla me"
   },
   {
@@ -12902,6 +13090,10 @@
   {
     "artist": "Gipsy Kings",
     "title": "Volare"
+  },
+  {
+    "artist": "Girls Aloud",
+    "title": "I'll Stand By You"
   },
   {
     "artist": "Girls Aloud",
@@ -12934,10 +13126,6 @@
   {
     "artist": "Girls Aloud",
     "title": "The show"
-  },
-  {
-    "artist": "Girls Aloud",
-    "title": "I'll Stand By You"
   },
   {
     "artist": "Girls Aloud",
@@ -13165,11 +13353,19 @@
   },
   {
     "artist": "Graeme Allwright",
+    "title": "Il faut que je m’en aille"
+  },
+  {
+    "artist": "Graeme Allwright",
     "title": "Jolie bouteille"
   },
   {
     "artist": "Grand Corps Malade",
     "title": "Retiens les rêves"
+  },
+  {
+    "artist": "Grand Corps Malade & Camille Lellouche",
+    "title": "Mais je t'aime"
   },
   {
     "artist": "Grand Jojo",
@@ -13205,31 +13401,19 @@
   },
   {
     "artist": "Green Day",
-    "title": "Basket Case"
-  },
-  {
-    "artist": "Green Day",
-    "title": "Holiday"
-  },
-  {
-    "artist": "Green Day",
     "title": "American Idiot"
+  },
+  {
+    "artist": "Green Day",
+    "title": "Basket Case"
   },
   {
     "artist": "Green Day",
     "title": "Boulevard Of Broken Dreams"
   },
   {
-    "artist": "Grégoire",
-    "title": "Merci"
-  },
-  {
-    "artist": "Grégoire",
-    "title": "Rue des étoiles"
-  },
-  {
-    "artist": "Grégoire",
-    "title": "Toi + moi"
+    "artist": "Green Day",
+    "title": "Holiday"
   },
   {
     "artist": "Gregory Abbott",
@@ -13266,6 +13450,18 @@
   {
     "artist": "Grover Washington Jr",
     "title": "Just the two of us"
+  },
+  {
+    "artist": "Grégoire",
+    "title": "Merci"
+  },
+  {
+    "artist": "Grégoire",
+    "title": "Rue des étoiles"
+  },
+  {
+    "artist": "Grégoire",
+    "title": "Toi + moi"
   },
   {
     "artist": "Guesh Patti",
@@ -13328,6 +13524,90 @@
     "title": "Rich Girl"
   },
   {
+    "artist": "Génération Goldman",
+    "title": "Envole-moi"
+  },
+  {
+    "artist": "Gérald De Palmas",
+    "title": "Elle Habite Ici"
+  },
+  {
+    "artist": "Gérald De Palmas",
+    "title": "Elle s'ennuie"
+  },
+  {
+    "artist": "Gérald De Palmas",
+    "title": "J'en rêve encore"
+  },
+  {
+    "artist": "Gérald de Palmas",
+    "title": "Regarde-moi bien en face"
+  },
+  {
+    "artist": "Gérald De Palmas",
+    "title": "Une seule vie"
+  },
+  {
+    "artist": "Gérard Berliner",
+    "title": "Louise"
+  },
+  {
+    "artist": "Gérard Blanc",
+    "title": "Une autre histoire"
+  },
+  {
+    "artist": "Gérard Blanchard",
+    "title": "Rock Amadour"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "C'est peut être les anges"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Et moi je chante"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Gentil petit dauphin tristre"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Il"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "La ballade des gens heureux"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "La petite valse"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Les matins d'hiver"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Michèle"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Si j'étais président"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Si tu ne me laisses pas tomber"
+  },
+  {
+    "artist": "Gérard Lenorman",
+    "title": "Voici les clés"
+  },
+  {
+    "artist": "Gérard Palaprat",
+    "title": "Pour la fin du monde"
+  },
+  {
     "artist": "H & Claire",
     "title": "All Out Of Love"
   },
@@ -13366,10 +13646,6 @@
   {
     "artist": "Hairsprat",
     "title": "You Can't Stop The Beat"
-  },
-  {
-    "artist": "Haley Reinhart",
-    "title": "Can't Help Falling In Love"
   },
   {
     "artist": "Haley Reinhart",
@@ -13497,6 +13773,10 @@
   },
   {
     "artist": "Hear'Say",
+    "title": "Lovin' Is Easy"
+  },
+  {
+    "artist": "Hear'Say",
     "title": "Pure & simple"
   },
   {
@@ -13504,8 +13784,8 @@
     "title": "The way to your love"
   },
   {
-    "artist": "Hear'Say",
-    "title": "Lovin' Is Easy"
+    "artist": "Hear’Say",
+    "title": "Lovin’ Is Easy"
   },
   {
     "artist": "Heaven 17",
@@ -13530,62 +13810,6 @@
   {
     "artist": "Helen Shapiro",
     "title": "Walking back to happiness"
-  },
-  {
-    "artist": "Héléna",
-    "title": "Aimée pour de vrai"
-  },
-  {
-    "artist": "Hélène",
-    "title": "Je m'appelle Hélène"
-  },
-  {
-    "artist": "Hélène",
-    "title": "La danse d' Hélène"
-  },
-  {
-    "artist": "Hélène",
-    "title": "Pour l'amour d'un garçon"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "Ailleurs Comme Ici"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "Au nom d'une femme"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "Elle, tu l'aimes"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "Encore une fois"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "L'amour est un soleil"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "Loin du froid de décembre"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "Mrs Jones"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "On ne dit pas"
-  },
-  {
-    "artist": "Hélène Sègara",
-    "title": "Y'a trop de gens qui t'aiment"
-  },
-  {
-    "artist": "Hélène Sègara & Laura Pausini",
-    "title": "On n'oublies jamais rien,on vit avec"
   },
   {
     "artist": "Helmut Fritz",
@@ -13625,7 +13849,15 @@
   },
   {
     "artist": "Henri Salvador",
+    "title": "C’est pas la joie"
+  },
+  {
+    "artist": "Henri Salvador",
     "title": "Jardin D'Hiver"
+  },
+  {
+    "artist": "Henri Salvador",
+    "title": "Jardin D’Hiver"
   },
   {
     "artist": "Henri Salvador",
@@ -13650,6 +13882,10 @@
   {
     "artist": "Henrique e Juliano",
     "title": "Deixa A Gente Quieto"
+  },
+  {
+    "artist": "Henrique e Juliano",
+    "title": "Deixa A Gente Quieto           "
   },
   {
     "artist": "Hepburn",
@@ -13685,6 +13921,10 @@
   },
   {
     "artist": "Herbert Léonard",
+    "title": "Quand tu m’aimes"
+  },
+  {
+    "artist": "Herbert Léonard",
     "title": "Tu ne pourras plus jamais m'oublier"
   },
   {
@@ -13712,10 +13952,6 @@
     "title": "Que Sera Sera"
   },
   {
-    "artist": "Héroes del Silencio",
-    "title": "Entre dos tierras"
-  },
-  {
     "artist": "Hervé Christiani",
     "title": "Il est libre Max"
   },
@@ -13733,11 +13969,11 @@
   },
   {
     "artist": "Hervé Villard",
-    "title": "Méditerranéenne"
+    "title": "Mourir ou vivre"
   },
   {
     "artist": "Hervé Villard",
-    "title": "Mourir ou vivre"
+    "title": "Méditerranéenne"
   },
   {
     "artist": "Hervé Villard",
@@ -13774,10 +14010,6 @@
   {
     "artist": "Hillary Duff",
     "title": "So yesterday"
-  },
-  {
-    "artist": "Höllenboer",
-    "title": "Busje Komt Zo"
   },
   {
     "artist": "Hollies",
@@ -13968,12 +14200,84 @@
     "title": "Tell me when"
   },
   {
+    "artist": "Hélène",
+    "title": "Je m'appelle Hélène"
+  },
+  {
+    "artist": "Hélène",
+    "title": "La danse d' Hélène"
+  },
+  {
+    "artist": "Hélène",
+    "title": "Pour l'amour d'un garçon"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Ailleurs Comme Ici"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Au nom d'une femme"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Au nom d’une femme"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Elle, tu l'aimes"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Encore une fois"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "L'amour est un soleil"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Loin du froid de décembre"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Mrs Jones"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "On ne dit pas"
+  },
+  {
+    "artist": "Hélène Sègara",
+    "title": "Y'a trop de gens qui t'aiment"
+  },
+  {
+    "artist": "Hélène Sègara & Laura Pausini",
+    "title": "On n'oublies jamais rien,on vit avec"
+  },
+  {
+    "artist": "Héléna",
+    "title": "Aimée pour de vrai"
+  },
+  {
+    "artist": "Héroes del Silencio",
+    "title": "Entre dos tierras"
+  },
+  {
+    "artist": "Höllenboer",
+    "title": "Busje Komt Zo"
+  },
+  {
     "artist": "I Cavalieri",
     "title": "Lupin l'incorreggibile Lupin"
   },
   {
     "artist": "I Nomadi",
     "title": "Canzone per un' amica"
+  },
+  {
+    "artist": "I Nomadi",
+    "title": "Canzone per un’ amica"
   },
   {
     "artist": "I Nomadi",
@@ -14016,6 +14320,10 @@
     "title": "Regresa a mi"
   },
   {
+    "artist": "il Volo",
+    "title": "Grande Amore"
+  },
+  {
     "artist": "Il était une fois",
     "title": "J'ai encore rêver d'elle"
   },
@@ -14030,10 +14338,6 @@
   {
     "artist": "Il était une fois",
     "title": "Que fais tu ce soir après diner"
-  },
-  {
-    "artist": "il Volo",
-    "title": "Grande Amore"
   },
   {
     "artist": "Ilona",
@@ -14258,6 +14562,10 @@
   {
     "artist": "Isabelle Boulay",
     "title": "Quand vos coeurs m'appellent"
+  },
+  {
+    "artist": "Isabelle Boulay",
+    "title": "Quand vos coeurs m’appellent"
   },
   {
     "artist": "Isabelle Boulay",
@@ -14581,11 +14889,11 @@
   },
   {
     "artist": "Jacques Higelin",
-    "title": "Tête en l'air"
+    "title": "Tombé du ciel"
   },
   {
     "artist": "Jacques Higelin",
-    "title": "Tombé du ciel"
+    "title": "Tête en l'air"
   },
   {
     "artist": "Jaimeson",
@@ -14881,15 +15189,15 @@
   },
   {
     "artist": "Jann Arden",
-    "title": "To sir with love"
-  },
-  {
-    "artist": "Jann Arden",
     "title": "Could I be your girl"
   },
   {
     "artist": "Jann Arden",
     "title": "I would die for you"
+  },
+  {
+    "artist": "Jann Arden",
+    "title": "To sir with love"
   },
   {
     "artist": "Jantje Koopmans",
@@ -14944,6 +15252,10 @@
     "title": "Amigos Para Sempre"
   },
   {
+    "artist": "Jayne",
+    "title": "Amigos Para Sempre                          "
+  },
+  {
     "artist": "Jaynettes",
     "title": "Sally go round the roses"
   },
@@ -14990,6 +15302,14 @@
   {
     "artist": "Jean Gabin",
     "title": "Maintenant, je sais"
+  },
+  {
+    "artist": "Jean Jacques Goldman",
+    "title": "Parler v'ma vie"
+  },
+  {
+    "artist": "Jean Jacques Lafon",
+    "title": "Le géant de papier (Yann Muller)"
   },
   {
     "artist": "Jean Lumière",
@@ -15093,10 +15413,6 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Là - bas"
-  },
-  {
-    "artist": "Jean-Jacques Goldman",
     "title": "La vie par procuration"
   },
   {
@@ -15105,11 +15421,15 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Medley"
+    "title": "Là - bas"
   },
   {
     "artist": "Jean-Jacques Goldman",
-    "title": "Né en 17 à Leidenstadt"
+    "title": "Là-bas"
+  },
+  {
+    "artist": "Jean-Jacques Goldman",
+    "title": "Medley"
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -15121,7 +15441,15 @@
   },
   {
     "artist": "Jean-Jacques Goldman",
+    "title": "Né en 17 à Leidenstadt"
+  },
+  {
+    "artist": "Jean-Jacques Goldman",
     "title": "On ira"
+  },
+  {
+    "artist": "Jean-Jacques Goldman",
+    "title": "Parler v'ma vie"
   },
   {
     "artist": "Jean-Jacques Goldman",
@@ -15192,6 +15520,10 @@
     "title": "L'agitateur"
   },
   {
+    "artist": "Jean-Pascal",
+    "title": "L’agitateur"
+  },
+  {
     "artist": "Jean-Patrick Capdevielle",
     "title": "C'est dur d'être un héros"
   },
@@ -15234,6 +15566,14 @@
   {
     "artist": "Jeanne Mas",
     "title": "En rouge et noir"
+  },
+  {
+    "artist": "Jeanne Mas",
+    "title": "L'enfant"
+  },
+  {
+    "artist": "Jeanne Mas",
+    "title": "L’enfant"
   },
   {
     "artist": "Jeanne Mas",
@@ -15301,6 +15641,10 @@
   },
   {
     "artist": "Jenifer",
+    "title": "J’Attends L’Amour"
+  },
+  {
+    "artist": "Jenifer",
     "title": "Le souvenir de ce jour"
   },
   {
@@ -15358,6 +15702,14 @@
   {
     "artist": "Jennifer Lopez",
     "title": "If you had my love"
+  },
+  {
+    "artist": "Jennifer Lopez",
+    "title": "I’m Glad"
+  },
+  {
+    "artist": "Jennifer Lopez",
+    "title": "I’m Gonna Be Alright"
   },
   {
     "artist": "Jennifer Lopez",
@@ -15434,6 +15786,10 @@
   {
     "artist": "Jesse Garon",
     "title": "C'est lundi"
+  },
+  {
+    "artist": "Jesse Garon",
+    "title": "C’est lundi"
   },
   {
     "artist": "Jessica & Ashlee Simpson",
@@ -15612,6 +15968,10 @@
     "title": "Pongamos que hablo de Madrid"
   },
   {
+    "artist": "Joaquin Sabina",
+    "title": "Pongamos que hablo de Madrid   "
+  },
+  {
     "artist": "Jocelyn Brown",
     "title": "Somebody else's  guy"
   },
@@ -15638,6 +15998,10 @@
   {
     "artist": "Joe Cocker",
     "title": "Up where we belong (solo)"
+  },
+  {
+    "artist": "Joe Cocker",
+    "title": "Up where we belong (Solo)"
   },
   {
     "artist": "Joe Cocker",
@@ -15701,6 +16065,10 @@
   },
   {
     "artist": "Joe Dassin",
+    "title": "L’équipe à Jojo"
+  },
+  {
+    "artist": "Joe Dassin",
     "title": "Salut"
   },
   {
@@ -15726,10 +16094,6 @@
   {
     "artist": "Joel Dowel",
     "title": "Wooden heart"
-  },
-  {
-    "artist": "Joëlle Ursule",
-    "title": "White And Black Blues"
   },
   {
     "artist": "Johan Verminnen",
@@ -16033,19 +16397,19 @@
   },
   {
     "artist": "Johnny Halliday",
-    "title": "Noël interdit"
-  },
-  {
-    "artist": "Johnny Halliday",
     "title": "Noir c'est Noir"
   },
   {
     "artist": "Johnny Halliday",
-    "title": "Oh ! ma jolie Sarah"
+    "title": "Noël interdit"
   },
   {
     "artist": "Johnny Halliday",
     "title": "Oh Marie"
+  },
+  {
+    "artist": "Johnny Halliday",
+    "title": "Oh ! ma jolie Sarah"
   },
   {
     "artist": "Johnny Halliday",
@@ -16121,6 +16485,10 @@
   },
   {
     "artist": "Johnny Halliday",
+    "title": "Toute la musique que j’aime"
+  },
+  {
+    "artist": "Johnny Halliday",
     "title": "Un jour viendra"
   },
   {
@@ -16132,6 +16500,14 @@
     "title": "J'oublierai ton nom"
   },
   {
+    "artist": "Johnny Halliday & Carmel",
+    "title": "J’oublierai ton nom"
+  },
+  {
+    "artist": "Johnny Hallyday",
+    "title": "Non, Je Ne Regrette Rien"
+  },
+  {
     "artist": "Johnny hates jazz",
     "title": "I don't to be a hero"
   },
@@ -16140,8 +16516,24 @@
     "title": "I Don't wanna be a hero"
   },
   {
+    "artist": "Johnny Hates Jazz",
+    "title": "I don't wanna be a hero"
+  },
+  {
     "artist": "Johnny Hoes",
     "title": "Och was ik maar"
+  },
+  {
+    "artist": "Johnny Horton",
+    "title": "North to Alska"
+  },
+  {
+    "artist": "Johnny Horton",
+    "title": "The mansion you stole"
+  },
+  {
+    "artist": "Johnny Horton",
+    "title": "Whisparing pines"
   },
   {
     "artist": "Johnny Jordaan",
@@ -16162,6 +16554,10 @@
   {
     "artist": "Johnny Logan",
     "title": "Hold me know"
+  },
+  {
+    "artist": "Johnny Logan",
+    "title": "What's another year"
   },
   {
     "artist": "Johnny mathis",
@@ -16200,6 +16596,10 @@
     "title": "Dur dur d'être bébé"
   },
   {
+    "artist": "Jordy",
+    "title": "Dur dur d’être bébé"
+  },
+  {
     "artist": "Jorge Negrete",
     "title": "Me he de comer esa tuna"
   },
@@ -16210,30 +16610,6 @@
   {
     "artist": "Jorge Sepùlveda",
     "title": "Cantame un pasodoble español"
-  },
-  {
-    "artist": "José Luis Perales",
-    "title": "Me llamas"
-  },
-  {
-    "artist": "José Luis Perales",
-    "title": "Quisiera decir tu nombre"
-  },
-  {
-    "artist": "José Luis Perales",
-    "title": "Te quiero"
-  },
-  {
-    "artist": "José Luis Perales",
-    "title": "Tu como yo"
-  },
-  {
-    "artist": "José Luis Perales",
-    "title": "Un velero llamado libertad"
-  },
-  {
-    "artist": "José Manuel Soto",
-    "title": "Por ella"
   },
   {
     "artist": "Jose Velez",
@@ -16253,6 +16629,10 @@
   },
   {
     "artist": "Josh Groban",
+    "title": "Gira con me"
+  },
+  {
+    "artist": "Josh Groban",
     "title": "Hymne à l'amour"
   },
   {
@@ -16266,6 +16646,10 @@
   {
     "artist": "Josh Groban",
     "title": "You raise me up"
+  },
+  {
+    "artist": "Josh Groban",
+    "title": "You Raise Me Up"
   },
   {
     "artist": "Josh Groban",
@@ -16292,6 +16676,34 @@
     "title": "You Had Me"
   },
   {
+    "artist": "José Luis Perales",
+    "title": "Me llamas"
+  },
+  {
+    "artist": "José Luis Perales",
+    "title": "Quisiera decir tu nombre"
+  },
+  {
+    "artist": "José Luis Perales",
+    "title": "Te quiero"
+  },
+  {
+    "artist": "José Luis Perales",
+    "title": "Tu como yo"
+  },
+  {
+    "artist": "José Luis Perales",
+    "title": "Un velero llamado libertad"
+  },
+  {
+    "artist": "José Manuel Soto",
+    "title": "Por ella"
+  },
+  {
+    "artist": "José Manuel Soto ",
+    "title": "Por ella"
+  },
+  {
     "artist": "Journey",
     "title": "Don't Stop Believin"
   },
@@ -16302,6 +16714,10 @@
   {
     "artist": "Jovanotti",
     "title": "Bella"
+  },
+  {
+    "artist": "Jovanotti",
+    "title": "Hey mama"
   },
   {
     "artist": "Jovanotti",
@@ -16333,7 +16749,7 @@
   },
   {
     "artist": "Jovanotti",
-    "title": "Hey mama"
+    "title": "Voglio di piu’"
   },
   {
     "artist": "Joyca",
@@ -16346,6 +16762,10 @@
   {
     "artist": "Joyce Jonathan",
     "title": "Je ne sais pas"
+  },
+  {
+    "artist": "Joëlle Ursule",
+    "title": "White And Black Blues"
   },
   {
     "artist": "JP Cooper",
@@ -16389,11 +16809,11 @@
   },
   {
     "artist": "Julie Zenatti",
-    "title": "Si j'men sors"
+    "title": "Je voudrais que tu me consoles"
   },
   {
     "artist": "Julie Zenatti",
-    "title": "Je voudrais que tu me consoles"
+    "title": "Si j'men sors"
   },
   {
     "artist": "Julie Zennati",
@@ -16453,11 +16873,11 @@
   },
   {
     "artist": "Julien Clerc",
-    "title": "Mélissa"
+    "title": "Mon refuge"
   },
   {
     "artist": "Julien Clerc",
-    "title": "Mon refuge"
+    "title": "Mélissa"
   },
   {
     "artist": "Julien Clerc",
@@ -16482,6 +16902,10 @@
   {
     "artist": "Julien Doré",
     "title": "Chou Wasabi"
+  },
+  {
+    "artist": "Julien Doré",
+    "title": "Nous"
   },
   {
     "artist": "Julien Doré",
@@ -16518,6 +16942,10 @@
   {
     "artist": "Julio Iglesias",
     "title": "Amor,amor,amor"
+  },
+  {
+    "artist": "Julio Iglesias",
+    "title": "Amor,amor,amor                  "
   },
   {
     "artist": "Julio Iglesias",
@@ -16581,10 +17009,6 @@
   },
   {
     "artist": "Julio Iglesias",
-    "title": "Se Mi Lasci Non Vale"
-  },
-  {
-    "artist": "Julio Iglesias",
     "title": "Soy Un Truhan"
   },
   {
@@ -16618,10 +17042,6 @@
   {
     "artist": "Junior Senior",
     "title": "Rhythm Bandits"
-  },
-  {
-    "artist": "Jürgen Drews",
-    "title": "So wie im Film"
   },
   {
     "artist": "Justin Bieber",
@@ -16674,6 +17094,10 @@
   {
     "artist": "Justine Timberlake",
     "title": "Senorita"
+  },
+  {
+    "artist": "Jürgen Drews",
+    "title": "So wie im Film"
   },
   {
     "artist": "K D Lang",
@@ -16738,10 +17162,6 @@
   {
     "artist": "Kanye West",
     "title": "Touch in the sky"
-  },
-  {
-    "artist": "Kaoma",
-    "title": "Lambada"
   },
   {
     "artist": "Kaoma",
@@ -17225,7 +17645,15 @@
   },
   {
     "artist": "Kpop Demon Hunters",
+    "title": "Briller (Golden)"
+  },
+  {
+    "artist": "Kpop Demon Hunters",
     "title": "Golden"
+  },
+  {
+    "artist": "Kpop Demon Hunters",
+    "title": "Libre (Free)"
   },
   {
     "artist": "Krezip",
@@ -17337,15 +17765,15 @@
   },
   {
     "artist": "Kyo",
+    "title": "Je saigne encore"
+  },
+  {
+    "artist": "Kyo",
     "title": "Le graal"
   },
   {
     "artist": "Kyo",
     "title": "Plan A"
-  },
-  {
-    "artist": "Kyo",
-    "title": "Je saigne encore"
   },
   {
     "artist": "Kyo & Sita",
@@ -17456,8 +17884,16 @@
     "title": "La playa"
   },
   {
+    "artist": "La oreja de Van Gogh",
+    "title": "La playa                     "
+  },
+  {
     "artist": "La Petite Culotte",
     "title": "La goffa Lolita"
+  },
+  {
+    "artist": "La Petite Culotte",
+    "title": "La goffa lolita"
   },
   {
     "artist": "La petite sirène",
@@ -17572,6 +18008,10 @@
     "title": "Ven,Devórame Otra Vez"
   },
   {
+    "artist": "Lalo Rodriguez",
+    "title": "Ven,Devórame Otra Vez                            "
+  },
+  {
     "artist": "Lana del Rey",
     "title": "Born To Die"
   },
@@ -17629,6 +18069,10 @@
   },
   {
     "artist": "Lara Fabian",
+    "title": "Je t'ai cherché"
+  },
+  {
+    "artist": "Lara Fabian",
     "title": "Je t'aime"
   },
   {
@@ -17638,6 +18082,10 @@
   {
     "artist": "Lara Fabian",
     "title": "Je t'appartiens"
+  },
+  {
+    "artist": "Lara Fabian",
+    "title": "J’Y Crois Encore"
   },
   {
     "artist": "Lara Fabian",
@@ -17653,11 +18101,11 @@
   },
   {
     "artist": "Lara Fabian",
-    "title": "Leïla"
+    "title": "Les amoureux de l'an 2000"
   },
   {
     "artist": "Lara Fabian",
-    "title": "Les amoureux de l'an 2000"
+    "title": "Leïla"
   },
   {
     "artist": "Lara Fabian",
@@ -17797,7 +18245,15 @@
   },
   {
     "artist": "Laura Pausini",
+    "title": "Non c’e"
+  },
+  {
+    "artist": "Laura Pausini",
     "title": "Perche non torna piu'"
+  },
+  {
+    "artist": "Laura Pausini",
+    "title": "Perche non torna piu’"
   },
   {
     "artist": "Laura Pausini",
@@ -17805,7 +18261,19 @@
   },
   {
     "artist": "Laura Pausini",
+    "title": "Un Amico È Cosi"
+  },
+  {
+    "artist": "Laura Pausini",
+    "title": "Un amico é cosi"
+  },
+  {
+    "artist": "Laura Pausini",
     "title": "Un emerganza d'amore"
+  },
+  {
+    "artist": "Laura Pausini",
+    "title": "Un emerganza d’amore"
   },
   {
     "artist": "Lauren Daigle",
@@ -17973,11 +18441,11 @@
   },
   {
     "artist": "Lemar",
-    "title": "No Pressure"
+    "title": "If There's Any Justice"
   },
   {
     "artist": "Lemar",
-    "title": "If There's Any Justice"
+    "title": "No Pressure"
   },
   {
     "artist": "Lena Martell",
@@ -17986,6 +18454,10 @@
   {
     "artist": "Lena Park",
     "title": "You Raise me up"
+  },
+  {
+    "artist": "Lena Park",
+    "title": "You Raise Me Up"
   },
   {
     "artist": "Lena Zavanori",
@@ -18040,22 +18512,6 @@
     "title": "When I need you"
   },
   {
-    "artist": "Léo Ferré",
-    "title": "Avec le temps"
-  },
-  {
-    "artist": "Léo Ferré",
-    "title": "C'est extra"
-  },
-  {
-    "artist": "Léo Ferré",
-    "title": "Comme à Ostende"
-  },
-  {
-    "artist": "Léo Noël",
-    "title": "Dolorosa"
-  },
-  {
     "artist": "Leona Lewis",
     "title": "Run"
   },
@@ -18074,10 +18530,6 @@
   {
     "artist": "Leopold 3",
     "title": "Zomernacht"
-  },
-  {
-    "artist": "Léopold Nord et Vous",
-    "title": "C'est L'amour"
   },
   {
     "artist": "Les Agadoos",
@@ -18209,7 +18661,19 @@
   },
   {
     "artist": "Liane Foly",
+    "title": "Ca va ça vient"
+  },
+  {
+    "artist": "Liane Foly",
     "title": "Doucement"
+  },
+  {
+    "artist": "Liane Foly",
+    "title": "Etre vrai"
+  },
+  {
+    "artist": "Liane Foly",
+    "title": "Goodbye lover"
   },
   {
     "artist": "Liane Foly",
@@ -18225,18 +18689,6 @@
   },
   {
     "artist": "Liane Foly",
-    "title": "On a tous le droit"
-  },
-  {
-    "artist": "Liane Foly",
-    "title": "Rêve Orange"
-  },
-  {
-    "artist": "Liane Foly",
-    "title": "Va savoir"
-  },
-  {
-    "artist": "Liane Foly",
     "title": "Laisse pleurer les nuages"
   },
   {
@@ -18245,11 +18697,11 @@
   },
   {
     "artist": "Liane Foly",
-    "title": "Ca va ça vient"
+    "title": "On a tous le droit"
   },
   {
     "artist": "Liane Foly",
-    "title": "Goodbye lover"
+    "title": "Rêve Orange"
   },
   {
     "artist": "Liane Foly",
@@ -18257,7 +18709,7 @@
   },
   {
     "artist": "Liane Foly",
-    "title": "Etre vrai"
+    "title": "Va savoir"
   },
   {
     "artist": "Liane Foly",
@@ -18636,10 +19088,6 @@
     "title": "Rhythm Inside"
   },
   {
-    "artist": "Loïc Nottet",
-    "title": "Mr  Mme"
-  },
-  {
     "artist": "Lola Beltrán",
     "title": "Ay, Jalisco no te rajes"
   },
@@ -18705,11 +19153,31 @@
   },
   {
     "artist": "Loredana Berté",
+    "title": "Il mare d’inverno"
+  },
+  {
+    "artist": "Loredana Berté",
     "title": "Per i tuoi occhi"
   },
   {
     "artist": "Loretta Goggi",
+    "title": "Il mio prossimo amore"
+  },
+  {
+    "artist": "Loretta Goggi",
     "title": "Io nascero'"
+  },
+  {
+    "artist": "Loretta Goggi",
+    "title": "Io nascero’"
+  },
+  {
+    "artist": "Loretta Goggi",
+    "title": "Maledetta Primavera"
+  },
+  {
+    "artist": "Loretta Goggi",
+    "title": "Pieno d'amore"
   },
   {
     "artist": "Lorie",
@@ -18790,6 +19258,10 @@
   {
     "artist": "Los Iracundos",
     "title": "La Juventud"
+  },
+  {
+    "artist": "Los Iracundos",
+    "title": "La Juventud                         "
   },
   {
     "artist": "Los Lobos ( Richie Valens)",
@@ -18960,8 +19432,16 @@
     "title": "You're A Superstar"
   },
   {
+    "artist": "Love Inc",
+    "title": "You’re A Superstar"
+  },
+  {
     "artist": "Lowland Trio",
     "title": "Trouw niet voor je 40 bent"
+  },
+  {
+    "artist": "Loïc Nottet",
+    "title": "Mr  Mme"
   },
   {
     "artist": "LP",
@@ -19005,6 +19485,10 @@
   },
   {
     "artist": "Luca Carboni",
+    "title": "Ci sei perche’"
+  },
+  {
+    "artist": "Luca Carboni",
     "title": "Ci stiamo sbagliando"
   },
   {
@@ -19025,6 +19509,10 @@
   },
   {
     "artist": "Luca Carboni",
+    "title": "Sara’ un uomo"
+  },
+  {
+    "artist": "Luca Carboni",
     "title": "Silvia lo sai"
   },
   {
@@ -19034,6 +19522,10 @@
   {
     "artist": "Luca sepe",
     "title": "Un po' di te"
+  },
+  {
+    "artist": "Luca sepe",
+    "title": "Un po’ di te"
   },
   {
     "artist": "Luce",
@@ -19157,7 +19649,15 @@
   },
   {
     "artist": "Lucio Battisti",
+    "title": "Perche’ no"
+  },
+  {
+    "artist": "Lucio Battisti",
     "title": "Prendila cosi'"
+  },
+  {
+    "artist": "Lucio Battisti",
+    "title": "Prendila cosi’"
   },
   {
     "artist": "Lucio Battisti",
@@ -19202,6 +19702,10 @@
   {
     "artist": "Lucio Dalla",
     "title": "Com' e' profondo il mare"
+  },
+  {
+    "artist": "Lucio Dalla",
+    "title": "Com’ e’ profondo il mare"
   },
   {
     "artist": "Lucio Dalla",
@@ -19276,6 +19780,10 @@
     "title": "Échame La Culpa"
   },
   {
+    "artist": "Luis Fonsi, Demi Lovato",
+    "title": "Échame La Culpa           "
+  },
+  {
     "artist": "Luis Mariano",
     "title": "Chevalier du ciel"
   },
@@ -19306,6 +19814,10 @@
   {
     "artist": "Luis Miguel",
     "title": "Besame Mucho"
+  },
+  {
+    "artist": "Luis Miguel",
+    "title": "Historia De Amor"
   },
   {
     "artist": "Luis Miguel",
@@ -19426,6 +19938,26 @@
   {
     "artist": "Lys Gauty",
     "title": "A Paris, dans chaque faubourg"
+  },
+  {
+    "artist": "Léo Ferré",
+    "title": "Avec le temps"
+  },
+  {
+    "artist": "Léo Ferré",
+    "title": "C'est extra"
+  },
+  {
+    "artist": "Léo Ferré",
+    "title": "Comme à Ostende"
+  },
+  {
+    "artist": "Léo Noël",
+    "title": "Dolorosa"
+  },
+  {
+    "artist": "Léopold Nord et Vous",
+    "title": "C'est L'amour"
   },
   {
     "artist": "M",
@@ -19668,10 +20200,6 @@
     "title": "You'll see"
   },
   {
-    "artist": "Maëlle",
-    "title": "L'effet de masse"
-  },
-  {
     "artist": "Magali Noel",
     "title": "Fais moi mal Johnny"
   },
@@ -19694,6 +20222,10 @@
   {
     "artist": "Maitre Gims",
     "title": "Cameleon"
+  },
+  {
+    "artist": "Maitre Gims",
+    "title": "Changer"
   },
   {
     "artist": "Maitre Gims",
@@ -19724,36 +20256,16 @@
     "title": "Zombie"
   },
   {
-    "artist": "Maître Gims",
-    "title": "Bella"
-  },
-  {
-    "artist": "Maître Gims",
-    "title": "Bella Ciao"
-  },
-  {
-    "artist": "Maître Gims",
-    "title": "Estce que tu m'aimes"
-  },
-  {
-    "artist": "Maître Gims",
-    "title": "J'me tire"
-  },
-  {
-    "artist": "Maître Gims",
-    "title": "Parisienne"
-  },
-  {
-    "artist": "Maitre Gims",
-    "title": "Changer"
+    "artist": "Maluma",
+    "title": "Corazon"
   },
   {
     "artist": "Malú",
     "title": "Enamorada"
   },
   {
-    "artist": "Maluma",
-    "title": "Corazon"
+    "artist": "Malú",
+    "title": "Enamorada                                    "
   },
   {
     "artist": "Mama Cass Elliot",
@@ -19778,10 +20290,6 @@
   {
     "artist": "Mamma's Jasse",
     "title": "Als de dage van toen"
-  },
-  {
-    "artist": "Maná",
-    "title": "Bendita tu luz"
   },
   {
     "artist": "Manau",
@@ -19920,8 +20428,20 @@
     "title": "Que He De Hacer Para Olvidarte"
   },
   {
+    "artist": "Manolo Otero",
+    "title": "Que He De Hacer Para Olvidarte       "
+  },
+  {
     "artist": "Manuel Turizo",
     "title": "La Bachata"
+  },
+  {
+    "artist": "Maná",
+    "title": "Bendita tu luz"
+  },
+  {
+    "artist": "Maná",
+    "title": "Bendita tu luz                               "
   },
   {
     "artist": "Marc Anthony",
@@ -19936,6 +20456,10 @@
     "title": "No Me Ames"
   },
   {
+    "artist": "Marc Anthony y Jennifer Lopez ",
+    "title": "No Me Ames        "
+  },
+  {
     "artist": "Marc Antoine",
     "title": "Tant besoin de toi"
   },
@@ -19946,6 +20470,10 @@
   {
     "artist": "Marc Cohn",
     "title": "Walking In Memphis"
+  },
+  {
+    "artist": "Marc Lavoine",
+    "title": "Bascule avec moi"
   },
   {
     "artist": "Marc Lavoine",
@@ -19965,7 +20493,7 @@
   },
   {
     "artist": "Marc Lavoine",
-    "title": "Le parking des anges"
+    "title": "L'amour de 30 secondes"
   },
   {
     "artist": "Marc Lavoine",
@@ -19973,15 +20501,7 @@
   },
   {
     "artist": "Marc Lavoine",
-    "title": "Pour une biguine avec toi"
-  },
-  {
-    "artist": "Marc Lavoine",
-    "title": "L'amour de 30 secondes"
-  },
-  {
-    "artist": "Marc Lavoine",
-    "title": "Bascule avec moi"
+    "title": "Le parking des anges"
   },
   {
     "artist": "Marc Lavoine",
@@ -19989,11 +20509,15 @@
   },
   {
     "artist": "Marc Lavoine",
-    "title": "Rue Fontaine"
+    "title": "Paris"
   },
   {
     "artist": "Marc Lavoine",
-    "title": "Paris"
+    "title": "Pour une biguine avec toi"
+  },
+  {
+    "artist": "Marc Lavoine",
+    "title": "Rue Fontaine"
   },
   {
     "artist": "Marc Lavoine & Bambou",
@@ -20026,6 +20550,10 @@
   {
     "artist": "Marco Borsato",
     "title": "Het water"
+  },
+  {
+    "artist": "Marco Borsato",
+    "title": "Het water "
   },
   {
     "artist": "Marco Borsato",
@@ -20205,6 +20733,10 @@
   },
   {
     "artist": "Marie Laforêt",
+    "title": "Il a neigé sur yesterday"
+  },
+  {
+    "artist": "Marie Laforêt",
     "title": "Ivan Boris et Moi"
   },
   {
@@ -20213,23 +20745,7 @@
   },
   {
     "artist": "Marie Laforêt",
-    "title": "Mes bouquets d'asphodèles"
-  },
-  {
-    "artist": "Marie Laforêt",
-    "title": "Il a neigé sur yesterday"
-  },
-  {
-    "artist": "Marie Laforêt",
     "title": "Les vendanges de l'amour"
-  },
-  {
-    "artist": "Marie Laforêt",
-    "title": "Manchester et Liverpool"
-  },
-  {
-    "artist": "Marie Laforêt",
-    "title": "Viens sur la montagne"
   },
   {
     "artist": "Marie Laforêt",
@@ -20237,7 +20753,19 @@
   },
   {
     "artist": "Marie Laforêt",
+    "title": "Manchester et Liverpool"
+  },
+  {
+    "artist": "Marie Laforêt",
+    "title": "Mes bouquets d'asphodèles"
+  },
+  {
+    "artist": "Marie Laforêt",
     "title": "Mon amour, mon ami"
+  },
+  {
+    "artist": "Marie Laforêt",
+    "title": "Viens sur la montagne"
   },
   {
     "artist": "Marie Laforêt",
@@ -20308,6 +20836,10 @@
     "title": "Y hubo alguien"
   },
   {
+    "artist": "Mark Anthony",
+    "title": "Y hubo alguien                       "
+  },
+  {
     "artist": "Mark Lower ft. Scarlett Quinn",
     "title": "Bad Boys Cry"
   },
@@ -20353,11 +20885,11 @@
   },
   {
     "artist": "Maroon 5",
-    "title": "This Love"
+    "title": "Sunday Morning"
   },
   {
     "artist": "Maroon 5",
-    "title": "Sunday Morning"
+    "title": "This Love"
   },
   {
     "artist": "Marta Sanchez",
@@ -20485,6 +21017,10 @@
   },
   {
     "artist": "Massimo Di Cataldo",
+    "title": "Che sara’ di me"
+  },
+  {
+    "artist": "Massimo Di Cataldo",
     "title": "Se adesso te ne vai"
   },
   {
@@ -20577,15 +21113,15 @@
   },
   {
     "artist": "Maurane",
+    "title": "Tout faux"
+  },
+  {
+    "artist": "Maurane",
     "title": "Tout pour un seul homme"
   },
   {
     "artist": "Maurane",
     "title": "Toutes les mamas"
-  },
-  {
-    "artist": "Maurane",
-    "title": "Tout faux"
   },
   {
     "artist": "Mauranne & Lara Fabian",
@@ -20678,6 +21214,46 @@
   {
     "artist": "Maxime Leforestier",
     "title": "Mon frère"
+  },
+  {
+    "artist": "Maëlle",
+    "title": "L'effet de masse"
+  },
+  {
+    "artist": "Maëlle",
+    "title": "L’effet de masse"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Bella"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Bella Ciao"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Ciel"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Estce que tu m'aimes"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "J'me tire"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Ninao"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Parisienne"
+  },
+  {
+    "artist": "Maître Gims",
+    "title": "Spider"
   },
   {
     "artist": "Mc Fadden & whitehead",
@@ -20836,12 +21412,12 @@
     "title": "Word up"
   },
   {
-    "artist": "Mélanie Renaud",
-    "title": "J'm'en veux"
+    "artist": "Melendi",
+    "title": "Un violinista en tu tejado"
   },
   {
     "artist": "Melendi",
-    "title": "Un violinista en tu tejado"
+    "title": "Un violinista en tu tejado                "
   },
   {
     "artist": "Melissa Etheridge",
@@ -20874,6 +21450,10 @@
   {
     "artist": "Mentissa",
     "title": "Mamma Mia! (version française)"
+  },
+  {
+    "artist": "Mentissa",
+    "title": "Mamma Mia! (VF)"
   },
   {
     "artist": "Meredith Brooks",
@@ -20910,6 +21490,10 @@
   {
     "artist": "Mia Martini",
     "title": "Almeno tu nell' universo"
+  },
+  {
+    "artist": "Mia Martini",
+    "title": "Almeno tu nell’ universo"
   },
   {
     "artist": "Mia Martini",
@@ -21024,6 +21608,10 @@
     "title": "You'll Never Find Another Love like Mine"
   },
   {
+    "artist": "Michael Buble & Laura Pausini",
+    "title": "You'll Never Find Another Love Like Mine"
+  },
+  {
     "artist": "Michael Bublé",
     "title": "Always On My Mind"
   },
@@ -21038,10 +21626,6 @@
   {
     "artist": "Michael Bublé",
     "title": "Me And Mrs Jones"
-  },
-  {
-    "artist": "Michael Buble & Laura Pausini",
-    "title": "You'll Never Find Another Love Like Mine"
   },
   {
     "artist": "Michael Grim",
@@ -21148,6 +21732,10 @@
     "title": "Tu Mets De L'Or"
   },
   {
+    "artist": "Michal",
+    "title": "Tu Mets De L’Or"
+  },
+  {
     "artist": "Micheal Buble",
     "title": "To love somebody"
   },
@@ -21166,6 +21754,10 @@
   {
     "artist": "Michel Berger",
     "title": "La groupie du pianiste"
+  },
+  {
+    "artist": "Michel Berger",
+    "title": "La Groupie Du Pianiste (Remix)"
   },
   {
     "artist": "Michel Berger",
@@ -21205,6 +21797,10 @@
   },
   {
     "artist": "Michel Delpech",
+    "title": "62, nos 15 ans"
+  },
+  {
+    "artist": "Michel Delpech",
     "title": "Ce lundi-là"
   },
   {
@@ -21213,7 +21809,15 @@
   },
   {
     "artist": "Michel Delpech",
+    "title": "J'étais un ange"
+  },
+  {
+    "artist": "Michel Delpech",
     "title": "Le chasseur"
+  },
+  {
+    "artist": "Michel Delpech",
+    "title": "Le Chasseur (Les oies sauvages-Yann Muller remix)"
   },
   {
     "artist": "Michel Delpech",
@@ -21245,14 +21849,6 @@
   },
   {
     "artist": "Michel Delpech",
-    "title": "J'étais un ange"
-  },
-  {
-    "artist": "Michel Delpech",
-    "title": "62, nos 15 ans"
-  },
-  {
-    "artist": "Michel Delpech",
     "title": "Wight is Wight"
   },
   {
@@ -21261,39 +21857,15 @@
   },
   {
     "artist": "Michel Fugain",
-    "title": "C'est la fête"
-  },
-  {
-    "artist": "Michel Fugain",
-    "title": "Fais comme l'oiseau"
-  },
-  {
-    "artist": "Michel Fugain",
-    "title": "Je n'aurai pas le temps"
-  },
-  {
-    "artist": "Michel Fugain",
-    "title": "Les Sud Américaines"
-  },
-  {
-    "artist": "Michel Fugain",
-    "title": "Une belle histoire"
-  },
-  {
-    "artist": "Michel Fugain",
-    "title": "Viva la vida"
-  },
-  {
-    "artist": "Michel Fugain",
-    "title": "Chanson pour les demoiselles"
-  },
-  {
-    "artist": "Michel Fugain",
     "title": "Bravo monsieur le monde"
   },
   {
     "artist": "Michel Fugain",
-    "title": "Des rêves et du vent"
+    "title": "C'est la fête"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Chanson pour les demoiselles"
   },
   {
     "artist": "Michel Fugain",
@@ -21305,11 +21877,35 @@
   },
   {
     "artist": "Michel Fugain",
-    "title": "Où s'en vont"
+    "title": "Des rêves et du vent"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Fais comme l'oiseau"
   },
   {
     "artist": "Michel Fugain",
     "title": "Forteresse"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Je n'aurai pas le temps"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Les Sud Américaines"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Où s'en vont"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Une belle histoire"
+  },
+  {
+    "artist": "Michel Fugain",
+    "title": "Viva la vida"
   },
   {
     "artist": "Michel Jonasz",
@@ -21321,6 +21917,14 @@
   },
   {
     "artist": "Michel Jonasz",
+    "title": "Je voulais te dire que je t’attends"
+  },
+  {
+    "artist": "Michel Jonasz",
+    "title": "Joueurs de blues"
+  },
+  {
+    "artist": "Michel Jonasz",
     "title": "La boîte de jazz"
   },
   {
@@ -21329,15 +21933,11 @@
   },
   {
     "artist": "Michel Jonasz",
-    "title": "Super nana"
-  },
-  {
-    "artist": "Michel Jonasz",
-    "title": "Joueurs de blues"
-  },
-  {
-    "artist": "Michel Jonasz",
     "title": "Lucille"
+  },
+  {
+    "artist": "Michel Jonasz",
+    "title": "Super nana"
   },
   {
     "artist": "Michel Legrand",
@@ -21377,11 +21977,11 @@
   },
   {
     "artist": "Michel Polnareff",
-    "title": "L.N.A.H.O."
+    "title": "L'amour avec toi"
   },
   {
     "artist": "Michel Polnareff",
-    "title": "L'amour avec toi"
+    "title": "L.N.A.H.O."
   },
   {
     "artist": "Michel Polnareff",
@@ -21445,11 +22045,11 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "1965"
+    "title": "10 ans plus tôt"
   },
   {
     "artist": "Michel Sardou",
-    "title": "10 ans plus tôt"
+    "title": "1965"
   },
   {
     "artist": "Michel Sardou",
@@ -21485,10 +22085,6 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Être une femme"
-  },
-  {
-    "artist": "Michel Sardou",
     "title": "Il Etait Là"
   },
   {
@@ -21502,6 +22098,10 @@
   {
     "artist": "Michel Sardou",
     "title": "Je  ne sais plus rien"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Je ne sais plus rien"
   },
   {
     "artist": "Michel Sardou",
@@ -21546,6 +22146,10 @@
   {
     "artist": "Michel Sardou",
     "title": "La maladie d'amour"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "La maladie d’amour"
   },
   {
     "artist": "Michel Sardou",
@@ -21597,6 +22201,14 @@
   },
   {
     "artist": "Michel Sardou",
+    "title": "Loin"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "L’aigle noir (live 2013)"
+  },
+  {
+    "artist": "Michel Sardou",
     "title": "Musica"
   },
   {
@@ -21605,7 +22217,15 @@
   },
   {
     "artist": "Michel Sardou",
+    "title": "Non Merci"
+  },
+  {
+    "artist": "Michel Sardou",
     "title": "Petit"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Putain de temps"
   },
   {
     "artist": "Michel Sardou",
@@ -21617,7 +22237,19 @@
   },
   {
     "artist": "Michel Sardou",
+    "title": "Salut"
+  },
+  {
+    "artist": "Michel Sardou",
     "title": "Selon que vous serez etc... etc..."
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Tous les bateaux s'envolent"
+  },
+  {
+    "artist": "Michel Sardou",
+    "title": "Tous les bateaux s’envolent"
   },
   {
     "artist": "Michel Sardou",
@@ -21633,19 +22265,11 @@
   },
   {
     "artist": "Michel Sardou",
-    "title": "Je ne sais plus rien"
+    "title": "Être une femme"
   },
   {
     "artist": "Michel Sardou",
-    "title": "Loin"
-  },
-  {
-    "artist": "Michel Sardou",
-    "title": "Non Merci"
-  },
-  {
-    "artist": "Michel Sardou",
-    "title": "Salut"
+    "title": "Être une femme (Remix)"
   },
   {
     "artist": "Michel Sardou & Garou",
@@ -21656,24 +22280,12 @@
     "title": "Zaza"
   },
   {
-    "artist": "Michèle Toor",
-    "title": "Emmène moi danser"
-  },
-  {
-    "artist": "Michèle Torr",
-    "title": "Ave Maria"
-  },
-  {
-    "artist": "Michèle Torr",
-    "title": "Lui"
-  },
-  {
-    "artist": "Michèle Torr",
-    "title": "Un enfant c'est comme ça"
+    "artist": "Michele Zarrillo",
+    "title": "L'elefante e la farfalla"
   },
   {
     "artist": "Michele Zarrillo",
-    "title": "L'elefante e la farfalla"
+    "title": "L’elefante e la farfalla"
   },
   {
     "artist": "Michelle Branch",
@@ -21698,6 +22310,22 @@
   {
     "artist": "Michelle Zarilla",
     "title": "Cinque giorni"
+  },
+  {
+    "artist": "Michèle Toor",
+    "title": "Emmène moi danser"
+  },
+  {
+    "artist": "Michèle Torr",
+    "title": "Ave Maria"
+  },
+  {
+    "artist": "Michèle Torr",
+    "title": "Lui"
+  },
+  {
+    "artist": "Michèle Torr",
+    "title": "Un enfant c'est comme ça"
   },
   {
     "artist": "Mick Jagger & Joss Stone",
@@ -21756,6 +22384,10 @@
     "title": "Se tu non torni"
   },
   {
+    "artist": "Miguel Bosè",
+    "title": "L'autoradio"
+  },
+  {
     "artist": "Miguel Bosé",
     "title": "Amante bandido"
   },
@@ -21766,10 +22398,6 @@
   {
     "artist": "Miguel Bosé",
     "title": "Sevilla"
-  },
-  {
-    "artist": "Miguel Bosè",
-    "title": "L'autoradio"
   },
   {
     "artist": "Miguel Rios",
@@ -21821,7 +22449,23 @@
   },
   {
     "artist": "Mike Brant",
+    "title": "Mais dans la lumière"
+  },
+  {
+    "artist": "Mike Brant",
+    "title": "Medley"
+  },
+  {
+    "artist": "Mike Brant",
     "title": "On se retrouve par hazard"
+  },
+  {
+    "artist": "Mike Brant",
+    "title": "Parce que je t'aime plus que moi"
+  },
+  {
+    "artist": "Mike Brant",
+    "title": "Qui pourra te dire"
   },
   {
     "artist": "Mike Brant",
@@ -21833,19 +22477,7 @@
   },
   {
     "artist": "Mike Brant",
-    "title": "Medley"
-  },
-  {
-    "artist": "Mike Brant",
     "title": "Tout donné, tout repris"
-  },
-  {
-    "artist": "Mike Brant",
-    "title": "Mais dans la lumière"
-  },
-  {
-    "artist": "Mike Brant",
-    "title": "Qui pourra te dire"
   },
   {
     "artist": "Mike Brant",
@@ -21889,11 +22521,19 @@
   },
   {
     "artist": "Mina",
+    "title": "E Poi"
+  },
+  {
+    "artist": "Mina",
     "title": "E se domani"
   },
   {
     "artist": "Mina",
     "title": "Grande grande grande"
+  },
+  {
+    "artist": "Mina",
+    "title": "Grande Grande Grande"
   },
   {
     "artist": "Mina",
@@ -21969,6 +22609,10 @@
   },
   {
     "artist": "Mireille Mathieu",
+    "title": "Une femme amoureuse"
+  },
+  {
+    "artist": "Mireille Mathieu",
     "title": "Une histoire d'amour"
   },
   {
@@ -22016,14 +22660,6 @@
     "title": "Secretaria"
   },
   {
-    "artist": "Modà",
-    "title": "Cuore e vento"
-  },
-  {
-    "artist": "Modà",
-    "title": "Tappeto Di Fragole"
-  },
-  {
     "artist": "Modern Talking",
     "title": "Chery, Chery, Lady"
   },
@@ -22036,6 +22672,10 @@
     "title": "You're my heart, you're my soul"
   },
   {
+    "artist": "Modern Talking",
+    "title": "You’re my heart, you’re my soul"
+  },
+  {
     "artist": "Modesita Aparte",
     "title": "Es tu turno"
   },
@@ -22046,6 +22686,18 @@
   {
     "artist": "Modjo",
     "title": "Lady (hear me tonight)"
+  },
+  {
+    "artist": "Modà",
+    "title": "Cuore e vento"
+  },
+  {
+    "artist": "Modà",
+    "title": "Tappeto Di Fragole"
+  },
+  {
+    "artist": "Moha K",
+    "title": "Vroum Vroum"
   },
   {
     "artist": "Moloko",
@@ -22064,8 +22716,16 @@
     "title": "Amarrame"
   },
   {
+    "artist": "Mon Laferte y Juanes",
+    "title": "Amarrame                     "
+  },
+  {
     "artist": "Monica Naranjo",
     "title": "Pantera En Libertad"
+  },
+  {
+    "artist": "Monica Naranjo",
+    "title": "Pantera En Libertad                "
   },
   {
     "artist": "Monkees",
@@ -22100,6 +22760,10 @@
     "title": "Te Atreves"
   },
   {
+    "artist": "Morat Como",
+    "title": "Te Atreves                             "
+  },
+  {
     "artist": "Morcheba",
     "title": "Rome wasn't built in a day"
   },
@@ -22117,19 +22781,19 @@
   },
   {
     "artist": "Morrissey",
-    "title": "Irish Blood, English Heart"
-  },
-  {
-    "artist": "Morrissey",
-    "title": "Suedehead"
-  },
-  {
-    "artist": "Morrissey",
     "title": "I Have Forgiven You Jesus"
   },
   {
     "artist": "Morrissey",
+    "title": "Irish Blood, English Heart"
+  },
+  {
+    "artist": "Morrissey",
     "title": "Let Me Kiss You"
+  },
+  {
+    "artist": "Morrissey",
+    "title": "Suedehead"
   },
   {
     "artist": "Mort Shuman",
@@ -22316,6 +22980,10 @@
     "title": "Donne"
   },
   {
+    "artist": "Mélanie Renaud",
+    "title": "J'm'en veux"
+  },
+  {
     "artist": "N'Sync",
     "title": "Bye bye bye"
   },
@@ -22357,6 +23025,10 @@
   },
   {
     "artist": "Nadiya",
+    "title": "Et C’Est Parti"
+  },
+  {
+    "artist": "Nadiya",
     "title": "Parle moi"
   },
   {
@@ -22374,6 +23046,10 @@
   {
     "artist": "Nana Mouskouri",
     "title": "Plaisir d'amour"
+  },
+  {
+    "artist": "Nana Mouskouri",
+    "title": "Plaisir d’amour"
   },
   {
     "artist": "Nana Mouskouri",
@@ -22501,11 +23177,15 @@
   },
   {
     "artist": "Natasha St-Pier",
-    "title": "Je n'ai que mon âme"
+    "title": "Je n’ai que mon âme"
   },
   {
     "artist": "Natasha St-Pier",
     "title": "Quand on cherche l'amour"
+  },
+  {
+    "artist": "Natasha St-Pier",
+    "title": "Tant que c'est toi"
   },
   {
     "artist": "Natasha St-Pier",
@@ -22514,10 +23194,6 @@
   {
     "artist": "Natasha St-Pier",
     "title": "Un ange frappe à ma porte"
-  },
-  {
-    "artist": "Natasha St-Pier",
-    "title": "Tant que c'est toi"
   },
   {
     "artist": "Natazreth",
@@ -22561,6 +23237,10 @@
   },
   {
     "artist": "Neil Diamond",
+    "title": "Forever In Blue Jeans"
+  },
+  {
+    "artist": "Neil Diamond",
     "title": "Hello Again"
   },
   {
@@ -22577,6 +23257,10 @@
   },
   {
     "artist": "Neil Diamond",
+    "title": "Medley 3"
+  },
+  {
+    "artist": "Neil Diamond",
     "title": "September morn"
   },
   {
@@ -22586,14 +23270,6 @@
   {
     "artist": "Neil Diamond",
     "title": "The Story Of My Life"
-  },
-  {
-    "artist": "Neil Diamond",
-    "title": "Forever In Blue Jeans"
-  },
-  {
-    "artist": "Neil Diamond",
-    "title": "Medley 3"
   },
   {
     "artist": "Neil Diamond & Kim Carnes",
@@ -22646,6 +23322,10 @@
   {
     "artist": "Nek",
     "title": "Se una rigola c'e"
+  },
+  {
+    "artist": "Nek",
+    "title": "Se una rigola c’e"
   },
   {
     "artist": "Nek",
@@ -22706,6 +23386,10 @@
   {
     "artist": "Neri Per Caso",
     "title": "Mai piu' sola"
+  },
+  {
+    "artist": "Neri Per Caso",
+    "title": "Mai piu’ sola"
   },
   {
     "artist": "New christy minstrels",
@@ -22821,7 +23505,7 @@
   },
   {
     "artist": "Nicky Jam",
-    "title": "Travesuras"
+    "title": "Travesuras                              "
   },
   {
     "artist": "Nicky Minaj",
@@ -22842,6 +23526,10 @@
   {
     "artist": "Nicola Di Bari",
     "title": "La prima cosa bella"
+  },
+  {
+    "artist": "Nicola di Bari",
+    "title": "Vagabondo"
   },
   {
     "artist": "Nicolas Peyrac",
@@ -22916,6 +23604,10 @@
     "title": "I will survive"
   },
   {
+    "artist": "Nils Landgren",
+    "title": "I Will Survive"
+  },
+  {
     "artist": "Nilsson",
     "title": "Everybody's Talkin'"
   },
@@ -22934,6 +23626,10 @@
   {
     "artist": "Ninho",
     "title": "La vie qu'on mène"
+  },
+  {
+    "artist": "Ninho",
+    "title": "La vie qu’on mène"
   },
   {
     "artist": "Ninho",
@@ -22964,6 +23660,10 @@
     "title": "Fotoromanza"
   },
   {
+    "artist": "Nino D'angelo",
+    "title": "Fra' Cinquant' anni"
+  },
+  {
     "artist": "Nino D'Angelo",
     "title": "L'anniversario"
   },
@@ -22977,15 +23677,11 @@
   },
   {
     "artist": "Nino D'Angelo",
-    "title": "Vedrai"
-  },
-  {
-    "artist": "Nino D'angelo",
-    "title": "Fra' Cinquant' anni"
+    "title": "Sinno' me moro"
   },
   {
     "artist": "Nino D'Angelo",
-    "title": "Sinno' me moro"
+    "title": "Vedrai"
   },
   {
     "artist": "Nino D'Angelo e Maria Nazionale",
@@ -23016,6 +23712,14 @@
     "title": "Mirza"
   },
   {
+    "artist": "Nino Ferrer",
+    "title": "Si tu m'aimes encore"
+  },
+  {
+    "artist": "Nino Rota",
+    "title": "Brucia la terra"
+  },
+  {
     "artist": "Nirvana",
     "title": "Come as you are"
   },
@@ -23029,6 +23733,10 @@
   },
   {
     "artist": "Nirvana",
+    "title": "Smells Like Teen Spirit"
+  },
+  {
+    "artist": "Nirvana",
     "title": "Something In The Way (Acoustic)"
   },
   {
@@ -23038,10 +23746,6 @@
   {
     "artist": "Nirvana",
     "title": "You Know You're Right"
-  },
-  {
-    "artist": "Nirvana",
-    "title": "Smells Like Teen Spirit"
   },
   {
     "artist": "No Doubt",
@@ -23141,11 +23845,11 @@
   },
   {
     "artist": "Notre Dame de Paris",
-    "title": "Déchiré"
+    "title": "Dieu que le monde est injuste"
   },
   {
     "artist": "Notre Dame de Paris",
-    "title": "Dieu que le monde est injuste"
+    "title": "Déchiré"
   },
   {
     "artist": "Notre Dame de Paris",
@@ -23348,14 +24052,6 @@
     "title": "Het leven is goed in m'n Brabantse land"
   },
   {
-    "artist": "Olé-Olé",
-    "title": "Chica ye-ye"
-  },
-  {
-    "artist": "Olé-Olé",
-    "title": "No controles"
-  },
-  {
     "artist": "Oleta Adams",
     "title": "Get here"
   },
@@ -23396,6 +24092,14 @@
     "title": "Get down saturday night"
   },
   {
+    "artist": "Olé-Olé",
+    "title": "Chica ye-ye"
+  },
+  {
+    "artist": "Olé-Olé",
+    "title": "No controles"
+  },
+  {
     "artist": "Omar",
     "title": "There's Nothing Like This"
   },
@@ -23418,6 +24122,10 @@
   {
     "artist": "One True Voice",
     "title": "After You're Gone"
+  },
+  {
+    "artist": "One True Voice",
+    "title": "After You’re Gone"
   },
   {
     "artist": "One True Voice",
@@ -23456,6 +24164,10 @@
     "title": "La terre est ronde"
   },
   {
+    "artist": "Oria",
+    "title": "Soirée mondaine"
+  },
+  {
     "artist": "Orietta Berti",
     "title": "Fin che la barca va"
   },
@@ -23478,6 +24190,10 @@
   {
     "artist": "Oski",
     "title": "Fisica o Quimica"
+  },
+  {
+    "artist": "Oski",
+    "title": "Fisica o Quimica                             "
   },
   {
     "artist": "Osmond Brothers",
@@ -23538,6 +24254,10 @@
   {
     "artist": "Pablo Alborán",
     "title": "Solamente Tu"
+  },
+  {
+    "artist": "Pablo Alborán",
+    "title": "Solamente Tu                        "
   },
   {
     "artist": "Pablo Villafranca",
@@ -23653,10 +24373,6 @@
   },
   {
     "artist": "Pascal Obispo",
-    "title": "À Qui Dire Qu'on Est Seul"
-  },
-  {
-    "artist": "Pascal Obispo",
     "title": "Assassine"
   },
   {
@@ -23720,6 +24436,10 @@
     "title": "Zinedine"
   },
   {
+    "artist": "Pascal Obispo",
+    "title": "À Qui Dire Qu'on Est Seul"
+  },
+  {
     "artist": "Pascal Obispo & Zazie",
     "title": "Les meilleurs ennemis"
   },
@@ -23741,11 +24461,35 @@
   },
   {
     "artist": "Patricia Kaas",
+    "title": "Ceux qui n'ont rien"
+  },
+  {
+    "artist": "Patricia Kaas",
     "title": "Elle voulait jouer Cabaret"
   },
   {
     "artist": "Patricia Kaas",
+    "title": "Entrer dans la lumière"
+  },
+  {
+    "artist": "Patricia Kaas",
+    "title": "Et je m'en veut"
+  },
+  {
+    "artist": "Patricia Kaas",
     "title": "Il me dit que je suis belle"
+  },
+  {
+    "artist": "Patricia Kaas",
+    "title": "Je le garde pour toi"
+  },
+  {
+    "artist": "Patricia Kaas",
+    "title": "Je voudrais la connaître"
+  },
+  {
+    "artist": "Patricia Kaas",
+    "title": "Kennedy Rose"
   },
   {
     "artist": "Patricia Kaas",
@@ -23774,30 +24518,6 @@
   {
     "artist": "Patricia Kaas",
     "title": "Regarde les riches"
-  },
-  {
-    "artist": "Patricia Kaas",
-    "title": "Je voudrais la connaître"
-  },
-  {
-    "artist": "Patricia Kaas",
-    "title": "Entrer dans la lumière"
-  },
-  {
-    "artist": "Patricia Kaas",
-    "title": "Je le garde pour toi"
-  },
-  {
-    "artist": "Patricia Kaas",
-    "title": "Ceux qui n'ont rien"
-  },
-  {
-    "artist": "Patricia Kaas",
-    "title": "Et je m'en veut"
-  },
-  {
-    "artist": "Patricia Kaas",
-    "title": "Kennedy Rose"
   },
   {
     "artist": "Patricia Lavila",
@@ -23877,6 +24597,10 @@
   },
   {
     "artist": "Patrick Fiori",
+    "title": "Chrysalide"
+  },
+  {
+    "artist": "Patrick Fiori",
     "title": "Debout"
   },
   {
@@ -23905,15 +24629,11 @@
   },
   {
     "artist": "Patrick Fiori",
-    "title": "Chrysalide"
+    "title": "Sans bruit"
   },
   {
     "artist": "Patrick Fiori",
     "title": "Toutes les peines"
-  },
-  {
-    "artist": "Patrick Fiori",
-    "title": "Sans bruit"
   },
   {
     "artist": "Patrick Fiori & Jean jacques Goldman",
@@ -23937,7 +24657,7 @@
   },
   {
     "artist": "Patrick Juvet",
-    "title": "Où Sont Les Femmes ?"
+    "title": "La musica"
   },
   {
     "artist": "Patrick Juvet",
@@ -23945,19 +24665,19 @@
   },
   {
     "artist": "Patrick Juvet",
-    "title": "Toujours du cinéma"
-  },
-  {
-    "artist": "Patrick Juvet",
-    "title": "La musica"
-  },
-  {
-    "artist": "Patrick Juvet",
     "title": "Magic"
   },
   {
     "artist": "Patrick Juvet",
+    "title": "Où Sont Les Femmes ?"
+  },
+  {
+    "artist": "Patrick Juvet",
     "title": "Sonia"
+  },
+  {
+    "artist": "Patrick Juvet",
+    "title": "Toujours du cinéma"
   },
   {
     "artist": "Patrick Swayze",
@@ -24006,6 +24726,10 @@
   {
     "artist": "Patxi Garat",
     "title": "L'Anglaise"
+  },
+  {
+    "artist": "Patxi Garat",
+    "title": "L’Anglaise"
   },
   {
     "artist": "Paul & Paula",
@@ -24577,6 +25301,10 @@
   },
   {
     "artist": "Pink",
+    "title": "Don’t Let Me Get Me"
+  },
+  {
+    "artist": "Pink",
     "title": "Family Portrait"
   },
   {
@@ -24646,6 +25374,10 @@
   {
     "artist": "Pino Daniele",
     "title": "O' scarrafone"
+  },
+  {
+    "artist": "Pino Daniele e Giorgia",
+    "title": "Vento Di Passione"
   },
   {
     "artist": "Pino Donaggio",
@@ -24901,14 +25633,18 @@
   },
   {
     "artist": "Prince Royce",
-    "title": "Darte un beso"
+    "title": "Darte un beso                        "
+  },
+  {
+    "artist": "Prince Royce",
+    "title": "La Carretera"
   },
   {
     "artist": "Prince Royce",
     "title": "Te Espero"
   },
   {
-    "artist": "Prince Royce",
+    "artist": "Prince Royce ",
     "title": "La Carretera"
   },
   {
@@ -24929,15 +25665,15 @@
   },
   {
     "artist": "Priscilla",
+    "title": "Jalousie"
+  },
+  {
+    "artist": "Priscilla",
     "title": "Regarde-moi"
   },
   {
     "artist": "Priscilla",
     "title": "Tchouk Tchouk Music"
-  },
-  {
-    "artist": "Priscilla",
-    "title": "Jalousie"
   },
   {
     "artist": "Priscilla",
@@ -24954,6 +25690,10 @@
   {
     "artist": "Prodigy",
     "title": "Firestarter"
+  },
+  {
+    "artist": "Puccini",
+    "title": "E Lucevan le Stelle (Tosca)"
   },
   {
     "artist": "Puddles Pity Party",
@@ -24986,6 +25726,10 @@
   {
     "artist": "Queen",
     "title": "A kind of magic"
+  },
+  {
+    "artist": "Queen",
+    "title": "Another One Bites The Dust"
   },
   {
     "artist": "Queen",
@@ -25037,6 +25781,10 @@
   },
   {
     "artist": "Queen",
+    "title": "Thank God It's Christmas"
+  },
+  {
+    "artist": "Queen",
     "title": "The show must go on"
   },
   {
@@ -25054,14 +25802,6 @@
   {
     "artist": "Queen",
     "title": "You're my best friend"
-  },
-  {
-    "artist": "Queen",
-    "title": "Another One Bites The Dust"
-  },
-  {
-    "artist": "Queen",
-    "title": "Thank God It's Christmas"
   },
   {
     "artist": "Queen & 5ive",
@@ -25141,11 +25881,11 @@
   },
   {
     "artist": "R.E.M.",
-    "title": "Electron Blue"
+    "title": "Aftermath"
   },
   {
     "artist": "R.E.M.",
-    "title": "Aftermath"
+    "title": "Electron Blue"
   },
   {
     "artist": "Racey",
@@ -25228,11 +25968,11 @@
     "title": "Tanti auguri"
   },
   {
-    "artist": "Raffaella Carrá",
+    "artist": "Raffaella Carrà",
     "title": "Pedro"
   },
   {
-    "artist": "Raffaella Carrà",
+    "artist": "Raffaella Carrá",
     "title": "Pedro"
   },
   {
@@ -25293,7 +26033,15 @@
   },
   {
     "artist": "Raphael",
+    "title": "En carne via "
+  },
+  {
+    "artist": "Raphael",
     "title": "Mi Gran Noche"
+  },
+  {
+    "artist": "Raphaella Cara",
+    "title": "Tuca tuca"
   },
   {
     "artist": "Raphaël",
@@ -25306,10 +26054,6 @@
   {
     "artist": "Raphaël & Jean-Louis Aubert",
     "title": "Sur La Route"
-  },
-  {
-    "artist": "Raphaella Cara",
-    "title": "Tuca tuca"
   },
   {
     "artist": "Rasmus",
@@ -25549,11 +26293,19 @@
   },
   {
     "artist": "Renaud",
+    "title": "Adieu minette"
+  },
+  {
+    "artist": "Renaud",
     "title": "C'est mon dernier bal"
   },
   {
     "artist": "Renaud",
     "title": "Dans mon H.L.M."
+  },
+  {
+    "artist": "Renaud",
+    "title": "Docteur Renaud"
   },
   {
     "artist": "Renaud",
@@ -25565,15 +26317,15 @@
   },
   {
     "artist": "Renaud",
-    "title": "Docteur Renaud"
-  },
-  {
-    "artist": "Renaud",
     "title": "En cloque"
   },
   {
     "artist": "Renaud",
     "title": "It is not because you are"
+  },
+  {
+    "artist": "Renaud",
+    "title": "La ballade nord irlandaise"
   },
   {
     "artist": "Renaud",
@@ -25628,6 +26380,14 @@
     "title": "Doe maar gewoon"
   },
   {
+    "artist": "Renee De Haan",
+    "title": "Vuile Huichelaar"
+  },
+  {
+    "artist": "Reno",
+    "title": "Almost paradise"
+  },
+  {
     "artist": "René Froger",
     "title": "Alles kan een mens gelukkig maken"
   },
@@ -25662,14 +26422,6 @@
   {
     "artist": "René Schuurmans",
     "title": "Laat de zon in je hart"
-  },
-  {
-    "artist": "Renee De Haan",
-    "title": "Vuile Huichelaar"
-  },
-  {
-    "artist": "Reno",
-    "title": "Almost paradise"
   },
   {
     "artist": "Reo Speedwagon",
@@ -25740,6 +26492,10 @@
     "title": "Se stiamo insieme"
   },
   {
+    "artist": "Riccardo Del Turco",
+    "title": "Luglio"
+  },
+  {
     "artist": "Ricchi e Poveri",
     "title": "Che sara"
   },
@@ -25769,6 +26525,14 @@
   },
   {
     "artist": "Richard Anthony",
+    "title": "C'est ma fête"
+  },
+  {
+    "artist": "Richard Anthony",
+    "title": "Ce monde"
+  },
+  {
+    "artist": "Richard Anthony",
     "title": "Fiche le camp jack"
   },
   {
@@ -25794,14 +26558,6 @@
   {
     "artist": "Richard Anthony",
     "title": "Tu parles trop"
-  },
-  {
-    "artist": "Richard Anthony",
-    "title": "C'est ma fête"
-  },
-  {
-    "artist": "Richard Anthony",
-    "title": "Ce monde"
   },
   {
     "artist": "Richard Ashcroft",
@@ -25920,12 +26676,20 @@
     "title": "Never gonna give you up"
   },
   {
+    "artist": "Rick Astley",
+    "title": "When I'll fall in love"
+  },
+  {
     "artist": "Rick Springfield",
     "title": "Jessie's girl"
   },
   {
     "artist": "Ricky Martin",
     "title": "La Mordidita"
+  },
+  {
+    "artist": "Ricky Martin",
+    "title": "La Mordidita                         "
   },
   {
     "artist": "Ricky Martin",
@@ -25973,7 +26737,15 @@
   },
   {
     "artist": "Righeira",
+    "title": "Innamoratissimo"
+  },
+  {
+    "artist": "Righeira",
     "title": "L'estate sta finendo"
+  },
+  {
+    "artist": "Righeira",
+    "title": "L’estate sta finendo"
   },
   {
     "artist": "Righeira",
@@ -25982,10 +26754,6 @@
   {
     "artist": "Righeira",
     "title": "Vamos a la playa"
-  },
-  {
-    "artist": "Righeira",
-    "title": "Innamoratissimo"
   },
   {
     "artist": "Right Said Fred",
@@ -26002,6 +26770,10 @@
   {
     "artist": "Righteous Brothers",
     "title": "You've lost that lovin' feelin'"
+  },
+  {
+    "artist": "Rihanna",
+    "title": "American Oxygen"
   },
   {
     "artist": "Rihanna",
@@ -26029,7 +26801,15 @@
   },
   {
     "artist": "Rihanna",
+    "title": "Only Girl (In The World)"
+  },
+  {
+    "artist": "Rihanna",
     "title": "S&M (Come On)"
+  },
+  {
+    "artist": "Rihanna",
+    "title": "Stay"
   },
   {
     "artist": "Rihanna",
@@ -26038,18 +26818,6 @@
   {
     "artist": "Rihanna",
     "title": "What now"
-  },
-  {
-    "artist": "Rihanna",
-    "title": "American Oxygen"
-  },
-  {
-    "artist": "Rihanna",
-    "title": "Only Girl (In The World)"
-  },
-  {
-    "artist": "Rihanna",
-    "title": "Stay"
   },
   {
     "artist": "Rihanna feat Calvin Harris",
@@ -26105,6 +26873,10 @@
   },
   {
     "artist": "Rita Pavone",
+    "title": "Come te non c’e’ nessuno"
+  },
+  {
+    "artist": "Rita Pavone",
     "title": "Il ballo del mattone"
   },
   {
@@ -26150,6 +26922,10 @@
   {
     "artist": "Rob De Nijs",
     "title": "Malle babbe"
+  },
+  {
+    "artist": "Rob De Nijs",
+    "title": "Malle babbe "
   },
   {
     "artist": "Rob De Nijs",
@@ -26324,6 +27100,10 @@
     "title": "Tonight I Celebrate My Love"
   },
   {
+    "artist": "Robertino",
+    "title": "Un bacio piccolissimo"
+  },
+  {
     "artist": "Roberto Carlos",
     "title": "Mi cacharrito"
   },
@@ -26433,6 +27213,10 @@
   },
   {
     "artist": "Roch Voisine",
+    "title": "Je l’ai vu"
+  },
+  {
+    "artist": "Roch Voisine",
     "title": "On the outside"
   },
   {
@@ -26452,10 +27236,6 @@
     "title": "Amor Eterno"
   },
   {
-    "artist": "Rocìo Jurado",
-    "title": "Como una ola"
-  },
-  {
     "artist": "Rock Voisine",
     "title": "Ne viens pas"
   },
@@ -26466,6 +27246,10 @@
   {
     "artist": "Rocky Roberts",
     "title": "Stasera mi butto"
+  },
+  {
+    "artist": "Rocìo Jurado",
+    "title": "Como una ola"
   },
   {
     "artist": "Rod Steward",
@@ -26581,6 +27365,10 @@
   },
   {
     "artist": "Rolling Stones",
+    "title": "Paint it black"
+  },
+  {
+    "artist": "Rolling Stones",
     "title": "Satisfaction"
   },
   {
@@ -26596,10 +27384,6 @@
     "title": "The last time"
   },
   {
-    "artist": "Rolling Stones",
-    "title": "Paint it black"
-  },
-  {
     "artist": "Romantics",
     "title": "Rock you up"
   },
@@ -26610,6 +27394,14 @@
   {
     "artist": "Romantics",
     "title": "What I like about you"
+  },
+  {
+    "artist": "Romeo & Juliette",
+    "title": "J'ai peur"
+  },
+  {
+    "artist": "Romeo Santos",
+    "title": "La diabla"
   },
   {
     "artist": "Roméo & Juliette",
@@ -26656,20 +27448,12 @@
     "title": "Vérone"
   },
   {
-    "artist": "Romeo & Juliette",
-    "title": "J'ai peur"
-  },
-  {
     "artist": "Roméo Elvis",
     "title": "Soleil"
   },
   {
     "artist": "Roméo et Juliette",
     "title": "Les rois du monde"
-  },
-  {
-    "artist": "Romeo Santos",
-    "title": "La diabla"
   },
   {
     "artist": "Ron",
@@ -26701,11 +27485,19 @@
   },
   {
     "artist": "Ron",
+    "title": "Per questa notte che cade giu’"
+  },
+  {
+    "artist": "Ron",
     "title": "Stella mia"
   },
   {
     "artist": "Ron & Tosca",
     "title": "Vorrei incontrarti fra cent'anni"
+  },
+  {
+    "artist": "Ron & Tosca",
+    "title": "Vorrei incontrarti fra cent’anni"
   },
   {
     "artist": "Ron Brandsteder",
@@ -26760,6 +27552,10 @@
     "title": "We've Got Tonight"
   },
   {
+    "artist": "Ronan Keating feat Lulu",
+    "title": "We’ve Got Tonight"
+  },
+  {
     "artist": "Ronettes",
     "title": "Be My Baby"
   },
@@ -26790,10 +27586,6 @@
   {
     "artist": "Rose  Royce",
     "title": "Love don't live here anymore"
-  },
-  {
-    "artist": "ROSÉ & Bruno Mars",
-    "title": "APT"
   },
   {
     "artist": "Rose Laurens",
@@ -26830,6 +27622,10 @@
   {
     "artist": "Rossana Cisale",
     "title": "Destino"
+  },
+  {
+    "artist": "ROSÉ & Bruno Mars",
+    "title": "APT"
   },
   {
     "artist": "Roxette",
@@ -26969,11 +27765,11 @@
   },
   {
     "artist": "Rubettes",
-    "title": "Sugar baby love"
+    "title": "Juke box jive"
   },
   {
     "artist": "Rubettes",
-    "title": "Juke box jive"
+    "title": "Sugar baby love"
   },
   {
     "artist": "Rudi Carell",
@@ -27109,6 +27905,10 @@
   },
   {
     "artist": "Sacha Distel",
+    "title": "Ces mots stupides"
+  },
+  {
+    "artist": "Sacha Distel",
     "title": "L'incendie à Rio"
   },
   {
@@ -27128,10 +27928,6 @@
     "title": "Toute la pluie tombe sur moi"
   },
   {
-    "artist": "Sacha Distel",
-    "title": "Ces mots stupides"
-  },
-  {
     "artist": "Sade",
     "title": "No Ordinary Love"
   },
@@ -27145,15 +27941,19 @@
   },
   {
     "artist": "Sade",
-    "title": "Your love is king"
+    "title": "The Sweetest Taboo"
   },
   {
     "artist": "Sade",
-    "title": "The Sweetest Taboo"
+    "title": "Your love is king"
   },
   {
     "artist": "Saint Granier",
     "title": "Ramona"
+  },
+  {
+    "artist": "Sal Da Vinci",
+    "title": "Per sempre sì"
   },
   {
     "artist": "Sal Da Vinci",
@@ -27276,12 +28076,20 @@
     "title": "Als het om de liefde gaat"
   },
   {
+    "artist": "Sandra Kim",
+    "title": "J'aime la vie"
+  },
+  {
     "artist": "Sandro",
     "title": "Porque yo te amo"
   },
   {
     "artist": "Sandro Giacobbe",
     "title": "Sara' la nostalgia"
+  },
+  {
+    "artist": "Sandro Giacobbe",
+    "title": "Sara’ la nostalgia"
   },
   {
     "artist": "Sandy",
@@ -27409,6 +28217,10 @@
   },
   {
     "artist": "Scissor Sisters",
+    "title": "Filthy/Gorgeous"
+  },
+  {
+    "artist": "Scissor Sisters",
     "title": "Laura"
   },
   {
@@ -27418,10 +28230,6 @@
   {
     "artist": "Scissor Sisters",
     "title": "Take Your Mama"
-  },
-  {
-    "artist": "Scissor Sisters",
-    "title": "Filthy/Gorgeous"
   },
   {
     "artist": "SClubs Juniors",
@@ -27465,10 +28273,6 @@
   },
   {
     "artist": "Seal",
-    "title": "Crazy"
-  },
-  {
-    "artist": "Seal",
     "title": "Kiss from a rose"
   },
   {
@@ -27502,6 +28306,10 @@
   {
     "artist": "Selena",
     "title": "Bidi Bidi Bom Bom"
+  },
+  {
+    "artist": "Selena",
+    "title": "Bidi Bidi Bom Bom                          "
   },
   {
     "artist": "Selena",
@@ -27617,6 +28425,10 @@
   },
   {
     "artist": "Serge Reggiani",
+    "title": "Le petit garçon"
+  },
+  {
+    "artist": "Serge Reggiani",
     "title": "Le temps qui reste"
   },
   {
@@ -27634,10 +28446,6 @@
   {
     "artist": "Serge Reggiani",
     "title": "Votre fille a vingt ans"
-  },
-  {
-    "artist": "Serge Reggiani",
-    "title": "Le petit garçon"
   },
   {
     "artist": "Sergio Dalma",
@@ -27662,10 +28470,6 @@
   {
     "artist": "Sergio y Estìbaliz",
     "title": "Cantinero de Cuba"
-  },
-  {
-    "artist": "Séverine",
-    "title": "Un banc, un arbre, une rue"
   },
   {
     "artist": "Sex Pistols",
@@ -27745,6 +28549,10 @@
   },
   {
     "artist": "Shakira",
+    "title": "Acróstico"
+  },
+  {
+    "artist": "Shakira",
     "title": "Bizarrap"
   },
   {
@@ -27776,7 +28584,7 @@
     "title": "Whenever, Wherever"
   },
   {
-    "artist": "Shakira",
+    "artist": "Shakira ",
     "title": "Acróstico"
   },
   {
@@ -27818,6 +28626,10 @@
   {
     "artist": "Shania Twain",
     "title": "I'm Gonna Getcha Good"
+  },
+  {
+    "artist": "Shania Twain",
+    "title": "I’m Gonna Getcha Good"
   },
   {
     "artist": "Shania Twain",
@@ -27990,6 +28802,10 @@
   {
     "artist": "Shorts",
     "title": "Comment ça va"
+  },
+  {
+    "artist": "Shorts",
+    "title": "Comment ça va "
   },
   {
     "artist": "Shy FX & T. Power feat. Di",
@@ -28245,6 +29061,10 @@
   },
   {
     "artist": "Slimane",
+    "title": "Des milliers de je t’aime"
+  },
+  {
+    "artist": "Slimane",
     "title": "Je serai là"
   },
   {
@@ -28262,6 +29082,10 @@
   {
     "artist": "Slimane",
     "title": "La recette"
+  },
+  {
+    "artist": "Slimane",
+    "title": "Le vide"
   },
   {
     "artist": "Slimane",
@@ -28284,10 +29108,6 @@
     "title": "Tourner la tête"
   },
   {
-    "artist": "Slimane",
-    "title": "Le vide"
-  },
-  {
     "artist": "Slimane & Claudio Capéo",
     "title": "Chez toi"
   },
@@ -28305,6 +29125,10 @@
   },
   {
     "artist": "Smash",
+    "title": "Caught In The Storm"
+  },
+  {
+    "artist": "Smash",
     "title": "Cut, Print... Moving On"
   },
   {
@@ -28318,10 +29142,6 @@
   {
     "artist": "Smash",
     "title": "They Just Keep Moving The Line"
-  },
-  {
-    "artist": "Smash",
-    "title": "Caught In The Storm"
   },
   {
     "artist": "Smashing Pumpkins",
@@ -28368,10 +29188,6 @@
     "title": "Spitting Games"
   },
   {
-    "artist": "Sœur Sourire",
-    "title": "Dominique"
-  },
-  {
     "artist": "Sofia Karlberg",
     "title": "Crazy In Love (50 nuances de Grey)"
   },
@@ -28386,6 +29202,10 @@
   {
     "artist": "Soha",
     "title": "Mil Pasos"
+  },
+  {
+    "artist": "Soha",
+    "title": "Mil Pasos                                    "
   },
   {
     "artist": "Soldat Louis",
@@ -28474,6 +29294,10 @@
   {
     "artist": "Soprano",
     "title": "Hiro"
+  },
+  {
+    "artist": "Soprano",
+    "title": "Inaya"
   },
   {
     "artist": "Soprano",
@@ -28637,11 +29461,11 @@
   },
   {
     "artist": "Stadio",
-    "title": "Ho bisogno di voi"
+    "title": "Chiedi che erano i Beatles"
   },
   {
     "artist": "Stadio",
-    "title": "Chiedi che erano i Beatles"
+    "title": "Ho bisogno di voi"
   },
   {
     "artist": "Staind",
@@ -28694,6 +29518,10 @@
   {
     "artist": "Starmania",
     "title": "Besoin d'amour"
+  },
+  {
+    "artist": "Starmania",
+    "title": "Besoin d’amour"
   },
   {
     "artist": "Starmania",
@@ -29328,6 +30156,18 @@
     "title": "Non ci sto"
   },
   {
+    "artist": "Séverine",
+    "title": "Un banc, un arbre, une rue"
+  },
+  {
+    "artist": "Sœur Sourire",
+    "title": "Dominique"
+  },
+  {
+    "artist": "T'Pau",
+    "title": "China in your hand"
+  },
+  {
     "artist": "T-Spoon",
     "title": "Sex on the beach"
   },
@@ -29346,10 +30186,6 @@
   {
     "artist": "T. Rex",
     "title": "Telegram Sam"
-  },
-  {
-    "artist": "T'Pau",
-    "title": "China in your hand"
   },
   {
     "artist": "Take 6",
@@ -29505,6 +30341,10 @@
   },
   {
     "artist": "Teddy Swims",
+    "title": "Bad Dreams"
+  },
+  {
+    "artist": "Teddy Swims",
     "title": "Bad Dreams (Zoom)"
   },
   {
@@ -29529,35 +30369,15 @@
   },
   {
     "artist": "Teddy Swims",
+    "title": "The Door"
+  },
+  {
+    "artist": "Teddy Swims",
     "title": "You're still the one"
   },
   {
-    "artist": "Téléphone",
-    "title": "Argent trop cher"
-  },
-  {
-    "artist": "Téléphone",
-    "title": "Ca c'est vraiment toi"
-  },
-  {
-    "artist": "Téléphone",
-    "title": "Cendrillon"
-  },
-  {
-    "artist": "Téléphone",
-    "title": "La bombe humaine"
-  },
-  {
-    "artist": "Téléphone",
-    "title": "Le jour s'est levé"
-  },
-  {
-    "artist": "Téléphone",
-    "title": "New-York avec toi"
-  },
-  {
-    "artist": "Téléphone",
-    "title": "Un autre monde"
+    "artist": "Teddy Swims",
+    "title": "You're Still The One"
   },
   {
     "artist": "Temptations",
@@ -29590,10 +30410,6 @@
   {
     "artist": "Tennessee Ernie Ford",
     "title": "Sixteen tons"
-  },
-  {
-    "artist": "Téo Lavabo",
-    "title": "Chipolata"
   },
   {
     "artist": "Teppisti dei sogni",
@@ -29634,10 +30450,6 @@
   {
     "artist": "Terry Jacks",
     "title": "Seasons In The Sun"
-  },
-  {
-    "artist": "Tété",
-    "title": "A la faveur de l'automne"
   },
   {
     "artist": "Texas",
@@ -29830,6 +30642,10 @@
   {
     "artist": "Thierry Le Luron",
     "title": "Nous Nous Reverrons Un Jour Ou L'Autre"
+  },
+  {
+    "artist": "Thierry Le Luron",
+    "title": "Nous Nous Reverrons Un Jour Ou L’Autre"
   },
   {
     "artist": "Thin Lizzy",
@@ -30026,6 +30842,10 @@
   {
     "artist": "Tol Hansse",
     "title": "Big city"
+  },
+  {
+    "artist": "Tol Hansse",
+    "title": "Big city "
   },
   {
     "artist": "Tom & Dick",
@@ -30520,6 +31340,42 @@
     "title": "Barbados"
   },
   {
+    "artist": "Téléphone",
+    "title": "Argent trop cher"
+  },
+  {
+    "artist": "Téléphone",
+    "title": "Ca c'est vraiment toi"
+  },
+  {
+    "artist": "Téléphone",
+    "title": "Cendrillon"
+  },
+  {
+    "artist": "Téléphone",
+    "title": "La bombe humaine"
+  },
+  {
+    "artist": "Téléphone",
+    "title": "Le jour s'est levé"
+  },
+  {
+    "artist": "Téléphone",
+    "title": "New-York avec toi"
+  },
+  {
+    "artist": "Téléphone",
+    "title": "Un autre monde"
+  },
+  {
+    "artist": "Téo Lavabo",
+    "title": "Chipolata"
+  },
+  {
+    "artist": "Tété",
+    "title": "A la faveur de l'automne"
+  },
+  {
     "artist": "U 2",
     "title": "Hold me, thrill me, kiss me, kill me"
   },
@@ -30561,6 +31417,10 @@
   },
   {
     "artist": "U2",
+    "title": "Mothers Of The Disappeared"
+  },
+  {
+    "artist": "U2",
     "title": "New Year's Day"
   },
   {
@@ -30573,19 +31433,15 @@
   },
   {
     "artist": "U2",
+    "title": "Unforgettable Fire"
+  },
+  {
+    "artist": "U2",
     "title": "Walk On"
   },
   {
     "artist": "U2",
     "title": "Where The Streets Have No Name"
-  },
-  {
-    "artist": "U2",
-    "title": "Mothers Of The Disappeared"
-  },
-  {
-    "artist": "U2",
-    "title": "Unforgettable Fire"
   },
   {
     "artist": "UB 40",
@@ -30745,6 +31601,10 @@
   },
   {
     "artist": "Usher",
+    "title": "Caught Up"
+  },
+  {
+    "artist": "Usher",
     "title": "Confessions Pt. II"
   },
   {
@@ -30762,10 +31622,6 @@
   {
     "artist": "Usher",
     "title": "Yeah!"
-  },
-  {
-    "artist": "Usher",
-    "title": "Caught Up"
   },
   {
     "artist": "Usher & Alicia Keys",
@@ -30960,22 +31816,6 @@
     "title": "Ghost riders in the sky"
   },
   {
-    "artist": "Vaya con dios",
-    "title": "Johnny tu n'es pas un ange"
-  },
-  {
-    "artist": "Vaya con dios",
-    "title": "Pauvre Diable"
-  },
-  {
-    "artist": "Vaya con dios",
-    "title": "Quand elle rit aux éclats"
-  },
-  {
-    "artist": "Vaya Con Dios",
-    "title": "What's A Woman"
-  },
-  {
     "artist": "Vaya Con Dios",
     "title": "Don't cry for Louie"
   },
@@ -30984,12 +31824,28 @@
     "title": "Forever Blue"
   },
   {
+    "artist": "Vaya con dios",
+    "title": "Johnny tu n'es pas un ange"
+  },
+  {
     "artist": "Vaya Con Dios",
     "title": "Neh Nah Nah Nah"
   },
   {
+    "artist": "Vaya con dios",
+    "title": "Pauvre Diable"
+  },
+  {
     "artist": "Vaya Con Dios",
     "title": "Puerto rico"
+  },
+  {
+    "artist": "Vaya con dios",
+    "title": "Quand elle rit aux éclats"
+  },
+  {
+    "artist": "Vaya Con Dios",
+    "title": "What's A Woman"
   },
   {
     "artist": "Vegedream",
@@ -31046,42 +31902,6 @@
   {
     "artist": "Verbalicious",
     "title": "Don't Play Nice"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Bahia"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Chanson sur ma drôle de vie"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Comme je l'imagine"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Ma révérence"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Pour me comprendre"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Rien que de l'eau"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Seras tu la"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Vancouver"
-  },
-  {
-    "artist": "Véronique Sanson & Vianney",
-    "title": "Chanson sur ma drôle de vie"
   },
   {
     "artist": "Verve",
@@ -31190,6 +32010,50 @@
   {
     "artist": "VS",
     "title": "Call You Sexy"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Amoureuse"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Bahia"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Chanson sur ma drôle de vie"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Comme je l'imagine"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Je me suis tellement manquée"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Ma révérence"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Pour me comprendre"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Rien que de l'eau"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Seras tu la"
+  },
+  {
+    "artist": "Véronique Sanson",
+    "title": "Vancouver"
+  },
+  {
+    "artist": "Véronique Sanson & Vianney",
+    "title": "Chanson sur ma drôle de vie"
   },
   {
     "artist": "W. Houston & E. Iglesias",
@@ -31305,6 +32169,10 @@
   },
   {
     "artist": "Westlife",
+    "title": "Smile"
+  },
+  {
+    "artist": "Westlife",
     "title": "Swear it again"
   },
   {
@@ -31326,10 +32194,6 @@
   {
     "artist": "Westlife",
     "title": "When You're Looking Like That"
-  },
-  {
-    "artist": "Westlife",
-    "title": "Smile"
   },
   {
     "artist": "Wet Wet Wet",
@@ -31528,12 +32392,12 @@
     "title": "You give good love"
   },
   {
-    "artist": "Whitney Houston § J. Jackson",
-    "title": "Nobody loves me like you do"
-  },
-  {
     "artist": "Whitney Houston & George Michael",
     "title": "If I told you that"
+  },
+  {
+    "artist": "Whitney Houston § J. Jackson",
+    "title": "Nobody loves me like you do"
   },
   {
     "artist": "Will Smith",
@@ -31626,6 +32490,10 @@
   {
     "artist": "Will Tura",
     "title": "Medley"
+  },
+  {
+    "artist": "Will Tura",
+    "title": "Medley "
   },
   {
     "artist": "Will Tura",
@@ -31765,6 +32633,10 @@
   },
   {
     "artist": "Willy Sommers",
+    "title": "Laat de zon in je hart"
+  },
+  {
+    "artist": "Willy Sommers",
     "title": "Samba carioca"
   },
   {
@@ -31776,7 +32648,7 @@
     "title": "Zeven anjers,zeven rozen"
   },
   {
-    "artist": "Willy Sommers",
+    "artist": "Willy Sommers                                          ",
     "title": "Laat de zon in je hart"
   },
   {
@@ -31905,11 +32777,11 @@
   },
   {
     "artist": "Yannick Noah",
-    "title": "Simon Papa Tara"
+    "title": "Si tu savais"
   },
   {
     "artist": "Yannick Noah",
-    "title": "Si tu savais"
+    "title": "Simon Papa Tara"
   },
   {
     "artist": "Yannick Noah & Dezziz La Peste",
@@ -31936,6 +32808,10 @@
     "title": "Corazon de acero"
   },
   {
+    "artist": "Yiyo Sarante",
+    "title": "Corazon de acero                     "
+  },
+  {
     "artist": "Youssou N'Dour",
     "title": "7 seconds"
   },
@@ -31953,6 +32829,10 @@
   },
   {
     "artist": "Yves Duteil",
+    "title": "Au parc Monceau"
+  },
+  {
+    "artist": "Yves Duteil",
     "title": "La Langue De Chez Nous"
   },
   {
@@ -31966,10 +32846,6 @@
   {
     "artist": "Yves Duteil",
     "title": "Prendre un enfant par la main"
-  },
-  {
-    "artist": "Yves Duteil",
-    "title": "Au parc Monceau"
   },
   {
     "artist": "Yves Montand",
@@ -32208,563 +33084,7 @@
     "title": "Sleeping bag"
   },
   {
-    "artist": "10cc",
-    "title": "Dreadlock Holiday"
-  },
-  {
-    "artist": "ACDC",
-    "title": "Highway to Hell"
-  },
-  {
-    "artist": "Daryl Hall & John Oates",
-    "title": "Say It Isn't So"
-  },
-  {
-    "artist": "Flayns feat. Fred-V",
-    "title": "I'm sorry"
-  },
-  {
-    "artist": "Johnny Hates Jazz",
-    "title": "I don't wanna be a hero"
-  },
-  {
-    "artist": "Johnny Horton",
-    "title": "North to Alska"
-  },
-  {
-    "artist": "Johnny Horton",
-    "title": "The mansion you stole"
-  },
-  {
-    "artist": "Johnny Horton",
-    "title": "Whisparing pines"
-  },
-  {
-    "artist": "Johnny Logan",
-    "title": "What's another year"
-  },
-  {
-    "artist": "Josh Groban",
-    "title": "You Raise Me Up"
-  },
-  {
-    "artist": "Lena Park",
-    "title": "You Raise Me Up"
-  },
-  {
-    "artist": "Cher",
-    "title": "Welcome to burlesque"
-  },
-  {
-    "artist": "Alain Barriere",
-    "title": "Ma vie (Remix)"
-  },
-  {
-    "artist": "Alain Delorme",
-    "title": "Romantique avec toi (Remix)"
-  },
-  {
-    "artist": "Bigflo et Oli",
-    "title": "Dernière"
-  },
-  {
-    "artist": "Black M",
-    "title": "Sur ma route"
-  },
-  {
-    "artist": "Camille Lellouche",
-    "title": "Ne me jugez pas"
-  },
-  {
-    "artist": "Camille Lellouche & Grand Corps Malade",
-    "title": "Mais je t'aime"
-  },
-  {
-    "artist": "Carolyne Jomphe",
-    "title": "Alléluia (VF)"
-  },
-  {
-    "artist": "Céline Dion",
-    "title": "Ordinaire"
-  },
-  {
-    "artist": "Charles Aznavour",
-    "title": "Mes emmerdes (Yann Muller remix)"
-  },
-  {
-    "artist": "Chimène Bady",
-    "title": "Si j'avais su t'aimer"
-  },
-  {
-    "artist": "Daniel Levi",
-    "title": "L'envie d'aimer (Yann Muller remix)"
-  },
-  {
-    "artist": "Didier Barbelivien",
-    "title": "Peut-être Toi, peut-être une autre"
-  },
-  {
-    "artist": "Enola",
-    "title": "Bonjour, je me présente"
-  },
-  {
-    "artist": "Fababy",
-    "title": "Love d'un voyou ft. Aya Nakamura"
-  },
-  {
-    "artist": "Francis Cabrel",
-    "title": "L'encre de tes yeux (Remix)"
-  },
-  {
-    "artist": "Francois Feldman",
-    "title": "Rien Que Pour Toi"
-  },
-  {
-    "artist": "Ginette Reno",
-    "title": "L'essentiel"
-  },
-  {
-    "artist": "Grand Corps Malade & Camille Lellouche",
-    "title": "Mais je t'aime"
-  },
-  {
-    "artist": "Herbert Léonard",
-    "title": "Quand tu m'aimes"
-  },
-  {
-    "artist": "Jean Jacques Goldman",
-    "title": "Parler v'ma vie"
-  },
-  {
-    "artist": "Jean Jacques Lafon",
-    "title": "Le géant de papier (Yann Muller)"
-  },
-  {
-    "artist": "Johnny Hallyday",
-    "title": "Non, Je Ne Regrette Rien"
-  },
-  {
-    "artist": "Kpop Demon Hunters",
-    "title": "Briller (Golden)"
-  },
-  {
-    "artist": "Kpop Demon Hunters",
-    "title": "Libre (Free)"
-  },
-  {
-    "artist": "La Petite Culotte",
-    "title": "La goffa lolita"
-  },
-  {
-    "artist": "Lara Fabian",
-    "title": "Je t'ai cherché"
-  },
-  {
-    "artist": "Maître Gims",
-    "title": "Ciel"
-  },
-  {
-    "artist": "Maître Gims",
-    "title": "Ninao"
-  },
-  {
-    "artist": "Maître Gims",
-    "title": "Spider"
-  },
-  {
-    "artist": "Mentissa",
-    "title": "Mamma Mia! (VF)"
-  },
-  {
-    "artist": "Michel Berger",
-    "title": "La Groupie Du Pianiste (Remix)"
-  },
-  {
-    "artist": "Michel Delpech",
-    "title": "Le Chasseur (Les oies sauvages-Yann Muller remix)"
-  },
-  {
-    "artist": "Michel Sardou",
-    "title": "Être une femme (Remix)"
-  },
-  {
-    "artist": "Michel Sardou",
-    "title": "Tous les bateaux s'envolent"
-  },
-  {
-    "artist": "Mireille Mathieu",
-    "title": "Une femme amoureuse"
-  },
-  {
-    "artist": "Moha K",
-    "title": "Vroum Vroum"
-  },
-  {
-    "artist": "Nino Ferrer",
-    "title": "Si tu m'aimes encore"
-  },
-  {
-    "artist": "Oria",
-    "title": "Soirée mondaine"
-  },
-  {
-    "artist": "Renaud",
-    "title": "Adieu minette"
-  },
-  {
-    "artist": "Renaud",
-    "title": "La ballade nord irlandaise"
-  },
-  {
-    "artist": "Soprano",
-    "title": "Inaya"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Amoureuse"
-  },
-  {
-    "artist": "Véronique Sanson",
-    "title": "Je me suis tellement manquée"
-  },
-  {
-    "artist": "Michel Sardou",
-    "title": "Putain de temps"
-  },
-  {
-    "artist": "Jeanne Mas",
-    "title": "L'enfant"
-  },
-  {
-    "artist": "Bonnie St. Claire",
-    "title": "Pierrot "
-  },
-  {
-    "artist": "Carry Konings & Koos Alberts",
-    "title": "Ik wil altijd Bij jou Zijn "
-  },
-  {
-    "artist": "De Dijk",
-    "title": "5 uur "
-  },
-  {
-    "artist": "Frank Boeijen ",
-    "title": "Koud in mijn hart"
-  },
-  {
-    "artist": "Marco Borsato",
-    "title": "Het water "
-  },
-  {
-    "artist": "Rob De Nijs",
-    "title": "Malle babbe "
-  },
-  {
-    "artist": "Shorts",
-    "title": "Comment ça va "
-  },
-  {
-    "artist": "Tol Hansse",
-    "title": "Big city "
-  },
-  {
-    "artist": "Will Tura",
-    "title": "Medley "
-  },
-  {
-    "artist": "Willy Sommers                                          ",
-    "title": "Laat de zon in je hart"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Ali di libertà"
-  },
-  {
-    "artist": "Andrea Bocelli",
-    "title": "Romanza"
-  },
-  {
-    "artist": "Gigi D'alessio & Laura Fabian",
-    "title": "Un Cuore Malato"
-  },
-  {
-    "artist": "Gigliola Cinquetti",
-    "title": "Dio, come ti amo"
-  },
-  {
-    "artist": "Josh Groban",
-    "title": "Gira con me"
-  },
-  {
-    "artist": "Laura Pausini",
-    "title": "Un amico é cosi"
-  },
-  {
-    "artist": "Laura Pausini",
-    "title": "Un Amico È Cosi"
-  },
-  {
-    "artist": "Loretta Goggi",
-    "title": "Il mio prossimo amore"
-  },
-  {
-    "artist": "Loretta Goggi",
-    "title": "Maledetta Primavera"
-  },
-  {
-    "artist": "Loretta Goggi",
-    "title": "Pieno d'amore"
-  },
-  {
-    "artist": "Mina",
-    "title": "E Poi"
-  },
-  {
-    "artist": "Mina",
-    "title": "Grande Grande Grande"
-  },
-  {
-    "artist": "Nicola di Bari",
-    "title": "Vagabondo"
-  },
-  {
-    "artist": "Nino Rota",
-    "title": "Brucia la terra"
-  },
-  {
-    "artist": "Puccini",
-    "title": "E Lucevan le Stelle (Tosca)"
-  },
-  {
-    "artist": "Riccardo Del Turco",
-    "title": "Luglio"
-  },
-  {
-    "artist": "Robertino",
-    "title": "Un bacio piccolissimo"
-  },
-  {
-    "artist": "Alex Ubago",
-    "title": "Sin Miedo A Nada                       "
-  },
-  {
-    "artist": "Ana Belen & Manuel",
-    "title": "La puerta de alcala "
-  },
-  {
-    "artist": "Antonio Machin",
-    "title": "Camarera                           "
-  },
-  {
-    "artist": "Bendita",
-    "title": "Tu Luz                                    "
-  },
-  {
-    "artist": "Bruno e Marrone   ",
-    "title": "Boate azul"
-  },
-  {
-    "artist": "David Bisbal",
-    "title": "Ave Maria                    "
-  },
-  {
-    "artist": "Don omar ft Aventura",
-    "title": "Ella y yo                    "
-  },
-  {
-    "artist": "El Barrio",
-    "title": "Todo tiene sun fin                      "
-  },
-  {
-    "artist": "El Gran Combo De P R",
-    "title": "Me Libere                    "
-  },
-  {
-    "artist": "Enrique  Iglesias",
-    "title": "Heroe "
-  },
-  {
-    "artist": "Enrique Iglesias",
-    "title": "Bailamos                         "
-  },
-  {
-    "artist": "Enrique Iglesias",
-    "title": "Nunca te olvidare                "
-  },
-  {
-    "artist": "Enrique Iglesias",
-    "title": "Subeme la radio               "
-  },
-  {
-    "artist": "Enrique iglesias ft gente de zona",
-    "title": "Bailando        "
-  },
-  {
-    "artist": "Enrique Iglesias Ft. Bad Bunny",
-    "title": "El Baño            "
-  },
-  {
-    "artist": "Eros Ramazoti",
-    "title": "Cosas de la Vida                    "
-  },
-  {
-    "artist": "Eros Ramazzotti",
-    "title": "Otra Como Tu "
-  },
-  {
-    "artist": "Henrique e Juliano",
-    "title": "Deixa A Gente Quieto           "
-  },
-  {
-    "artist": "Jayne",
-    "title": "Amigos Para Sempre                          "
-  },
-  {
-    "artist": "Joaquin Sabina",
-    "title": "Pongamos que hablo de Madrid   "
-  },
-  {
-    "artist": "José Manuel Soto ",
-    "title": "Por ella"
-  },
-  {
-    "artist": "Julio Iglesias",
-    "title": "Amor,amor,amor                  "
-  },
-  {
-    "artist": "La oreja de Van Gogh",
-    "title": "La playa                     "
-  },
-  {
-    "artist": "Lalo Rodriguez",
-    "title": "Ven,Devórame Otra Vez                            "
-  },
-  {
-    "artist": "Los Iracundos",
-    "title": "La Juventud                         "
-  },
-  {
-    "artist": "Luis Fonsi, Demi Lovato",
-    "title": "Échame La Culpa           "
-  },
-  {
-    "artist": "Malú",
-    "title": "Enamorada                                    "
-  },
-  {
-    "artist": "Maná",
-    "title": "Bendita tu luz                               "
-  },
-  {
-    "artist": "Manolo Otero",
-    "title": "Que He De Hacer Para Olvidarte       "
-  },
-  {
-    "artist": "Marc Anthony y Jennifer Lopez ",
-    "title": "No Me Ames        "
-  },
-  {
-    "artist": "Mark Anthony",
-    "title": "Y hubo alguien                       "
-  },
-  {
-    "artist": "Melendi",
-    "title": "Un violinista en tu tejado                "
-  },
-  {
-    "artist": "Mon Laferte y Juanes",
-    "title": "Amarrame                     "
-  },
-  {
-    "artist": "Monica Naranjo",
-    "title": "Pantera En Libertad                "
-  },
-  {
-    "artist": "Morat Como",
-    "title": "Te Atreves                             "
-  },
-  {
-    "artist": "Nicky Jam",
-    "title": "Travesuras                              "
-  },
-  {
-    "artist": "Oski",
-    "title": "Fisica o Quimica                             "
-  },
-  {
-    "artist": "Pablo Alborán",
-    "title": "Solamente Tu                        "
-  },
-  {
-    "artist": "Prince Royce",
-    "title": "Darte un beso                        "
-  },
-  {
-    "artist": "Prince Royce ",
-    "title": "La Carretera"
-  },
-  {
-    "artist": "Raphael",
-    "title": "En carne via "
-  },
-  {
-    "artist": "Ricky Martin",
-    "title": "La Mordidita                         "
-  },
-  {
-    "artist": "Selena",
-    "title": "Bidi Bidi Bom Bom                          "
-  },
-  {
-    "artist": "Shakira ",
-    "title": "Acróstico"
-  },
-  {
-    "artist": "Soha",
-    "title": "Mil Pasos                                    "
-  },
-  {
-    "artist": "Yiyo Sarante",
-    "title": "Corazon de acero                     "
-  },
-  {
-    "artist": "Blackpink",
-    "title": "JUMP"
-  },
-  {
-    "artist": "Coldplay X Selena Gomez",
-    "title": "Let Somebody Go"
-  },
-  {
-    "artist": "Joe Cocker",
-    "title": "Up where we belong (Solo)"
-  },
-  {
-    "artist": "Nils Landgren",
-    "title": "I Will Survive"
-  },
-  {
-    "artist": "Teddy Swims",
-    "title": "Bad Dreams"
-  },
-  {
-    "artist": "Teddy Swims",
-    "title": "The Door"
-  },
-  {
-    "artist": "Teddy Swims",
-    "title": "You're Still The One"
-  },
-  {
-    "artist": "Celia Cruz",
-    "title": "La vida es un carnaval"
-  },
-  {
-    "artist": "Gipsy Kings",
-    "title": "Bamboleo"
-  },
-  {
-    "artist": "Luis Miguel",
-    "title": "Historia De Amor"
+    "artist": "Étienne Daho",
+    "title": "Le premier jour du reste de ta vie"
   }
 ]
