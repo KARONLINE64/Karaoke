@@ -96,6 +96,11 @@ function applyKjBranding(info) {
     return;
   }
   document.title = info.name || "Karaoké";
+  // Nom de scène du KJ en haut de sa page.
+  if (nameEl) {
+    nameEl.textContent = info.name || "";
+    nameEl.classList.toggle("hidden", !info.name);
+  }
   if (logo && info.logoVersion !== kjLogoVersion) {
     kjLogoVersion = info.logoVersion;
     // Logo du KJ s'il en a envoyé un, sinon le logo « Karaoke Songs List ».
@@ -807,9 +812,12 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
   const title = reqTitle.value.trim();
   const singer = reqSinger.value.trim();
   const keyChange = parseInt(reqKey.value, 10);
-  if (!requestSelectedSong || !artist || !title) { requestStatus.textContent = t('selectSong'); return; }
+  // Page d'un KJ : un titre sans artiste (fichier nommé « Titre » seul) est
+  // une chanson valide de son catalogue.
+  if (!requestSelectedSong || !title || (!artist && !KJ_MODE)) { requestStatus.textContent = t('selectSong'); return; }
   if (!singer) { requestStatus.textContent = t('enterSinger'); return; }
-  const payload = { artist, title, singer, keyChange };
+  // Le serveur des demandes exige un artiste : « - » quand le fichier n'en a pas.
+  const payload = { artist: artist || '-', title, singer, keyChange };
   if (KJ_MODE && requestSelectedSong && requestSelectedSong.id) payload.songId = requestSelectedSong.id;
   console.log('REQUEST SENDING', payload);
 
