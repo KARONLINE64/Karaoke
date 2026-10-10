@@ -342,7 +342,9 @@ main{
     font-weight:bold;
     color:#ffd700;
     text-align:center;
-    margin:10px auto 22px;
+    margin:0 auto 16px;
+    line-height:1.15;
+    overflow-wrap:anywhere;
 }
 #poweredBy{
     display:flex;
