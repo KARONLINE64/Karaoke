@@ -497,6 +497,7 @@ if (KJ_MODE) {
   if (kjLogo) kjLogo.style.visibility = "hidden";
   const powered = document.getElementById("poweredBy");
   if (powered) powered.classList.remove("hidden");
+  document.body.classList.add("kj-page");
   showHome();
 } else {
   fetch("songs.json")
@@ -850,7 +851,7 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
 const translations = {
   fr: {
     searchPlaceholder: 'Rechercher un artiste ou une chanson...',
-    welcome1: 'Choisissez une chanson, envoyez votre demande et chantons !',
+    welcome1: 'Choisissez une chanson, envoyez votre demande et chantons !',
     welcome2: 'Ou parcourez notre catalogue complet',
     navHome: 'Accueil',
     navCatalog: 'Catalogue',

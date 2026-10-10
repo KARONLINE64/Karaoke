@@ -358,3 +358,11 @@ main{
 }
 #poweredBy img{width:150px;height:auto;opacity:0.9}
 #poweredBy.hidden{display:none}
+/* Page d'un KJ : accueil plus compact, « Powered by » visible sans défiler */
+body.kj-page #welcome{margin-top:20px}
+body.kj-page .welcomeAction{margin:18px 0;font-size:26px}
+body.kj-page #poweredBy{margin-top:22px}
+@media(max-width:700px){
+    body.kj-page .welcomeAction{font-size:21px}
+    body.kj-page #logo{margin-bottom:12px}
+}
