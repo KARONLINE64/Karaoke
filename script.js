@@ -1,9 +1,27 @@
+// --- Page d'un KJ (KaroliveBox KJ) : ?kj=CODE ---------------------------
+// Même page, mêmes boutons ; seuls changent le nom, le logo et le catalogue
+// (ceux du KJ), et l'adresse où partent les demandes. Sans ?kj=, la page
+// reste celle du KJ propriétaire (OpenKJ), inchangée.
+// Serveur des espaces KJ (séparé du serveur OpenKJ du KJ propriétaire).
+const KJ_WORKER_URL = "https://karolive-kj.amkoud.workers.dev";
+const KJ_CODE = (() => {
+  const code = (new URLSearchParams(window.location.search).get("kj") || "").trim().toLowerCase();
+  return /^[a-z0-9][a-z0-9-]{1,30}$/.test(code) ? code : "";
+})();
+const KJ_MODE = KJ_CODE !== "";
+const KJ_BASE = KJ_MODE ? `${KJ_WORKER_URL}/kj/${encodeURIComponent(KJ_CODE)}` : "";
+// Favoris propres à chaque page (un client peut aller chez plusieurs KJ).
+const STORAGE_PREFIX = KJ_MODE ? `kj:${KJ_CODE}:` : "";
+let kjInfo = null;
+let kjCatalogVersion = -1;
+let kjLogoVersion = -1;
+
 let songs = [];
 let searchIndex = [];
 let currentSongs = [];
-let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+let favorites = JSON.parse(localStorage.getItem(STORAGE_PREFIX + "favorites") || "[]");
 const catalogCache = {};
-const favoriteSongMetaKey = "favoriteSongMeta";
+const favoriteSongMetaKey = STORAGE_PREFIX + "favoriteSongMeta";
 let favoriteSongMeta = JSON.parse(localStorage.getItem(favoriteSongMetaKey) || "{}");
 
 for (const key of favorites) {
@@ -37,6 +55,7 @@ let serviceOnline = true;
 let offlineToastTimer = null;
 
 async function checkServiceOnline() {
+  if (KJ_MODE) return checkKjOnline();
   try {
     const res = await fetch(SERVICE_STATUS_URL);
     const data = await res.json();
@@ -44,6 +63,52 @@ async function checkServiceOnline() {
   } catch (error) {
     console.log("[status] Cannot reach status endpoint, treating as offline");
     return false;
+  }
+}
+
+async function fetchKjInfo() {
+  try {
+    const res = await fetch(`${KJ_BASE}/info`, { cache: "no-store" });
+    if (res.status === 404) return { missing: true };
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (error) {
+    console.log("[kj] Cannot reach KJ info");
+    return null;
+  }
+}
+
+// Page du KJ consultable : logiciel ouvert, ou option « hors soirée ».
+async function checkKjOnline() {
+  const info = await fetchKjInfo();
+  if (!info) return false;
+  kjInfo = info;
+  applyKjBranding(info);
+  return info.browse === true;
+}
+
+function applyKjBranding(info) {
+  const logo = document.getElementById("logo");
+  const nameEl = document.getElementById("kjName");
+  if (info.missing) {
+    if (logo) logo.style.display = "none";
+    if (nameEl) { nameEl.textContent = t("kjUnknown"); nameEl.classList.remove("hidden"); }
+    return;
+  }
+  document.title = info.name || "Karaoké";
+  if (logo && info.logoVersion !== kjLogoVersion) {
+    kjLogoVersion = info.logoVersion;
+    // Logo du KJ s'il en a envoyé un, sinon le logo « Karaoke Songs List ».
+    logo.src = info.logoVersion ? `${KJ_BASE}/logo?v=${info.logoVersion}` : "logo.png";
+    logo.alt = info.name || "Karaoké";
+    logo.style.visibility = "visible";
+  }
+  if (info.catalogVersion !== kjCatalogVersion) {
+    kjCatalogVersion = info.catalogVersion;
+    fetch(`${KJ_BASE}/catalog?v=${info.catalogVersion}`)
+      .then(response => response.json())
+      .then(data => setSongs(Array.isArray(data) ? data : []))
+      .catch(error => console.error("[kj] Catalogue load failed", error));
   }
 }
 
@@ -407,23 +472,35 @@ async function loadLanguage(file) {
   showSongs(currentSongs);
 }
 
-fetch("songs.json")
-  .then(response => response.json())
-  .then(data => {
-    songs = data.sort((a, b) => {
-      if (a.artist === b.artist) {
-        return a.title.localeCompare(b.title);
-      }
-      return a.artist.localeCompare(b.artist);
-    });
-
-    searchIndex = songs.map(song => ({
-      song,
-      normalized: `${song.artist.toLowerCase()}|${song.title.toLowerCase()}`
-    }));
-
-    showHome();
+function setSongs(data) {
+  songs = data.sort((a, b) => {
+    if (a.artist === b.artist) {
+      return a.title.localeCompare(b.title);
+    }
+    return a.artist.localeCompare(b.artist);
   });
+
+  searchIndex = songs.map(song => ({
+    song,
+    normalized: `${song.artist.toLowerCase()}|${song.title.toLowerCase()}`
+  }));
+}
+
+if (KJ_MODE) {
+  // Logo masqué jusqu'à savoir s'il faut celui du KJ ou celui par défaut.
+  const kjLogo = document.getElementById("logo");
+  if (kjLogo) kjLogo.style.visibility = "hidden";
+  const powered = document.getElementById("poweredBy");
+  if (powered) powered.classList.remove("hidden");
+  showHome();
+} else {
+  fetch("songs.json")
+    .then(response => response.json())
+    .then(data => {
+      setSongs(data);
+      showHome();
+    });
+}
 
 search.addEventListener("input", function () {
   if (!serviceOnline) {
@@ -456,6 +533,8 @@ homeBtn.onclick = function () {
 
 catalogBtn.onclick = function () {
   if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
+  // Page d'un KJ : son catalogue complet (ses propres chansons).
+  if (KJ_MODE) { currentSongs = songs; showSongs(currentSongs); return; }
   showCatalog();
 };
 
@@ -545,11 +624,12 @@ async function buildRequestSongIndex() {
     if (!s || !s.artist || !s.title) return;
     const key = s.artist + '|' + s.title;
     if (!requestSongIndex.has(key)) {
-      requestSongIndex.set(key, { artist: s.artist, title: s.title });
+      requestSongIndex.set(key, { artist: s.artist, title: s.title, id: s.id || "" });
     }
   };
 
   for (const s of songs) add(s);
+  if (KJ_MODE) return;
 
   const filesToLoad = requestCatalogFiles.filter(file => file !== "songs.json");
 
@@ -626,6 +706,11 @@ function searchRequestSongs(query) {
 }
 
 async function checkOpenKjAccepting() {
+  if (KJ_MODE) {
+    const info = await fetchKjInfo();
+    if (info) { kjInfo = info; applyKjBranding(info); }
+    return Boolean(info && info.open);
+  }
   try {
     const res = await fetch('http://127.0.0.1:3000/', {
       method: 'POST',
@@ -725,6 +810,7 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
   if (!requestSelectedSong || !artist || !title) { requestStatus.textContent = t('selectSong'); return; }
   if (!singer) { requestStatus.textContent = t('enterSinger'); return; }
   const payload = { artist, title, singer, keyChange };
+  if (KJ_MODE && requestSelectedSong && requestSelectedSong.id) payload.songId = requestSelectedSong.id;
   console.log('REQUEST SENDING', payload);
 
   sendRequestBtn.disabled = true;
@@ -732,7 +818,8 @@ sendRequestBtn && sendRequestBtn.addEventListener('click', async () => {
   sendRequestBtn.style.cursor = 'not-allowed';
 
   try {
-    const res = await fetch('https://cloudflare-request-server.amkoud.workers.dev/request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    const requestUrl = KJ_MODE ? `${KJ_BASE}/request` : 'https://cloudflare-request-server.amkoud.workers.dev/request';
+    const res = await fetch(requestUrl, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
     if (res.status === 403) {
       applyAcceptingState(false);
       return;
@@ -777,7 +864,9 @@ const translations = {
     selectSong: 'Veuillez sélectionner une chanson.',
     enterSinger: 'Veuillez entrer le nom du chanteur.',
     requestSent: 'Demande envoyée avec succès.',
-    requestFailed: 'Échec de l\'envoi. Veuillez réessayer.'
+    requestFailed: 'Échec de l\'envoi. Veuillez réessayer.',
+    kjUnknown: 'Page de KJ introuvable. Vérifiez le QR code.',
+    welcome2Kj: 'Ou parcourez mon catalogue complet'
   },
   en: {
     searchPlaceholder: 'Search artist or song...',
@@ -803,7 +892,9 @@ const translations = {
     selectSong: 'Please select a song.',
     enterSinger: 'Please enter the singer name.',
     requestSent: 'Request sent successfully.',
-    requestFailed: 'Request failed. Please try again.'
+    requestFailed: 'Request failed. Please try again.',
+    kjUnknown: 'KJ page not found. Please check the QR code.',
+    welcome2Kj: 'Or browse my complete catalogue'
   }
 };
 
@@ -821,7 +912,9 @@ function applyLocale(locale) {
   document.documentElement.lang = activeLocale;
 
   document.querySelectorAll('[data-i18n]').forEach((node) => {
-    const key = node.dataset.i18n;
+    let key = node.dataset.i18n;
+    // Page d'un KJ : « mon catalogue » (sa propre bibliothèque).
+    if (KJ_MODE && key === 'welcome2') key = 'welcome2Kj';
     if (translations[activeLocale][key]) {
       node.textContent = translations[activeLocale][key];
     }
