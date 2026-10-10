@@ -1,5 +1,3 @@
-import { handleKj } from "./kj.js";
-
 const parseAllowedOrigins = value => String(value || "http://127.0.0.1:5500").split(",").map(s => s.trim()).filter(Boolean);
 
 const HEARTBEAT_TIMEOUT_MS = 12000;
@@ -286,12 +284,6 @@ const handleRequestSubmission = async (env, request, data, corsHeaders, requestE
 
 export default {
   async fetch(request, env, ctx) {
-    // Espaces KJ (KaroliveBox KJ) : routes séparées, voir src/kj.js.
-    const kjUrl = new URL(request.url);
-    if (kjUrl.pathname.startsWith("/kj/") || kjUrl.pathname === "/admin/kj") {
-      return handleKj(request, env, kjUrl);
-    }
-
     const origin = request.headers.get("Origin") || "";
     const { allowedOrigins, requestEndpointToken, openKjApiKey } = getEnv(env);
     const corsHeaders = makeCorsHeaders(origin, allowedOrigins);

@@ -2,13 +2,14 @@
 // Même page, mêmes boutons ; seuls changent le nom, le logo et le catalogue
 // (ceux du KJ), et l'adresse où partent les demandes. Sans ?kj=, la page
 // reste celle du KJ propriétaire (OpenKJ), inchangée.
-const WORKER_URL = "https://cloudflare-request-server.amkoud.workers.dev";
+// Serveur des espaces KJ (séparé du serveur OpenKJ du KJ propriétaire).
+const KJ_WORKER_URL = "https://karolive-kj.amkoud.workers.dev";
 const KJ_CODE = (() => {
   const code = (new URLSearchParams(window.location.search).get("kj") || "").trim().toLowerCase();
   return /^[a-z0-9][a-z0-9-]{1,30}$/.test(code) ? code : "";
 })();
 const KJ_MODE = KJ_CODE !== "";
-const KJ_BASE = KJ_MODE ? `${WORKER_URL}/kj/${encodeURIComponent(KJ_CODE)}` : "";
+const KJ_BASE = KJ_MODE ? `${KJ_WORKER_URL}/kj/${encodeURIComponent(KJ_CODE)}` : "";
 // Favoris propres à chaque page (un client peut aller chez plusieurs KJ).
 const STORAGE_PREFIX = KJ_MODE ? `kj:${KJ_CODE}:` : "";
 let kjInfo = null;
@@ -95,21 +96,12 @@ function applyKjBranding(info) {
     return;
   }
   document.title = info.name || "Karaoké";
-  if (info.logoVersion !== kjLogoVersion) {
+  if (logo && info.logoVersion !== kjLogoVersion) {
     kjLogoVersion = info.logoVersion;
-    if (logo && info.logoVersion) {
-      logo.src = `${KJ_BASE}/logo?v=${info.logoVersion}`;
-      logo.alt = info.name || "Karaoké";
-      logo.style.display = "";
-      logo.style.visibility = "visible";
-    } else if (logo) {
-      logo.style.display = "none";
-    }
-  }
-  if (nameEl) {
-    // Sans logo, le nom de scène du KJ tient lieu de titre.
-    nameEl.textContent = info.name || "";
-    nameEl.classList.toggle("hidden", Boolean(info.logoVersion) || !info.name);
+    // Logo du KJ s'il en a envoyé un, sinon le logo « Karaoke Songs List ».
+    logo.src = info.logoVersion ? `${KJ_BASE}/logo?v=${info.logoVersion}` : "logo.png";
+    logo.alt = info.name || "Karaoké";
+    logo.style.visibility = "visible";
   }
   if (info.catalogVersion !== kjCatalogVersion) {
     kjCatalogVersion = info.catalogVersion;
@@ -495,9 +487,9 @@ function setSongs(data) {
 }
 
 if (KJ_MODE) {
-  // Le logo du KJ propriétaire n'apparaît jamais sur la page d'un autre KJ.
-  const ownerLogo = document.getElementById("logo");
-  if (ownerLogo) ownerLogo.style.visibility = "hidden";
+  // Logo masqué jusqu'à savoir s'il faut celui du KJ ou celui par défaut.
+  const kjLogo = document.getElementById("logo");
+  if (kjLogo) kjLogo.style.visibility = "hidden";
   const powered = document.getElementById("poweredBy");
   if (powered) powered.classList.remove("hidden");
   showHome();
@@ -873,7 +865,8 @@ const translations = {
     enterSinger: 'Veuillez entrer le nom du chanteur.',
     requestSent: 'Demande envoyée avec succès.',
     requestFailed: 'Échec de l\'envoi. Veuillez réessayer.',
-    kjUnknown: 'Page de KJ introuvable. Vérifiez le QR code.'
+    kjUnknown: 'Page de KJ introuvable. Vérifiez le QR code.',
+    welcome2Kj: 'Ou parcourez mon catalogue complet'
   },
   en: {
     searchPlaceholder: 'Search artist or song...',
@@ -900,7 +893,8 @@ const translations = {
     enterSinger: 'Please enter the singer name.',
     requestSent: 'Request sent successfully.',
     requestFailed: 'Request failed. Please try again.',
-    kjUnknown: 'KJ page not found. Please check the QR code.'
+    kjUnknown: 'KJ page not found. Please check the QR code.',
+    welcome2Kj: 'Or browse my complete catalogue'
   }
 };
 
@@ -918,7 +912,9 @@ function applyLocale(locale) {
   document.documentElement.lang = activeLocale;
 
   document.querySelectorAll('[data-i18n]').forEach((node) => {
-    const key = node.dataset.i18n;
+    let key = node.dataset.i18n;
+    // Page d'un KJ : « mon catalogue » (sa propre bibliothèque).
+    if (KJ_MODE && key === 'welcome2') key = 'welcome2Kj';
     if (translations[activeLocale][key]) {
       node.textContent = translations[activeLocale][key];
     }

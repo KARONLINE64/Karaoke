@@ -1,0 +1,12 @@
+# Serveur des espaces KJ (KaroliveBox KJ). Mise en ligne : deployer.ps1.
+name = "karolive-kj"
+main = "src/index.js"
+compatibility_date = "2025-10-01"
+# Les réglages faits dans le tableau de bord Cloudflare sont conservés.
+keep_vars = true
+
+[[d1_databases]]
+binding = "REQUEST_DB"
+database_name = "karolive-kj"
+# Rempli automatiquement par deployer.ps1 (base créée au premier lancement).
+database_id = "A_REMPLIR_PAR_DEPLOYER"

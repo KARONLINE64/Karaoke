@@ -1,4 +1,4 @@
-# Espaces KJ (KaroliveBox KJ) sur le serveur de demandes
+# karolive-kj : serveur des espaces KJ (KaroliveBox KJ)
 
 Chaque KJ abonné à KaroliveBox KJ a son espace, désigné par un **code
 permanent** : celui de son QR code,
@@ -8,17 +8,23 @@ réattribué à un autre KJ, même après la fin de son abonnement.
 La partie OpenKJ du KJ propriétaire (routes `/`, `/request`, `/status`, page
 sans `?kj=`) ne change pas.
 
-## Mise en ligne
+Serveur **séparé** du serveur OpenKJ du KJ propriétaire
+(`cloudflare-request-server`), qui n'est pas modifié. Même compte
+Cloudflare, adresse : `https://karolive-kj.<compte>.workers.dev`.
 
-1. Ajouter le secret **`KJ_ADMIN_TOKEN`** au Worker (une longue phrase
-   aléatoire, 40 caractères ou plus) : tableau de bord Cloudflare → Workers →
-   `cloudflare-request-server` → Settings → Variables and Secrets → Add →
-   type *Secret*. Ou en ligne de commande : `npx wrangler secret put KJ_ADMIN_TOKEN`.
-   Le même jeton sera donné au serveur karolive.com (il crée les espaces KJ).
-2. Déployer comme d'habitude (`npx wrangler deploy`). Les tables `kjs`,
-   `kj_requests` et `kj_catalog` sont créées automatiquement dans la base D1
-   existante, à la première utilisation ; rien n'est modifié dans `requests`
-   ni `meta`.
+## Mise en ligne (PowerShell, PC fixe ou PC 24/7)
+
+Double-clic sur **`DEPLOYER.bat`** (ou
+`powershell -NoProfile -ExecutionPolicy Bypass -File .\deployer.ps1`).
+Le script fait tout, et peut être relancé à chaque mise à jour :
+
+1. installe Node.js s'il manque (puis demande de relancer) et l'outil `wrangler` ;
+2. ouvre la connexion au compte Cloudflare (bouton « Allow ») ;
+3. crée la base de données `karolive-kj` (une seule fois) ;
+4. met le serveur en ligne ;
+5. crée le jeton d'administration `KJ_ADMIN_TOKEN` (une seule fois, gardé
+   dans `KJ_ADMIN_TOKEN.txt`, **secret** : il servira au serveur karolive.com) ;
+6. vérifie que tout répond et affiche l'adresse du serveur.
 
 ## Routes
 
@@ -49,6 +55,6 @@ sans `?kj=`) ne change pas.
 ## Test
 
 ```
-npx wrangler dev --local --port 8787     # avec KJ_ADMIN_TOKEN et OPENKJ_API_KEY dans [vars]
-python tests/kj_flow_test.py http://localhost:8787 <KJ_ADMIN_TOKEN> <OPENKJ_API_KEY>
+npx wrangler dev --local --port 8787     # avec KJ_ADMIN_TOKEN dans [vars]
+python tests/kj_flow_test.py http://localhost:8787 <KJ_ADMIN_TOKEN>
 ```

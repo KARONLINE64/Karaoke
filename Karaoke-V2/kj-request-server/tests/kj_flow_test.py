@@ -1,9 +1,7 @@
 """Test de bout en bout des espaces KJ, contre le serveur lancé en local :
 
-    npx wrangler dev --local --port 8787   (vars : KJ_ADMIN_TOKEN, OPENKJ_API_KEY)
-    python tests/kj_flow_test.py http://localhost:8787 admin-secret owner-key
-
-Vérifie aussi que la partie OpenKJ du KJ propriétaire n'a pas changé.
+    npx wrangler dev --local --port 8787   (var : KJ_ADMIN_TOKEN)
+    python tests/kj_flow_test.py http://localhost:8787 admin-secret
 """
 import hashlib
 import json
@@ -12,7 +10,7 @@ import time
 import urllib.error
 import urllib.request
 
-BASE, ADMIN, OWNER = sys.argv[1].rstrip("/"), sys.argv[2], sys.argv[3]
+BASE, ADMIN = sys.argv[1].rstrip("/"), sys.argv[2]
 CODE = f"djtest{int(time.time()) % 100000}"
 KEY = "cle-secrete-du-kj"
 
@@ -126,8 +124,4 @@ check("abonnement suspendu : logiciel refusé", kj("heartbeat")[0] == 403)
 call("POST", "/admin/kj", {"code": CODE, "email": "dj@test.fr", "active": True}, ADMIN)
 check("abonnement réactivé : même code, même clé", kj("heartbeat")[0] == 200)
 
-# Partie OpenKJ du KJ propriétaire : inchangée.
-check("OpenKJ : statut", call("GET", "/status")[0] == 200)
-check("OpenKJ : commande avec sa clé", call("POST", "/", {"command": "getSerial"}, OWNER)[0] == 200)
-check("OpenKJ : clé d'un KJ refusée", call("POST", "/", {"command": "getSerial"}, KEY)[0] == 401)
 print("TOUT EST OK")
