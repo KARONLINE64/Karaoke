@@ -47,7 +47,7 @@ async function checkServiceOnline() {
   }
 }
 
-const restrictedWhenOffline = [catalogBtn, favBtn, requestBtn, search].filter(Boolean);
+const restrictedWhenOffline = [catalogBtn, requestBtn, search].filter(Boolean);
 
 function showOfflineToastIfNeeded() {
   if (!offlineToast) return;
@@ -460,7 +460,6 @@ catalogBtn.onclick = function () {
 };
 
 favBtn.onclick = function () {
-  if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
   const combined = [];
 
   for (const s of songs) {
