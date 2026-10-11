@@ -52,6 +52,10 @@ const SERVICE_CHECK_INTERVAL_MS = 10000;
 const OFFLINE_TOAST_DURATION_MS = 4000;
 
 let serviceOnline = true;
+// Page d'un KJ : demandes possibles (logiciel ouvert et « Accepter les
+// demandes » coché, ou option « demandes hors soirée »). Le catalogue peut
+// rester consultable sans qu'on puisse demander.
+let requestsOpen = true;
 let offlineToastTimer = null;
 
 async function checkServiceOnline() {
@@ -81,6 +85,7 @@ async function fetchKjInfo() {
 // Page du KJ consultable : logiciel ouvert, ou option « hors soirée ».
 async function checkKjOnline() {
   const info = await fetchKjInfo();
+  requestsOpen = Boolean(info && info.open === true);
   if (!info) return false;
   kjInfo = info;
   applyKjBranding(info);
@@ -117,7 +122,7 @@ function applyKjBranding(info) {
   }
 }
 
-const restrictedWhenOffline = [catalogBtn, requestBtn, search].filter(Boolean);
+const restrictedWhenOffline = [catalogBtn, search].filter(Boolean);
 
 function showOfflineToastIfNeeded() {
   if (!offlineToast) return;
@@ -129,6 +134,7 @@ function showOfflineToastIfNeeded() {
 }
 
 function applyOfflineUiState() {
+  if (requestBtn) requestBtn.classList.toggle("offlineDisabled", !serviceOnline || !requestsOpen);
   restrictedWhenOffline.forEach(el => {
     el.classList.toggle("offlineDisabled", !serviceOnline);
   });
@@ -376,7 +382,7 @@ function createSongElement() {
   // Allow selecting a song by clicking the item (ignore clicks on the star)
   songEl.addEventListener('click', (e) => {
     if (e.target.closest('.star')) return;
-    if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
+    if (!serviceOnline || !requestsOpen) { showOfflineToastIfNeeded(); return; }
     const idx = songEl.dataset.index;
     if (!idx) return;
     const song = virtualState.currentList[Number(idx)];
@@ -789,7 +795,7 @@ const requestBox = requestModal && requestModal.querySelector('.rb-box');
 const requestOverlay = requestModal && requestModal.querySelector('.rb-overlay');
 
 requestBtn && requestBtn.addEventListener('click', () => {
-  if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
+  if (!serviceOnline || !requestsOpen) { showOfflineToastIfNeeded(); return; }
   openRequestModal();
 });
 cancelRequestBtn && cancelRequestBtn.addEventListener('click', () => closeRequestModal());

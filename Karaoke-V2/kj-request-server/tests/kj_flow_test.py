@@ -107,7 +107,14 @@ check("fermeture du logiciel", kj("close")[0] == 200)
 check("demandes restantes effacées à la fermeture", kj("getRequests")[1]["requests"] == [])
 info = call("GET", f"/kj/{CODE}/info")[1]
 check("page : hors ligne après fermeture", not info["online"] and not info["browse"])
-check("option hors soirée", kj("setProfile", allowOffline=True)[1]["profile"]["allowOffline"] is True)
+check("option catalogue hors soirée", kj("setProfile", allowOffline=True)[1]["profile"]["allowOffline"] is True)
+info = call("GET", f"/kj/{CODE}/info")[1]
+check("page : catalogue ouvert, demandes fermées, logiciel fermé",
+      info["browse"] and not info["open"] and not info["online"])
+check("demande refusée (logiciel fermé, catalogue seul)", call("POST", f"/kj/{CODE}/request",
+      {"artist": "Queen", "title": "Bohemian Rhapsody", "singer": "Tom"})[0] == 403)
+profile = kj("setProfile", offlineRequests=True)[1]["profile"]
+check("option demandes hors soirée", profile["offlineRequests"] is True and profile["allowOffline"] is True)
 info = call("GET", f"/kj/{CODE}/info")[1]
 check("page : catalogue et demandes ouverts, logiciel fermé", info["browse"] and info["open"] and not info["online"])
 check("demande hors soirée acceptée", call("POST", f"/kj/{CODE}/request",
