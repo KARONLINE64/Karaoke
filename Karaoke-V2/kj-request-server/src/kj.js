@@ -24,7 +24,9 @@ const CODE_RE = /^[a-z0-9][a-z0-9-]{1,30}$/;
 // Le signe de vie n'est écrit qu'une fois toutes les 15 s (quota d'écritures).
 const ONLINE_MS = 35000;
 const HEARTBEAT_WRITE_MS = 15000;
-// Demandes envoyées logiciel fermé (option « hors soirée ») : 48 h maximum.
+// Logiciel fermé (options « hors soirée ») : catalogue consultable
+// (allow_offline) et, en plus, demandes possibles (offline_requests),
+// gardées 48 h maximum.
 const OFFLINE_REQUEST_TTL_MS = 48 * 3600 * 1000;
 const MAX_PENDING = 300;
 const MAX_LOGO_BYTES = 300 * 1024;
@@ -63,6 +65,7 @@ async function ensureKjSchema(env) {
       active INTEGER NOT NULL DEFAULT 1,
       accepting INTEGER NOT NULL DEFAULT 1,
       allow_offline INTEGER NOT NULL DEFAULT 0,
+      offline_requests INTEGER NOT NULL DEFAULT 0,
       last_heartbeat INTEGER NOT NULL DEFAULT 0,
       serial INTEGER NOT NULL DEFAULT 1,
       catalog_version INTEGER NOT NULL DEFAULT 0,
@@ -92,6 +95,12 @@ async function ensureKjSchema(env) {
       PRIMARY KEY (code, part)
     )`),
   ]);
+  // Bases créées avant l'option « demandes logiciel fermé » : colonne ajoutée.
+  try {
+    await run(env, "ALTER TABLE kjs ADD COLUMN offline_requests INTEGER NOT NULL DEFAULT 0");
+  } catch (error) {
+    if (!String(error && error.message).includes("duplicate column")) throw error;
+  }
   schemaReady = true;
 }
 
@@ -125,10 +134,12 @@ function status(kj, now = Date.now()) {
   const active = kj.active === 1;
   return {
     online,
-    // Catalogue consultable : logiciel ouvert, ou option « hors soirée ».
+    // Catalogue consultable : logiciel ouvert, ou option « catalogue hors soirée ».
     browse: active && (online || kj.allow_offline === 1),
-    // Demandes acceptées : en plus, la case « Accepter les demandes ».
-    open: active && kj.accepting === 1 && (online || kj.allow_offline === 1),
+    // Demandes acceptées : case « Accepter les demandes » cochée, et logiciel
+    // ouvert ou option « demandes hors soirée » (avec le catalogue).
+    open: active && kj.accepting === 1
+      && (online || (kj.allow_offline === 1 && kj.offline_requests === 1)),
   };
 }
 
@@ -155,6 +166,7 @@ async function publicInfo(kj) {
     open: s.open,
     accepting: kj.accepting === 1,
     allowOffline: kj.allow_offline === 1,
+    offlineRequests: kj.offline_requests === 1,
     catalogVersion: kj.catalog_version,
     catalogCount: kj.catalog_count,
     logoVersion: kj.logo ? kj.logo_version : 0,
@@ -230,7 +242,8 @@ async function heartbeat(env, kj) {
 function profileOf(kj) {
   return {
     code: kj.code, name: kj.name, accepting: kj.accepting === 1,
-    allowOffline: kj.allow_offline === 1, catalogVersion: kj.catalog_version,
+    allowOffline: kj.allow_offline === 1, offlineRequests: kj.offline_requests === 1,
+    catalogVersion: kj.catalog_version,
     catalogCount: kj.catalog_count, logoVersion: kj.logo ? kj.logo_version : 0,
   };
 }
@@ -286,9 +299,12 @@ async function kjCommand(env, request, kj) {
       const name = data.name === undefined ? kj.name : clean(data.name, 60);
       const allow = data.allowOffline === undefined ? kj.allow_offline
         : (data.allowOffline === true ? 1 : 0);
-      await run(env, "UPDATE kjs SET name = ?, allow_offline = ? WHERE code = ?",
-        [name, allow, kj.code]);
-      return ok({ profile: profileOf({ ...kj, name, allow_offline: allow }) });
+      const offlineRequests = data.offlineRequests === undefined ? kj.offline_requests
+        : (data.offlineRequests === true ? 1 : 0);
+      await run(env, "UPDATE kjs SET name = ?, allow_offline = ?, offline_requests = ? WHERE code = ?",
+        [name, allow, offlineRequests, kj.code]);
+      return ok({ profile: profileOf({ ...kj, name, allow_offline: allow,
+        offline_requests: offlineRequests }) });
     }
     case "close":
       // Fin de soirée : les demandes restantes sont effacées, le KJ passe
