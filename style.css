@@ -366,3 +366,18 @@ body.kj-page #poweredBy{margin-top:22px}
     body.kj-page .welcomeAction{font-size:21px}
     body.kj-page #logo{margin-bottom:12px}
 }
+/* Page d'un KJ : téléphone à l'horizontale -> message pour revenir en portrait */
+#rotateWarning{display:none}
+@media (orientation: landscape) and (max-height: 540px) and (hover: none){
+    body.kj-page #rotateWarning{
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        position:fixed;inset:0;z-index:10000;padding:24px;text-align:center;
+        background:#05070b;color:#fff;font-size:22px;font-weight:bold;
+    }
+    body.kj-page #rotateWarning p{max-width:520px;margin:18px 0 0;line-height:1.3}
+    body.kj-page{overflow:hidden}
+}
+.rotate-icons{display:flex;align-items:center;gap:18px;font-size:64px}
+.rotate-phone{display:inline-block;transform:rotate(90deg)}
+.rotate-loop{display:inline-block;animation:rotateLoop 2s linear infinite}
+@keyframes rotateLoop{to{transform:rotate(360deg)}}
