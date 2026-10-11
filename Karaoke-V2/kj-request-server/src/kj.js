@@ -16,8 +16,18 @@
 //                           setProfile, close
 //   PUT  /kj/CODE/catalog   publication du catalogue
 //   PUT  /kj/CODE/logo      envoi du logo (PNG, JPEG ou WebP)
-// Route d'administration (serveur karolive.com, Bearer KJ_ADMIN_TOKEN) :
+//                           startSession, getSessions (formules)
+// Routes d'administration (serveur karolive.com, Bearer KJ_ADMIN_TOKEN) :
 //   POST /admin/kj          création / mise à jour d'un KJ (abonnement)
+//   POST /admin/kj/packs    ajout d'une formule achetée {code, plan}
+//   POST /admin/kj/sessions sessions restantes d'un KJ {code}
+//
+// Formules (sessions de 8 h) : UN JOUR (1 session, sans limite), UN WEEKEND
+// (2 sessions, dans les 3 jours après la 1re), UN MOIS (4 sessions, dans les
+// 30 jours après l'achat). La 1re session est offerte à la création du KJ.
+// Une session commence quand le KJ clique « Démarrer ma soirée » ; pendant
+// 8 h, sa page accepte les demandes (logiciel ouvert) ; ensuite, plus de
+// demandes jusqu'à la session suivante (la lecture, locale, continue).
 
 const CODE_RE = /^[a-z0-9][a-z0-9-]{1,30}$/;
 // Le KJ est « en ligne » si son logiciel s'est signalé depuis moins de 35 s.
@@ -33,6 +43,14 @@ const MAX_LOGO_BYTES = 300 * 1024;
 const MAX_CATALOG_SONGS = 100000;
 const CATALOG_PART_CHARS = 800000;
 const LOGO_TYPES = ["image/png", "image/jpeg", "image/webp"];
+const SESSION_MS = 8 * 3600 * 1000;
+const DAY_MS = 24 * 3600 * 1000;
+const PLANS = {
+  trial: { sessions: 1 },                             // 1re session offerte
+  day: { sessions: 1 },                               // UN JOUR
+  weekend: { sessions: 2, afterFirstUseMs: 3 * DAY_MS },  // UN WEEKEND
+  month: { sessions: 4, afterPurchaseMs: 30 * DAY_MS },   // UN MOIS
+};
 
 let schemaReady = false;
 
@@ -66,6 +84,7 @@ async function ensureKjSchema(env) {
       accepting INTEGER NOT NULL DEFAULT 1,
       allow_offline INTEGER NOT NULL DEFAULT 0,
       offline_requests INTEGER NOT NULL DEFAULT 0,
+      session_until INTEGER NOT NULL DEFAULT 0,
       last_heartbeat INTEGER NOT NULL DEFAULT 0,
       serial INTEGER NOT NULL DEFAULT 1,
       catalog_version INTEGER NOT NULL DEFAULT 0,
@@ -88,6 +107,14 @@ async function ensureKjSchema(env) {
     )`),
     env.REQUEST_DB.prepare(
       "CREATE INDEX IF NOT EXISTS kj_requests_code ON kj_requests(code, created_at)"),
+    env.REQUEST_DB.prepare(`CREATE TABLE IF NOT EXISTS kj_packs (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      code TEXT NOT NULL,
+      plan TEXT NOT NULL,
+      sessions_left INTEGER NOT NULL,
+      expires_at INTEGER NOT NULL DEFAULT 0,
+      created_at INTEGER NOT NULL
+    )`),
     env.REQUEST_DB.prepare(`CREATE TABLE IF NOT EXISTS kj_catalog (
       code TEXT NOT NULL,
       part INTEGER NOT NULL,
@@ -95,12 +122,19 @@ async function ensureKjSchema(env) {
       PRIMARY KEY (code, part)
     )`),
   ]);
-  // Bases créées avant l'option « demandes logiciel fermé » : colonne ajoutée.
-  try {
-    await run(env, "ALTER TABLE kjs ADD COLUMN offline_requests INTEGER NOT NULL DEFAULT 0");
-  } catch (error) {
-    if (!String(error && error.message).includes("duplicate column")) throw error;
+  // Bases créées avant ces options : colonnes ajoutées.
+  for (const column of ["offline_requests", "session_until"]) {
+    try {
+      await run(env, `ALTER TABLE kjs ADD COLUMN ${column} INTEGER NOT NULL DEFAULT 0`);
+    } catch (error) {
+      if (!String(error && error.message).includes("duplicate column")) throw error;
+    }
   }
+  // Une seule session offerte par KJ, même si deux requêtes arrivent ensemble.
+  await run(env, "CREATE UNIQUE INDEX IF NOT EXISTS kj_packs_trial ON kj_packs(code) WHERE plan = 'trial'");
+  // KJ inscrits avant les formules : leur 1re session offerte.
+  await run(env, `INSERT OR IGNORE INTO kj_packs (code, plan, sessions_left, expires_at, created_at)
+      SELECT code, 'trial', 1, 0, ? FROM kjs`, [Date.now()]);
   schemaReady = true;
 }
 
@@ -132,14 +166,18 @@ function parseKey(value) {
 function status(kj, now = Date.now()) {
   const online = now - kj.last_heartbeat < ONLINE_MS;
   const active = kj.active === 1;
+  const inSession = now < (kj.session_until || 0);
   return {
     online,
+    inSession,
     // Catalogue consultable : logiciel ouvert, ou option « catalogue hors soirée ».
     browse: active && (online || kj.allow_offline === 1),
     // Demandes acceptées : case « Accepter les demandes » cochée, et logiciel
-    // ouvert ou option « demandes hors soirée » (avec le catalogue).
+    // ouvert pendant une session (soirée de 8 h), ou logiciel fermé avec
+    // l'option « demandes hors soirée » (avec le catalogue).
     open: active && kj.accepting === 1
-      && (online || (kj.allow_offline === 1 && kj.offline_requests === 1)),
+      && ((online && inSession)
+        || (!online && kj.allow_offline === 1 && kj.offline_requests === 1)),
   };
 }
 
@@ -167,6 +205,7 @@ async function publicInfo(kj) {
     accepting: kj.accepting === 1,
     allowOffline: kj.allow_offline === 1,
     offlineRequests: kj.offline_requests === 1,
+    inSession: s.inSession,
     catalogVersion: kj.catalog_version,
     catalogCount: kj.catalog_count,
     logoVersion: kj.logo ? kj.logo_version : 0,
@@ -239,10 +278,54 @@ async function heartbeat(env, kj) {
   }
 }
 
+// --- Formules et sessions ----------------------------------------------------
+async function validPacks(env, code, now = Date.now()) {
+  return all(env, `SELECT * FROM kj_packs WHERE code = ? AND sessions_left > 0
+      AND (expires_at = 0 OR expires_at > ?)
+      ORDER BY CASE WHEN expires_at > 0 THEN expires_at ELSE 9007199254740991 END, id`,
+    [code, now]);
+}
+
+async function sessionsSummary(env, kj, now = Date.now()) {
+  const packs = await validPacks(env, kj.code, now);
+  return {
+    sessionUntil: now < (kj.session_until || 0) ? kj.session_until : 0,
+    sessionsLeft: packs.reduce((sum, pack) => sum + pack.sessions_left, 0),
+    packs: packs.map(pack => ({ plan: pack.plan, sessionsLeft: pack.sessions_left,
+      expiresAt: pack.expires_at })),
+  };
+}
+
+async function addPack(env, code, plan, now = Date.now()) {
+  const def = PLANS[plan];
+  const expires = def.afterPurchaseMs ? now + def.afterPurchaseMs : 0;
+  await run(env, `INSERT OR IGNORE INTO kj_packs (code, plan, sessions_left, expires_at, created_at)
+      VALUES (?, ?, ?, ?, ?)`, [code, plan, def.sessions, expires, now]);
+}
+
+// « Démarrer ma soirée » : une session de 8 h (rien n'est décompté si une
+// session est déjà en cours).
+async function startSession(env, kj, now = Date.now()) {
+  if (now < (kj.session_until || 0)) return { started: false, ...(await sessionsSummary(env, kj, now)) };
+  const pack = (await validPacks(env, kj.code, now))[0];
+  if (!pack) return null;
+  let expires = pack.expires_at;
+  if (pack.plan === "weekend" && !expires) expires = now + PLANS.weekend.afterFirstUseMs;
+  const until = now + SESSION_MS;
+  await env.REQUEST_DB.batch([
+    env.REQUEST_DB.prepare("UPDATE kj_packs SET sessions_left = sessions_left - 1, expires_at = ? WHERE id = ?")
+      .bind(expires, pack.id),
+    env.REQUEST_DB.prepare("UPDATE kjs SET session_until = ?, serial = serial + 1 WHERE code = ?")
+      .bind(until, kj.code),
+  ]);
+  return { started: true, ...(await sessionsSummary(env, { ...kj, session_until: until }, now)) };
+}
+
 function profileOf(kj) {
   return {
     code: kj.code, name: kj.name, accepting: kj.accepting === 1,
     allowOffline: kj.allow_offline === 1, offlineRequests: kj.offline_requests === 1,
+    sessionUntil: Date.now() < (kj.session_until || 0) ? kj.session_until : 0,
     catalogVersion: kj.catalog_version,
     catalogCount: kj.catalog_count, logoVersion: kj.logo ? kj.logo_version : 0,
   };
@@ -293,6 +376,16 @@ async function kjCommand(env, request, kj) {
       await run(env, "DELETE FROM kj_requests WHERE code = ?", [kj.code]);
       await bumpSerial(env, kj.code);
       return ok();
+    case "getSessions":
+      return ok({ sessions: await sessionsSummary(env, kj) });
+    case "startSession": {
+      const result = await startSession(env, kj);
+      if (!result) {
+        return json({ command, error: "no session left",
+          sessions: await sessionsSummary(env, kj) }, 402);
+      }
+      return ok({ sessions: result });
+    }
     case "getProfile":
       return ok({ profile: profileOf(kj) });
     case "setProfile": {
@@ -397,6 +490,7 @@ async function adminUpsert(env, request) {
     await run(env, `INSERT INTO kjs (code, email, key_hash, name, active, created_at)
         VALUES (?, ?, ?, ?, ?, ?)`,
       [code, email, keyHash, name || "", active === null ? 1 : active, Date.now()]);
+    await addPack(env, code, "trial");  // 1re session offerte
   } else {
     await run(env, `UPDATE kjs SET key_hash = COALESCE(?, key_hash),
         active = COALESCE(?, active), name = COALESCE(?, name) WHERE code = ?`,
@@ -405,10 +499,32 @@ async function adminUpsert(env, request) {
   return json({ error: "", code, created: !existing });
 }
 
+async function adminSessions(env, request, withPack) {
+  if (!env.KJ_ADMIN_TOKEN || !sameSecret(bearer(request), env.KJ_ADMIN_TOKEN)) {
+    return json({ error: "unauthorized" }, 401);
+  }
+  let data;
+  try {
+    data = await request.json();
+  } catch {
+    return json({ error: "invalid json" }, 400);
+  }
+  const kj = await getKj(env, clean(data.code, 31).toLowerCase());
+  if (!kj) return json({ error: "unknown kj" }, 404);
+  if (withPack) {
+    const plan = clean(data.plan, 20);
+    if (!["day", "weekend", "month"].includes(plan)) return json({ error: "invalid plan" }, 400);
+    await addPack(env, kj.code, plan);
+  }
+  return json({ error: "", code: kj.code, sessions: await sessionsSummary(env, kj) });
+}
+
 export async function handleKj(request, env, url) {
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
   await ensureKjSchema(env);
   if (url.pathname === "/admin/kj" && request.method === "POST") return adminUpsert(env, request);
+  if (url.pathname === "/admin/kj/packs" && request.method === "POST") return adminSessions(env, request, true);
+  if (url.pathname === "/admin/kj/sessions" && request.method === "POST") return adminSessions(env, request, false);
 
   const match = url.pathname.match(/^\/kj\/([^/]+)(?:\/(info|catalog|logo|request))?\/?$/);
   if (!match) return json({ error: "not found" }, 404, CORS);
