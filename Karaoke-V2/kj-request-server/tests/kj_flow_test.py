@@ -63,7 +63,31 @@ check("demande refusée hors ligne", call("POST", f"/kj/{CODE}/request",
       {"artist": "ABBA", "title": "Waterloo", "singer": "Léa"})[0] == 403)
 check("heartbeat", kj("heartbeat")[0] == 200)
 status, info = call("GET", f"/kj/{CODE}/info")
-check("page : KJ en ligne, demandes ouvertes", info["online"] and info["open"] and info["name"] == "DJ Test")
+check("page : KJ en ligne, catalogue ouvert, demandes fermées sans session",
+      info["online"] and info["browse"] and not info["open"] and info["name"] == "DJ Test")
+
+# Formules : 1re session offerte, puis UN WEEKEND / UN MOIS achetés.
+sessions = kj("getSessions")[1]["sessions"]
+check("1re session offerte", sessions["sessionsLeft"] == 1 and sessions["sessionUntil"] == 0)
+status, body = kj("startSession")
+check("soirée démarrée (8 h)", status == 200 and body["sessions"]["started"]
+      and body["sessions"]["sessionsLeft"] == 0
+      and 7.9 * 3600e3 < body["sessions"]["sessionUntil"] - time.time() * 1000 < 8.1 * 3600e3)
+status, body = kj("startSession")
+check("2e clic pendant la soirée : rien de décompté", status == 200 and not body["sessions"]["started"])
+status, info = call("GET", f"/kj/{CODE}/info")
+check("page : demandes ouvertes pendant la session", info["open"] and info["inSession"])
+check("formule refusée sans jeton", call("POST", "/admin/kj/packs", {"code": CODE, "plan": "day"})[0] == 401)
+check("formule inconnue refusée", call("POST", "/admin/kj/packs", {"code": CODE, "plan": "x"}, ADMIN)[0] == 400)
+status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "weekend"}, ADMIN)
+check("UN WEEKEND ajouté (2 sessions, sans date avant la 1re)", status == 200
+      and body["sessions"]["sessionsLeft"] == 2 and body["sessions"]["packs"][0]["expiresAt"] == 0)
+status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "month"}, ADMIN)
+month = [p for p in body["sessions"]["packs"] if p["plan"] == "month"][0]
+check("UN MOIS ajouté (4 sessions, 30 jours)", body["sessions"]["sessionsLeft"] == 6
+      and 29.9 * 86400e3 < month["expiresAt"] - time.time() * 1000 < 30.1 * 86400e3)
+status, body = call("POST", "/admin/kj/sessions", {"code": CODE}, ADMIN)
+check("sessions restantes (karolive.com)", status == 200 and body["sessions"]["sessionsLeft"] == 6)
 
 songs = [{"id": "a1", "artist": "ABBA", "title": "Waterloo"},
          {"id": "a1b", "artist": "abba", "title": "waterloo"},  # doublon (casse)
