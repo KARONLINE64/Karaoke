@@ -881,7 +881,8 @@ const translations = {
     requestSent: 'Demande envoyée avec succès.',
     requestFailed: 'Échec de l\'envoi. Veuillez réessayer.',
     kjUnknown: 'Page de KJ introuvable. Vérifiez le QR code.',
-    welcome2Kj: 'Ou parcourez mon catalogue complet'
+    welcome2Kj: 'Ou parcourez mon catalogue complet',
+    rotatePortrait: 'Tourner le téléphone en mode portrait pour faire une demande.'
   },
   en: {
     searchPlaceholder: 'Search artist or song...',
@@ -909,7 +910,8 @@ const translations = {
     requestSent: 'Request sent successfully.',
     requestFailed: 'Request failed. Please try again.',
     kjUnknown: 'KJ page not found. Please check the QR code.',
-    welcome2Kj: 'Or browse my complete catalogue'
+    welcome2Kj: 'Or browse my complete catalogue',
+    rotatePortrait: 'Turn your phone to portrait mode to make a request.'
   }
 };
 
