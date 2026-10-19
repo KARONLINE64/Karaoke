@@ -66,13 +66,14 @@ status, info = call("GET", f"/kj/{CODE}/info")
 check("page : KJ en ligne, catalogue ouvert, demandes fermées sans session",
       info["online"] and info["browse"] and not info["open"] and info["name"] == "DJ Test")
 
-# Formules : 1re session offerte, puis UN WEEKEND / UN MOIS achetés.
+# Formules : FREE (1 session de 4 h offerte), puis UN WEEKEND / UN MOIS / UN AN achetés.
 sessions = kj("getSessions")[1]["sessions"]
-check("1re session offerte", sessions["sessionsLeft"] == 1 and sessions["sessionUntil"] == 0)
+check("FREE : 1 session offerte", sessions["sessionsLeft"] == 1 and sessions["sessionUntil"] == 0
+      and sessions["lifetime"] is False)
 status, body = kj("startSession")
-check("soirée démarrée (8 h)", status == 200 and body["sessions"]["started"]
+check("session offerte démarrée (4 h)", status == 200 and body["sessions"]["started"]
       and body["sessions"]["sessionsLeft"] == 0
-      and 7.9 * 3600e3 < body["sessions"]["sessionUntil"] - time.time() * 1000 < 8.1 * 3600e3)
+      and 3.9 * 3600e3 < body["sessions"]["sessionUntil"] - time.time() * 1000 < 4.1 * 3600e3)
 status, body = kj("startSession")
 check("2e clic pendant la soirée : rien de décompté", status == 200 and not body["sessions"]["started"])
 status, info = call("GET", f"/kj/{CODE}/info")
@@ -84,10 +85,14 @@ check("UN WEEKEND ajouté (2 sessions, sans date avant la 1re)", status == 200
       and body["sessions"]["sessionsLeft"] == 2 and body["sessions"]["packs"][0]["expiresAt"] == 0)
 status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "month"}, ADMIN)
 month = [p for p in body["sessions"]["packs"] if p["plan"] == "month"][0]
-check("UN MOIS ajouté (4 sessions, 30 jours)", body["sessions"]["sessionsLeft"] == 6
+check("UN MOIS ajouté (8 sessions, 30 jours)", body["sessions"]["sessionsLeft"] == 10
       and 29.9 * 86400e3 < month["expiresAt"] - time.time() * 1000 < 30.1 * 86400e3)
+status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "year"}, ADMIN)
+year = [p for p in body["sessions"]["packs"] if p["plan"] == "year"][0]
+check("UN AN ajouté (96 sessions, 365 jours)", body["sessions"]["sessionsLeft"] == 106
+      and 364.9 * 86400e3 < year["expiresAt"] - time.time() * 1000 < 365.1 * 86400e3)
 status, body = call("POST", "/admin/kj/sessions", {"code": CODE}, ADMIN)
-check("sessions restantes (karolive.com)", status == 200 and body["sessions"]["sessionsLeft"] == 6)
+check("sessions restantes (karolive.com)", status == 200 and body["sessions"]["sessionsLeft"] == 106)
 
 songs = [{"id": "a1", "artist": "ABBA", "title": "Waterloo"},
          {"id": "a1b", "artist": "abba", "title": "waterloo"},  # doublon (casse)
@@ -154,5 +159,20 @@ check("abonnement suspendu : page fermée", not info["active"] and not info["ope
 check("abonnement suspendu : logiciel refusé", kj("heartbeat")[0] == 403)
 call("POST", "/admin/kj", {"code": CODE, "email": "dj@test.fr", "active": True}, ADMIN)
 check("abonnement réactivé : même code, même clé", kj("heartbeat")[0] == 200)
+
+
+# Gratuité à vie (abonnés d'avant les formules) : rien n'est décompté.
+LIFE, LIFE_KEY = CODE + "v", "cle-du-kj-a-vie"
+status, body = call("POST", "/admin/kj", {"code": LIFE, "email": "ami@test.fr", "name": "Ami",
+                                          "keyHash": hashlib.sha256(LIFE_KEY.encode()).hexdigest(),
+                                          "lifetime": True}, ADMIN)
+check("KJ à vie créé", status == 200)
+status, body = call("POST", f"/kj/{LIFE}", {"command": "startSession"}, LIFE_KEY)
+check("KJ à vie : session de 8 h sans décompte", status == 200 and body["sessions"]["lifetime"] is True
+      and body["sessions"]["sessionsLeft"] == 1
+      and 7.9 * 3600e3 < body["sessions"]["sessionUntil"] - time.time() * 1000 < 8.1 * 3600e3)
+call("POST", "/admin/kj", {"code": LIFE, "email": "ami@test.fr", "lifetime": False}, ADMIN)
+status, body = call("POST", f"/kj/{LIFE}", {"command": "getSessions"}, LIFE_KEY)
+check("gratuité à vie retirée", body["sessions"]["lifetime"] is False)
 
 print("TOUT EST OK")

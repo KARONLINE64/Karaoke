@@ -23,8 +23,10 @@
 //   POST /admin/kj/sessions sessions restantes d'un KJ {code}
 //
 // Formules (sessions de 8 h) : UN JOUR (1 session, sans limite), UN WEEKEND
-// (2 sessions, dans les 3 jours après la 1re), UN MOIS (4 sessions, dans les
-// 30 jours après l'achat). La 1re session est offerte à la création du KJ.
+// (2 sessions, dans les 3 jours après la 1re), UN MOIS (8 sessions, dans les
+// 30 jours après l'achat), UN AN (96 sessions, dans les 365 jours). FREE :
+// 1 session de 4 h offerte à la création du KJ. KJ « à vie » (abonnés
+// d'avant les formules) : sessions illimitées, rien n'est décompté.
 // Une session commence quand le KJ clique « Démarrer ma soirée » ; pendant
 // 8 h, sa page accepte les demandes (logiciel ouvert) ; ensuite, plus de
 // demandes jusqu'à la session suivante (la lecture, locale, continue).
@@ -46,11 +48,13 @@ const LOGO_TYPES = ["image/png", "image/jpeg", "image/webp"];
 const SESSION_MS = 8 * 3600 * 1000;
 const DAY_MS = 24 * 3600 * 1000;
 const PLANS = {
-  trial: { sessions: 1 },                             // 1re session offerte
+  trial: { sessions: 1, sessionMs: 4 * 3600 * 1000 },  // FREE : 1 session de 4 h offerte
   day: { sessions: 1 },                               // UN JOUR
   weekend: { sessions: 2, afterFirstUseMs: 3 * DAY_MS },  // UN WEEKEND
-  month: { sessions: 4, afterPurchaseMs: 30 * DAY_MS },   // UN MOIS
+  month: { sessions: 8, afterPurchaseMs: 30 * DAY_MS },   // UN MOIS
+  year: { sessions: 96, afterPurchaseMs: 365 * DAY_MS },  // UN AN
 };
+const PAID_PLANS = ["day", "weekend", "month", "year"];
 
 let schemaReady = false;
 
@@ -123,7 +127,7 @@ async function ensureKjSchema(env) {
     )`),
   ]);
   // Bases créées avant ces options : colonnes ajoutées.
-  for (const column of ["offline_requests", "session_until"]) {
+  for (const column of ["offline_requests", "session_until", "lifetime"]) {
     try {
       await run(env, `ALTER TABLE kjs ADD COLUMN ${column} INTEGER NOT NULL DEFAULT 0`);
     } catch (error) {
@@ -290,6 +294,7 @@ async function sessionsSummary(env, kj, now = Date.now()) {
   const packs = await validPacks(env, kj.code, now);
   return {
     sessionUntil: now < (kj.session_until || 0) ? kj.session_until : 0,
+    lifetime: kj.lifetime === 1,
     sessionsLeft: packs.reduce((sum, pack) => sum + pack.sessions_left, 0),
     packs: packs.map(pack => ({ plan: pack.plan, sessionsLeft: pack.sessions_left,
       expiresAt: pack.expires_at })),
@@ -307,11 +312,16 @@ async function addPack(env, code, plan, now = Date.now()) {
 // session est déjà en cours).
 async function startSession(env, kj, now = Date.now()) {
   if (now < (kj.session_until || 0)) return { started: false, ...(await sessionsSummary(env, kj, now)) };
+  if (kj.lifetime === 1) {  // gratuité à vie : rien n'est décompté
+    const until = now + SESSION_MS;
+    await run(env, "UPDATE kjs SET session_until = ?, serial = serial + 1 WHERE code = ?", [until, kj.code]);
+    return { started: true, ...(await sessionsSummary(env, { ...kj, session_until: until }, now)) };
+  }
   const pack = (await validPacks(env, kj.code, now))[0];
   if (!pack) return null;
   let expires = pack.expires_at;
   if (pack.plan === "weekend" && !expires) expires = now + PLANS.weekend.afterFirstUseMs;
-  const until = now + SESSION_MS;
+  const until = now + (PLANS[pack.plan].sessionMs || SESSION_MS);
   await env.REQUEST_DB.batch([
     env.REQUEST_DB.prepare("UPDATE kj_packs SET sessions_left = sessions_left - 1, expires_at = ? WHERE id = ?")
       .bind(expires, pack.id),
@@ -485,16 +495,18 @@ async function adminUpsert(env, request) {
     ? data.keyHash : null;
   const active = data.active === undefined ? null : (data.active ? 1 : 0);
   const name = data.name === undefined ? null : clean(data.name, 60);
+  const lifetime = data.lifetime === undefined ? null : (data.lifetime ? 1 : 0);
   if (!existing) {
     if (!email || !keyHash) return json({ error: "email and keyHash required" }, 400);
-    await run(env, `INSERT INTO kjs (code, email, key_hash, name, active, created_at)
-        VALUES (?, ?, ?, ?, ?, ?)`,
-      [code, email, keyHash, name || "", active === null ? 1 : active, Date.now()]);
+    await run(env, `INSERT INTO kjs (code, email, key_hash, name, active, lifetime, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [code, email, keyHash, name || "", active === null ? 1 : active, lifetime || 0, Date.now()]);
     await addPack(env, code, "trial");  // 1re session offerte
   } else {
     await run(env, `UPDATE kjs SET key_hash = COALESCE(?, key_hash),
-        active = COALESCE(?, active), name = COALESCE(?, name) WHERE code = ?`,
-      [keyHash, active, name, code]);
+        active = COALESCE(?, active), name = COALESCE(?, name),
+        lifetime = COALESCE(?, lifetime) WHERE code = ?`,
+      [keyHash, active, name, lifetime, code]);
   }
   return json({ error: "", code, created: !existing });
 }
@@ -513,7 +525,7 @@ async function adminSessions(env, request, withPack) {
   if (!kj) return json({ error: "unknown kj" }, 404);
   if (withPack) {
     const plan = clean(data.plan, 20);
-    if (!["day", "weekend", "month"].includes(plan)) return json({ error: "invalid plan" }, 400);
+    if (!PAID_PLANS.includes(plan)) return json({ error: "invalid plan" }, 400);
     await addPack(env, kj.code, plan);
   }
   return json({ error: "", code: kj.code, sessions: await sessionsSummary(env, kj) });
