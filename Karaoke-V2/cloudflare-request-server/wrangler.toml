@@ -1,14 +1,10 @@
-# Serveur des demandes du KJ propriétaire (KaroliveBox Master / OpenKJ).
-# Mise en ligne : deployer.ps1 (DEPLOYER.bat).
 name = "cloudflare-request-server"
 main = "src/index.js"
 compatibility_date = "2025-10-01"
-# Les réglages faits dans le tableau de bord Cloudflare (ALLOWED_ORIGINS,
-# jetons) sont conservés.
-keep_vars = true
+type = "javascript"
+d1_databases = [
+  { binding = "REQUEST_DB", database_name = "requests" }
+]
 
-[[d1_databases]]
-binding = "REQUEST_DB"
-database_name = "requests"
-# Rempli automatiquement par deployer.ps1 (base existante « requests »).
-database_id = "A_REMPLIR_PAR_DEPLOYER"
+[vars]
+ALLOWED_ORIGINS = "http://127.0.0.1:5500"
