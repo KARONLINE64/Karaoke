@@ -48,10 +48,6 @@ const requestBtn = document.getElementById("requestBtn");
 
 const offlineToast = document.getElementById("offlineToast");
 const SERVICE_STATUS_URL = "https://cloudflare-request-server.amkoud.workers.dev/status";
-// Catalogue publié par KaroliveBox Master : remplace songs.json dès qu'il
-// existe, et se recharge quand sa version change (bibliothèque modifiée).
-const OWNER_CATALOG_URL = "https://cloudflare-request-server.amkoud.workers.dev/catalog";
-let ownerCatalogVersion = 0;
 const SERVICE_CHECK_INTERVAL_MS = 10000;
 const OFFLINE_TOAST_DURATION_MS = 4000;
 
@@ -67,14 +63,6 @@ async function checkServiceOnline() {
   try {
     const res = await fetch(SERVICE_STATUS_URL);
     const data = await res.json();
-    const version = data && Number(data.catalogVersion) || 0;
-    if (version > 0 && version !== ownerCatalogVersion) {
-      ownerCatalogVersion = version;
-      fetch(`${OWNER_CATALOG_URL}?v=${version}`, { cache: "no-store" })
-        .then(response => response.json())
-        .then(list => { if (Array.isArray(list) && list.length) setSongs(list); })
-        .catch(error => console.error("[catalog] Owner catalogue load failed", error));
-    }
     return data && data.online === true;
   } catch (error) {
     console.log("[status] Cannot reach status endpoint, treating as offline");
@@ -521,8 +509,7 @@ if (KJ_MODE) {
   fetch("songs.json")
     .then(response => response.json())
     .then(data => {
-      // Catalogue de Master déjà chargé : il a priorité sur songs.json.
-      if (!ownerCatalogVersion || !songs.length) setSongs(data);
+      setSongs(data);
       showHome();
     });
 }

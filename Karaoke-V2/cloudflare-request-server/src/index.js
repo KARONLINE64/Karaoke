@@ -1,11 +1,6 @@
 const parseAllowedOrigins = value => String(value || "http://127.0.0.1:5500").split(",").map(s => s.trim()).filter(Boolean);
 
 const HEARTBEAT_TIMEOUT_MS = 12000;
-// Catalogue publié par KaroliveBox Master (commande « setCatalog ») : la page
-// le recharge dès que sa version (dans /status) change. Découpé en parts
-// (taille limitée d'une valeur D1).
-const CATALOG_PART_CHARS = 800000;
-const MAX_CATALOG_SONGS = 100000;
 const NTFY_TOPIC = "floribar-karaoke-req-af0ae747";
 
 const notifyNewRequest = async (env, artist, title, singer) => {
@@ -62,11 +57,6 @@ const initSchema = async env => {
   await dbRun(env, `CREATE TABLE IF NOT EXISTS meta (
     key TEXT PRIMARY KEY,
     value TEXT NOT NULL
-  )`);
-
-  await dbRun(env, `CREATE TABLE IF NOT EXISTS catalog (
-    part INTEGER PRIMARY KEY,
-    data TEXT NOT NULL
   )`);
 
   const serialRow = await dbGet(env, `SELECT value FROM meta WHERE key = ?`, ["serial"]);
@@ -133,40 +123,6 @@ const isOnline = async env => {
   }
   return Date.now() - lastHeartbeat < HEARTBEAT_TIMEOUT_MS;
 };
-
-const cleanText = (value, max) => (typeof value === "string" ? value.trim().slice(0, max) : "");
-
-const setCatalog = async (env, songs) => {
-  const seen = new Set();
-  const list = [];
-  for (const song of Array.isArray(songs) ? songs : []) {
-    const artist = cleanText(song && song.artist, 200);
-    const title = cleanText(song && song.title, 200);
-    const key = `${artist.toLowerCase()}|${title.toLowerCase()}`;
-    if (!title || seen.has(key)) continue;
-    seen.add(key);
-    list.push({ artist, title });
-    if (list.length >= MAX_CATALOG_SONGS) break;
-  }
-  const text = JSON.stringify(list);
-  const statements = [env.REQUEST_DB.prepare("DELETE FROM catalog")];
-  for (let i = 0, part = 0; i < text.length; i += CATALOG_PART_CHARS, part += 1) {
-    statements.push(env.REQUEST_DB.prepare("INSERT INTO catalog(part, data) VALUES(?, ?)")
-      .bind(part, text.slice(i, i + CATALOG_PART_CHARS)));
-  }
-  statements.push(env.REQUEST_DB.prepare("INSERT OR REPLACE INTO meta(key, value) VALUES(?, ?)")
-    .bind("catalog_version", String(Date.now())));
-  await env.REQUEST_DB.batch(statements);
-  return list.length;
-};
-
-const getCatalogText = async env => {
-  const rows = await dbAll(env, "SELECT data FROM catalog ORDER BY part");
-  const text = (rows.results || []).map(row => row.data).join("");
-  return text || "[]";
-};
-
-const getCatalogVersion = async env => parseInt(await getMetaValue(env, "catalog_version"), 10) || 0;
 
 const generateRequestId = () => {
   if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
@@ -273,10 +229,6 @@ const handleOpenKjCommand = async (env, data, corsHeaders) => {
       await incrementSerial(env);
       return jsonResponse({ command: "deleteRequest", error: "", request_id }, 200, corsHeaders);
     }
-    case "setCatalog": {
-      const count = await setCatalog(env, data.songs);
-      return jsonResponse({ command: "setCatalog", error: "", count }, 200, corsHeaders);
-    }
     case "addSongs":
       return jsonResponse({ command: "addSongs", error: "" }, 200, corsHeaders);
     case "clearDatabase":
@@ -347,15 +299,7 @@ export default {
     if (request.method === "GET" && url.pathname === "/status") {
       const online = await isOnline(env);
       const lastNotifyResult = await getMetaValue(env, "last_notify_result");
-      const catalogVersion = await getCatalogVersion(env);
-      return jsonResponse({ online, lastNotifyResult, catalogVersion }, 200, corsHeaders);
-    }
-
-    if (request.method === "GET" && url.pathname === "/catalog") {
-      return new Response(await getCatalogText(env), {
-        status: 200,
-        headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...corsHeaders }
-      });
+      return jsonResponse({ online, lastNotifyResult }, 200, corsHeaders);
     }
 
     if (request.method === "POST" && url.pathname === "/") {
