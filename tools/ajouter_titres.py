@@ -111,7 +111,8 @@ def ask_yes_no(question: str) -> bool:
 
 def main() -> int:
     print("=== Ajouter des titres au catalogue de la page karaoké ===\n")
-    if not git("pull", "--ff-only", "-q"):
+    # --rebase : un ajout resté sur ce PC passe après les nouveautés de GitHub.
+    if not git("pull", "--rebase", "-q"):
         print("\nARRÊT : impossible de récupérer la dernière version (git pull).")
         return 1
     pending = unpublished_commits()
