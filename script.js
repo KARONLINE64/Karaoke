@@ -621,12 +621,7 @@ const requestCatalogFiles = [
   "francais.json",
   "nederlands.json",
   "italiano.json",
-  "español.json",
-  "newenglish.json",
-  "newfrancais.json",
-  "newnederlands.json",
-  "newitaliano.json",
-  "newespañol.json"
+  "español.json"
 ];
 
 async function buildRequestSongIndex() {
