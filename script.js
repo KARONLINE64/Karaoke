@@ -476,7 +476,7 @@ async function loadLanguage(file) {
     return;
   }
 
-  const response = await fetch(file);
+  const response = await fetch(file, { cache: "no-cache" });
   const data = await response.json();
   catalogCache[file] = data;
   currentSongs = data;
@@ -497,6 +497,11 @@ function setSongs(data) {
   }));
 }
 
+// Page du KJ propriétaire : songs.json et les catalogues par langue relus
+// toutes les 3 minutes ; mis à jour seulement s'ils ont changé.
+const SONGS_REFRESH_MS = 3 * 60 * 1000;
+let songsJsonText = "";
+
 if (KJ_MODE) {
   // Logo masqué jusqu'à savoir s'il faut celui du KJ ou celui par défaut.
   const kjLogo = document.getElementById("logo");
@@ -507,11 +512,32 @@ if (KJ_MODE) {
   showHome();
 } else {
   fetch("songs.json")
-    .then(response => response.json())
-    .then(data => {
-      setSongs(data);
+    .then(response => response.text())
+    .then(text => {
+      songsJsonText = text;
+      setSongs(JSON.parse(text));
       showHome();
     });
+  // Titres ajoutés (AJOUTER_TITRES) : la page ouverte se met à jour seule,
+  // sans que le client ait à la recharger.
+  setInterval(refreshSongsJson, SONGS_REFRESH_MS);
+}
+
+async function refreshSongsJson() {
+  try {
+    const response = await fetch(`songs.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) return;
+    const text = await response.text();
+    if (!text || text === songsJsonText) return;
+    const data = JSON.parse(text);
+    if (!Array.isArray(data) || !data.length) return;
+    songsJsonText = text;
+    setSongs(data);
+    // Catalogues par langue et liste des demandes : relus au prochain affichage.
+    for (const file of Object.keys(catalogCache)) delete catalogCache[file];
+  } catch (error) {
+    console.log("[catalog] songs.json refresh failed", error);
+  }
 }
 
 search.addEventListener("input", function () {
@@ -645,7 +671,7 @@ async function buildRequestSongIndex() {
       if (catalogCache[file]) return catalogCache[file];
 
       try {
-        const response = await fetch(file);
+        const response = await fetch(file, { cache: "no-cache" });
         if (!response.ok) return [];
         const data = await response.json();
         catalogCache[file] = data;
