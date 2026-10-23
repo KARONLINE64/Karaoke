@@ -55,6 +55,26 @@ def insert_sorted(songs: list[dict], song: dict) -> None:
     songs.append(song)
 
 
+# Lignes de l'affichage de l'outil, collées par erreur avec les titres.
+TOOL_MESSAGES = ("format attendu", "titre(s) à ajouter", "publier sur la page", "langue",
+                 "tapez un titre", "ligne vide", "annulé", "publié", "appuyez sur")
+
+
+def clean_line(line: str) -> str | None:
+    """Ligne tapée ou collée → « Artiste - Titre », ou None si ce n'est pas
+    un titre (message de l'outil copié avec le reste)."""
+    line = line.strip()
+    while line[:1] in (">", "✓", "=", "✗", "•"):
+        line = line[1:].strip()
+    lower = line.casefold()
+    if lower.startswith("déjà dans le catalogue :"):
+        line = line.split(":", 1)[1].strip()
+        lower = line.casefold()
+    if any(message in lower for message in TOOL_MESSAGES):
+        return None
+    return line
+
+
 def parse_line(line: str) -> dict | None:
     """« Artiste - Titre » (le premier « - » entouré d'espaces sépare)."""
     artist, sep, title = line.partition(" - ")
@@ -68,11 +88,39 @@ def git(*args: str) -> bool:
     return subprocess.run(["git", *args], cwd=ROOT).returncode == 0
 
 
+def unpublished_commits() -> int:
+    """Ajouts enregistrés sur ce PC mais pas encore envoyés sur GitHub
+    (ex. première connexion à GitHub interrompue)."""
+    result = subprocess.run(["git", "rev-list", "--count", "@{u}..HEAD"], cwd=ROOT,
+                            capture_output=True, text=True)
+    try:
+        return int(result.stdout.strip() or 0)
+    except ValueError:
+        return 0
+
+
+def ask_yes_no(question: str) -> bool:
+    while True:
+        answer = input(question).strip().upper()
+        if answer in ("O", "OUI", "Y", "YES"):
+            return True
+        if answer in ("N", "NON", "NO"):
+            return False
+        print("   Répondez O (oui) ou N (non).")
+
+
 def main() -> int:
     print("=== Ajouter des titres au catalogue de la page karaoké ===\n")
     if not git("pull", "--ff-only", "-q"):
         print("\nARRÊT : impossible de récupérer la dernière version (git pull).")
         return 1
+    pending = unpublished_commits()
+    if pending:
+        print(f"Envoi sur GitHub de {pending} ajout(s) resté(s) sur ce PC...")
+        if not git("push", "-q"):
+            print("\nARRÊT : envoi sur GitHub impossible. Envoyez ce message à Claude.")
+            return 1
+        print("Envoyé : la page sera à jour d'ici quelques minutes.\n")
     print("Langue des titres :")
     for code, (label, _file) in LANGUAGES.items():
         print(f"  {code} = {label}")
@@ -89,9 +137,12 @@ def main() -> int:
     known = {song_key(s) for s in all_songs} | {song_key(s) for s in lang_songs}
     added: list[dict] = []
     while True:
-        line = input("> ").strip()
-        if not line:
+        raw = input("> ")
+        if not raw.strip():
             break
+        line = clean_line(raw)
+        if line is None or line.upper() in LANGUAGES:
+            continue  # message de l'outil ou code de langue collé : ignoré
         song = parse_line(line)
         if song is None:
             print("   ✗ format attendu : Artiste - Titre (avec un tiret entouré d'espaces)")
@@ -109,7 +160,7 @@ def main() -> int:
     print(f"\n{len(added)} titre(s) à ajouter en {label} :")
     for song in added:
         print(f"   {song['artist']} - {song['title']}")
-    if input("\nPublier sur la page maintenant ? (O/N) ").strip().upper() not in ("O", "OUI", "Y"):
+    if not ask_yes_no("\nPublier sur la page maintenant ? (O/N) "):
         print("Annulé : rien n'a été modifié.")
         return 0
 
