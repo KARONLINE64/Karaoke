@@ -506,8 +506,11 @@ if (KJ_MODE) {
   // Logo masqué jusqu'à savoir s'il faut celui du KJ ou celui par défaut.
   const kjLogo = document.getElementById("logo");
   if (kjLogo) kjLogo.style.visibility = "hidden";
+  // « Powered by karolive.com » en bas de la page : masqué pendant la phase
+  // de test gratuite. À remettre à true au lancement.
+  const SHOW_POWERED_BY = false;
   const powered = document.getElementById("poweredBy");
-  if (powered) powered.classList.remove("hidden");
+  if (powered && SHOW_POWERED_BY) powered.classList.remove("hidden");
   document.body.classList.add("kj-page");
   showHome();
 } else {
