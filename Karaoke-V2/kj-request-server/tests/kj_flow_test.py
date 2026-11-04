@@ -1,16 +1,21 @@
 """Test de bout en bout des espaces KJ, contre le serveur lancé en local :
 
-    npx wrangler dev --local --port 8787   (var : KJ_ADMIN_TOKEN)
+    npx wrangler dev --local --port 8787   (var : KJ_ADMIN_TOKEN, fichier .dev.vars)
     python tests/kj_flow_test.py http://localhost:8787 admin-secret
 """
 import hashlib
 import json
+import os
+import subprocess
 import sys
 import time
 import urllib.error
 import urllib.request
 
 BASE, ADMIN = sys.argv[1].rstrip("/"), sys.argv[2]
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Rab de 2 h : testé seulement contre « wrangler dev --local » (base locale).
+LOCAL_DB = BASE.startswith("http://localhost") or BASE.startswith("http://127.0.0.1")
 CODE = f"djtest{int(time.time()) % 100000}"
 KEY = "cle-secrete-du-kj"
 
@@ -152,13 +157,43 @@ requests = kj("getRequests")[1]["requests"]
 check("demande hors soirée gardée et marquée", len(requests) == 1 and requests[0]["offline"] == 1)
 kj("clearRequests")
 
-# Abonnement suspendu : page fermée, logiciel refusé, même code (QR inchangé).
+# Fin de soirée : 2 h de rab, page ouverte comme pendant la soirée.
+# (date de fin de soirée modifiée directement dans la base locale)
+def set_session_until(ms):
+    subprocess.run(["npx", "wrangler", "d1", "execute", "karolive-kj", "--local", "--command",
+                    f"UPDATE kjs SET session_until = {int(ms)} WHERE code = '{CODE}'"],
+                   check=True, capture_output=True, cwd=HERE, shell=(os.name == "nt"))
+
+
+if LOCAL_DB:
+    kj("setAccepting", accepting=True)
+    kj("heartbeat")
+    set_session_until(time.time() * 1000 - 3600e3)  # soirée finie il y a 1 h
+    info = call("GET", f"/kj/{CODE}/info")[1]
+    check("rab de 2 h : demandes encore ouvertes", info["open"] and info["inGrace"] and not info["inSession"])
+    sessions = kj("getSessions")[1]["sessions"]
+    check("rab de 2 h : fin du rab donnée au logiciel", sessions["sessionUntil"] == 0
+          and 0.9 * 3600e3 < sessions["graceUntil"] - time.time() * 1000 < 1.1 * 3600e3)
+    set_session_until(time.time() * 1000 - 3 * 3600e3)  # soirée finie il y a 3 h
+    info = call("GET", f"/kj/{CODE}/info")[1]
+    check("après le rab : demandes fermées", not info["open"] and not info["inGrace"])
+    check("après le rab : plus de date de rab", kj("getSessions")[1]["sessions"]["graceUntil"] == 0)
+    set_session_until(time.time() * 1000 - 3600e3)  # de nouveau dans le rab
+
+# Abonnement suspendu (désabonnement) : page fermée et VIDE, logiciel refusé,
+# rab supprimé, demandes effacées ; même code (QR inchangé).
+check("demande avant désabonnement", call("POST", f"/kj/{CODE}/request",
+      {"artist": "Queen", "title": "We Will Rock You", "singer": "Ana"})[0] in (200, 403))
 call("POST", "/admin/kj", {"code": CODE, "email": "dj@test.fr", "active": False}, ADMIN)
 info = call("GET", f"/kj/{CODE}/info")[1]
 check("abonnement suspendu : page fermée", not info["active"] and not info["open"] and not info["browse"])
+check("abonnement suspendu : page vide (aucun catalogue)", info["catalogCount"] == 0
+      and call("GET", f"/kj/{CODE}/catalog")[1] == [] and not info["inGrace"])
 check("abonnement suspendu : logiciel refusé", kj("heartbeat")[0] == 403)
 call("POST", "/admin/kj", {"code": CODE, "email": "dj@test.fr", "active": True}, ADMIN)
 check("abonnement réactivé : même code, même clé", kj("heartbeat")[0] == 200)
+check("abonnement réactivé : demandes d'avant effacées, pas de rab",
+      kj("getRequests")[1]["requests"] == [] and kj("getSessions")[1]["sessions"]["graceUntil"] == 0)
 
 
 # Gratuité à vie (abonnés d'avant les formules) : rien n'est décompté.

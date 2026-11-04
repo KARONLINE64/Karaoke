@@ -28,8 +28,8 @@
 // 1 session de 4 h offerte à la création du KJ. KJ « à vie » (abonnés
 // d'avant les formules) : sessions illimitées, rien n'est décompté.
 // Une session commence quand le KJ clique « Démarrer ma soirée » ; pendant
-// 8 h, sa page accepte les demandes (logiciel ouvert) ; ensuite, plus de
-// demandes jusqu'à la session suivante (la lecture, locale, continue).
+// 8 h, sa page accepte les demandes (logiciel ouvert), puis encore 2 h de rab
+// (GRACE_MS) ; ensuite, plus de demandes jusqu'à la session suivante.
 
 const CODE_RE = /^[a-z0-9][a-z0-9-]{1,30}$/;
 // Le KJ est « en ligne » si son logiciel s'est signalé depuis moins de 35 s.
@@ -46,6 +46,10 @@ const MAX_CATALOG_SONGS = 100000;
 const CATALOG_PART_CHARS = 800000;
 const LOGO_TYPES = ["image/png", "image/jpeg", "image/webp"];
 const SESSION_MS = 8 * 3600 * 1000;
+// Fin de soirée : 2 h de rab (geste commercial, le temps de racheter une
+// session) pendant lesquelles la page reste ouverte comme pendant la soirée,
+// selon les réglages du KJ. Jamais pour un KJ désabonné (active = 0).
+const GRACE_MS = 2 * 3600 * 1000;
 const DAY_MS = 24 * 3600 * 1000;
 const PLANS = {
   trial: { sessions: 1, sessionMs: 4 * 3600 * 1000 },  // FREE : 1 session de 4 h offerte
@@ -171,16 +175,18 @@ function status(kj, now = Date.now()) {
   const online = now - kj.last_heartbeat < ONLINE_MS;
   const active = kj.active === 1;
   const inSession = now < (kj.session_until || 0);
+  const inGrace = !inSession && (kj.session_until || 0) > 0 && now < kj.session_until + GRACE_MS;
   return {
     online,
     inSession,
+    inGrace,
     // Catalogue consultable : logiciel ouvert, ou option « catalogue hors soirée ».
     browse: active && (online || kj.allow_offline === 1),
     // Demandes acceptées : case « Accepter les demandes » cochée, et logiciel
     // ouvert pendant une session (soirée de 8 h), ou logiciel fermé avec
     // l'option « demandes hors soirée » (avec le catalogue).
     open: active && kj.accepting === 1
-      && ((online && inSession)
+      && ((online && (inSession || inGrace))
         || (!online && kj.allow_offline === 1 && kj.offline_requests === 1)),
   };
 }
@@ -210,13 +216,19 @@ async function publicInfo(kj) {
     allowOffline: kj.allow_offline === 1,
     offlineRequests: kj.offline_requests === 1,
     inSession: s.inSession,
-    catalogVersion: kj.catalog_version,
-    catalogCount: kj.catalog_count,
+    inGrace: s.inGrace,
+    // KJ désabonné : page vide (aucun catalogue).
+    catalogVersion: kj.active === 1 ? kj.catalog_version : 0,
+    catalogCount: kj.active === 1 ? kj.catalog_count : 0,
     logoVersion: kj.logo ? kj.logo_version : 0,
   }, 200, { ...CORS, "Cache-Control": "no-store" });
 }
 
 async function publicCatalog(env, kj) {
+  if (kj.active !== 1) {
+    return new Response("[]", { headers: { ...CORS, "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-store" } });
+  }
   const parts = await all(env, "SELECT data FROM kj_catalog WHERE code = ? ORDER BY part", [kj.code]);
   const body = parts.length ? parts.map(p => p.data).join("") : "[]";
   return new Response(body, {
@@ -294,6 +306,9 @@ async function sessionsSummary(env, kj, now = Date.now()) {
   const packs = await validPacks(env, kj.code, now);
   return {
     sessionUntil: now < (kj.session_until || 0) ? kj.session_until : 0,
+    // Fin du rab de 2 h après la dernière soirée (0 s'il est passé).
+    graceUntil: (kj.session_until || 0) > 0 && now < kj.session_until + GRACE_MS
+      ? kj.session_until + GRACE_MS : 0,
     lifetime: kj.lifetime === 1,
     sessionsLeft: packs.reduce((sum, pack) => sum + pack.sessions_left, 0),
     packs: packs.map(pack => ({ plan: pack.plan, sessionsLeft: pack.sessions_left,
@@ -503,10 +518,14 @@ async function adminUpsert(env, request) {
       [code, email, keyHash, name || "", active === null ? 1 : active, lifetime || 0, Date.now()]);
     await addPack(env, code, "trial");  // 1re session offerte
   } else {
+    // Désabonnement (active = 0) : soirée et rab arrêtés, demandes effacées.
     await run(env, `UPDATE kjs SET key_hash = COALESCE(?, key_hash),
         active = COALESCE(?, active), name = COALESCE(?, name),
-        lifetime = COALESCE(?, lifetime) WHERE code = ?`,
-      [keyHash, active, name, lifetime, code]);
+        lifetime = COALESCE(?, lifetime),
+        session_until = CASE WHEN ? = 0 THEN 0 ELSE session_until END,
+        serial = serial + 1 WHERE code = ?`,
+      [keyHash, active, name, lifetime, active, code]);
+    if (active === 0) await run(env, "DELETE FROM kj_requests WHERE code = ?", [code]);
   }
   return json({ error: "", code, created: !existing });
 }
