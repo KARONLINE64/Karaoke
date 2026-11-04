@@ -157,28 +157,69 @@ requests = kj("getRequests")[1]["requests"]
 check("demande hors soirée gardée et marquée", len(requests) == 1 and requests[0]["offline"] == 1)
 kj("clearRequests")
 
-# Fin de soirée : 2 h de rab, page ouverte comme pendant la soirée.
-# (date de fin de soirée modifiée directement dans la base locale)
-def set_session_until(ms):
-    subprocess.run(["npx", "wrangler", "d1", "execute", "karolive-kj", "--local", "--command",
-                    f"UPDATE kjs SET session_until = {int(ms)} WHERE code = '{CODE}'"],
+# Session = 8 h d'UTILISATION dans les 24 h, pause logiciel fermé, rab de 2 h.
+# (état de la session modifié directement dans la base locale)
+def sql(statement):
+    subprocess.run(["npx", "wrangler", "d1", "execute", "karolive-kj", "--local", "--command", statement],
                    check=True, capture_output=True, cwd=HERE, shell=(os.name == "nt"))
 
 
+def set_session(start_ago_h, used_h, beat_ago_s=5, done_ago_h=None, length_h=8):
+    now = int(time.time() * 1000)
+    done = 0 if done_ago_h is None else now - int(done_ago_h * 3600e3)
+    sql(f"UPDATE kjs SET session_start = {now - int(start_ago_h * 3600e3)}, "
+        f"session_length = {int(length_h * 3600e3)}, session_used = {int(used_h * 3600e3)}, "
+        f"session_beat = {now - beat_ago_s * 1000}, session_done = {done}, "
+        f"last_heartbeat = {now - 20000} "  # logiciel en ligne, prochain signal enregistré
+        f"WHERE code = '{CODE}'")
+
+
+def session():
+    return kj("getSessions")[1]["sessions"]
+
+
+H = 3600e3
 if LOCAL_DB:
     kj("setAccepting", accepting=True)
+    set_session(start_ago_h=3, used_h=1, beat_ago_s=600)  # logiciel fermé 10 min
     kj("heartbeat")
-    set_session_until(time.time() * 1000 - 3600e3)  # soirée finie il y a 1 h
+    check("logiciel rouvert après une fermeture : pause, rien de compté",
+          abs(session()["sessionRemaining"] - 7 * H) < 2000)
     info = call("GET", f"/kj/{CODE}/info")[1]
-    check("rab de 2 h : demandes encore ouvertes", info["open"] and info["inGrace"] and not info["inSession"])
-    sessions = kj("getSessions")[1]["sessions"]
-    check("rab de 2 h : fin du rab donnée au logiciel", sessions["sessionUntil"] == 0
-          and 0.9 * 3600e3 < sessions["graceUntil"] - time.time() * 1000 < 1.1 * 3600e3)
-    set_session_until(time.time() * 1000 - 3 * 3600e3)  # soirée finie il y a 3 h
+    check("session en cours : demandes ouvertes", info["open"] and info["inSession"])
+    sql(f"UPDATE kjs SET session_beat = {int(time.time() * 1000) - 20000}, "
+        f"last_heartbeat = {int(time.time() * 1000) - 20000} "
+        f"WHERE code = '{CODE}'")
+    kj("heartbeat")
+    remaining = session()["sessionRemaining"]
+    check("logiciel ouvert : le temps est décompté", 7 * H - 25000 < remaining < 7 * H - 15000)
+    check("fin prévue = maintenant + durée restante",
+          abs(session()["sessionUntil"] - time.time() * 1000 - remaining) < 5000)
+    kj("heartbeat", usedMs=int(3 * H))
+    check("compte du logiciel plus grand (connexion coupée) : retenu",
+          abs(session()["sessionRemaining"] - 5 * H) < 2000)
+    kj("heartbeat", usedMs=int(0.5 * H))
+    check("compte du logiciel plus petit : ignoré", abs(session()["sessionRemaining"] - 5 * H) < 25000)
+    check("« Démarrer ma soirée » pendant la session : rien de décompté",
+          kj("startSession")[1]["sessions"]["started"] is False)
+
+    set_session(start_ago_h=25, used_h=2)  # fenêtre de 24 h dépassée il y a 1 h
+    info = call("GET", f"/kj/{CODE}/info")[1]
+    check("24 h dépassées : session finie, rab de 2 h", not info["inSession"] and info["inGrace"] and info["open"])
+    check("rab : fin donnée au logiciel", session()["sessionUntil"] == 0
+          and 0.9 * H < session()["graceUntil"] - time.time() * 1000 < 1.1 * H)
+    set_session(start_ago_h=27, used_h=2)
     info = call("GET", f"/kj/{CODE}/info")[1]
     check("après le rab : demandes fermées", not info["open"] and not info["inGrace"])
-    check("après le rab : plus de date de rab", kj("getSessions")[1]["sessions"]["graceUntil"] == 0)
-    set_session_until(time.time() * 1000 - 3600e3)  # de nouveau dans le rab
+    set_session(start_ago_h=10, used_h=8, done_ago_h=0.5)  # 8 h utilisées il y a 30 min
+    info = call("GET", f"/kj/{CODE}/info")[1]
+    check("8 h utilisées : rab de 2 h", not info["inSession"] and info["inGrace"]
+          and 1.4 * H < session()["graceUntil"] - time.time() * 1000 < 1.6 * H)
+    set_session(start_ago_h=1, used_h=7.999, beat_ago_s=10)
+    kj("heartbeat")
+    check("dernières secondes consommées : session finie, rab commence",
+          session()["sessionRemaining"] == 0 and session()["graceUntil"] > 0)
+    set_session(start_ago_h=1, used_h=1)  # de nouveau en session
 
 # Abonnement suspendu (désabonnement) : page fermée et VIDE, logiciel refusé,
 # rab supprimé, demandes effacées ; même code (QR inchangé).
@@ -192,8 +233,9 @@ check("abonnement suspendu : page vide (aucun catalogue)", info["catalogCount"] 
 check("abonnement suspendu : logiciel refusé", kj("heartbeat")[0] == 403)
 call("POST", "/admin/kj", {"code": CODE, "email": "dj@test.fr", "active": True}, ADMIN)
 check("abonnement réactivé : même code, même clé", kj("heartbeat")[0] == 200)
-check("abonnement réactivé : demandes d'avant effacées, pas de rab",
-      kj("getRequests")[1]["requests"] == [] and kj("getSessions")[1]["sessions"]["graceUntil"] == 0)
+check("abonnement réactivé : demandes d'avant effacées, ni session ni rab",
+      kj("getRequests")[1]["requests"] == [] and kj("getSessions")[1]["sessions"]["graceUntil"] == 0
+      and kj("getSessions")[1]["sessions"]["sessionRemaining"] == 0)
 
 
 # Gratuité à vie (abonnés d'avant les formules) : rien n'est décompté.

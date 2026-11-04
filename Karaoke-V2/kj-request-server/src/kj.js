@@ -27,9 +27,14 @@
 // 30 jours après l'achat), UN AN (96 sessions, dans les 365 jours). FREE :
 // 1 session de 4 h offerte à la création du KJ. KJ « à vie » (abonnés
 // d'avant les formules) : sessions illimitées, rien n'est décompté.
-// Une session commence quand le KJ clique « Démarrer ma soirée » ; pendant
-// 8 h, sa page accepte les demandes (logiciel ouvert), puis encore 2 h de rab
-// (GRACE_MS) ; ensuite, plus de demandes jusqu'à la session suivante.
+// Une session commence quand le KJ clique « Démarrer ma soirée » : 8 h
+// d'UTILISATION (logiciel ouvert), à consommer dans les 24 h (SESSION_WINDOW_MS).
+// Logiciel fermé (ou planté) : le compteur est en pause, il reprend sur la
+// durée restante. Décocher « Accepter les demandes » ne met PAS en pause.
+// Le logiciel envoie aussi son propre compte (usedMs) avec chaque signal de
+// vie : le plus grand des deux est retenu (connexion coupée : aucun gain).
+// Puis 2 h de rab (GRACE_MS) ; ensuite, plus de demandes jusqu'à la session
+// suivante.
 
 const CODE_RE = /^[a-z0-9][a-z0-9-]{1,30}$/;
 // Le KJ est « en ligne » si son logiciel s'est signalé depuis moins de 35 s.
@@ -50,6 +55,10 @@ const SESSION_MS = 8 * 3600 * 1000;
 // session) pendant lesquelles la page reste ouverte comme pendant la soirée,
 // selon les réglages du KJ. Jamais pour un KJ désabonné (active = 0).
 const GRACE_MS = 2 * 3600 * 1000;
+const SESSION_WINDOW_MS = 24 * 3600 * 1000;
+// Écart entre deux signaux de vie au-delà duquel le logiciel était fermé :
+// ce temps-là n'est pas compté (pause).
+const PAUSE_GAP_MS = 60 * 1000;
 const DAY_MS = 24 * 3600 * 1000;
 const PLANS = {
   trial: { sessions: 1, sessionMs: 4 * 3600 * 1000 },  // FREE : 1 session de 4 h offerte
@@ -131,7 +140,8 @@ async function ensureKjSchema(env) {
     )`),
   ]);
   // Bases créées avant ces options : colonnes ajoutées.
-  for (const column of ["offline_requests", "session_until", "lifetime"]) {
+  for (const column of ["offline_requests", "session_until", "lifetime", "session_start",
+    "session_length", "session_used", "session_beat", "session_done"]) {
     try {
       await run(env, `ALTER TABLE kjs ADD COLUMN ${column} INTEGER NOT NULL DEFAULT 0`);
     } catch (error) {
@@ -171,11 +181,31 @@ function parseKey(value) {
   return Number.isNaN(parsed) || parsed < -12 || parsed > 12 ? null : parsed;
 }
 
+// --- Session : 8 h d'utilisation dans une fenêtre de 24 h -------------------
+function sessionState(kj, now = Date.now()) {
+  const start = kj.session_start || 0;
+  if (!start) {
+    // Sessions démarrées avant ce compteur : 8 h d'horloge (session_until).
+    const until = kj.session_until || 0;
+    const inSession = now < until;
+    return { inSession, remaining: inSession ? until - now : 0, windowEnd: until,
+      endedAt: until, length: 0, used: 0 };
+  }
+  const length = kj.session_length || SESSION_MS;
+  const used = Math.min(kj.session_used || 0, length);
+  const windowEnd = start + SESSION_WINDOW_MS;
+  const inSession = now < windowEnd && used < length;
+  // Fin de la session : 8 h utilisées, sinon fin de la fenêtre de 24 h.
+  const endedAt = used >= length ? (kj.session_done || now) : windowEnd;
+  return { inSession, remaining: inSession ? length - used : 0, windowEnd, endedAt, length, used };
+}
+
 function status(kj, now = Date.now()) {
   const online = now - kj.last_heartbeat < ONLINE_MS;
   const active = kj.active === 1;
-  const inSession = now < (kj.session_until || 0);
-  const inGrace = !inSession && (kj.session_until || 0) > 0 && now < kj.session_until + GRACE_MS;
+  const session = sessionState(kj, now);
+  const inSession = session.inSession;
+  const inGrace = !inSession && session.endedAt > 0 && now < session.endedAt + GRACE_MS;
   return {
     online,
     inSession,
@@ -287,11 +317,24 @@ async function authorizeKj(env, request, kj) {
   return null;
 }
 
-async function heartbeat(env, kj) {
+// Signal de vie du logiciel : compte le temps d'utilisation de la session.
+async function heartbeat(env, kj, reportedUsed = 0) {
   const now = Date.now();
-  if (now - kj.last_heartbeat >= HEARTBEAT_WRITE_MS) {
+  const session = sessionState(kj, now);
+  const counting = session.inSession && (kj.session_start || 0) > 0;
+  const reported = Math.max(0, Math.min(Number(reportedUsed) || 0, session.length));
+  const ahead = counting && reported > session.used + HEARTBEAT_WRITE_MS;
+  if (now - kj.last_heartbeat < HEARTBEAT_WRITE_MS && !ahead) return;
+  if (!counting) {
     await run(env, "UPDATE kjs SET last_heartbeat = ? WHERE code = ?", [now, kj.code]);
+    return;
   }
+  const gap = now - (kj.session_beat || 0);
+  const counted = kj.session_beat && gap <= PAUSE_GAP_MS ? gap : 0;  // sinon : pause
+  const used = Math.min(session.length, Math.max(session.used + counted, reported));
+  const done = used >= session.length ? (kj.session_done || now) : 0;
+  await run(env, `UPDATE kjs SET last_heartbeat = ?, session_used = ?, session_beat = ?,
+      session_done = ? WHERE code = ?`, [now, used, now, done, kj.code]);
 }
 
 // --- Formules et sessions ----------------------------------------------------
@@ -302,13 +345,26 @@ async function validPacks(env, code, now = Date.now()) {
     [code, now]);
 }
 
+// Champs de session envoyés au logiciel : sessionUntil = fin si le logiciel
+// reste ouvert (maintenant + durée restante), sessionRemaining = durée
+// restante, sessionWindowEnd = limite des 24 h, graceUntil = fin du rab.
+function sessionFields(kj, now = Date.now()) {
+  const session = sessionState(kj, now);
+  const graceEnd = session.endedAt > 0 ? session.endedAt + GRACE_MS : 0;
+  return {
+    sessionUntil: session.inSession ? now + session.remaining : 0,
+    sessionRemaining: session.remaining,
+    sessionUsed: session.inSession ? session.used : 0,
+    sessionLength: session.inSession ? session.length : 0,
+    sessionWindowEnd: session.inSession ? session.windowEnd : 0,
+    graceUntil: !session.inSession && now < graceEnd ? graceEnd : 0,
+  };
+}
+
 async function sessionsSummary(env, kj, now = Date.now()) {
   const packs = await validPacks(env, kj.code, now);
   return {
-    sessionUntil: now < (kj.session_until || 0) ? kj.session_until : 0,
-    // Fin du rab de 2 h après la dernière soirée (0 s'il est passé).
-    graceUntil: (kj.session_until || 0) > 0 && now < kj.session_until + GRACE_MS
-      ? kj.session_until + GRACE_MS : 0,
+    ...sessionFields(kj, now),
     lifetime: kj.lifetime === 1,
     sessionsLeft: packs.reduce((sum, pack) => sum + pack.sessions_left, 0),
     packs: packs.map(pack => ({ plan: pack.plan, sessionsLeft: pack.sessions_left,
@@ -326,31 +382,33 @@ async function addPack(env, code, plan, now = Date.now()) {
 // « Démarrer ma soirée » : une session de 8 h (rien n'est décompté si une
 // session est déjà en cours).
 async function startSession(env, kj, now = Date.now()) {
-  if (now < (kj.session_until || 0)) return { started: false, ...(await sessionsSummary(env, kj, now)) };
+  if (sessionState(kj, now).inSession) return { started: false, ...(await sessionsSummary(env, kj, now)) };
+  const fresh = (length) => ({ ...kj, session_start: now, session_length: length, session_used: 0,
+    session_beat: now, session_done: 0, session_until: now + SESSION_WINDOW_MS });
+  const startSql = `UPDATE kjs SET session_start = ?, session_length = ?, session_used = 0,
+      session_beat = ?, session_done = 0, session_until = ?, serial = serial + 1 WHERE code = ?`;
   if (kj.lifetime === 1) {  // gratuité à vie : rien n'est décompté
-    const until = now + SESSION_MS;
-    await run(env, "UPDATE kjs SET session_until = ?, serial = serial + 1 WHERE code = ?", [until, kj.code]);
-    return { started: true, ...(await sessionsSummary(env, { ...kj, session_until: until }, now)) };
+    await run(env, startSql, [now, SESSION_MS, now, now + SESSION_WINDOW_MS, kj.code]);
+    return { started: true, ...(await sessionsSummary(env, fresh(SESSION_MS), now)) };
   }
   const pack = (await validPacks(env, kj.code, now))[0];
   if (!pack) return null;
   let expires = pack.expires_at;
   if (pack.plan === "weekend" && !expires) expires = now + PLANS.weekend.afterFirstUseMs;
-  const until = now + (PLANS[pack.plan].sessionMs || SESSION_MS);
+  const length = PLANS[pack.plan].sessionMs || SESSION_MS;
   await env.REQUEST_DB.batch([
     env.REQUEST_DB.prepare("UPDATE kj_packs SET sessions_left = sessions_left - 1, expires_at = ? WHERE id = ?")
       .bind(expires, pack.id),
-    env.REQUEST_DB.prepare("UPDATE kjs SET session_until = ?, serial = serial + 1 WHERE code = ?")
-      .bind(until, kj.code),
+    env.REQUEST_DB.prepare(startSql).bind(now, length, now, now + SESSION_WINDOW_MS, kj.code),
   ]);
-  return { started: true, ...(await sessionsSummary(env, { ...kj, session_until: until }, now)) };
+  return { started: true, ...(await sessionsSummary(env, fresh(length), now)) };
 }
 
 function profileOf(kj) {
   return {
     code: kj.code, name: kj.name, accepting: kj.accepting === 1,
     allowOffline: kj.allow_offline === 1, offlineRequests: kj.offline_requests === 1,
-    sessionUntil: Date.now() < (kj.session_until || 0) ? kj.session_until : 0,
+    sessionUntil: sessionFields(kj).sessionUntil,
     catalogVersion: kj.catalog_version,
     catalogCount: kj.catalog_count, logoVersion: kj.logo ? kj.logo_version : 0,
   };
@@ -369,7 +427,7 @@ async function kjCommand(env, request, kj) {
     case "connectionTest":
       return ok();
     case "heartbeat":
-      await heartbeat(env, kj);
+      await heartbeat(env, kj, data.usedMs);
       return ok();
     case "getSerial":
       return ok({ serial: kj.serial });
@@ -523,8 +581,11 @@ async function adminUpsert(env, request) {
         active = COALESCE(?, active), name = COALESCE(?, name),
         lifetime = COALESCE(?, lifetime),
         session_until = CASE WHEN ? = 0 THEN 0 ELSE session_until END,
+        session_start = CASE WHEN ? = 0 THEN 0 ELSE session_start END,
+        session_used = CASE WHEN ? = 0 THEN 0 ELSE session_used END,
+        session_done = CASE WHEN ? = 0 THEN 0 ELSE session_done END,
         serial = serial + 1 WHERE code = ?`,
-      [keyHash, active, name, lifetime, active, code]);
+      [keyHash, active, name, lifetime, active, active, active, active, code]);
     if (active === 0) await run(env, "DELETE FROM kj_requests WHERE code = ?", [code]);
   }
   return json({ error: "", code, created: !existing });
