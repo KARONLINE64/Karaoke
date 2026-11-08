@@ -132,14 +132,16 @@ function onKjCatalog(data) {
   const listVisible = !songsPage.classList.contains("hidden");
   const showingCatalog = listVisible && currentSongs === songs;
   setSongs(data);
-  if (showingCatalog) {
-    const scroll = songsDiv.scrollTop;
-    drawSongs(songs);
-    songsDiv.scrollTop = scroll;
-    renderVisibleSongs();
-  } else if (listVisible && search.value.trim()) {
-    search.dispatchEvent(new Event("input"));
-  }
+  if (showingCatalog) redrawSongs(songs);
+  else if (listVisible && search.value.trim()) search.dispatchEvent(new Event("input"));
+}
+
+// Liste affichée remplacée par sa nouvelle version, à la même position.
+function redrawSongs(list) {
+  const scroll = songsDiv.scrollTop;
+  drawSongs(list);
+  songsDiv.scrollTop = scroll;
+  renderVisibleSongs();
 }
 
 const restrictedWhenOffline = [catalogBtn, search].filter(Boolean);
@@ -161,8 +163,11 @@ function applyOfflineUiState() {
 }
 
 async function updateServiceStatus() {
+  const wasOnline = serviceOnline;
   serviceOnline = await checkServiceOnline();
   applyOfflineUiState();
+  // Logiciel du KJ propriétaire de nouveau en ligne : catalogue relu.
+  if (!KJ_MODE && serviceOnline && !wasOnline) refreshSongsJson();
 }
 
 updateServiceStatus();
@@ -170,7 +175,9 @@ setInterval(updateServiceStatus, SERVICE_CHECK_INTERVAL_MS);
 // Téléphone rallumé / onglet revenu au premier plan : état et catalogue
 // relus aussitôt (les minuteries sont ralenties quand la page est cachée).
 document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) updateServiceStatus();
+  if (document.hidden) return;
+  updateServiceStatus();
+  if (!KJ_MODE) refreshSongsJson();
 });
 
 const virtualState = {
@@ -502,8 +509,10 @@ async function loadLanguage(file) {
   }
 
   const response = await fetch(file, { cache: "no-cache" });
-  const data = await response.json();
+  const text = await response.text();
+  const data = JSON.parse(text);
   catalogCache[file] = data;
+  catalogTexts[file] = text;
   currentSongs = data;
   showSongs(currentSongs);
 }
@@ -522,10 +531,12 @@ function setSongs(data) {
   }));
 }
 
-// Page du KJ propriétaire : songs.json et les catalogues par langue relus
-// toutes les 3 minutes ; mis à jour seulement s'ils ont changé.
-const SONGS_REFRESH_MS = 3 * 60 * 1000;
+// Page du KJ propriétaire : songs.json et les catalogues par langue déjà
+// ouverts relus toutes les minutes (GitHub Pages met environ 1 min à publier
+// AJOUTER_TITRES) ; la liste affichée se met à jour sans recharger la page.
+const SONGS_REFRESH_MS = 60 * 1000;
 let songsJsonText = "";
+const catalogTexts = {};
 
 if (KJ_MODE) {
   // Logo masqué jusqu'à savoir s'il faut celui du KJ ou celui par défaut.
@@ -551,20 +562,47 @@ if (KJ_MODE) {
   setInterval(refreshSongsJson, SONGS_REFRESH_MS);
 }
 
+async function fetchIfChanged(file, oldText) {
+  const response = await fetch(`${file}?t=${Date.now()}`, { cache: "no-store" });
+  if (!response.ok) return null;
+  const text = await response.text();
+  if (!text || text === oldText) return null;
+  const data = JSON.parse(text);
+  return Array.isArray(data) && data.length ? { text, data } : null;
+}
+
+let refreshingSongs = false;
+
 async function refreshSongsJson() {
+  if (KJ_MODE || refreshingSongs) return;
+  refreshingSongs = true;
   try {
-    const response = await fetch(`songs.json?t=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) return;
-    const text = await response.text();
-    if (!text || text === songsJsonText) return;
-    const data = JSON.parse(text);
-    if (!Array.isArray(data) || !data.length) return;
-    songsJsonText = text;
-    setSongs(data);
-    // Catalogues par langue et liste des demandes : relus au prochain affichage.
-    for (const file of Object.keys(catalogCache)) delete catalogCache[file];
+    const listVisible = !songsPage.classList.contains("hidden");
+    const shown = currentSongs;
+    let changed = false;
+    const main = await fetchIfChanged("songs.json", songsJsonText);
+    if (main) {
+      const wasShown = shown === songs;
+      songsJsonText = main.text;
+      setSongs(main.data);
+      changed = true;
+      if (listVisible && wasShown) redrawSongs(songs);
+    }
+    for (const file of Object.keys(catalogCache)) {
+      const fresh = await fetchIfChanged(file, catalogTexts[file]);
+      if (!fresh) continue;
+      const wasShown = shown === catalogCache[file];
+      catalogCache[file] = fresh.data;
+      catalogTexts[file] = fresh.text;
+      changed = true;
+      if (listVisible && wasShown) redrawSongs(fresh.data);
+    }
+    // Résultats d'une recherche affichés : recherche refaite.
+    if (changed && listVisible && search.value.trim()) search.dispatchEvent(new Event("input"));
   } catch (error) {
-    console.log("[catalog] songs.json refresh failed", error);
+    console.log("[catalog] refresh failed", error);
+  } finally {
+    refreshingSongs = false;
   }
 }
 
@@ -701,8 +739,10 @@ async function buildRequestSongIndex() {
       try {
         const response = await fetch(file, { cache: "no-cache" });
         if (!response.ok) return [];
-        const data = await response.json();
+        const text = await response.text();
+        const data = JSON.parse(text);
         catalogCache[file] = data;
+        catalogTexts[file] = text;
         return data;
       } catch (error) {
         console.error("Request catalogue load failed:", file, error);
@@ -1026,4 +1066,4 @@ localeButtons.forEach((button) => {
 });
 
 buildKeyOptions();
-applyLocale(currentLocale);
+applyLocale(localStorage.getItem('karaokeLocale') || 'fr');
