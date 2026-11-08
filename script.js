@@ -85,8 +85,12 @@ async function fetchKjInfo() {
 // Page du KJ consultable : logiciel ouvert, ou option « hors soirée ».
 async function checkKjOnline() {
   const info = await fetchKjInfo();
+  const wasOpen = requestsOpen;
   requestsOpen = Boolean(info && info.open === true);
   if (!info) return false;
+  // Demandes rouvertes par le KJ (« Accepter les demandes » décoché puis
+  // recoché) : catalogue relu, sans attendre que le client recharge la page.
+  if (!wasOpen && requestsOpen) kjCatalogVersion = -1;
   kjInfo = info;
   applyKjBranding(info);
   return info.browse === true;
@@ -115,10 +119,26 @@ function applyKjBranding(info) {
   }
   if (info.catalogVersion !== kjCatalogVersion) {
     kjCatalogVersion = info.catalogVersion;
-    fetch(`${KJ_BASE}/catalog?v=${info.catalogVersion}`)
+    fetch(`${KJ_BASE}/catalog?v=${info.catalogVersion}`, { cache: "no-store" })
       .then(response => response.json())
-      .then(data => setSongs(Array.isArray(data) ? data : []))
+      .then(data => onKjCatalog(Array.isArray(data) ? data : []))
       .catch(error => console.error("[kj] Catalogue load failed", error));
+  }
+}
+
+// Nouveau catalogue du KJ : la liste ou la recherche affichée se met à jour
+// tout de suite (même position dans la liste), sans recharger la page.
+function onKjCatalog(data) {
+  const listVisible = !songsPage.classList.contains("hidden");
+  const showingCatalog = listVisible && currentSongs === songs;
+  setSongs(data);
+  if (showingCatalog) {
+    const scroll = songsDiv.scrollTop;
+    drawSongs(songs);
+    songsDiv.scrollTop = scroll;
+    renderVisibleSongs();
+  } else if (listVisible && search.value.trim()) {
+    search.dispatchEvent(new Event("input"));
   }
 }
 
@@ -147,6 +167,11 @@ async function updateServiceStatus() {
 
 updateServiceStatus();
 setInterval(updateServiceStatus, SERVICE_CHECK_INTERVAL_MS);
+// Téléphone rallumé / onglet revenu au premier plan : état et catalogue
+// relus aussitôt (les minuteries sont ralenties quand la page est cachée).
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) updateServiceStatus();
+});
 
 const virtualState = {
   initialized: false,
