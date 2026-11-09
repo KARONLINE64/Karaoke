@@ -1,16 +1,21 @@
 """Test de bout en bout des espaces KJ, contre le serveur lancé en local :
 
-    npx wrangler dev --local --port 8787   (var : KJ_ADMIN_TOKEN)
+    npx wrangler dev --local --port 8787   (var : KJ_ADMIN_TOKEN, fichier .dev.vars)
     python tests/kj_flow_test.py http://localhost:8787 admin-secret
 """
 import hashlib
 import json
+import os
+import subprocess
 import sys
 import time
 import urllib.error
 import urllib.request
 
 BASE, ADMIN = sys.argv[1].rstrip("/"), sys.argv[2]
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Rab de 2 h : testé seulement contre « wrangler dev --local » (base locale).
+LOCAL_DB = BASE.startswith("http://localhost") or BASE.startswith("http://127.0.0.1")
 CODE = f"djtest{int(time.time()) % 100000}"
 KEY = "cle-secrete-du-kj"
 
@@ -66,33 +71,35 @@ status, info = call("GET", f"/kj/{CODE}/info")
 check("page : KJ en ligne, catalogue ouvert, demandes fermées sans session",
       info["online"] and info["browse"] and not info["open"] and info["name"] == "DJ Test")
 
-# Formules : FREE (1 session de 4 h offerte), puis UN WEEKEND / UN MOIS / UN AN achetés.
+# Stock d'heures : FREE (4 h offertes), puis UN WEEKEND (16 h) / UN MOIS (64 h)
+# / UN AN (768 h) achetés.
+H = 3600e3
 sessions = kj("getSessions")[1]["sessions"]
-check("FREE : 1 session offerte", sessions["sessionsLeft"] == 1 and sessions["sessionUntil"] == 0
-      and sessions["lifetime"] is False)
+check("FREE : 4 h offertes, pas de soirée en cours", sessions["hoursLeft"] == 4 * H
+      and not sessions["showRunning"] and sessions["lifetime"] is False)
 status, body = kj("startSession")
-check("session offerte démarrée (4 h)", status == 200 and body["sessions"]["started"]
-      and body["sessions"]["sessionsLeft"] == 0
-      and 3.9 * 3600e3 < body["sessions"]["sessionUntil"] - time.time() * 1000 < 4.1 * 3600e3)
+check("soirée démarrée : rien de décompté au départ", status == 200 and body["sessions"]["started"]
+      and body["sessions"]["showRunning"] and body["sessions"]["hoursLeft"] == 4 * H)
 status, body = kj("startSession")
 check("2e clic pendant la soirée : rien de décompté", status == 200 and not body["sessions"]["started"])
 status, info = call("GET", f"/kj/{CODE}/info")
-check("page : demandes ouvertes pendant la session", info["open"] and info["inSession"])
+check("page : demandes ouvertes pendant la soirée", info["open"] and info["inSession"])
 check("formule refusée sans jeton", call("POST", "/admin/kj/packs", {"code": CODE, "plan": "day"})[0] == 401)
 check("formule inconnue refusée", call("POST", "/admin/kj/packs", {"code": CODE, "plan": "x"}, ADMIN)[0] == 400)
 status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "weekend"}, ADMIN)
-check("UN WEEKEND ajouté (2 sessions, sans date avant la 1re)", status == 200
-      and body["sessions"]["sessionsLeft"] == 2 and body["sessions"]["packs"][0]["expiresAt"] == 0)
+weekend = [p for p in body["sessions"]["packs"] if p["plan"] == "weekend"][0]
+check("UN WEEKEND ajouté (16 h, sans date avant la 1re utilisation)", status == 200
+      and body["sessions"]["hoursLeft"] == 20 * H and weekend["expiresAt"] == 0)
 status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "month"}, ADMIN)
 month = [p for p in body["sessions"]["packs"] if p["plan"] == "month"][0]
-check("UN MOIS ajouté (8 sessions, 30 jours)", body["sessions"]["sessionsLeft"] == 10
+check("UN MOIS ajouté (64 h, 30 jours)", body["sessions"]["hoursLeft"] == 84 * H
       and 29.9 * 86400e3 < month["expiresAt"] - time.time() * 1000 < 30.1 * 86400e3)
 status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "year"}, ADMIN)
 year = [p for p in body["sessions"]["packs"] if p["plan"] == "year"][0]
-check("UN AN ajouté (96 sessions, 365 jours)", body["sessions"]["sessionsLeft"] == 106
+check("UN AN ajouté (768 h, 365 jours)", body["sessions"]["hoursLeft"] == 852 * H
       and 364.9 * 86400e3 < year["expiresAt"] - time.time() * 1000 < 365.1 * 86400e3)
 status, body = call("POST", "/admin/kj/sessions", {"code": CODE}, ADMIN)
-check("sessions restantes (karolive.com)", status == 200 and body["sessions"]["sessionsLeft"] == 106)
+check("stock d'heures (karolive.com)", status == 200 and body["sessions"]["hoursLeft"] == 852 * H)
 
 songs = [{"id": "a1", "artist": "ABBA", "title": "Waterloo"},
          {"id": "a1b", "artist": "abba", "title": "waterloo"},  # doublon (casse)
@@ -152,13 +159,101 @@ requests = kj("getRequests")[1]["requests"]
 check("demande hors soirée gardée et marquée", len(requests) == 1 and requests[0]["offline"] == 1)
 kj("clearRequests")
 
-# Abonnement suspendu : page fermée, logiciel refusé, même code (QR inchangé).
+# Compteur du stock : logiciel ouvert seulement, pause à la fermeture, compte
+# du logiciel retenu s'il est plus grand, stock épuisé → rab de 2 h.
+# (état de la soirée modifié directement dans la base locale)
+def sql(statement):
+    subprocess.run(["npx", "wrangler", "d1", "execute", "karolive-kj", "--local", "--command", statement],
+                   check=True, capture_output=True, cwd=HERE, shell=(os.name == "nt"))
+
+
+def now_ms():
+    return int(time.time() * 1000)
+
+
+def set_show(running=1, used_ms=0, beat_ago_s=5, done_ago_h=None):
+    done = 0 if done_ago_h is None else now_ms() - int(done_ago_h * H)
+    beat = now_ms() - beat_ago_s * 1000 if running else 0
+    sql(f"UPDATE kjs SET show_running = {running}, show_used = {int(used_ms)}, session_beat = {beat}, "
+        f"show_done = {done}, last_heartbeat = {now_ms() - 20000} WHERE code = '{CODE}'")
+
+
+def stock():
+    return kj("getSessions")[1]["sessions"]
+
+
+if LOCAL_DB:
+    kj("setAccepting", accepting=True)
+    before = stock()["hoursLeft"]
+    set_show(beat_ago_s=600)  # logiciel fermé 10 min pendant la soirée
+    kj("heartbeat")
+    check("logiciel rouvert après une fermeture : pause, rien de décompté", stock()["hoursLeft"] == before)
+    set_show(beat_ago_s=20)
+    kj("heartbeat")
+    used = before - stock()["hoursLeft"]
+    check("logiciel ouvert : le temps est décompté du stock", 15000 < used < 25000)
+    check("décompté d'abord sur la formule qui expire la première (UN MOIS)",
+          [p for p in stock()["packs"] if p["plan"] == "month"][0]["msLeft"] == 64 * H - used
+          and [p for p in stock()["packs"] if p["plan"] == "trial"][0]["msLeft"] == 4 * H)
+    kj("heartbeat", usedMs=int(H + used))
+    check("compte du logiciel plus grand (connexion coupée) : retenu",
+          abs(before - stock()["hoursLeft"] - (H + used)) < 2000)
+    kj("heartbeat", usedMs=1000)
+    check("compte du logiciel plus petit : ignoré", abs(before - stock()["hoursLeft"] - (H + used)) < 25000)
+    status, body = kj("endSession")
+    check("« Terminer ma soirée » : compteur arrêté", status == 200 and not body["sessions"]["showRunning"]
+          and body["sessions"]["graceUntil"] == 0)
+    left = stock()["hoursLeft"]
+    kj("heartbeat")
+    check("soirée terminée : plus rien de décompté", stock()["hoursLeft"] == left)
+    info = call("GET", f"/kj/{CODE}/info")[1]
+    check("soirée terminée (stock restant) : demandes fermées, pas de rab", not info["open"])
+
+    kj("startSession")
+    set_show(beat_ago_s=7 * 3600)  # logiciel fermé 7 h : soirée terminée d'office
+    kj("heartbeat")
+    check("logiciel fermé plus de 6 h : soirée terminée, rien décompté",
+          not stock()["showRunning"] and stock()["hoursLeft"] == left)
+
+    # Stock épuisé en pleine soirée : fin de soirée et rab de 2 h.
+    kj("startSession")
+    set_show(used_ms=0, beat_ago_s=5)
+    kj("heartbeat", usedMs=int(left + H))
+    s2 = stock()
+    check("stock épuisé : soirée finie, rab de 2 h", s2["hoursLeft"] == 0 and not s2["showRunning"]
+          and 1.9 * H < s2["graceUntil"] - now_ms() < 2.1 * H)
+    info = call("GET", f"/kj/{CODE}/info")[1]
+    check("rab : demandes encore ouvertes", info["open"] and info["inGrace"] and not info["inSession"])
+    check("plus d'heures : « Démarrer ma soirée » refusé", kj("startSession")[0] == 402)
+    set_show(running=0, done_ago_h=3)
+    info = call("GET", f"/kj/{CODE}/info")[1]
+    check("après le rab : demandes fermées", not info["open"] and not info["inGrace"])
+    status, body = call("POST", "/admin/kj/packs", {"code": CODE, "plan": "day"}, ADMIN)
+    day = [p for p in body["sessions"]["packs"] if p["plan"] == "day"][0]
+    check("UN JOUR acheté : 8 h, délai pas encore commencé", body["sessions"]["hoursLeft"] == 8 * H
+          and day["expiresAt"] == 0)
+    kj("startSession")
+    set_show(beat_ago_s=20)
+    kj("heartbeat")
+    day = [p for p in stock()["packs"] if p["plan"] == "day"][0]
+    check("UN JOUR : délai de 24 h à partir de la 1re utilisation",
+          23.9 * H < day["expiresAt"] - now_ms() < 24.1 * H)
+
+# Abonnement suspendu (désabonnement) : page fermée et VIDE, logiciel refusé,
+# rab supprimé, demandes effacées ; même code (QR inchangé).
+check("demande avant désabonnement", call("POST", f"/kj/{CODE}/request",
+      {"artist": "Queen", "title": "We Will Rock You", "singer": "Ana"})[0] in (200, 403))
 call("POST", "/admin/kj", {"code": CODE, "email": "dj@test.fr", "active": False}, ADMIN)
 info = call("GET", f"/kj/{CODE}/info")[1]
 check("abonnement suspendu : page fermée", not info["active"] and not info["open"] and not info["browse"])
+check("abonnement suspendu : page vide (aucun catalogue)", info["catalogCount"] == 0
+      and call("GET", f"/kj/{CODE}/catalog")[1] == [] and not info["inGrace"])
 check("abonnement suspendu : logiciel refusé", kj("heartbeat")[0] == 403)
 call("POST", "/admin/kj", {"code": CODE, "email": "dj@test.fr", "active": True}, ADMIN)
 check("abonnement réactivé : même code, même clé", kj("heartbeat")[0] == 200)
+check("abonnement réactivé : demandes d'avant effacées, ni soirée ni rab",
+      kj("getRequests")[1]["requests"] == [] and kj("getSessions")[1]["sessions"]["graceUntil"] == 0
+      and not kj("getSessions")[1]["sessions"]["showRunning"])
 
 
 # Gratuité à vie (abonnés d'avant les formules) : rien n'est décompté.
@@ -168,9 +263,8 @@ status, body = call("POST", "/admin/kj", {"code": LIFE, "email": "ami@test.fr", 
                                           "lifetime": True}, ADMIN)
 check("KJ à vie créé", status == 200)
 status, body = call("POST", f"/kj/{LIFE}", {"command": "startSession"}, LIFE_KEY)
-check("KJ à vie : session de 8 h sans décompte", status == 200 and body["sessions"]["lifetime"] is True
-      and body["sessions"]["sessionsLeft"] == 1
-      and 7.9 * 3600e3 < body["sessions"]["sessionUntil"] - time.time() * 1000 < 8.1 * 3600e3)
+check("KJ à vie : soirée sans décompte", status == 200 and body["sessions"]["lifetime"] is True
+      and body["sessions"]["showRunning"] and body["sessions"]["hoursLeft"] == 4 * 3600e3)
 call("POST", "/admin/kj", {"code": LIFE, "email": "ami@test.fr", "lifetime": False}, ADMIN)
 status, body = call("POST", f"/kj/{LIFE}", {"command": "getSessions"}, LIFE_KEY)
 check("gratuité à vie retirée", body["sessions"]["lifetime"] is False)
