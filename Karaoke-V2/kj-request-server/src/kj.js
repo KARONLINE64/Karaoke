@@ -541,7 +541,9 @@ async function uploadCatalog(env, request, kj) {
     const key = (artist + "|" + title).toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    songs.push({ id: clean(song.id, 40), artist, title });
+    // Langue (rubrique de la page) : nom du dossier du KJ, « Préparer mon catalogue ».
+    const lang = clean(song.lang, 40);
+    songs.push(lang ? { id: clean(song.id, 40), artist, title, lang } : { id: clean(song.id, 40), artist, title });
   }
   songs.sort((a, b) => a.artist.localeCompare(b.artist, "fr") || a.title.localeCompare(b.title, "fr"));
   const text = JSON.stringify(songs);
