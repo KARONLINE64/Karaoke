@@ -66,15 +66,16 @@ const PAUSE_GAP_MS = 60 * 1000;
 const DAY_MS = 24 * 3600 * 1000;
 const HOUR_MS = 3600 * 1000;
 // Heures ajoutées au stock ; délai : après la 1re utilisation (UN JOUR,
-// UN WEEKEND) ou après l'achat (UN MOIS, UN AN).
+// UN WEEKEND) ou après l'achat (UN MOIS, UN MOIS PRO, UN AN).
 const PLANS = {
   trial: { hoursMs: 4 * HOUR_MS },                                  // FREE : 4 h offertes
   day: { hoursMs: 8 * HOUR_MS, afterFirstUseMs: DAY_MS },           // UN JOUR
   weekend: { hoursMs: 16 * HOUR_MS, afterFirstUseMs: 3 * DAY_MS },  // UN WEEKEND
   month: { hoursMs: 64 * HOUR_MS, afterPurchaseMs: 30 * DAY_MS },   // UN MOIS
+  pro: { hoursMs: 160 * HOUR_MS, afterPurchaseMs: 30 * DAY_MS },    // UN MOIS PRO
   year: { hoursMs: 768 * HOUR_MS, afterPurchaseMs: 365 * DAY_MS },  // UN AN
 };
-const PAID_PLANS = ["day", "weekend", "month", "year"];
+const PAID_PLANS = ["day", "weekend", "month", "pro", "year"];
 
 let schemaReady = false;
 

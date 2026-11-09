@@ -269,4 +269,14 @@ call("POST", "/admin/kj", {"code": LIFE, "email": "ami@test.fr", "lifetime": Fal
 status, body = call("POST", f"/kj/{LIFE}", {"command": "getSessions"}, LIFE_KEY)
 check("gratuité à vie retirée", body["sessions"]["lifetime"] is False)
 
+# UN MOIS PRO : 160 h à utiliser en 30 jours (KJ à part : stock de 4 h offertes).
+PRO = CODE + "p"
+call("POST", "/admin/kj", {"code": PRO, "email": "pro@test.fr", "name": "Pro",
+                           "keyHash": hashlib.sha256(b"cle-pro").hexdigest()}, ADMIN)
+status, body = call("POST", "/admin/kj/packs", {"code": PRO, "plan": "pro"}, ADMIN)
+pro = [p for p in body["sessions"]["packs"] if p["plan"] == "pro"][0]
+check("UN MOIS PRO ajouté (160 h, 30 jours)", status == 200 and pro["msLeft"] == 160 * 3600e3
+      and body["sessions"]["hoursLeft"] == 164 * 3600e3
+      and 29.9 * 86400e3 < pro["expiresAt"] - time.time() * 1000 < 30.1 * 86400e3)
+
 print("TOUT EST OK")
