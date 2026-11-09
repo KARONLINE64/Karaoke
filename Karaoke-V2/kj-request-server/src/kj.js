@@ -16,7 +16,7 @@
 //                           setProfile, close
 //   PUT  /kj/CODE/catalog   publication du catalogue
 //   PUT  /kj/CODE/logo      envoi du logo (PNG, JPEG ou WebP)
-//                           startSession, getSessions (formules)
+//                           startSession, endSession, getSessions (stock d'heures)
 // Routes d'administration (serveur karolive.com, Bearer KJ_ADMIN_TOKEN) :
 //   POST /admin/kj          création / mise à jour d'un KJ (abonnement)
 //   POST /admin/kj/packs    ajout d'une formule achetée {code, plan}
@@ -27,9 +27,17 @@
 // 30 jours après l'achat), UN AN (96 sessions, dans les 365 jours). FREE :
 // 1 session de 4 h offerte à la création du KJ. KJ « à vie » (abonnés
 // d'avant les formules) : sessions illimitées, rien n'est décompté.
-// Une session commence quand le KJ clique « Démarrer ma soirée » ; pendant
-// 8 h, sa page accepte les demandes (logiciel ouvert) ; ensuite, plus de
-// demandes jusqu'à la session suivante (la lecture, locale, continue).
+// STOCK D'HEURES : chaque formule ajoute des heures d'utilisation au stock du
+// KJ (UN JOUR 8 h, UN WEEKEND 16 h, UN MOIS 64 h, UN AN 768 h ; session
+// offerte 4 h), à consommer comme il veut pendant la durée de la formule.
+// « Démarrer ma soirée » lance le compteur, « Terminer ma soirée »
+// l'arrête. Il ne tourne que logiciel ouvert (signaux de vie) : fermé ou
+// planté, il est en pause ; au-delà de 6 h de fermeture, la soirée est
+// terminée d'office (oubli de « Terminer »). Décocher « Accepter les
+// demandes » ne met PAS en pause. Le logiciel envoie aussi son propre compte
+// (usedMs) avec chaque signal de vie : le plus grand des deux est retenu
+// (connexion coupée : aucun gain). Stock épuisé en soirée : 2 h de rab
+// (GRACE_MS), puis plus rien jusqu'au prochain achat.
 
 const CODE_RE = /^[a-z0-9][a-z0-9-]{1,30}$/;
 // Le KJ est « en ligne » si son logiciel s'est signalé depuis moins de 35 s.
@@ -46,15 +54,28 @@ const MAX_CATALOG_SONGS = 100000;
 const CATALOG_PART_CHARS = 800000;
 const LOGO_TYPES = ["image/png", "image/jpeg", "image/webp"];
 const SESSION_MS = 8 * 3600 * 1000;
+// Fin de soirée : 2 h de rab (geste commercial, le temps de racheter une
+// session) pendant lesquelles la page reste ouverte comme pendant la soirée,
+// selon les réglages du KJ. Jamais pour un KJ désabonné (active = 0).
+const GRACE_MS = 2 * 3600 * 1000;
+// Logiciel fermé plus de 6 h pendant une soirée : soirée terminée d'office.
+const AUTO_END_MS = 6 * 3600 * 1000;
+// Écart entre deux signaux de vie au-delà duquel le logiciel était fermé :
+// ce temps-là n'est pas compté (pause).
+const PAUSE_GAP_MS = 60 * 1000;
 const DAY_MS = 24 * 3600 * 1000;
+const HOUR_MS = 3600 * 1000;
+// Heures ajoutées au stock ; délai : après la 1re utilisation (UN JOUR,
+// UN WEEKEND) ou après l'achat (UN MOIS, UN MOIS PRO, UN AN).
 const PLANS = {
-  trial: { sessions: 1, sessionMs: 4 * 3600 * 1000 },  // FREE : 1 session de 4 h offerte
-  day: { sessions: 1 },                               // UN JOUR
-  weekend: { sessions: 2, afterFirstUseMs: 3 * DAY_MS },  // UN WEEKEND
-  month: { sessions: 8, afterPurchaseMs: 30 * DAY_MS },   // UN MOIS
-  year: { sessions: 96, afterPurchaseMs: 365 * DAY_MS },  // UN AN
+  trial: { hoursMs: 4 * HOUR_MS },                                  // FREE : 4 h offertes
+  day: { hoursMs: 8 * HOUR_MS, afterFirstUseMs: DAY_MS },           // UN JOUR
+  weekend: { hoursMs: 16 * HOUR_MS, afterFirstUseMs: 3 * DAY_MS },  // UN WEEKEND
+  month: { hoursMs: 64 * HOUR_MS, afterPurchaseMs: 30 * DAY_MS },   // UN MOIS
+  pro: { hoursMs: 160 * HOUR_MS, afterPurchaseMs: 30 * DAY_MS },    // UN MOIS PRO
+  year: { hoursMs: 768 * HOUR_MS, afterPurchaseMs: 365 * DAY_MS },  // UN AN
 };
-const PAID_PLANS = ["day", "weekend", "month", "year"];
+const PAID_PLANS = ["day", "weekend", "month", "pro", "year"];
 
 let schemaReady = false;
 
@@ -127,18 +148,30 @@ async function ensureKjSchema(env) {
     )`),
   ]);
   // Bases créées avant ces options : colonnes ajoutées.
-  for (const column of ["offline_requests", "session_until", "lifetime"]) {
+  for (const column of ["offline_requests", "session_until", "lifetime", "session_start",
+    "session_length", "session_used", "session_beat", "session_done", "show_running",
+    "show_used", "show_done"]) {
     try {
       await run(env, `ALTER TABLE kjs ADD COLUMN ${column} INTEGER NOT NULL DEFAULT 0`);
     } catch (error) {
       if (!String(error && error.message).includes("duplicate column")) throw error;
     }
   }
+  // Stock d'heures : ms_left par formule. Formules d'avant (en sessions) :
+  // converties une fois (sessions_left remis à 0).
+  try {
+    await run(env, "ALTER TABLE kj_packs ADD COLUMN ms_left INTEGER NOT NULL DEFAULT 0");
+  } catch (error) {
+    if (!String(error && error.message).includes("duplicate column")) throw error;
+  }
+  await run(env, `UPDATE kj_packs SET ms_left = sessions_left * CASE WHEN plan = 'trial'
+      THEN ${4 * 3600 * 1000} ELSE ${8 * 3600 * 1000} END, sessions_left = 0
+      WHERE sessions_left > 0`);
   // Une seule session offerte par KJ, même si deux requêtes arrivent ensemble.
   await run(env, "CREATE UNIQUE INDEX IF NOT EXISTS kj_packs_trial ON kj_packs(code) WHERE plan = 'trial'");
   // KJ inscrits avant les formules : leur 1re session offerte.
-  await run(env, `INSERT OR IGNORE INTO kj_packs (code, plan, sessions_left, expires_at, created_at)
-      SELECT code, 'trial', 1, 0, ? FROM kjs`, [Date.now()]);
+  await run(env, `INSERT OR IGNORE INTO kj_packs (code, plan, sessions_left, ms_left, expires_at, created_at)
+      SELECT code, 'trial', 0, ${4 * 3600 * 1000}, 0, ? FROM kjs`, [Date.now()]);
   schemaReady = true;
 }
 
@@ -167,20 +200,30 @@ function parseKey(value) {
   return Number.isNaN(parsed) || parsed < -12 || parsed > 12 ? null : parsed;
 }
 
+// --- Soirée : compteur du stock d'heures --------------------------------------
+function showState(kj, now = Date.now()) {
+  const running = kj.show_running === 1;
+  const graceEnd = kj.show_done ? kj.show_done + GRACE_MS : 0;
+  return { running, inGrace: !running && now < graceEnd, graceEnd };
+}
+
 function status(kj, now = Date.now()) {
   const online = now - kj.last_heartbeat < ONLINE_MS;
   const active = kj.active === 1;
-  const inSession = now < (kj.session_until || 0);
+  const show = showState(kj, now);
+  const inSession = show.running;
+  const inGrace = show.inGrace;
   return {
     online,
     inSession,
+    inGrace,
     // Catalogue consultable : logiciel ouvert, ou option « catalogue hors soirée ».
     browse: active && (online || kj.allow_offline === 1),
     // Demandes acceptées : case « Accepter les demandes » cochée, et logiciel
     // ouvert pendant une session (soirée de 8 h), ou logiciel fermé avec
     // l'option « demandes hors soirée » (avec le catalogue).
     open: active && kj.accepting === 1
-      && ((online && inSession)
+      && ((online && (inSession || inGrace))
         || (!online && kj.allow_offline === 1 && kj.offline_requests === 1)),
   };
 }
@@ -210,13 +253,19 @@ async function publicInfo(kj) {
     allowOffline: kj.allow_offline === 1,
     offlineRequests: kj.offline_requests === 1,
     inSession: s.inSession,
-    catalogVersion: kj.catalog_version,
-    catalogCount: kj.catalog_count,
+    inGrace: s.inGrace,
+    // KJ désabonné : page vide (aucun catalogue).
+    catalogVersion: kj.active === 1 ? kj.catalog_version : 0,
+    catalogCount: kj.active === 1 ? kj.catalog_count : 0,
     logoVersion: kj.logo ? kj.logo_version : 0,
   }, 200, { ...CORS, "Cache-Control": "no-store" });
 }
 
 async function publicCatalog(env, kj) {
+  if (kj.active !== 1) {
+    return new Response("[]", { headers: { ...CORS, "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-store" } });
+  }
   const parts = await all(env, "SELECT data FROM kj_catalog WHERE code = ? ORDER BY part", [kj.code]);
   const body = parts.length ? parts.map(p => p.data).join("") : "[]";
   return new Response(body, {
@@ -275,67 +324,117 @@ async function authorizeKj(env, request, kj) {
   return null;
 }
 
-async function heartbeat(env, kj) {
-  const now = Date.now();
-  if (now - kj.last_heartbeat >= HEARTBEAT_WRITE_MS) {
-    await run(env, "UPDATE kjs SET last_heartbeat = ? WHERE code = ?", [now, kj.code]);
-  }
-}
-
-// --- Formules et sessions ----------------------------------------------------
+// Formules encore valables, la plus proche de son échéance d'abord.
 async function validPacks(env, code, now = Date.now()) {
-  return all(env, `SELECT * FROM kj_packs WHERE code = ? AND sessions_left > 0
+  return all(env, `SELECT * FROM kj_packs WHERE code = ? AND ms_left > 0
       AND (expires_at = 0 OR expires_at > ?)
       ORDER BY CASE WHEN expires_at > 0 THEN expires_at ELSE 9007199254740991 END, id`,
     [code, now]);
 }
 
+// Retire `amount` ms du stock ; renvoie le stock restant.
+async function consume(env, code, amount, now = Date.now()) {
+  const packs = await validPacks(env, code, now);
+  const statements = [];
+  let left = amount;
+  for (const pack of packs) {
+    if (left <= 0) break;
+    const take = Math.min(left, pack.ms_left);
+    left -= take;
+    const def = PLANS[pack.plan] || {};
+    // UN JOUR / UN WEEKEND : le délai part de la 1re utilisation.
+    const expires = !pack.expires_at && def.afterFirstUseMs ? now + def.afterFirstUseMs : pack.expires_at;
+    statements.push(env.REQUEST_DB.prepare(
+      "UPDATE kj_packs SET ms_left = ms_left - ?, expires_at = ? WHERE id = ?").bind(take, expires, pack.id));
+  }
+  if (statements.length) await env.REQUEST_DB.batch(statements);
+  return packs.reduce((sum, pack) => sum + pack.ms_left, 0) - (amount - Math.max(left, 0));
+}
+
+// Signal de vie du logiciel : décompte le temps de soirée du stock d'heures.
+async function heartbeat(env, kj, reportedUsed = 0) {
+  const now = Date.now();
+  const running = kj.show_running === 1;
+  const shown = kj.show_used || 0;
+  const reported = Math.max(0, Number(reportedUsed) || 0);
+  const ahead = running && reported > shown + HEARTBEAT_WRITE_MS;
+  if (now - kj.last_heartbeat < HEARTBEAT_WRITE_MS && !ahead) return;
+  if (!running) {
+    await run(env, "UPDATE kjs SET last_heartbeat = ? WHERE code = ?", [now, kj.code]);
+    return;
+  }
+  const gap = now - (kj.session_beat || 0);
+  if (kj.session_beat && gap > AUTO_END_MS) {
+    // Logiciel fermé plus de 6 h : la soirée est terminée (rien de décompté).
+    await run(env, `UPDATE kjs SET last_heartbeat = ?, show_running = 0, session_beat = 0,
+        serial = serial + 1 WHERE code = ?`, [now, kj.code]);
+    return;
+  }
+  const counted = kj.session_beat && gap <= PAUSE_GAP_MS ? gap : 0;  // sinon : pause
+  let used = Math.max(shown + counted, reported);
+  let stillRunning = 1;
+  let done = kj.show_done || 0;
+  if (kj.lifetime !== 1) {
+    const left = await consume(env, kj.code, used - shown, now);
+    if (left <= 0) {  // stock épuisé : fin de soirée, 2 h de rab
+      stillRunning = 0;
+      done = now;
+    }
+  }
+  await run(env, `UPDATE kjs SET last_heartbeat = ?, show_used = ?, session_beat = ?,
+      show_running = ?, show_done = ?, serial = serial + ? WHERE code = ?`,
+    [now, used, stillRunning ? now : 0, stillRunning, done, stillRunning ? 0 : 1, kj.code]);
+}
+
+// Stock, soirée et rab, pour le logiciel et karolivekj.com.
 async function sessionsSummary(env, kj, now = Date.now()) {
   const packs = await validPacks(env, kj.code, now);
+  const stock = packs.reduce((sum, pack) => sum + pack.ms_left, 0);
+  const lifetime = kj.lifetime === 1;
+  const show = showState(kj, now);
+  const running = show.running && (lifetime || stock > 0);
   return {
-    sessionUntil: now < (kj.session_until || 0) ? kj.session_until : 0,
-    lifetime: kj.lifetime === 1,
-    sessionsLeft: packs.reduce((sum, pack) => sum + pack.sessions_left, 0),
-    packs: packs.map(pack => ({ plan: pack.plan, sessionsLeft: pack.sessions_left,
-      expiresAt: pack.expires_at })),
+    showRunning: running,
+    showUsed: running ? kj.show_used || 0 : 0,
+    hoursLeft: stock,          // ms
+    graceUntil: show.inGrace ? show.graceEnd : 0,
+    lifetime,
+    packs: packs.map(pack => ({ plan: pack.plan, msLeft: pack.ms_left, expiresAt: pack.expires_at })),
+    // Anciennes versions du logiciel (sessions de 8 h).
+    sessionUntil: running ? now + (lifetime ? SESSION_MS : stock) : 0,
+    sessionsLeft: Math.floor(stock / SESSION_MS),
   };
 }
 
 async function addPack(env, code, plan, now = Date.now()) {
   const def = PLANS[plan];
   const expires = def.afterPurchaseMs ? now + def.afterPurchaseMs : 0;
-  await run(env, `INSERT OR IGNORE INTO kj_packs (code, plan, sessions_left, expires_at, created_at)
-      VALUES (?, ?, ?, ?, ?)`, [code, plan, def.sessions, expires, now]);
+  await run(env, `INSERT OR IGNORE INTO kj_packs (code, plan, sessions_left, ms_left, expires_at, created_at)
+      VALUES (?, ?, 0, ?, ?, ?)`, [code, plan, def.hoursMs, expires, now]);
 }
 
-// « Démarrer ma soirée » : une session de 8 h (rien n'est décompté si une
-// session est déjà en cours).
+// « Démarrer ma soirée » : lance le compteur (stock d'heures non vide).
 async function startSession(env, kj, now = Date.now()) {
-  if (now < (kj.session_until || 0)) return { started: false, ...(await sessionsSummary(env, kj, now)) };
-  if (kj.lifetime === 1) {  // gratuité à vie : rien n'est décompté
-    const until = now + SESSION_MS;
-    await run(env, "UPDATE kjs SET session_until = ?, serial = serial + 1 WHERE code = ?", [until, kj.code]);
-    return { started: true, ...(await sessionsSummary(env, { ...kj, session_until: until }, now)) };
-  }
-  const pack = (await validPacks(env, kj.code, now))[0];
-  if (!pack) return null;
-  let expires = pack.expires_at;
-  if (pack.plan === "weekend" && !expires) expires = now + PLANS.weekend.afterFirstUseMs;
-  const until = now + (PLANS[pack.plan].sessionMs || SESSION_MS);
-  await env.REQUEST_DB.batch([
-    env.REQUEST_DB.prepare("UPDATE kj_packs SET sessions_left = sessions_left - 1, expires_at = ? WHERE id = ?")
-      .bind(expires, pack.id),
-    env.REQUEST_DB.prepare("UPDATE kjs SET session_until = ?, serial = serial + 1 WHERE code = ?")
-      .bind(until, kj.code),
-  ]);
-  return { started: true, ...(await sessionsSummary(env, { ...kj, session_until: until }, now)) };
+  if (kj.show_running === 1) return { started: false, ...(await sessionsSummary(env, kj, now)) };
+  if (kj.lifetime !== 1 && !(await validPacks(env, kj.code, now)).length) return null;
+  await run(env, `UPDATE kjs SET show_running = 1, show_used = 0, session_beat = ?, show_done = 0,
+      serial = serial + 1 WHERE code = ?`, [now, kj.code]);
+  return { started: true, ...(await sessionsSummary(env,
+    { ...kj, show_running: 1, show_used: 0, session_beat: now, show_done: 0 }, now)) };
+}
+
+// « Terminer ma soirée » : le compteur s'arrête (pas de rab).
+async function endSession(env, kj, now = Date.now()) {
+  await run(env, `UPDATE kjs SET show_running = 0, session_beat = 0, serial = serial + 1
+      WHERE code = ?`, [kj.code]);
+  return sessionsSummary(env, { ...kj, show_running: 0, session_beat: 0 }, now);
 }
 
 function profileOf(kj) {
   return {
     code: kj.code, name: kj.name, accepting: kj.accepting === 1,
     allowOffline: kj.allow_offline === 1, offlineRequests: kj.offline_requests === 1,
-    sessionUntil: Date.now() < (kj.session_until || 0) ? kj.session_until : 0,
+    showRunning: kj.show_running === 1,
     catalogVersion: kj.catalog_version,
     catalogCount: kj.catalog_count, logoVersion: kj.logo ? kj.logo_version : 0,
   };
@@ -354,7 +453,7 @@ async function kjCommand(env, request, kj) {
     case "connectionTest":
       return ok();
     case "heartbeat":
-      await heartbeat(env, kj);
+      await heartbeat(env, kj, data.usedMs);
       return ok();
     case "getSerial":
       return ok({ serial: kj.serial });
@@ -396,6 +495,8 @@ async function kjCommand(env, request, kj) {
       }
       return ok({ sessions: result });
     }
+    case "endSession":
+      return ok({ sessions: await endSession(env, kj) });
     case "getProfile":
       return ok({ profile: profileOf(kj) });
     case "setProfile": {
@@ -503,10 +604,17 @@ async function adminUpsert(env, request) {
       [code, email, keyHash, name || "", active === null ? 1 : active, lifetime || 0, Date.now()]);
     await addPack(env, code, "trial");  // 1re session offerte
   } else {
+    // Désabonnement (active = 0) : soirée et rab arrêtés, demandes effacées.
     await run(env, `UPDATE kjs SET key_hash = COALESCE(?, key_hash),
         active = COALESCE(?, active), name = COALESCE(?, name),
-        lifetime = COALESCE(?, lifetime) WHERE code = ?`,
-      [keyHash, active, name, lifetime, code]);
+        lifetime = COALESCE(?, lifetime),
+        session_until = CASE WHEN ? = 0 THEN 0 ELSE session_until END,
+        show_running = CASE WHEN ? = 0 THEN 0 ELSE show_running END,
+        show_used = CASE WHEN ? = 0 THEN 0 ELSE show_used END,
+        show_done = CASE WHEN ? = 0 THEN 0 ELSE show_done END,
+        serial = serial + 1 WHERE code = ?`,
+      [keyHash, active, name, lifetime, active, active, active, active, code]);
+    if (active === 0) await run(env, "DELETE FROM kj_requests WHERE code = ?", [code]);
   }
   return json({ error: "", code, created: !existing });
 }
