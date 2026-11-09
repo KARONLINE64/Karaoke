@@ -108,6 +108,14 @@ status, body = call("PUT", f"/kj/{CODE}/catalog", {"songs": songs}, KEY)
 check("publication du catalogue (doublon retiré)", status == 200 and body["count"] == 2)
 status, catalog = call("GET", f"/kj/{CODE}/catalog")
 check("catalogue public", [s["title"] for s in catalog] == ["Waterloo", "Bohemian Rhapsody"])
+with_lang = [{"id": "a1", "artist": "ABBA", "title": "Waterloo", "lang": "English"},
+             {"id": "j1", "artist": "Johnny Hallyday", "title": "Allumer le feu", "lang": "Français"},
+             {"id": "q1", "artist": "Queen", "title": "Bohemian Rhapsody"}]
+call("PUT", f"/kj/{CODE}/catalog", {"songs": with_lang}, KEY)
+status, catalog = call("GET", f"/kj/{CODE}/catalog")
+check("langues publiées (rubriques de la page)",
+      [(s["title"], s.get("lang")) for s in catalog] == [
+          ("Waterloo", "English"), ("Allumer le feu", "Français"), ("Bohemian Rhapsody", None)])
 big = [{"id": str(i), "artist": f"Artiste {i:05d} " + "x" * 40, "title": f"Titre {i} " + "y" * 40}
        for i in range(20000)]
 status, body = call("PUT", f"/kj/{CODE}/catalog", {"songs": big}, KEY)

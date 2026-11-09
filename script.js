@@ -132,8 +132,50 @@ function onKjCatalog(data) {
   const listVisible = !songsPage.classList.contains("hidden");
   const showingCatalog = listVisible && currentSongs === songs;
   setSongs(data);
-  if (showingCatalog) redrawSongs(songs);
+  if (listVisible && kjShownLang !== null) redrawSongs(kjSongsOf(kjShownLang));
+  else if (showingCatalog) redrawSongs(songs);
   else if (listVisible && search.value.trim()) search.dispatchEvent(new Event("input"));
+  if (!catalogPage.classList.contains("hidden")) showKjLanguages();
+}
+
+// Page d'un KJ : rubriques par langue (dossiers du KJ), comme la page du KJ
+// propriétaire. Sans langues : le catalogue complet, comme avant.
+let kjShownLang = null;  // rubrique affichée ("" : tous les titres)
+
+function kjLanguages() {
+  const langs = new Set();
+  for (const s of songs) if (s.lang) langs.add(s.lang);
+  return [...langs].sort((a, b) => a.localeCompare(b));
+}
+
+function kjSongsOf(lang) {
+  return lang ? songs.filter(s => s.lang === lang) : songs;
+}
+
+function showKjSongs(lang) {
+  kjShownLang = lang;
+  currentSongs = kjSongsOf(lang);
+  showSongs(currentSongs);
+}
+
+function showKjLanguages() {
+  const langs = kjLanguages();
+  if (!langs.length) { showKjSongs(""); return; }
+  catalogPage.querySelectorAll(".catalogItem").forEach(el => el.remove());
+  const add = (label, lang) => {
+    const item = document.createElement("div");
+    item.className = "catalogItem";
+    item.textContent = label;
+    item.onclick = () => {
+      if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
+      showKjSongs(lang);
+    };
+    catalogPage.appendChild(item);
+  };
+  for (const lang of langs) add(lang, lang);
+  add(t("allSongs"), "");
+  kjShownLang = null;
+  showCatalog();
 }
 
 // Liste affichée remplacée par sa nouvelle version, à la même position.
@@ -232,6 +274,7 @@ function hideAllPages() {
 }
 
 function showHome() {
+  kjShownLang = null;
   hideAllPages();
   homePage.classList.remove("hidden");
   search.value = "";
@@ -614,6 +657,7 @@ search.addEventListener("input", function () {
   }
 
   const value = search.value.trim().toLowerCase();
+  kjShownLang = null;
 
   if (value === "") {
     showHome();
@@ -637,12 +681,13 @@ homeBtn.onclick = function () {
 
 catalogBtn.onclick = function () {
   if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
-  // Page d'un KJ : son catalogue complet (ses propres chansons).
-  if (KJ_MODE) { currentSongs = songs; showSongs(currentSongs); return; }
+  // Page d'un KJ : ses rubriques par langue, ou son catalogue complet.
+  if (KJ_MODE) { showKjLanguages(); return; }
   showCatalog();
 };
 
 favBtn.onclick = function () {
+  kjShownLang = null;
   const combined = [];
 
   for (const s of songs) {
@@ -971,6 +1016,7 @@ const translations = {
     requestFailed: 'Échec de l\'envoi. Veuillez réessayer.',
     kjUnknown: 'Page de KJ introuvable. Vérifiez le QR code.',
     welcome2Kj: 'Ou parcourez mon catalogue complet',
+    allSongs: 'Tous les titres',
     rotatePortrait: 'Tourner le téléphone en mode portrait pour faire une demande.'
   },
   en: {
@@ -1000,6 +1046,7 @@ const translations = {
     requestFailed: 'Request failed. Please try again.',
     kjUnknown: 'KJ page not found. Please check the QR code.',
     welcome2Kj: 'Or browse my complete catalogue',
+    allSongs: 'All songs',
     rotatePortrait: 'Turn your phone to portrait mode to make a request.'
   }
 };
