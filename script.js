@@ -162,10 +162,12 @@ function showKjLanguages() {
   const langs = kjLanguages();
   if (!langs.length) { showKjSongs(""); return; }
   catalogPage.querySelectorAll(".catalogItem").forEach(el => el.remove());
-  const add = (label, lang) => {
+  const add = (label, lang, i18nKey) => {
     const item = document.createElement("div");
     item.className = "catalogItem";
     item.textContent = label;
+    // Traduit avec le reste de la page (boutons FR / EN).
+    if (i18nKey) item.dataset.i18n = i18nKey;
     item.onclick = () => {
       if (!serviceOnline) { showOfflineToastIfNeeded(); return; }
       showKjSongs(lang);
@@ -173,7 +175,7 @@ function showKjLanguages() {
     catalogPage.appendChild(item);
   };
   for (const lang of langs) add(lang, lang);
-  add(t("allSongs"), "");
+  add(t("allSongs"), "", "allSongs");
   kjShownLang = null;
   showCatalog();
 }
