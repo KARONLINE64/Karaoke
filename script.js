@@ -1129,31 +1129,20 @@ localeButtons.forEach((button) => {
 buildKeyOptions();
 applyLocale(localStorage.getItem('karaokeLocale') || 'fr');
 
-// --- Aide de la page d'accueil -------------------------------------------
-// « Aide » montre 3 sujets ; un sujet affiche son texte (dans la langue de la
-// page), un 2e clic sur le même sujet le referme.
-(function () {
-  const toggle = document.getElementById("helpToggle");
-  const topics = document.getElementById("helpTopics");
-  const text = document.getElementById("helpText");
-  if (!toggle || !topics || !text) return;
+// --- Aide ------------------------------------------------------------------
+// Cadre de l'accueil (« Aide » montre 3 sujets) et fenêtre ouverte par le
+// bouton « Aide » de la barre du bas (toutes les pages). Un sujet affiche son
+// texte (dans la langue de la page) ; un 2e clic sur le même sujet le referme.
+function setupHelp(box, onShow) {
+  const topics = box.querySelector(".helpTopics");
+  const text = box.querySelector(".helpText");
   let shown = "";
-  function render() {
+  const render = () => {
     topics.querySelectorAll(".helpTopic").forEach(b => b.classList.toggle("active", b.dataset.help === shown));
     text.textContent = shown ? t(shown) : "";
     text.classList.toggle("hidden", !shown);
-    // Aide ouverte : entièrement visible, au-dessus de la barre du bas.
-    if (!topics.classList.contains("hidden")) {
-      requestAnimationFrame(() => document.getElementById("helpBox").scrollIntoView({ block: "end", behavior: "smooth" }));
-    }
-  }
-  toggle.addEventListener("click", () => {
-    const open = topics.classList.contains("hidden");
-    topics.classList.toggle("hidden", !open);
-    toggle.setAttribute("aria-expanded", String(open));
-    if (!open) shown = "";
-    render();
-  });
+    if (onShow) onShow();
+  };
   topics.querySelectorAll(".helpTopic").forEach(button => {
     button.addEventListener("click", () => {
       shown = shown === button.dataset.help ? "" : button.dataset.help;
@@ -1162,4 +1151,35 @@ applyLocale(localStorage.getItem('karaokeLocale') || 'fr');
   });
   // Changement de langue : le texte affiché suit.
   document.querySelectorAll(".lang-btn").forEach(b => b.addEventListener("click", () => setTimeout(render, 0)));
+  return { reset() { shown = ""; render(); } };
+}
+
+(function () {
+  const box = document.getElementById("helpBox");
+  const toggle = document.getElementById("helpToggle");
+  if (box && toggle) {
+    const topics = box.querySelector(".helpTopics");
+    const help = setupHelp(box, () => {
+      // Aide ouverte : entièrement visible, au-dessus de la barre du bas.
+      if (!topics.classList.contains("hidden")) {
+        requestAnimationFrame(() => box.scrollIntoView({ block: "end", behavior: "smooth" }));
+      }
+    });
+    toggle.addEventListener("click", () => {
+      const open = topics.classList.contains("hidden");
+      topics.classList.toggle("hidden", !open);
+      toggle.setAttribute("aria-expanded", String(open));
+      help.reset();
+    });
+  }
+  const modal = document.getElementById("helpModal");
+  const navBtn = document.getElementById("helpNavBtn");
+  if (modal && navBtn) {
+    const help = setupHelp(modal);
+    const close = () => modal.classList.add("hidden");
+    navBtn.addEventListener("click", () => { help.reset(); modal.classList.remove("hidden"); });
+    modal.querySelector(".help-overlay").addEventListener("click", close);
+    modal.querySelector(".help-close").addEventListener("click", close);
+    document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  }
 })();

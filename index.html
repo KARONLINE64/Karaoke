@@ -8,7 +8,7 @@
 
 <title>Karaoke</title>
 
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 
 </head>
 
@@ -65,12 +65,12 @@ spellcheck="false">
 <!-- Aide : 3 sujets, texte affiché sous le sujet choisi -->
 <div id="helpBox">
 <button id="helpToggle" type="button" aria-expanded="false"><span>❓</span> <span data-i18n="helpButton">Aide</span></button>
-<div id="helpTopics" class="hidden">
+<div id="helpTopics" class="helpTopics hidden">
 <button class="helpTopic" type="button" data-help="helpSearchText"><span>🔎</span> <span data-i18n="helpSearch">Recherche</span></button>
 <button class="helpTopic" type="button" data-help="helpBugText"><span>🐞</span> <span data-i18n="helpBug">Bug</span></button>
 <button class="helpTopic" type="button" data-help="helpSongsText"><span>⭐</span> <span data-i18n="navFavorites">Mes chansons</span></button>
 </div>
-<p id="helpText" class="hidden" aria-live="polite"></p>
+<p class="helpText hidden" aria-live="polite"></p>
 </div>
 
 <!-- Pages des KJ (KaroliveBox KJ, ?kj=CODE) uniquement -->
@@ -135,8 +135,28 @@ Español
 <span data-i18n="navFavorites" style="font-size:0.82em;">Mes chansons</span>
 </button>
 
+<button id="helpNavBtn" type="button">
+<span class="nav-icon">❓</span>
+<span data-i18n="helpButton" style="font-size:0.82em;">Aide</span>
+</button>
+
 </nav>
 
+
+<!-- Aide, toujours accessible (bouton « Aide » de la barre du bas) -->
+<div id="helpModal" class="hidden">
+<div class="help-overlay"></div>
+<div class="help-sheet" role="dialog" aria-modal="true">
+<button class="help-close" type="button" aria-label="Fermer">×</button>
+<h3>❓ <span data-i18n="helpButton">Aide</span></h3>
+<div class="helpTopics">
+<button class="helpTopic" type="button" data-help="helpSearchText"><span>🔎</span> <span data-i18n="helpSearch">Recherche</span></button>
+<button class="helpTopic" type="button" data-help="helpBugText"><span>🐞</span> <span data-i18n="helpBug">Bug</span></button>
+<button class="helpTopic" type="button" data-help="helpSongsText"><span>⭐</span> <span data-i18n="navFavorites">Mes chansons</span></button>
+</div>
+<p class="helpText hidden" aria-live="polite"></p>
+</div>
+</div>
 
 <!-- Request modal (hidden by default) -->
 <div id="requestModal" class="hidden">
@@ -170,7 +190,7 @@ Español
 </div>
 
 <script>localStorage.setItem('karaokeLocale', 'fr');</script>
-<script src="script.js?v=9"></script>
+<script src="script.js?v=10"></script>
 <script>if (typeof applyLocale === 'function') applyLocale('fr');</script>
 </body>
 </html>
