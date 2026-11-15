@@ -408,11 +408,11 @@ body.kj-page #poweredBy{margin-top:22px}
 }
 #helpToggle{font-size:22px;padding:8px 26px;box-shadow:0 0 10px rgba(42,167,255,.45)}
 #helpToggle[aria-expanded="true"]{background:#2aa7ff;color:#04121f}
-.helpTopics{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px}
-.helpTopics.hidden,.helpText.hidden,#helpModal.hidden{display:none}
+#helpTopics{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px}
+#helpTopics.hidden,#helpText.hidden{display:none}
 .helpTopic{font-size:18px;padding:7px 16px}
 .helpTopic.active{background:#2aa7ff;color:#04121f}
-.helpText{
+#helpText{
     margin:12px 4px 2px;
     font-size:18px;
     line-height:1.45;
@@ -422,25 +422,5 @@ body.kj-page #poweredBy{margin-top:22px}
 @media (max-width:420px){
     #helpToggle{font-size:20px}
     .helpTopic{font-size:16px;padding:6px 12px}
-    .helpText{font-size:16px}
-}
-
-/* Barre du bas : 5 boutons (Aide compris) */
-.bottomNav button{flex:1;min-width:0;padding:0 2px}
-.bottomNav button span{display:block}
-
-/* Fenêtre d'aide (bouton « Aide » de la barre du bas, toutes les pages) */
-#helpModal{position:fixed;inset:0;z-index:50}
-.help-overlay{position:absolute;inset:0;background:rgba(0,0,0,.6)}
-.help-sheet{
-    position:absolute;left:50%;bottom:84px;transform:translateX(-50%);
-    width:min(560px,calc(100% - 24px));box-sizing:border-box;
-    padding:14px 16px 16px;border:1px solid #2aa7ff;border-radius:18px;
-    background:#151b25;box-shadow:0 0 24px rgba(42,167,255,.35);
-    color:#fff;text-align:center;max-height:calc(100vh - 110px);overflow-y:auto;
-}
-.help-sheet h3{margin:0 0 4px;font-size:22px}
-.help-close{
-    position:absolute;top:6px;right:10px;background:none;border:0;color:#9fb0c0;
-    font-size:30px;line-height:1;cursor:pointer;
+    #helpText{font-size:16px}
 }
