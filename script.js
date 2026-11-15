@@ -1018,6 +1018,12 @@ const translations = {
     requestFailed: 'Échec de l\'envoi. Veuillez réessayer.',
     kjUnknown: 'Page de KJ introuvable. Vérifiez le QR code.',
     welcome2Kj: 'Ou parcourez mon catalogue complet',
+    helpButton: 'Aide',
+    helpSearch: 'Recherche',
+    helpBug: 'Bug',
+    helpSearchText: "La recherche peut se faire sur le nom de l'artiste ou du titre. La page proposera des titres durant l'écriture.",
+    helpBugText: "Aviser le KJ si aucun résultat n'est affiché ; pour vérifier si le titre est dans sa database mais pas sur sa page de demandes ou le télécharger.",
+    helpSongsText: 'Un aide-mémoire pour ajouter, puis retrouver les titres déjà chantés ou à chanter plus tard.',
     allSongs: 'Tous les titres',
     rotatePortrait: 'Tourner le téléphone en mode portrait pour faire une demande.'
   },
@@ -1048,6 +1054,12 @@ const translations = {
     requestFailed: 'Request failed. Please try again.',
     kjUnknown: 'KJ page not found. Please check the QR code.',
     welcome2Kj: 'Or browse my complete catalogue',
+    helpButton: 'Help',
+    helpSearch: 'Search',
+    helpBug: 'Bug',
+    helpSearchText: 'You can search by artist name or song title. The page suggests songs as you type.',
+    helpBugText: "Tell the KJ if no result is shown: they can check whether the song is in their library but not on their request page, or download it.",
+    helpSongsText: "A reminder to add, then find, the songs you've already sung or want to sing later.",
     allSongs: 'All songs',
     rotatePortrait: 'Turn your phone to portrait mode to make a request.'
   }
@@ -1116,3 +1128,38 @@ localeButtons.forEach((button) => {
 
 buildKeyOptions();
 applyLocale(localStorage.getItem('karaokeLocale') || 'fr');
+
+// --- Aide de la page d'accueil -------------------------------------------
+// « Aide » montre 3 sujets ; un sujet affiche son texte (dans la langue de la
+// page), un 2e clic sur le même sujet le referme.
+(function () {
+  const toggle = document.getElementById("helpToggle");
+  const topics = document.getElementById("helpTopics");
+  const text = document.getElementById("helpText");
+  if (!toggle || !topics || !text) return;
+  let shown = "";
+  function render() {
+    topics.querySelectorAll(".helpTopic").forEach(b => b.classList.toggle("active", b.dataset.help === shown));
+    text.textContent = shown ? t(shown) : "";
+    text.classList.toggle("hidden", !shown);
+    // Aide ouverte : entièrement visible, au-dessus de la barre du bas.
+    if (!topics.classList.contains("hidden")) {
+      requestAnimationFrame(() => document.getElementById("helpBox").scrollIntoView({ block: "end", behavior: "smooth" }));
+    }
+  }
+  toggle.addEventListener("click", () => {
+    const open = topics.classList.contains("hidden");
+    topics.classList.toggle("hidden", !open);
+    toggle.setAttribute("aria-expanded", String(open));
+    if (!open) shown = "";
+    render();
+  });
+  topics.querySelectorAll(".helpTopic").forEach(button => {
+    button.addEventListener("click", () => {
+      shown = shown === button.dataset.help ? "" : button.dataset.help;
+      render();
+    });
+  });
+  // Changement de langue : le texte affiché suit.
+  document.querySelectorAll(".lang-btn").forEach(b => b.addEventListener("click", () => setTimeout(render, 0)));
+})();

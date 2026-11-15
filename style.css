@@ -381,3 +381,46 @@ body.kj-page #poweredBy{margin-top:22px}
 .rotate-phone{display:inline-block;transform:rotate(90deg)}
 .rotate-loop{display:inline-block;animation:rotateLoop 2s linear infinite}
 @keyframes rotateLoop{to{transform:rotate(360deg)}}
+
+/* Aide de la page d'accueil (sous « Ou parcourez… ») */
+#homePage{padding-bottom:96px}
+#helpBox{
+    margin:6px auto 20px;
+    scroll-margin-bottom:96px;  /* au-dessus de la barre du bas */
+    max-width:560px;
+    padding:12px 14px;
+    border:1px solid #2b4667;
+    border-radius:18px;
+    background:#151b25;
+    box-shadow:0 6px 16px rgba(0,0,0,.35);
+    text-align:center;
+}
+#helpToggle,.helpTopic{
+    font:inherit;
+    font-weight:bold;
+    color:#fff;
+    background:#1d2736;
+    border:1px solid #2aa7ff;
+    border-radius:999px;
+    cursor:pointer;
+    -webkit-user-select:none;
+    user-select:none;
+}
+#helpToggle{font-size:22px;padding:8px 26px;box-shadow:0 0 10px rgba(42,167,255,.45)}
+#helpToggle[aria-expanded="true"]{background:#2aa7ff;color:#04121f}
+#helpTopics{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px}
+#helpTopics.hidden,#helpText.hidden{display:none}
+.helpTopic{font-size:18px;padding:7px 16px}
+.helpTopic.active{background:#2aa7ff;color:#04121f}
+#helpText{
+    margin:12px 4px 2px;
+    font-size:18px;
+    line-height:1.45;
+    color:#d8e4f0;
+    text-align:left;
+}
+@media (max-width:420px){
+    #helpToggle{font-size:20px}
+    .helpTopic{font-size:16px;padding:6px 12px}
+    #helpText{font-size:16px}
+}
