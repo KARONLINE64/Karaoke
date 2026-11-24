@@ -84,6 +84,15 @@ def parse_line(line: str) -> dict | None:
     return {"artist": artist, "title": title}
 
 
+def language_code(line: str) -> str | None:
+    """« EN », « Anglais », « EN : »… seul sur une ligne : code de la langue."""
+    key = normalize(line)
+    for code, (label, _file) in LANGUAGES.items():
+        if key in (code.casefold(), normalize(label)):
+            return code
+    return None
+
+
 def git(*args: str) -> bool:
     return subprocess.run(["git", *args], cwd=ROOT).returncode == 0
 
@@ -125,25 +134,33 @@ def main() -> int:
     print("Langue des titres :")
     for code, (label, _file) in LANGUAGES.items():
         print(f"  {code} = {label}")
-    code = input("Langue (FR, EN, NL, IT ou ES) : ").strip().upper()
+    code = language_code(input("Langue (FR, EN, NL, IT ou ES) : ")) or ""
     if code not in LANGUAGES:
         print("Langue inconnue : rien n'a été modifié.")
         return 1
-    label, lang_file = LANGUAGES[code]
 
     print("\nTapez un titre par ligne, sous la forme :  Artiste - Titre")
+    print("Pour changer de langue en cours de liste : tapez FR, EN, NL, IT ou ES seul sur une ligne.")
     print("(ligne vide pour terminer)\n")
+    print(f"   [{LANGUAGES[code][0]}]")
     all_songs, all_nl = load(ALL_SONGS)
-    lang_songs, lang_nl = load(lang_file)
-    known = {song_key(s) for s in all_songs} | {song_key(s) for s in lang_songs}
-    added: list[dict] = []
+    files = {c: load(f) for c, (_l, f) in LANGUAGES.items()}
+    known = {song_key(s) for s in all_songs}
+    for songs, _nl in files.values():
+        known |= {song_key(s) for s in songs}
+    added: list[tuple[str, dict]] = []
     while True:
         raw = input("> ")
         if not raw.strip():
             break
         line = clean_line(raw)
-        if line is None or line.upper() in LANGUAGES:
-            continue  # message de l'outil ou code de langue collé : ignoré
+        if line is None:
+            continue  # message de l'outil collé : ignoré
+        switch = language_code(line)
+        if switch:
+            code = switch
+            print(f"   [{LANGUAGES[code][0]}]")
+            continue
         song = parse_line(line)
         if song is None:
             print("   ✗ format attendu : Artiste - Titre (avec un tiret entouré d'espaces)")
@@ -152,26 +169,33 @@ def main() -> int:
             print(f"   = déjà dans le catalogue : {song['artist']} - {song['title']}")
             continue
         known.add(song_key(song))
-        added.append(song)
+        added.append((code, song))
         print(f"   ✓ {song['artist']} - {song['title']}")
 
     if not added:
         print("\nAucun nouveau titre : rien n'a été modifié.")
         return 0
-    print(f"\n{len(added)} titre(s) à ajouter en {label} :")
-    for song in added:
-        print(f"   {song['artist']} - {song['title']}")
+    used = [c for c in LANGUAGES if any(c == a for a, _s in added)]
+    print(f"\n{len(added)} titre(s) à ajouter :")
+    for c in used:
+        print(f"  {LANGUAGES[c][0]} :")
+        for a, song in added:
+            if a == c:
+                print(f"     {song['artist']} - {song['title']}")
     if not ask_yes_no("\nPublier sur la page maintenant ? (O/N) "):
         print("Annulé : rien n'a été modifié.")
         return 0
 
-    for song in added:
+    for c, song in added:
         insert_sorted(all_songs, dict(song))
-        insert_sorted(lang_songs, dict(song))
+        insert_sorted(files[c][0], dict(song))
     save(ALL_SONGS, all_songs, all_nl)
-    save(lang_file, lang_songs, lang_nl)
+    lang_files = [LANGUAGES[c][1] for c in used]
+    for c in used:
+        save(LANGUAGES[c][1], *files[c])
+    label = ", ".join(LANGUAGES[c][0] for c in used)
     message = f"Catalogue : {len(added)} titre(s) ajouté(s) en {label}"
-    if not (git("add", ALL_SONGS, lang_file) and git("commit", "-q", "-m", message)
+    if not (git("add", ALL_SONGS, *lang_files) and git("commit", "-q", "-m", message)
             and git("push", "-q")):
         print("\nARRÊT : publication impossible (git). Envoyez ce message à Claude.")
         return 1
