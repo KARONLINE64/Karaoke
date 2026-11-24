@@ -1364,6 +1364,10 @@
     "title": "DJ"
   },
   {
+    "artist": "Dire Straits",
+    "title": "Ticket to Heaven"
+  },
+  {
     "artist": "Ed Sheeran",
     "title": "Make it rain"
   },
@@ -5116,12 +5120,20 @@
     "title": "Derrière le brouillard"
   },
   {
+    "artist": "Jerry Lee Lewis",
+    "title": "Somewhere Over The Rainbow"
+  },
+  {
     "artist": "Johnny Hallyday",
     "title": "Quelques cris"
   },
   {
     "artist": "Johnny Hallyday & Chimène Badi",
     "title": "Je te promets"
+  },
+  {
+    "artist": "Mark Knopfler & Emmilou Harris",
+    "title": "If This Is Goodbye"
   },
   {
     "artist": "Patrick Bruel",
@@ -5138,6 +5150,10 @@
   {
     "artist": "Renaud",
     "title": "Si tu me paies un verre"
+  },
+  {
+    "artist": "Sasha Sloan",
+    "title": "Dancing With Your Ghost"
   },
   {
     "artist": "Sasha Sloan",
